@@ -8,7 +8,7 @@
     <title>VUE</title>
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
-
+    @vite('resources/scss/app.scss')
 </head>
 <body>
 <div id="app"></div>
