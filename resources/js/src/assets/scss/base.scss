@@ -2,13 +2,13 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     color: $primary_text_color;
 
-    margin: 0;
-    padding: 0;
     a {
         color: $primary_text_color;
         text-decoration: none;
@@ -24,4 +24,10 @@ ul {
 
 img {
     max-width: 100%;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
 }
