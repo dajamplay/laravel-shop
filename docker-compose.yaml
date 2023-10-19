@@ -1,0 +1,90 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: "nginx:1.25.2-alpine"
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./:/var/www/laravel
+    depends_on:
+      - mysql
+      - php
+      - node
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+  php:
+    build:
+      context: docker
+      dockerfile: ./fpm/Dockerfile
+    container_name: php
+    volumes:
+      - ./:/var/www/laravel
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+  node:
+    build:
+      context: docker
+      dockerfile: ./node/Dockerfile
+    container_name: node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/var/www/laravel
+    tty: true
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/mysql/database:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+  pma:
+    platform: linux/amd64
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: pma
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
+    networks:
+      - lara-net
+
+volumes:
+  database:
+
+networks:
+  lara-net:
+    driver: bridge
+
