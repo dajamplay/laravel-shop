@@ -1,0 +1,27 @@
+@import './colors';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: $primary_text_color;
+
+    margin: 0;
+    padding: 0;
+    a {
+        color: $primary_text_color;
+        text-decoration: none;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
