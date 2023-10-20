@@ -6,14 +6,19 @@
 }
 
 body {
-    color: $primary_text_color;
+    color: $color-white;
 
+    font-family: 'Roboto-Regular', sans-serif;
     font-size: 14px;
 
     a {
-        color: $primary_text_color;
+        color: $color-white;
         text-decoration: none;
     }
+}
+
+svg {
+    color: green;
 }
 
 ul {

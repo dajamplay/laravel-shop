@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Header from "./components/Header/Header.vue";
 
 export default {
     components: {Header},
@@ -23,6 +23,6 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
