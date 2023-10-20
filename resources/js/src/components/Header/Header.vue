@@ -49,6 +49,10 @@ export default {
     justify-content: space-between;
     font-family: 'Oswald-SemiBold', sans-serif;
     font-size: 14px;
+    color: $color-white;
+    a {
+        color: $color-white;
+    }
     &-left {
         display: flex;
         align-items: center;

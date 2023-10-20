@@ -6,13 +6,10 @@
 }
 
 body {
-    color: $color-white;
-
     font-family: 'Roboto-Regular', sans-serif;
     font-size: 14px;
 
     a {
-        color: $color-white;
         text-decoration: none;
     }
 }
@@ -35,5 +32,5 @@ img {
 .container-fluid {
     margin: 0;
     padding: 0;
-    max-width: 1920px;
+    width: 1920px;
 }
