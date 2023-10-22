@@ -10,6 +10,10 @@ const routes = [
 
     {path: '/contacts', component: () => import('../pages/Shop.vue'), name: 'contacts'},
 
+    {path: '/user-login', component: () => import('../pages/Login.vue'), name: 'login'},
+
+    {path: '/:catchAll(.*)', component: () => import('../pages/404.vue'), name: '404'},
+
 ]
 
 export default routes;

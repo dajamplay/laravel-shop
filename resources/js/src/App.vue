@@ -6,7 +6,7 @@
         <router-view />
     </div>
 
-    <div v-if="user">
+    <div v-if="this.$store.getters.isAuth">
         <p>{{ user.email }}</p>
         <p>{{ user.first_name }}</p>
     </div>
@@ -20,17 +20,14 @@ export default {
     components: {Header},
 
     mounted() {
-        this.$store.dispatch('getUser', 1);
-        this.$store.dispatch('getUsers');
+        this.$store.dispatch('getAuthUser');
     },
+
     computed: {
         user() {
-            return this.$store.getters.user
+            return this.$store.getters.isAuth
         },
-        users() {
-            return this.$store.getters.users
-        },
-    }
+    },
 }
 
 </script>

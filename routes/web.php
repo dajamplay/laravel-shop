@@ -6,4 +6,6 @@ require base_path('routes/web/auth.php');
 
 require base_path('routes/web/admin.php');
 
-Route::get('/', fn () => view('app'));
+Route::get('/{any?}', function () {
+    return view('app');
+})->where('any', '.*');
