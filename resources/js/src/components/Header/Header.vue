@@ -1,74 +1,49 @@
 <template>
-    <div class="container-fluid">
-        <div class="header">
-            <div class="header-left">
-                <Logo />
-                <Menu />
-            </div>
-            <div class="header-right">
-                <Search />
-                <div class="header-right-block">
-                    <Auth />
-                    <Favorite />
-                    <Cart />
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="/assets/img/logo.png" alt="Елеанта">
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <div class="menu_toggle">
+                        <div class="menu_toggle_line"></div>
+                    </div>
+                    <div class="header_menu">
+                        <ul>
+                            <li class="link_home"><a href="/">Главная</a></li>
+                            <li><a href="/about">О компании</a></li>
+                            <li><a href="/category/1">Продукция</a></li>
+                            <li class="categories__menu">
+                                <ul>
+                                    <li><a href="#">Rosa Graf</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/delivery">Оплата и доставка</a></li>
+                            <li><a href="/contacts">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="header__auth">
+                    <div>+7(911)744-78-88</div>
+                    <div>+7(911)940-66-95</div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <script>
-import Menu from "./Menu.vue";
-import Logo from "./Logo.vue";
-import Search from "./Search.vue";
-import Auth from "./Auth.vue";
-import Favorite from "./Favorite.vue";
-import Cart from "./Cart.vue";
 
 export default {
     name: "Header",
-    components: {Cart, Favorite, Auth, Search, Logo, Menu},
+    components: {},
     mounted() {},
-    data() {
-        return {
-            headerMenuList: [
-                { value: 'Home', routeName: 'index'},
-                { value: 'About', routeName: 'about'},
-            ]
-        }
-    }
 }
 </script>
 
 <style lang="scss" scoped>
-.header {
-    background-color: $color-black;
-    height: 115px;
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    font-family: 'Oswald-SemiBold', sans-serif;
-    font-size: 14px;
-    color: $color-white;
-    a {
-        color: $color-white;
-    }
-    &-left {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 50%;
-    }
-    &-right {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 50%;
-        &-block {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-    }
-}
+
 </style>
