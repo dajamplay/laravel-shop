@@ -32,10 +32,6 @@ class LoginController extends AbstractAuthController
 
         $action->run($data, $request->session(), $this->guard);
 
-        if($this->guard === self::GUARD_API) {
-            return response()->json(['message' => trans('auth.login')]);
-        }
-
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

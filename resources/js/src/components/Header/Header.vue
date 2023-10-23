@@ -49,6 +49,7 @@ export default {
             axios.get('/sanctum/csrf-cookie')
                 .then(response => {
                     axios.post('/api/v1/logout').then( response => {
+                        console.log(response)
                         this.$store.dispatch('getAuthUser');
                         this.$router.push({ path: '/' })
                     }).catch(error => {

@@ -1,8 +1,8 @@
 <template>
     <form>
-        <div v-if="errors.email" class="error">{{ errors.email[0] }}</div>
+        <div v-if="errors?.email" class="error">{{ errors.email[0] }}</div>
         <input v-model="email" type="email">
-        <div v-if="errors.password" class="error">{{ errors.password[0] }}</div>
+        <div v-if="errors?.password" class="error">{{ errors.password[0] }}</div>
         <input v-model="password" type="password">
         <button @click.prevent="login" type="submit">Вход</button>
     </form>
@@ -14,8 +14,8 @@ export default {
 
     data() {
         return {
-            email: null,
-            password: null,
+            email: '',
+            password: '',
             errors: [],
         }
     },
@@ -24,10 +24,11 @@ export default {
         login() {
             axios.get('/sanctum/csrf-cookie')
                 .then(response => {
-                axios.post('/login', {
+                axios.post('/api/v1/login', {
                     email: this.email,
                     password: this.password,
                 }).then( response => {
+                    console.log(response)
                     this.$store.dispatch('getAuthUser');
                     this.$router.push({ path: '/' });
                 }).catch(error => {

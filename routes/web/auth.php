@@ -20,7 +20,7 @@ Route::middleware('auth')->group( function () {
 
 });
 
-Route::middleware(['guest', 'auth_api'])->group( function () {
+Route::middleware('guest')->group( function () {
 
     Route::get('/login', [Auth\LoginController::class, 'create'])
         ->name('login');
