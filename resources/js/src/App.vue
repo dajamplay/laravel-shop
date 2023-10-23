@@ -11,6 +11,11 @@
         <p>{{ user.first_name }}</p>
     </div>
 
+    <div v-if="this.$store.getters.isAuth">
+        <p>{{ user.email }}</p>
+        <p>{{ user.first_name }}</p>
+    </div>
+
 </template>
 
 <script>
@@ -18,6 +23,12 @@ import Header from "./components/Header/Header.vue";
 
 export default {
     components: {Header},
+
+    data() {
+        return {
+            timer: null
+        }
+    },
 
     mounted() {
         this.$store.dispatch('getAuthUser');

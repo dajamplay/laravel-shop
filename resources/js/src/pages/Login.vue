@@ -1,9 +1,11 @@
 <template>
     <form>
-        <div v-if="errors?.email" class="error">{{ errors.email[0] }}</div>
-        <input v-model="email" type="email">
-        <div v-if="errors?.password" class="error">{{ errors.password[0] }}</div>
-        <input v-model="password" type="password">
+        <div v-if="errors?.email" class="error animate__animated animate__zoomIn">{{ errors.email[0] }}</div>
+        <label v-else>&nbsp;</label>
+        <input v-model="email" type="email" name="email" placeholder="Введите почту">
+        <div v-if="errors?.password" class="error animate__animated animate__zoomIn">{{ errors.password[0] }}</div>
+        <label v-else>&nbsp;</label>
+        <input v-model="password" type="password" name="password" placeholder="Введите пароль">
         <button @click.prevent="login" type="submit">Вход</button>
     </form>
 </template>
@@ -28,7 +30,6 @@ export default {
                     email: this.email,
                     password: this.password,
                 }).then( response => {
-                    console.log(response)
                     this.$store.dispatch('getAuthUser');
                     this.$router.push({ path: '/' });
                 }).catch(error => {
@@ -36,7 +37,6 @@ export default {
                 });
             });
         },
-
     }
 }
 </script>
