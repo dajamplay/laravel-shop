@@ -1,13 +1,13 @@
 <template>
     <h2>Test</h2>
-    <button @click.prevent="alert">PUSH ME</button>
+    <button @click.prevent="send">PUSH ME</button>
 </template>
 
 <script>
 export default {
     methods: {
-        alert() {
-            console.log('ALEEEEERT')
+        send() {
+            console.log('test')
         }
     }
 }
