@@ -9,6 +9,6 @@ class PublicController extends Controller
 {
     public function index(): View
     {
-        return view('public.index');
+        return view('main.index');
     }
 }

@@ -1,11 +1,10 @@
 <template>
-
+    <h2>Test</h2>
 </template>
 
 <script>
-export default {
-    name: "MainLayout"
-}
+
+
 </script>
 
 <style scoped>
