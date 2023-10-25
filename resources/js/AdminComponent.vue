@@ -1,6 +1,7 @@
 <template>
     <h2>Test</h2>
     <button @click.prevent="send">PUSH ME</button>
+    <slot></slot>
 </template>
 
 <script>
