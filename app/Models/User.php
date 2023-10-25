@@ -16,6 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasApiTokens, HasFactory, Notifiable, Filterable;
 
     const ROLE_SUPER_ADMIN = 7;
+
     const ROLE_USER = 1;
 
     protected $fillable = [

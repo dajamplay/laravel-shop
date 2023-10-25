@@ -17,9 +17,7 @@ class AuthService
 
     public function auth(User $user, string $guard): void
     {
-        $guard = $this->guardService->getGuardByUserRole($user->role);
-
-        dd($guard);
+        //$guard = $this->guardService->getGuardByUserRole($user->role);
 
         auth($guard)->login($user);
     }

@@ -4,17 +4,13 @@ namespace App\Http\Middleware;
 
 use App\Providers\RouteServiceProvider;
 use Closure;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class RedirectIfAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
@@ -27,4 +23,19 @@ class RedirectIfAuthenticated
 
         return $next($request);
     }
+
+//    protected function unauthenticated($request, AuthenticationException $exception)
+//    {
+//        if ($request->expectsJson()) {
+//            return response()->json(['error' => 'Unauthenticated.'], 401);
+//        }
+//        if ($request->is('admin') || $request->is('admin/*')) {
+//            return redirect()->guest('/login/admin');
+//        }
+//        if ($request->is('writer') || $request->is('writer/*')) {
+//            return redirect()->guest('/login/writer');
+//        }
+//        return redirect()->guest(route('login'));
+//    }
 }
+
