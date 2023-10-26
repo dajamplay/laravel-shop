@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services\Seo;
+namespace App\Facades;
 
+use App\Services\SeoService;
 use Illuminate\Support\Facades\Facade;
 
 /**

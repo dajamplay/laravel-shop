@@ -1,6 +1,5 @@
 <template>
-    <h2>Test</h2>
-    <button @click.prevent="send">PUSH ME</button>
+    <button @click.prevent="send">Добавить в корзину</button>
     <slot></slot>
 </template>
 

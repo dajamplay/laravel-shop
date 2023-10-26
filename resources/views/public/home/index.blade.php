@@ -1,8 +1,14 @@
 @extends('public.layouts.base')
 
 @section('content')
-    <h1>Public Home Index</h1>
-    <component-admin>
-        <h2>Test2</h2>
-    </component-admin>
+
+    <h1>Корзина</h1>
+    <v-cart></v-cart>
+
+    <h1>Товар 1</h1>
+    <v-add-button></v-add-button>
+
+    <h1>Товар 2</h1>
+    <v-add-button></v-add-button>
+
 @endsection

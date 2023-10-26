@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Public;
 
+use App\Facades\Seo;
 use App\Http\Controllers\Controller;
-use App\Services\Seo\Seo;
 use Illuminate\View\View;
 
 class HomeController extends Controller
