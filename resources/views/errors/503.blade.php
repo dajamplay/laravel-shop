@@ -1,4 +1,4 @@
-@extends('errors::minimal')
+@extends('layouts.error')
 
 @section('title', __('Сервер не готов обработать запрос в данный момент'))
 @section('code', '503')

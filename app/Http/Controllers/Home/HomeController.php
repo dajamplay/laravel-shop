@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Public;
+namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
@@ -12,6 +12,6 @@ class HomeController extends Controller
         seo()->description = 'Тестовое описание';
         seo()->title = 'Тестовый заголовок';
 
-        return view('public.home.index');
+        return view('home.index');
     }
 }
