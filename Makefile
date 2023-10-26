@@ -33,6 +33,5 @@ exec-node:
 db-clear:
 	docker run --rm -v ${pwd}/docker/mysql:/app -w /app alpine sh -c 'rm -rf database'
 
-
-
-
+seed:
+	docker exec php php artisan migrate:refresh --seed

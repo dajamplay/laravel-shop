@@ -1,5 +1,5 @@
 @php
-    /** @var $seo \App\Services\SeoService */
+    /** @var $seo \App\Data\Seo\SeoData */
 @endphp
 
 
@@ -21,6 +21,8 @@
 
 {{--<meta name="keywords" content="{{ $seo->keywords }}" />--}}
 
-<meta name="description" content="{{ $seo->getDescription() }}">
+@isset($seo->description)
+    <meta name="description" content="{{ $seo->description }}">
+@endisset
 
-<title>{{ $seo->getTitle() }}</title>
+<title>{{ $seo->title ?? config('app.name') }}</title>
