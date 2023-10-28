@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('slug')->unique();
 
             $table->text('content')->nullable();
-
             $table->decimal('price')->nullable();
 
             $table->string('image')->nullable();

@@ -11,10 +11,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Models\User;
-use App\ViewModels\User\UserCreateViewModel;
-use App\ViewModels\User\UserEditViewModel;
-use App\ViewModels\User\UserIndexViewModel;
-use App\ViewModels\User\UserShowViewModel;
+use App\ViewModels\Admin\User\UserCreateViewModel;
+use App\ViewModels\Admin\User\UserEditViewModel;
+use App\ViewModels\Admin\User\UserIndexViewModel;
+use App\ViewModels\Admin\User\UserShowViewModel;
 use Illuminate\Http\RedirectResponse;
 use Spatie\LaravelData\Exceptions\InvalidDataClass;
 

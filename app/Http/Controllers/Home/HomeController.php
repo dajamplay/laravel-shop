@@ -3,15 +3,12 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use App\ViewModels\Home\HomeIndexViewModel;
 
 class HomeController extends Controller
 {
-    public function index(): View
+    public function index(HomeIndexViewModel $viewModel): HomeIndexViewModel
     {
-        seo()->description = 'Тестовое описание';
-        seo()->title = 'Тестовый заголовок';
-
-        return view('home.index');
+        return $viewModel;
     }
 }
