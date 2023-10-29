@@ -2077,7 +2077,7 @@ blockquote p {
 }
 
 .sticky img {
-  max-width: 40px;
+  max-width: 160px;
 }
 
 .sticky .main-nav > ul > li > a {
@@ -2105,7 +2105,7 @@ blockquote p {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  min-height: 650px;
+  min-height: 770px;
 }
 
 @media (max-width: 991px) {

@@ -1,8 +1,8 @@
 <div class="product-area section-space-top-100">
     <div class="container">
-        <div class="row">
+        <div class="row" >
             <div class="section-title-wrap without-tab animate__fadeInDown wow">
-                <h2 class="section-title">New Products</h2>
+                <h2 class="section-title">Новые поступления</h2>
                 <p class="section-desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
                     roots in a piece of classical Latin literature
                 </p>
