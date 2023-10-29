@@ -4,10 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-6">
 
-                    <a href="index.html" class="header-logo">
-                        <img src="assets/images/logo2.png" alt="Header Logo">
-                    </a>
-
+                    <x-header.logo />
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="main-menu">
