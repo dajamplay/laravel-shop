@@ -5,9 +5,7 @@
                 <div class="col-lg-3">
                     <div class="footer-widget-item">
                         <div class="footer-widget-logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo2.png" alt="Logo">
-                            </a>
+                            <x-header.logo />
                         </div>
                         <p class="footer-widget-desc">Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod
                             tempor

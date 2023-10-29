@@ -1,4 +1,4 @@
-<div {{ $attributes->merge()->class(['header-contact']) }}>
+<div {{ $attributes->merge()->class([]) }}>
     <i class="pe-7s-call"></i>
     <div>
         <div>

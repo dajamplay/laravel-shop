@@ -2042,7 +2042,7 @@ blockquote p {
       -ms-flex-align: center;
           align-items: center;
   max-width: 400px;
-  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(17deg) brightness(95%) contrast(80%);
+  /*filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(17deg) brightness(95%) contrast(80%);*/
 
 }
 

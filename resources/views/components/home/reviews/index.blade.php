@@ -1,6 +1,6 @@
 <div class="testimonial-area section-space-top-90 section-space-bottom-95">
     <div class="container-fluid">
-        <div class="testimonial-bg" data-bg-image="assets/images/testimonial/bg/1-1-1820x443.jpg">
+        <div class="testimonial-bg" data-bg-image="assets/images/section.jpg">
             <div class="section-title-wrap">
                 <h2 class="section-title">Отзывы клиентов</h2>
                 <p class="section-desc mb-0">Contrary to popular belief, Lorem Ipsum is not simply random
