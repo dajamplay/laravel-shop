@@ -1,20 +1,10 @@
-<div class="header-middle py-3">
+<div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="header-middle-wrap position-relative">
-                    <div class="header-contact d-none d-lg-flex">
-                        <i class="pe-7s-call"></i>
-                        <div>
-                            <div>
-                                <a href="tel://+7(911)940-66-95">+7(911)940-66-95</a>
-                            </div>
-                            <div>
-                                <a href="tel://+7(911)744-78-88">+7(911)744-78-88</a>
-                            </div>
 
-                        </div>
-                    </div>
+                    <x-header.telephone class="d-none d-lg-flex"/>
 
                     <a href="{{ route('home.index') }}" class="header-logo">
                         <img src="/assets/images/logo2.png" alt="Header Logo">

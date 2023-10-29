@@ -6,7 +6,7 @@
 
     <x-header.bottom />
 
-{{--    <x-header.sticky />--}}
+    <x-header.sticky />
 
     <x-header.mobile-menu />
 

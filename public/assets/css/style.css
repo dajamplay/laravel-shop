@@ -1777,6 +1777,10 @@ blockquote p {
 }
 
 /* ---Main Header--- */
+.main-menu a {
+    word-break: keep-all;
+}
+
 .main-nav > ul {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2073,12 +2077,12 @@ blockquote p {
 }
 
 .sticky img {
-  max-width: 200px;
+  max-width: 40px;
 }
 
 .sticky .main-nav > ul > li > a {
-  padding-top: 25px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*----------------------------------------*/
