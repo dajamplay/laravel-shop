@@ -5,11 +5,14 @@
                 <div class="col-lg-3 col-6">
 
                     <x-header.logo />
+
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="main-menu">
                         <nav class="main-nav">
+
                             <x-header.menu />
+
                         </nav>
                     </div>
                 </div>
