@@ -1,4 +1,4 @@
-@extends('public.layouts.shop')
+@extends('public')
 
 @php
     /** @var $products \App\Models\Product[] */

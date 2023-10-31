@@ -21,7 +21,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         $seoService = $this->app->make(SeoService::class);
 
-        View::composer('shared.seo', function ($view) use ($seoService){
+        View::composer('partials.seo', function ($view) use ($seoService){
             $view->with([
                 'seo' => $seoService->data()
             ]);
