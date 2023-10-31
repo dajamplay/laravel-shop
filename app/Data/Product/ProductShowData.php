@@ -2,6 +2,7 @@
 
 namespace App\Data\Product;
 
+use App\Data\Brand\BrandShowData;
 use Illuminate\Support\Carbon;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Attributes\WithCast;
@@ -29,7 +30,7 @@ class ProductShowData extends Data
 
         public string|Optional $image,
 
-        public string|Optional $brand_id,
+        public BrandShowData|Optional $brand,
 
         public string|Optional $tag_id,
 

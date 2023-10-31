@@ -7,7 +7,7 @@
         <div class="col-xl-3 col-md-4 col-sm-6 pt-4">
             <div class="product-item animate__flipInY wow">
                 <div class="product-img">
-                    <a href="shop.html">
+                    <a href="{{ route('shop.products.show', $product) }}">
                         <img class="primary-img" src="{{storage($product->image)}}" alt="{{$product->title}}">
                     </a>
                     <div class="product-add-action">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="product-content">
-                    <a class="product-name" href="shop.html">{{$product->title}}</a>
+                    <a class="product-name" href="{{ route('shop.products.show', $product) }}">{{$product->title}}</a>
                     <div class="price-box pb-1">
                         <span class="new-price">{{$product->price}}</span>
                     </div>

@@ -8,11 +8,11 @@ Route::prefix('shop')->name('shop')->group( function () {
 
 //    Route::get('/', [ShopController::class, 'index'])->name('index');
 
-    Route::prefix('products')->name('products')->group( function () {
+    Route::prefix('products')->name('.products')->group( function () {
 
-        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/', [ProductController::class, 'index'])->name('.index');
 
-        Route::get('/{product:slug}', [ProductController::class, 'show'])->name('show');
+        Route::get('/{product:slug}', [ProductController::class, 'show'])->name('.show');
 
     });
 
