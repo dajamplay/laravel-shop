@@ -8,5 +8,6 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth','verified'])->group(
     Route::get('/', [Admin\AdminController::class, 'index'])->name('index');
 
     Route::resource('users', Admin\UserController::class);
+    Route::resource('products', Admin\ProductController::class);
 
 });

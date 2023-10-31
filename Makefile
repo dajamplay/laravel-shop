@@ -1,4 +1,4 @@
-init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-migrate
+init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-migrate artisan-store-link
 
 docker-pull:
 	docker compose pull
@@ -17,6 +17,9 @@ docker-down-clear:
 
 artisan-migrate:
 	docker exec php php artisan migrate:fresh --seed
+
+artisan-store-link:
+	docker exec php php artisan storage:link
 
 composer-install:
 	docker exec php composer install

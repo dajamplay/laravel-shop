@@ -8,8 +8,7 @@
             <div class="product-item animate__flipInY wow">
                 <div class="product-img">
                     <a href="shop.html">
-                        <img class="primary-img" src="{{$product->image}}" alt="Product Images">
-                        <img class="secondary-img" src="{{$product->image}}" alt="Product Images">
+                        <img class="primary-img" src="{{storage($product->image)}}" alt="{{$product->title}}">
                     </a>
                     <div class="product-add-action">
                         <ul>

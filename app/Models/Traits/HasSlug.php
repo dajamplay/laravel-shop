@@ -8,7 +8,9 @@ trait HasSlug
 {
     public function setTitleAttribute($value): void
     {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        if (!isset($this->attributes['slug'])) {
+            $this->attributes['title'] = $value;
+            $this->attributes['slug'] = Str::slug($value);
+        }
     }
 }

@@ -1,0 +1,24 @@
+/**********
+SINGLE ITEM (show)
+**********/
+
+.single-item {
+    -webkit-box-shadow: -1px 12px 27px -4px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: -1px 12px 27px -4px rgba(34, 60, 80, 0.1);
+    box-shadow: -1px 12px 27px -4px rgba(34, 60, 80, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.single-item__title {
+    font-weight: bold;
+}
+
+.single-item__row {
+    border-bottom: 1px solid #cccccc;
+}
+
+.single-item__row img {
+    max-width: 100%;
+    max-height: 300px;
+}

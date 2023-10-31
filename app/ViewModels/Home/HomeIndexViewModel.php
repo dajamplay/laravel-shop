@@ -18,17 +18,17 @@ class HomeIndexViewModel extends ViewModel
 
     public function featuredProducts(): Collection
     {
-        return Product::query()->limit(4)->get();
+        return Product::query()->orderBy('id', 'desc')->limit(4)->get();
     }
 
     public function bestsellerProducts(): Collection
     {
-        return Product::query()->limit(10)->get();
+        return Product::query()->orderBy('id', 'desc')->limit(4)->get();
     }
 
     public function latestProducts(): Collection
     {
-        return Product::query()->limit(10)->get();
+        return Product::query()->orderBy('id', 'desc')->limit(4)->get();
     }
 
 }
