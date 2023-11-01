@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Actions\Product\ProductStoreAction;
-use App\Data\Product\ProductStoreData;
 use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;

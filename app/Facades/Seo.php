@@ -2,7 +2,7 @@
 
 namespace App\Facades;
 
-use App\Data\Seo\SeoData;
+use App\Data\SeoData;
 use App\Services\Seo\SeoService;
 use Illuminate\Support\Facades\Facade;
 

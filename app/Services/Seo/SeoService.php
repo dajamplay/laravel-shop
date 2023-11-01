@@ -2,7 +2,7 @@
 
 namespace App\Services\Seo;
 
-use App\Data\Seo\SeoData;
+use App\Data\SeoData;
 
 class SeoService
 {

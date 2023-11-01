@@ -1,5 +1,5 @@
 @php
-    /** @var $seo \App\Data\Seo\SeoData */
+    /** @var $seo \App\Data\SeoData */
 @endphp
 
 

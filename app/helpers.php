@@ -1,7 +1,7 @@
 <?php
 
 if (! function_exists('seo')) {
-    function seo(): \App\Data\Seo\SeoData
+    function seo(): \App\Data\SeoData
     {
         return App\Facades\Seo::data();
     }

@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @php
-/** @var $product \App\Data\Product\ProductShowData */
+/** @var $product \App\Data\ProductData */
 @endphp
 
 @section('content')
@@ -19,7 +19,7 @@
                         <div class="single-product-content">
                             <h2 class="title">{{ $product->title }}</h2>
                             <div class="price-box">
-                                <span class="new-price">${{ $product->price }}</span>
+                                <span class="new-price">{{ $product->price }} Руб</span>
                             </div>
                             <div class="rating-box-wrap pb-4">
                                 <div class="rating-box">
@@ -60,7 +60,7 @@
                             <ul class="service-item-wrap">
                                 <li class="service-item">
                                     <div class="service-img">
-                                        <img src="assets/images/shipping/icon/car.png" alt="Shipping Icon">
+                                        <img src="{{asset('assets/images/shipping/icon/car.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="service-content">
                                         <span class="title">Free <br> Shipping</span>
@@ -68,7 +68,7 @@
                                 </li>
                                 <li class="service-item">
                                     <div class="service-img">
-                                        <img src="assets/images/shipping/icon/card.png" alt="Shipping Icon">
+                                        <img src="{{asset('assets/images/shipping/icon/card.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="service-content">
                                         <span class="title">Safe <br> Payment</span>
@@ -76,7 +76,7 @@
                                 </li>
                                 <li class="service-item">
                                     <div class="service-img">
-                                        <img src="assets/images/shipping/icon/service.png" alt="Shipping Icon">
+                                        <img src="{{asset('assets/images/shipping/icon/service.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="service-content">
                                         <span class="title">Safe <br> Payment</span>
