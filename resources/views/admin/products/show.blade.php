@@ -23,6 +23,10 @@
             <div class="col-md-10">{{$product->content}}</div>
         </div>
         <div class="row single-item__row">
+            <div class="col-md-2 single-item__title">Бренд</div>
+            <div class="col-md-10">{{$product->brand->title}}</div>
+        </div>
+        <div class="row single-item__row">
             <div class="col-md-2 single-item__title">Изображение</div>
             <div class="col-md-10">
                 <img src="{{ storage($product->image)}}" alt="{{$product->title}}">

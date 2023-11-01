@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Data\Brand;
+namespace App\Data;
 
 use Illuminate\Support\Carbon;
 use Spatie\LaravelData\Attributes\MapName;
@@ -12,27 +12,25 @@ use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 use Spatie\LaravelData\Transformers\DateTimeInterfaceTransformer;
 
 #[MapName(SnakeCaseMapper::class)]
-class BrandShowData extends Data
+class BrandData extends Data
 {
     public function __construct(
 
-        public ?string $id,
+        public string $id,
 
-        public ?string $slug,
-
-        #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
-        #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
-        public ?Carbon $created_at,
-
-        #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
-        #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
-        public ?Carbon $updated_at,
+        public string $slug,
 
         public string $title,
 
-        public string $content,
+        public ?string $content,
 
-        public ?string $image,
+        #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
+        #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
+        public Carbon $created_at,
+
+        #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
+        #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
+        public Carbon $updated_at,
     )
     {
     }

@@ -2,16 +2,10 @@
 
 namespace App\Http\Requests\Product;
 
-use App\Data\Product\ProductStoreData;
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\LaravelData\WithData;
 
 class ProductStoreRequest extends FormRequest
 {
-    use WithData;
-
-    protected string $dataClass = ProductStoreData::class;
-
     public function authorize(): bool
     {
         return true;
@@ -23,6 +17,7 @@ class ProductStoreRequest extends FormRequest
             'title' => ['required', 'string', 'unique:products,title'],
             'content' => ['required', 'string'],
             'price' => ['required', 'integer'],
+            'brand_id' => ['required', 'exists:brands,id'],
             'file' => ['image'],
         ];
     }

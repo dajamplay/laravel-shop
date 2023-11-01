@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Shop\Products;
 
-use App\Data\Product\ProductShowData;
+use App\Data\ProductData;
 use App\Http\Controllers\Controller;
-use App\Models\Brand;
 use App\Models\Product;
 use App\ViewModels\Product\ProductShowViewModel;
 use Illuminate\View\View;
@@ -24,7 +23,7 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductShowViewModel
     {
-        $data = ProductShowData::from($product->toArray());
+        $data = ProductData::from($product->toArray());
 
         return new ProductShowViewModel($data);
     }

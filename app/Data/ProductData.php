@@ -1,18 +1,16 @@
 <?php
 
-namespace App\Data\Product;
+namespace App\Data;
 
-use App\Data\Brand\BrandShowData;
 use Illuminate\Support\Carbon;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
-use Spatie\LaravelData\Optional;
 
 #[MapName(SnakeCaseMapper::class)]
-class ProductShowData extends Data
+class ProductData extends Data
 {
     public function __construct(
 
@@ -26,13 +24,11 @@ class ProductShowData extends Data
 
         public int $price,
 
-        public int|Optional $size,
+        public BrandData $brand,
 
-        public string|Optional $image,
+        public ?int $size,
 
-        public BrandShowData|Optional $brand,
-
-        public string|Optional $tag_id,
+        public ?string $image,
 
         #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
         public Carbon $created_at,

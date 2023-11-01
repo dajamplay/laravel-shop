@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Product\ProductStoreAction;
 use App\Data\Product\ProductStoreData;
+use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;
 use App\Models\Product;
@@ -11,7 +12,6 @@ use App\ViewModels\Admin\Product\ProductCreateViewModel;
 use App\ViewModels\Admin\Product\ProductIndexViewModel;
 use App\ViewModels\Admin\Product\ProductShowViewModel;
 use Illuminate\Http\RedirectResponse;
-use Spatie\LaravelData\Exceptions\InvalidDataClass;
 
 class ProductController extends Controller
 {
@@ -22,7 +22,9 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductShowViewModel
     {
-        return new ProductShowViewModel($product);
+        $data = ProductData::from($product);
+
+        return new ProductShowViewModel($data);
     }
 
     public function create(ProductCreateViewModel $viewModel): ProductCreateViewModel
@@ -30,15 +32,9 @@ class ProductController extends Controller
         return $viewModel;
     }
 
-    /**
-     * @throws InvalidDataClass
-     */
     public function store(ProductStoreRequest $request, ProductStoreAction $action): RedirectResponse
     {
-        /** @var ProductStoreData $data */
-        $data = $request->getData();
-
-        $action->run($data);
+        $action->run($request->validated());
 
         return redirect(route('admin.products.index'))
             ->with('message', trans('custom.product.created'));

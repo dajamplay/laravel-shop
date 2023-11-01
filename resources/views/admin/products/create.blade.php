@@ -27,6 +27,12 @@
                         name="price"
                     />
 
+                    <x-admin.form.select
+                        label="{{__('Бренд')}}"
+                        name="brand_id"
+                        :options="$brands"
+                    />
+
                     <x-admin.form.input
                         label="{{__('Изображение')}}"
                         placeholder="{{__('Изображение')}}"

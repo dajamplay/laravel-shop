@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Data\Brand\BrandShowData;
+use App\Data\BrandData;
 use App\Models\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -17,11 +17,12 @@ class Product extends Model
         'content',
         'price',
         'size',
-        'image'
+        'image',
+        'brand_id',
     ];
 
     protected $casts = [
-        'brand' => BrandShowData::class,
+        'brand' => BrandData::class,
         'created_at' => "datetime:Y-m-d H:i:s",
         'updated_at' => "datetime:Y-m-d H:i:s",
     ];

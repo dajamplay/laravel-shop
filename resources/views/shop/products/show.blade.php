@@ -1,9 +1,13 @@
 @extends('layouts.home')
 
+@php
+/** @var $product \App\Data\Product\ProductShowData */
+@endphp
+
 @section('content')
 
     <main class="main-content">
-        <div class="single-product-area section-space-top-100">
+        <div class="single-product-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
