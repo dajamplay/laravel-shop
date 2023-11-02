@@ -22,14 +22,14 @@ class ProductData extends Data
 
         public int $price,
 
+        public ?int $size,
+
+        public ?string $image,
+
         public BrandData $brand,
 
         /** @var $tags Collection<TagData> */
         public ?Collection $tags,
-
-        public ?int $size,
-
-        public ?string $image,
 
         #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
         public Carbon $created_at,
