@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link  @linkactive('admin.orders.*')" >
+                <a href="{{ route('admin.orders.index')}}" class="nav-link  @linkactive('admin.orders.*')" >
                     <i class="nav-icon fab fa-shopify"></i>
                     <p>{{__('Заказы')}}</p>
                     <span class="right badge badge-danger">10</span>
@@ -43,8 +43,14 @@
                     <p>{{__('Пользователи')}}</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.posts.index')}}" class="nav-link  @linkactive('admin.posts.*')" >
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>{{__('Посты')}}</p>
+                </a>
+            </li>
             <li class="nav-item @linkactive('admin.settings.*')">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.settings.index')}}" class="nav-link @linkactive('admin.settings.*')">
                     <i class="nav-icon fas fa-cog"></i>
                     <p>{{__('Настройки')}}</p>
                 </a>

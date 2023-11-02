@@ -2,7 +2,11 @@
 
 namespace App\Data;
 
-class LineData
+use Spatie\LaravelData\Data;
+
+class LineData extends Data
 {
+    public int $id;
+
     public string $title;
 }
