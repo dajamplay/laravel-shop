@@ -12,4 +12,9 @@ class Tag extends Model
     protected $fillable = [
         'title',
     ];
+
+    protected $casts = [
+        'created_at' => "datetime:Y-m-d H:i:s",
+        'updated_at' => "datetime:Y-m-d H:i:s",
+    ];
 }

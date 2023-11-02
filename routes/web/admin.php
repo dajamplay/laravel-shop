@@ -9,5 +9,8 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth','verified'])->group(
 
     Route::resource('users', Admin\UserController::class);
     Route::resource('products', Admin\ProductController::class);
+    Route::resource('brands', Admin\BrandController::class);
+    Route::resource('tags', Admin\TagController::class);
+    Route::resource('lines', Admin\LineController::class);
 
 });

@@ -24,6 +24,8 @@ class BrandData extends Data
 
         public ?string $content,
 
+        public ?string $image,
+
         #[WithTransformer(DateTimeInterfaceTransformer::class, format: 'Y-m-d H:i:s')]
         #[WithCast(DateTimeInterfaceCast::class, format: 'Y-m-d H:i:s')]
         public Carbon $created_at,

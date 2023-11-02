@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\User;
+use Database\Seeders\Brand\BrandSeeder;
 use Database\Seeders\User\SuperAdminSeeder;
 use Illuminate\Database\Seeder;
 
@@ -16,14 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            SuperAdminSeeder::class,
+            BrandSeeder::class
+        ]);
+
         User::factory()->count(100)->create();
 
-        Brand::factory()->count(5)->create();
-
         Product::factory()->count(100)->create();
-
-        $this->call([
-            SuperAdminSeeder::class
-        ]);
     }
 }

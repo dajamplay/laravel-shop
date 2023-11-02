@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Shop\Products\ProductController;
-use App\Http\Controllers\Shop\ShopController;
+use App\Http\Controllers\Shop\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('shop')->name('shop')->group( function () {
