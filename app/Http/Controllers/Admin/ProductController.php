@@ -33,7 +33,9 @@ class ProductController extends Controller
 
     public function store(ProductStoreRequest $request, ProductStoreAction $action): RedirectResponse
     {
-        $action->run($request->validated());
+        $data = $request->validated();
+
+        $action->run($data);
 
         return redirect(route('admin.products.index'))
             ->with('message', trans('custom.product.created'));

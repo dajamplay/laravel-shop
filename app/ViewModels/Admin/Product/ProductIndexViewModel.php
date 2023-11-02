@@ -4,6 +4,7 @@ namespace App\ViewModels\Admin\Product;
 
 use App\Data\ProductData;
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Spatie\LaravelData\PaginatedDataCollection;
 use Spatie\ViewModels\ViewModel;
@@ -17,6 +18,8 @@ class ProductIndexViewModel extends ViewModel
     public function __construct()
     {
         //
+        $t = Tag::find(1);
+        dd($t->products);
     }
 
     public function products(): LengthAwarePaginator

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Product;
+use App\Models\ProductTag;
 use App\Models\User;
 use Database\Seeders\Brand\BrandSeeder;
 use Database\Seeders\Line\LineSeeder;
@@ -28,5 +29,8 @@ class DatabaseSeeder extends Seeder
         User::factory()->count(100)->create();
 
         Product::factory()->count(100)->create();
+
+        ProductTag::factory()->count(50)->create();
+
     }
 }

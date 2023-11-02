@@ -20,6 +20,10 @@ class ProductStoreAction
                 $data['image'] = Storage::put('/products', $data['file']);
             }
 
+            if(isset($data['tags'])) {
+
+            }
+
             $product = Product::create($data);
 
             DB::commit();
