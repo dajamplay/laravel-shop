@@ -22,6 +22,8 @@ return new class extends Migration
 
             $table->integer('price')->nullable();
 
+            $table->integer('price_opt')->nullable();
+
             $table->integer('size')->nullable();
 
             $table->string('image')->nullable();

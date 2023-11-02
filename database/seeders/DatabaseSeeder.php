@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Brand;
 use App\Models\Product;
 use App\Models\User;
 use Database\Seeders\Brand\BrandSeeder;
+use Database\Seeders\Tag\TagSeeder;
 use Database\Seeders\User\SuperAdminSeeder;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SuperAdminSeeder::class,
-            BrandSeeder::class
+            BrandSeeder::class,
+            TagSeeder::class,
         ]);
 
         User::factory()->count(100)->create();
