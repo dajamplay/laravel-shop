@@ -20,11 +20,11 @@ class ProductStoreAction
                 $data['image'] = Storage::put('/products', $data['file']);
             }
 
-            if(isset($data['tags'])) {
-
-            }
-
             $product = Product::create($data);
+
+            if(isset($data['tags'])) {
+                $product->tags()->sync($data['tags']);
+            }
 
             DB::commit();
         } catch(\Exception $e) {

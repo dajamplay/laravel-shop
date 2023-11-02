@@ -40,7 +40,6 @@
                         type="file"
                     />
 
-
                     <div class="form-group">
                         <label>Теги</label>
                         <select name="tags[]" class="tags" multiple="" data-placeholder="Выберите теги" style="width: 100%;">
@@ -49,7 +48,6 @@
                             @endforeach
                         </select>
                     </div>
-
 
                     <x-admin.form.button
                         text="{{__('Создать')}}"

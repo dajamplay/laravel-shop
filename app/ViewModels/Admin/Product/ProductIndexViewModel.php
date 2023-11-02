@@ -18,8 +18,6 @@ class ProductIndexViewModel extends ViewModel
     public function __construct()
     {
         //
-        $t = Tag::find(1);
-        dd($t->products);
     }
 
     public function products(): LengthAwarePaginator

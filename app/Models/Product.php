@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Data\BrandData;
 use App\Models\Traits\HasSlug;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -24,11 +25,12 @@ class Product extends Model
 
     protected $casts = [
         'brand' => BrandData::class,
+        'tags' => Collection::class,
         'created_at' => "datetime:Y-m-d H:i:s",
         'updated_at' => "datetime:Y-m-d H:i:s",
     ];
 
-    protected $with = ['brand'];
+    protected $with = ['brand', 'tags'];
 
     public function brand(): BelongsTo
     {

@@ -2,14 +2,12 @@
 
 namespace App\Data;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
-use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 
-#[MapName(SnakeCaseMapper::class)]
 class ProductData extends Data
 {
     public function __construct(
@@ -25,6 +23,9 @@ class ProductData extends Data
         public int $price,
 
         public BrandData $brand,
+
+        /** @var $tags Collection<TagData> */
+        public ?Collection $tags,
 
         public ?int $size,
 
