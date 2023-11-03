@@ -19,7 +19,7 @@ class ProductStoreRequest extends FormRequest
             'price' => ['required', 'integer'],
             'brand_id' => ['required', 'exists:brands,id'],
             'file' => ['image'],
-            'tags' => ['nullable', 'array'],
+            'tags' => ['nullable', 'array', 'required'],
         ];
     }
 }

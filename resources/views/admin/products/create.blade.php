@@ -40,14 +40,13 @@
                         type="file"
                     />
 
-                    <div class="form-group">
-                        <label>Теги</label>
-                        <select name="tags[]" class="tags" multiple="" data-placeholder="Выберите теги" style="width: 100%;">
-                            @foreach($tags as $tag)
-                                <option value="{{ $tag->id }}">{{ $tag->title }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                    <x-admin.form.multi-select
+                        label="{{__('Теги')}}"
+                        placeholder="{{__('Выберите теги')}}"
+                        name="tags"
+                        :options="$tags"
+                        icon="fas fa-tags"
+                    />
 
                     <x-admin.form.button
                         text="{{__('Создать')}}"

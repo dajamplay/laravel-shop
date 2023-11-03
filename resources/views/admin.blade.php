@@ -71,10 +71,11 @@
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/select2/js/i18n/ru.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script>
-        $('.tags').select2();
-    </script>
+
+    {{--Admin scripts--}}
+    <script src="{{ asset('assets/js/admin.js') }}"></script>
 </div>
 </body>
 </html>

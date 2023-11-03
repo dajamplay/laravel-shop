@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductShowViewModel
     {
-        $data = ProductData::from($product->toArray());
+        $data = ProductData::from($product);
 
         return new ProductShowViewModel($data);
     }

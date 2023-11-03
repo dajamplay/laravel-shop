@@ -4744,13 +4744,13 @@ S2.define('select2/i18n/en',[],function () {
       return message;
     },
     noResults: function () {
-      return 'No results found';
+      return 'Не найдено';
     },
     searching: function () {
-      return 'Searching…';
+      return 'Поиск…';
     },
     removeAllItems: function () {
-      return 'Remove all items';
+      return 'Удалить все';
     }
   };
 });
