@@ -35,6 +35,8 @@ class ProductController extends Controller
     {
         $data = $request->validated();
 
+        dd($data);
+
         $action->run($data);
 
         return redirect(route('admin.products.index'))

@@ -15,7 +15,13 @@
                         name="title"
                     />
 
-                    <x-admin.form.input
+{{--                    <x-admin.form.input--}}
+{{--                        label="{{__('Описание')}}"--}}
+{{--                        placeholder="{{__('Введите Описание')}}"--}}
+{{--                        name="content"--}}
+{{--                    />--}}
+
+                    <x-admin.form.summernote
                         label="{{__('Описание')}}"
                         placeholder="{{__('Введите Описание')}}"
                         name="content"

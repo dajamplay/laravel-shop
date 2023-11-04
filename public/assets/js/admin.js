@@ -134,3 +134,20 @@ $('.brand_id').select2({
         }
     },
 });
+
+// Summernote
+
+$('#summernote').summernote({
+    placeholder: 'Введите текст',
+    tabsize: 2,
+    height: 220,
+    toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+});
