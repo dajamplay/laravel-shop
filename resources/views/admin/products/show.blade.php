@@ -24,7 +24,7 @@
         </div>
         <div class="row single-item__row">
             <div class="col-md-2 single-item__title">Описание</div>
-            <div class="col-md-10">{{$product->content}}</div>
+            <div class="col-md-10">{!! $product->content !!}</div>
         </div>
         <div class="row single-item__row">
             <div class="col-md-2 single-item__title">Бренд</div>

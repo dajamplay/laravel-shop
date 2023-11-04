@@ -15,7 +15,7 @@
         <form action="{{ route('admin.' . $resource. '.destroy', $model) }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Вы уверены?')"><i class="fas fa-trash"></i></button>
         </form>
 
     </div>
