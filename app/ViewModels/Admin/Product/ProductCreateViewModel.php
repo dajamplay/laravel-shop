@@ -3,6 +3,7 @@
 namespace App\ViewModels\Admin\Product;
 
 use App\Models\Brand;
+use App\Models\Line;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
@@ -21,5 +22,10 @@ class ProductCreateViewModel extends ViewModel
     public function tags(): Collection
     {
         return Tag::all();
+    }
+
+    public function lines(): Collection
+    {
+        return Line::all();
     }
 }

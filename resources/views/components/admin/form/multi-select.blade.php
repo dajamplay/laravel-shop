@@ -18,7 +18,7 @@
     <label for="{{ $name }}" {!! $errorTextDangerClass !!}>{{ $label}}</label>
 
     <div class="input-group mb-2">
-        <select name="{{ $name }}[]" class="tags{{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}" style="width: 80%;">
+        <select name="{{ $name }}[]" class="{{ $name }} {{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}" style="width: 80%;">
             @foreach($options as $option)
                 <option value="{{ $option->id }}">{{ $option->title }}</option>
             @endforeach

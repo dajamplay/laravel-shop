@@ -21,7 +21,7 @@
         <select {{ $attributes->merge([
             'name' => $name,
             'id' => $name,
-            'class' => "form-control custom-select $errorBorderDangerClass"
+            'class' => "form-control custom-select $errorBorderDangerClass $name"
         ])}}>
             @isset($options)
                 @foreach($options as $option)

@@ -27,17 +27,22 @@
                         name="price"
                     />
 
+                    <x-admin.form.input
+                        label="{{__('Стоимость (оптовая)')}}"
+                        placeholder="{{__('Введите Стоимость')}}"
+                        name="price_opt"
+                    />
+
                     <x-admin.form.select
                         label="{{__('Бренд')}}"
                         name="brand_id"
                         :options="$brands"
                     />
 
-                    <x-admin.form.input
-                        label="{{__('Изображение')}}"
-                        placeholder="{{__('Изображение')}}"
-                        name="file"
-                        type="file"
+                    <x-admin.form.select
+                        label="{{__('Линия')}}"
+                        name="line_id"
+                        :options="$lines"
                     />
 
                     <x-admin.form.multi-select
@@ -46,6 +51,13 @@
                         name="tags"
                         :options="$tags"
                         icon="fas fa-tags"
+                    />
+
+                    <x-admin.form.input
+                        label="{{__('Изображение')}}"
+                        placeholder="{{__('Изображение')}}"
+                        name="file"
+                        type="file"
                     />
 
                     <x-admin.form.button
