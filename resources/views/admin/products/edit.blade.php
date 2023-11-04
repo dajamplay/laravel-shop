@@ -1,42 +1,50 @@
 @extends('admin')
 
-@section('title', __('Создание продукта'))
+@section('title', __('Редактирование продукта'))
 
 @section('content')
 
     <div class="container-fluid">
         <div class="row">
+
             <div class="col-md-6">
-                <x-admin.form action="{{route('admin.products.store')}}" method="post" enctype="multipart/form-data">
+
+                <x-admin.form action="{{route('admin.products.update', $product)}}" method="put">
 
                     <x-admin.form.input
                         label="{{__('Наименование')}}"
                         placeholder="{{__('Введите Наименование')}}"
                         name="title"
+                        :value="$product->title"
                     />
 
                     <x-admin.form.summernote
                         label="{{__('Описание')}}"
                         placeholder="{{__('Введите Описание')}}"
                         name="content"
+                        :value="$product->content"
+                        icon="fas fa-tags"
                     />
 
                     <x-admin.form.input
                         label="{{__('Стоимость')}}"
                         placeholder="{{__('Введите Стоимость')}}"
                         name="price"
+                        :value="$product->price"
                     />
 
                     <x-admin.form.input
                         label="{{__('Стоимость (оптовая)')}}"
                         placeholder="{{__('Введите Стоимость')}}"
                         name="price_opt"
+                        :value="$product->price_opt"
                     />
 
                     <x-admin.form.select
                         label="{{__('Бренд')}}"
                         name="brand_id"
                         :options="$brands"
+                        :value="$product->brand_id"
                     />
 
                     <x-admin.form.select
@@ -60,12 +68,12 @@
                         type="file"
                     />
 
-                    <x-admin.form.button
-                        text="{{__('Создать')}}"
-                    />
+                    <x-admin.form.button text="{{__('Сохранить изменения')}}"/>
 
                 </x-admin.form>
+
             </div>
+
         </div>
     </div>
 

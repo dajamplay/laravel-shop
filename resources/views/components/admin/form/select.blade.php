@@ -1,16 +1,16 @@
 @props([
-    'icon' => null,
-    'model',
     'name' => '',
-    'label' => null,
+    'label' => '',
+    'icon' => null,
     'errors',
-    'options'
+    'options',
+    'value' => '',
 ])
 
 @php
+    $value = old($name) ?? $value;
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
     $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
-    $value = old($name) ?? $model->$name ?? '';
 @endphp
 
 <div class="form-group">

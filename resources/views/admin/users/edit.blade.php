@@ -4,10 +4,6 @@
 
 @section('content')
 
-    @if($errors)
-        {{ print_r($errors) }}
-    @endif
-
     <div class="container-fluid">
         <div class="row">
 

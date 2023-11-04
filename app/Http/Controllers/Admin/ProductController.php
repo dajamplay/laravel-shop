@@ -6,8 +6,10 @@ use App\Actions\Product\ProductStoreAction;
 use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;
+use App\Http\Requests\Product\ProductUpdateRequest;
 use App\Models\Product;
 use App\ViewModels\Admin\Product\ProductCreateViewModel;
+use App\ViewModels\Admin\Product\ProductEditViewModel;
 use App\ViewModels\Admin\Product\ProductIndexViewModel;
 use App\ViewModels\Admin\Product\ProductShowViewModel;
 use Illuminate\Http\RedirectResponse;
@@ -35,11 +37,19 @@ class ProductController extends Controller
     {
         $data = $request->validated();
 
-        dd($data);
-
         $action->run($data);
 
         return redirect(route('admin.products.index'))
             ->with('message', trans('custom.product.created'));
+    }
+
+    public function edit(Product $product): ProductEditViewModel
+    {
+        return new ProductEditViewModel($product);
+    }
+
+    public function update(ProductUpdateRequest $request)
+    {
+        dd($request);
     }
 }

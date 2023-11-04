@@ -1,18 +1,17 @@
 @props([
-    'icon' => null,
-    'model',
     'name' => '',
-    'placeholder' => __('Заполните поле'),
     'type' => 'text',
-    'label' => null,
-    'errors'
+    'label' => '',
+    'placeholder' => __('Заполните поле'),
+    'value' => '',
+    'icon',
+    'errors',
 ])
 
 @php
+    $value = old($name) ?? $value;
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
     $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
-    $value = old($name) ?? $model->$name ?? '';
-    $label = $label ?? $placeholder;
 @endphp
 
 <div class="form-group">
