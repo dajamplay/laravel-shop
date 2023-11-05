@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/ion.rangeSlider.min.css')}}" />
 
     <!--Main Style CSS-->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 
     {{--    @vite(['resources/js/app.js', 'resources/css/app.css'])--}}
 </head>
