@@ -39,6 +39,13 @@
                         :value="$product->price_opt"
                     />
 
+                    <x-admin.form.input
+                        label="{{__('Объем')}}"
+                        placeholder="{{__('Введите Объем')}}"
+                        name="size"
+                        :value="$product->size"
+                    />
+
                     <x-admin.form.select
                         label="{{__('Бренд')}}"
                         name="brand_id"

@@ -16,7 +16,9 @@ class ProductFactory extends Factory
             'title' => fake()->unique()->sentence(3),
             'content' => fake()->text(300),
             'price' => fake()->randomFloat(2, 0, 100),
+            'price_opt' => fake()->randomFloat(2, 0, 100),
             'brand_id' => fake()->numberBetween(1,5),
+            'line_id' => fake()->numberBetween(1,5),
             'size' => fake()->numberBetween(50,300),
             'image' => fake()->imageUrl(),
         ];

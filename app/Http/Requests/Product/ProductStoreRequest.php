@@ -15,11 +15,14 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'unique:products,title'],
-            'content' => ['required', 'string'],
-            'price' => ['required', 'integer'],
+            'content' => ['nullable', 'string'],
+            'price' => ['nullable', 'integer'],
+            'price_opt' => ['nullable', 'integer'],
+            'size' => ['nullable', 'integer'],
             'brand_id' => ['required', 'exists:brands,id'],
-            'file' => ['image'],
-            'tags' => ['nullable', 'array', 'required'],
+            'line_id' => ['required', 'exists:lines,id'],
+            'file' => ['nullable', 'image'],
+            'tags' => ['nullable', 'array'],
         ];
     }
 }

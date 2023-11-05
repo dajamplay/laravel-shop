@@ -22,9 +22,11 @@
         <select name="{{ $name }}[]" class="flex-fill {{ $name }} {{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}">
             @foreach($options as $option)
                 <option
-                    @foreach($value as $item)
-                        {{ $option->id === $item->id ? 'selected' : '' }}
-                    @endforeach
+                        @foreach($value as $item)
+                            @isset($item->id)
+                                {{ (int)$option->id === (int)$item->id ? 'selected' : '' }}
+                            @endisset
+                        @endforeach
                     value="{{ $option->id }}">{{ $option->title }}</option>
             @endforeach
         </select>

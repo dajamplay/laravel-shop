@@ -19,6 +19,7 @@ class Product extends Model
         'size',
         'image',
         'brand_id',
+        'line_id',
     ];
 
     protected $casts = [
@@ -26,11 +27,16 @@ class Product extends Model
         'updated_at' => "datetime:Y-m-d H:i:s",
     ];
 
-    protected $with = ['brand', 'tags'];
+    protected $with = ['brand', 'tags', 'line'];
 
     public function brand(): BelongsTo
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function line(): BelongsTo
+    {
+        return $this->belongsTo(Line::class);
     }
 
     public function tags(): BelongsToMany

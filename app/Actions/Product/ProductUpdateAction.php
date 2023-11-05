@@ -7,11 +7,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
-class ProductStoreAction
+class ProductUpdateAction
 {
-    public function run(array $data): Product|null
+    public function run(array $data, Product $product): void
     {
-        $product = null;
         try {
             DB::beginTransaction();
 
@@ -19,11 +18,11 @@ class ProductStoreAction
                 $data['image'] = Storage::put('/products', $data['file']);
             }
 
-            $product = Product::create($data);
+            $product->update($data);
 
-            if(isset($data['tags'])) {
-                $product->tags()->sync($data['tags']);
-            }
+            $tags = $data['tags'] ?? [];
+
+            $product->tags()->sync($tags);
 
             DB::commit();
         } catch(\Exception $e) {
@@ -35,7 +34,5 @@ class ProductStoreAction
 
             Log::error($e->getMessage());
         }
-
-        return $product;
     }
 }

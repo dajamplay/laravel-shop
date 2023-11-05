@@ -16,11 +16,14 @@ class ProductUpdateRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', Rule::unique('products', 'title')->ignore($this->product)],
-            'content' => ['required', 'string'],
-            'price' => ['required', 'integer'],
+            'content' => ['nullable', 'string'],
+            'price' => ['nullable', 'integer'],
+            'price_opt' => ['nullable', 'integer'],
+            'size' => ['nullable', 'integer'],
             'brand_id' => ['required', 'exists:brands,id'],
-            'file' => ['image', 'nullable'],
-            'tags' => ['nullable', 'array', 'required'],
+            'line_id' => ['required', 'exists:lines,id'],
+            'file' => ['nullable', 'image'],
+            'tags' => ['nullable', 'array'],
         ];
     }
 }

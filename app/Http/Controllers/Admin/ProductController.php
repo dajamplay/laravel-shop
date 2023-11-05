@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Actions\Product\ProductStoreAction;
+use App\Actions\Product\ProductUpdateAction;
 use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;
@@ -48,8 +49,15 @@ class ProductController extends Controller
         return new ProductEditViewModel($product);
     }
 
-    public function update(ProductUpdateRequest $request)
+    public function update(
+        ProductUpdateRequest $request,
+        ProductUpdateAction $action,
+        Product $product
+    ): RedirectResponse
     {
-        dd($request);
+        $action->run($request->validated(), $product);
+
+        return redirect(route('admin.products.show', $product->fresh()))
+            ->with('message', trans('custom.product.updated'));
     }
 }
