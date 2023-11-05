@@ -24,7 +24,7 @@ $(document).ready( function () {
                 return 'Please enter ' + remainingChars + ' or more characters';
             },
             loadingMore: function () {
-                return 'Loading more results…';
+                return 'Загрузка…';
             },
             maximumSelected: function (args) {
                 var message = 'You can only select ' + args.maximum + ' item';
@@ -61,7 +61,13 @@ $(document).ready( function () {
             ['table', ['table']],
             ['insert', ['link']],
             ['view', ['fullscreen', 'codeview', 'help']]
-        ]
+        ],
+        callbacks: {
+            onInit: function (c) {
+                c.editable.html('');
+            },
+
+        }
     });
 });
 

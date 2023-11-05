@@ -18,15 +18,19 @@ class ProductData extends Data
 
         public string $title,
 
-        public string $content,
+        public ?string $content,
 
-        public int $price,
+        public ?int $price,
+
+        public ?int $price_opt,
 
         public ?int $size,
 
         public ?string $image,
 
         public BrandData $brand,
+
+        public LineData $line,
 
         /** @var $tags Collection<TagData> */
         public ?Collection $tags,

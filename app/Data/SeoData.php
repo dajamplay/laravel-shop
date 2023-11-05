@@ -6,7 +6,7 @@ class SeoData
 {
     public string $title;
 
-    public string $description;
+    public ?string $description;
 
-    public string $keywords;
+    public ?string $keywords;
 }
