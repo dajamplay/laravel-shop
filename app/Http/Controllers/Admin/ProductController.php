@@ -55,7 +55,9 @@ class ProductController extends Controller
         Product $product
     ): RedirectResponse
     {
-        $action->run($request->validated(), $product);
+        $data = $request->validated();
+
+        $action->run($data, $product);
 
         return redirect(route('admin.products.show', $product->fresh()))
             ->with('message', trans('custom.product.updated'));

@@ -9,7 +9,7 @@
 
             <div class="col-md-6">
 
-                <x-admin.form action="{{route('admin.products.update', $product)}}" method="put">
+                <x-admin.form action="{{route('admin.products.update', $product)}}" method="put" enctype="multipart/form-data">
 
                     <x-admin.form.input
                         label="{{__('Наименование')}}"

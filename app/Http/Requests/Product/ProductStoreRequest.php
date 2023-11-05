@@ -21,7 +21,7 @@ class ProductStoreRequest extends FormRequest
             'size' => ['nullable', 'integer'],
             'brand_id' => ['required', 'exists:brands,id'],
             'line_id' => ['required', 'exists:lines,id'],
-            'file' => ['nullable', 'image'],
+            'file' => ['image', 'nullable'],
             'tags' => ['nullable', 'array'],
         ];
     }
