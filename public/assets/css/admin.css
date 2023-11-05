@@ -1,5 +1,5 @@
 /**********
-SINGLE ITEM (show)
+--------------SINGLE ITEM (show)
 **********/
 
 .single-item {
@@ -21,4 +21,32 @@ SINGLE ITEM (show)
 .single-item__row img {
     max-width: 100%;
     max-height: 300px;
+}
+
+/**********
+--------------------SELECT2
+**********/
+
+.select2-search__field:focus {
+    border:1px dashed #007eff!important;
+    border-radius: 5px!important;
+}
+
+.select2-search__field {
+    padding: 5px!important;
+    border-radius: 5px!important;
+}
+
+span.select2-dropdown {
+    border: 2px solid #007eff!important;
+    border-radius: 5px!important;
+}
+
+.select2-search__field::placeholder {
+    color: #212529!important;
+    opacity: 0.4!important;
+}
+
+.select2-selection__choice {
+    padding: 5px!important;
 }

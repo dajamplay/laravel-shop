@@ -23,7 +23,6 @@
                         placeholder="{{__('Введите Описание')}}"
                         name="content"
                         :value="$product->content"
-                        icon="fas fa-tags"
                     />
 
                     <x-admin.form.input
@@ -51,6 +50,7 @@
                         label="{{__('Линия')}}"
                         name="line_id"
                         :options="$lines"
+                        :value="$product->line_id"
                     />
 
                     <x-admin.form.multi-select
@@ -58,7 +58,7 @@
                         placeholder="{{__('Выберите теги')}}"
                         name="tags"
                         :options="$tags"
-                        icon="fas fa-tags"
+                        :value="$product->tags"
                     />
 
                     <x-admin.form.input

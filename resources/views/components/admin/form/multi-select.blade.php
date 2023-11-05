@@ -5,22 +5,27 @@
     'label' => null,
     'errors',
     'options',
-    'placeholder' => 'Выберите'
+    'placeholder' => 'Выберите',
+    'value' => [],
 ])
 
 @php
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
     $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
-    $value = old($name) ?? $model->$name ?? '';
+    $value = old($name) ?? $value;
 @endphp
 
 <div class="form-group">
     <label for="{{ $name }}" {!! $errorTextDangerClass !!}>{{ $label}}</label>
 
-    <div class="input-group mb-2">
-        <select name="{{ $name }}[]" class="{{ $name }} {{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}" style="width: 80%;">
+    <div class="input-group mb-2 d-flex justify-content-between">
+        <select name="{{ $name }}[]" class="flex-fill {{ $name }} {{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}">
             @foreach($options as $option)
-                <option value="{{ $option->id }}">{{ $option->title }}</option>
+                <option
+                    @foreach($value as $item)
+                        {{ $option->id === $item->id ? 'selected' : '' }}
+                    @endforeach
+                    value="{{ $option->id }}">{{ $option->title }}</option>
             @endforeach
         </select>
         @if(isset($icon))
