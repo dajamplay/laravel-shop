@@ -13,10 +13,7 @@ class AdminIndexViewModel extends ViewModel
 {
     protected $view = 'admin.index';
 
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(){}
 
     public function products(): Collection
     {
