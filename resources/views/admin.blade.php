@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/lightbox/css/lightbox.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 
@@ -76,6 +77,7 @@
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 
     {{--Admin scripts--}}
     <script src="{{ asset('assets/js/admin.js') }}"></script>

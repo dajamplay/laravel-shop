@@ -45,7 +45,12 @@
                                     <td>{!! Str::limit($product->content, 20, ' ...') !!}</td>
                                     <td>{{$product->line->title}}</td>
                                     <td>{{$product->brand->title}}</td>
-                                    <td><img src="{{$product->image}}" alt="{{$product->title}}" width="75"></td>
+                                    <td>
+                                        <a href="{{$product->image}}" data-lightbox="{{$product->title}}" data-title="{{$product->title}}">
+                                            <img src="{{$product->image}}" alt="{{$product->title}}" width="75">
+                                        </a>
+
+                                    </td>
                                     <td><x-admin.extrabuttons :model="$product" resource="products"/><br><small>{{$product->created_at}}</small></td>
                                 </tr>
                             @endforeach
