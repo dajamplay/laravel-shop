@@ -1,6 +1,4 @@
-/**********
---------------SINGLE ITEM (show)
-**********/
+/**********    SINGLE ITEM (show)   **********/
 
 .single-item {
     -webkit-box-shadow: -1px 12px 27px -4px rgba(34, 60, 80, 0.1);
@@ -23,9 +21,7 @@
     max-height: 300px;
 }
 
-/**********
---------------------SELECT2
-**********/
+/**********    SELECT2   **********/
 
 .select2-search__field:focus {
     border:1px dashed #007eff!important;
@@ -49,4 +45,10 @@ span.select2-dropdown {
 
 .select2-selection__choice {
     padding: 5px!important;
+}
+
+/*****************   TABLE   *****************/
+
+.table td, .table th {
+    padding: 7px!important;
 }
