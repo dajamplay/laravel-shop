@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Product\ProductDestroyAction;
 use App\Actions\Product\ProductStoreAction;
 use App\Actions\Product\ProductUpdateAction;
 use App\Data\ProductData;
@@ -61,5 +62,13 @@ class ProductController extends Controller
 
         return redirect(route('admin.products.show', $product->fresh()))
             ->with('message', trans('custom.product.updated'));
+    }
+
+    public function destroy(ProductDestroyAction $action, Product $product): RedirectResponse
+    {
+        $action->run($product);
+
+        return redirect(route('admin.products.index'))
+            ->with('message', trans('custom.product.deleted'));
     }
 }

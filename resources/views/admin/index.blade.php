@@ -4,5 +4,4 @@
 
 @section('content')
     <h1>Главная страница</h1>
-    @dd('SOFT DELETE')
 @endsection
