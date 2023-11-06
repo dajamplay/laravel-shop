@@ -21,7 +21,7 @@
         <x-admin.show label="Бренд" value="{{$product->brand->title}}"/>
         <x-admin.show label="Линия" value="{{$product->line->title}}"/>
 
-        <x-admin.show.array label="Теги" array="{{$product->tags}}" key="title"/>
+        <x-admin.show.array label="Теги" :array="$product->tags" key="title"/>
 
         <x-admin.show.image label="Изображение" value="{{$product->image}}" alt="{{$product->title}}"/>
 
