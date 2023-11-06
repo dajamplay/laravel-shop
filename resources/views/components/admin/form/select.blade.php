@@ -23,7 +23,7 @@
             'id' => $name,
             'class' => "form-control custom-select $errorBorderDangerClass $name"
         ])}}>
-            <option disabled selected>{{ $label }}</option>
+            <option disabled selected>{{ __('Не выбрано') }}</option>
             @isset($options)
                 @foreach($options as $option)
                     @if((int)$value === $option->id)
