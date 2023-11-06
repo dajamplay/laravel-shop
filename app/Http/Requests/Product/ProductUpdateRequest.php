@@ -20,10 +20,11 @@ class ProductUpdateRequest extends FormRequest
             'price' => ['nullable', 'integer'],
             'price_opt' => ['nullable', 'integer'],
             'size' => ['nullable', 'integer'],
-            'brand_id' => ['required', 'exists:brands,id'],
-            'line_id' => ['required', 'exists:lines,id'],
+            'brand_id' => ['required', 'integer', 'exists:brands,id'],
+            'line_id' => ['required', 'integer', 'exists:lines,id'],
             'file' => ['nullable', 'image'],
             'tags' => ['nullable', 'array'],
+            'tags.*' => ['nullable', 'integer', 'exists:tags,id'],
         ];
     }
 }
