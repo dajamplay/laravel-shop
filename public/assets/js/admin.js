@@ -51,8 +51,8 @@ $(document).ready( function () {
 
     $('#summernote').summernote({
         placeholder: 'Введите текст',
-        tabsize: 2,
-        height: 220,
+        width: 1400,
+        height: 300,
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],

@@ -164,10 +164,11 @@ return [
         'last_name' => 'фамилия',
         'password_confirmation' => 'подтверждение пароля',
         'title' => 'заголовок',
-        'content' => 'контент',
+        'content' => 'описание(контент)',
         'birthday' => 'день рождения',
         'tags' => 'теги',
-        'brand' => 'бренд',
+        'brand_id' => 'бренд',
+        'line_id' => 'линия',
     ],
 
 ];
