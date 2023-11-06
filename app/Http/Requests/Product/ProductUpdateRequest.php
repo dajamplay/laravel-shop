@@ -15,7 +15,11 @@ class ProductUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', Rule::unique('products', 'title')->ignore($this->product)],
+            'title' => [
+                'required',
+                'string',
+                Rule::unique('products', 'title')->ignore($this->product)
+            ],
             'content' => ['nullable', 'string'],
             'price' => ['nullable', 'integer'],
             'price_opt' => ['nullable', 'integer'],
