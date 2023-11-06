@@ -56,7 +56,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12">
-                            <h1>@yield('title')</h1>
+                            <h4>@yield('title')</h4>
                             <hr/>
                             @yield('content')
                         </div>
