@@ -17,12 +17,14 @@ class ProductStoreAction
 
             if(isset($data['file'])) {
                 $data['image'] = Storage::put('/products', $data['file']);
+                unset($data['file']);
             }
 
             $product = Product::create($data);
 
             if(isset($data['tags'])) {
                 $product->tags()->sync($data['tags']);
+                unset($data['tags']);
             }
 
             DB::commit();

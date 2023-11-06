@@ -16,6 +16,7 @@ class ProductUpdateAction
 
             if(isset($data['file'])) {
                 $data['image'] = Storage::put('/products', $data['file']);
+                unset($data['file']);
             }
 
             $product->update($data);
