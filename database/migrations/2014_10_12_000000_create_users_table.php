@@ -15,12 +15,15 @@ return new class extends Migration
             $table->id();
 
             $table->string('email')->unique();
+
             $table->string('password');
 
             $table->string('first_name');
+
             $table->string('last_name');
 
             $table->datetime('registered_at')->default(now());
+
             $table->datetime('birthday')->nullable();
 
             $table->string('role')->default('user');
@@ -28,7 +31,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
 
             $table->rememberToken();
+
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 
