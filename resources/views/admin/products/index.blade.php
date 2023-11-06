@@ -1,7 +1,9 @@
-@extends('admin')
 @php
-/** @var $product \App\Data\ProductData */
+    /** @var $product \App\Data\ProductData */
 @endphp
+
+@extends('admin')
+
 @section('title', __('Продукция'))
 
 @section('content')
