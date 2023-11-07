@@ -5,9 +5,9 @@
 ])
 
 @if($label && $array && $key !== null)
-    <div {!! $attributes->merge([])->class(['row single-item__row']) !!}>
+    <div {!! $attributes->merge([])->class(['row border-bottom mb-2']) !!}>
         @if(is_iterable($array))
-            <div class="col-md-2 single-item__title">Теги</div>
+            <div class="col-md-2 text-bold">Теги</div>
 
             <div class="col-md-10 d-flex row">
                 @foreach($array as $elem)

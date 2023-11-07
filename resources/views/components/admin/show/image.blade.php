@@ -1,14 +1,16 @@
 @props([
     'label' => null,
-    'value' => null,
+    'src' => null,
     'alt' => ''
 ])
 
-@if($label && $value !== null)
-    <div {!! $attributes->merge([])->class(['row single-item__row']) !!}>
-        <div class="col-md-2 single-item__title">{!! $label !!}</div>
+@if($label && $src !== null)
+    <div {!! $attributes->merge([])->class(['row border-bottom']) !!}>
+        <div class="col-md-2 text-bold">{!! $label !!}</div>
         <div class="col-md-10">
-            <img src="{{storage($value)}}" alt="{{$alt}}">
+            <a href="{{storage($src)}}" data-lightbox="{{$alt}}" data-title="{{$alt}}">
+                <img src="{{storage($src)}}" alt="{{$alt}}" width="250" class="rounded">
+            </a>
         </div>
     </div>
 @endif
