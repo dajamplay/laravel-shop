@@ -56,11 +56,10 @@
             icon="fas fa-tags"
         />
 
-        <x-admin.form.input
+        <x-admin.form.image
             label="{{__('Изображение')}}"
             placeholder="{{__('Изображение')}}"
             name="file"
-            type="file"
         />
 
         <x-admin.form.button

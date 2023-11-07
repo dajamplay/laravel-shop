@@ -68,11 +68,11 @@
                         :value="$product->tags"
                     />
 
-                    <x-admin.form.input
+                    <x-admin.form.image
                         label="{{__('Изображение')}}"
                         placeholder="{{__('Изображение')}}"
                         name="file"
-                        type="file"
+                        :value="$product->image"
                     />
 
                     <x-admin.form.button text="{{__('Сохранить изменения')}}"/>

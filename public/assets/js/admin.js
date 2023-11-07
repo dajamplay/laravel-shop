@@ -62,12 +62,11 @@ $(document).ready( function () {
             ['insert', ['link']],
             ['view', ['fullscreen', 'codeview', 'help']]
         ],
-        callbacks: {
-            onInit: function (c) {
-                c.editable.html('');
-            },
-
-        }
+        // callbacks: {
+        //     onInit: function (c) {
+        //         c.editable.html('');
+        //     },
+        // }
     });
 
     // LightBox 2

@@ -12,8 +12,6 @@
     $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
 @endphp
 
-
-
 <div class="form-group">
 
     <label for="{{ $name }}">{{ $label}}</label>

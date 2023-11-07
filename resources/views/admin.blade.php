@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
@@ -82,11 +83,14 @@
     </div>
 
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
+
     <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+
     <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 
     {{--Admin scripts--}}
     <script src="{{ asset('assets/js/admin.js') }}"></script>

@@ -8,58 +8,54 @@
 
 @section('content')
 
+    <x-ui.button
+        text="{{__('Создать продукт')}}"
+        href="{{ route('admin.products.create') }}"
+    />
 
+    @if($products->isNotEmpty())
 
-                <x-ui.button
-                    text="{{__('Создать продукт')}}"
-                    href="{{ route('admin.products.create') }}"
-                />
+        <table class="table table-striped table-bordered table-hover projects mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Наименование</th>
+                    <th>Цена</th>
+                    <th>Цена(опт)</th>
+                    <th>Объем</th>
+                    <th>Описание</th>
+                    <th>Линия</th>
+                    <th>Бренд</th>
+                    <th>Изображение</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                    <tr>
+                        <td>{{$product->id}}</td>
+                        <td><a href="{{ route('admin.products.show', $product) }}">{{$product->title}}</a></td>
+                        <td>{{$product->price}} {{"\u{20BD}"}}</td>
+                        <td>{{$product->price_opt}} {{"\u{20BD}"}}</td>
+                        <td>{{$product->size}} мл</td>
+                        <td>{!! Str::limit($product->content, 20, ' ...') !!}</td>
+                        <td>{{$product->line->title}}</td>
+                        <td>{{$product->brand->title}}</td>
+                        <td>
+                            <a href="{{storage($product->image)}}" data-lightbox="{{$product->title}}" data-title="{{$product->title}}">
+                                <img src="{{storage($product->image)}}" alt="{{$product->title}}" height="100">
+                            </a>
+                        </td>
+                        <td><x-admin.extrabuttons :model="$product" resource="products"/><br><small>{{$product->created_at}}</small></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
-                @if($products->isNotEmpty())
+        {{ $products->withQueryString()->links() }}
 
-                    <table class="table table-striped table-bordered table-hover projects mt-3">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Наименование</th>
-                                <th>Цена</th>
-                                <th>Цена(опт)</th>
-                                <th>Объем</th>
-                                <th>Описание</th>
-                                <th>Линия</th>
-                                <th>Бренд</th>
-                                <th>Изображение</th>
-                                <th>Действия</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($products as $product)
-                                <tr>
-                                    <td>{{$product->id}}</td>
-                                    <td><a href="{{ route('admin.products.show', $product) }}">{{$product->title}}</a></td>
-                                    <td>{{$product->price}} {{"\u{20BD}"}}</td>
-                                    <td>{{$product->price_opt}} {{"\u{20BD}"}}</td>
-                                    <td>{{$product->size}} мл</td>
-                                    <td>{!! Str::limit($product->content, 20, ' ...') !!}</td>
-                                    <td>{{$product->line->title}}</td>
-                                    <td>{{$product->brand->title}}</td>
-                                    <td>
-                                        <a href="{{$product->image}}" data-lightbox="{{$product->title}}" data-title="{{$product->title}}">
-                                            <img src="{{$product->image}}" alt="{{$product->title}}" width="75">
-                                        </a>
-                                    </td>
-                                    <td><x-admin.extrabuttons :model="$product" resource="products"/><br><small>{{$product->created_at}}</small></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    {{ $products->withQueryString()->links() }}
-
-                @else
-                    <h2>Нет продукции</h2>
-                @endif
-
-
+    @else
+        <h2>Нет продукции</h2>
+    @endif
 
 @endsection

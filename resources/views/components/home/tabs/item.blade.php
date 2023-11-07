@@ -6,7 +6,7 @@
     @foreach($products as $product)
         <div class="col-xl-3 col-md-4 col-sm-6 pt-4">
             <div class="product-item animate__flipInY wow">
-                <div class="product-img">
+                <div class="product-img img-hover-effect">
                     <a href="{{ route('shop.products.show', $product) }}">
                         <img class="primary-img" src="{{storage($product->image)}}" alt="{{$product->title}}">
                     </a>
