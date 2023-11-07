@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="single-product-img">
-                            <img src="{{ $product->image }}" alt="">
+                            <img src="{{ storage($product->image) }}" alt="{{ $product->title }}">
                         </div>
                     </div>
                     <div class="col-lg-6 pt-5 pt-lg-0">
@@ -35,7 +35,7 @@
                                     <a href="#">( 1 Review )</a>
                                 </div>
                             </div>
-                            <p class="short-desc">{{ $product->content }}</p>
+                            <p class="short-desc">{!! $product->content !!}</p>
                             <ul class="quantity-with-btn">
                                 <li class="quantity">
                                     <div class="cart-plus-minus">
@@ -43,8 +43,7 @@
                                         <div class="dec qtybutton"><i class="fa fa-minus"></i></div><div class="inc qtybutton"><i class="fa fa-plus"></i></div></div>
                                 </li>
                                 <li class="add-to-cart">
-                                    <a class="btn btn-custom-size lg-size btn-pronia-primary" href="cart.html">Add to
-                                        cart</a>
+                                    <a class="btn btn-custom-size lg-size btn-pronia-primary" href="cart.html">В корзину</a>
                                 </li>
                                 <li class="wishlist-btn-wrap">
                                     <a class="custom-circle-btn" href="wishlist.html">

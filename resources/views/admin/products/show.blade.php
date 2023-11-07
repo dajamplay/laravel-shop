@@ -13,10 +13,8 @@
 
         <x-admin.show label="Наименование" value="{{$product->title}}"/>
 
-        @can('super_admin')
-            <x-admin.show label="Идентификатор" value="{{$product->id}}"/>
-            <x-admin.show label="Путь" value="{{config('app.url').'/shop/products/'.$product->slug}}"/>
-        @endcan
+        <x-admin.show label="Идентификатор" value="{{$product->id}}"/>
+        <x-admin.show label="Путь" value="{{config('app.url').'/shop/products/'.$product->slug}}"/>
 
         <x-admin.show label="Стоимость" value="{{$product->price}}"/>
         <x-admin.show label="Стоимость(Опт)" value="{{$product->price_opt}}"/>

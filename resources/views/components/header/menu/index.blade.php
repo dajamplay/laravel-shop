@@ -1,14 +1,6 @@
 <ul {{ $attributes }}>
     <li class="drop-holder">
-        <a href="index.html">Главная</a>
-        <ul class="drop-menu">
-            <li>
-                <a href="index.html">Home One</a>
-            </li>
-            <li>
-                <a href="index-2.html">Home Two</a>
-            </li>
-        </ul>
+        <a href="/">Главная</a>
     </li>
     <li class="megamenu-holder">
         <a href="shop.html">Магазин</a>
@@ -88,10 +80,10 @@
         <a href="blog.html">Блог</a>
         <ul class="drop-menu">
             <li>
-                <a href="blog-listview.html">Blog List View</a>
+                <a href="#">Последние статьи</a>
             </li>
             <li>
-                <a href="blog-detail.html">Blog Detail</a>
+                <a href="#">Интересное</a>
             </li>
         </ul>
     </li>
@@ -99,14 +91,14 @@
         <a href="#">Информация</a>
         <ul class="drop-menu">
             <li>
-                <a href="faq.html">Вопросы и ответы</a>
+                <a href="#">О компании</a>
             </li>
             <li>
-                <a href="404.html">Error 404</a>
+                <a href="#">Доставка и оплата</a>
             </li>
         </ul>
     </li>
     <li>
-        <a href="contact.html">Контакты</a>
+        <a href="#">Контакты</a>
     </li>
 </ul>

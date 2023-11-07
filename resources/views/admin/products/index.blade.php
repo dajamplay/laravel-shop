@@ -8,9 +8,7 @@
 
 @section('content')
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+
 
                 <x-ui.button
                     text="{{__('Создать продукт')}}"
@@ -62,8 +60,6 @@
                     <h2>Нет продукции</h2>
                 @endif
 
-            </div>
-        </div>
-    </div>
+
 
 @endsection

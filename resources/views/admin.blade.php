@@ -54,15 +54,24 @@
                 <x-ui.session_alert message="message"/>
             </div>
             <section class="content-header">
+
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12 col-lg-12">
+                        <div class="col-md-12">
                             <h4>@yield('title')</h4>
                             <hr/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
                             @yield('content')
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
 

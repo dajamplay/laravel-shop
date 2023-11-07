@@ -3696,6 +3696,16 @@ blockquote p {
     border: 1px solid #dee2e6;
 }
 
+.single-product-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-product-img img {
+    max-height: 500px;
+}
+
 .single-product-slider {
     border: 1px solid #dee2e6;
     margin-bottom: 20px;
