@@ -26,4 +26,30 @@
 
 </div>
 
+@pushonce('scripts')
+    <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Введите текст',
+            width: 1400,
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+        });
+    </script>
+@endpushonce
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
+@endpush
+
+
+
 

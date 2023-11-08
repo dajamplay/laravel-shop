@@ -9,11 +9,11 @@
 
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/lightbox/css/lightbox.min.css') }}">
 
+    @stack('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 
 </head>
@@ -83,17 +83,31 @@
     </div>
 
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 
     <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 300,
+            'wrapAround': true,
+            'fadeDuration' : 300,
+        });
+    </script>
+
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
 
-    <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
-
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script>
+        $('.tags, .brand_id, .line_id').select2();
+    </script>
 
-    {{--Admin scripts--}}
+    {{-- dmin components scripts --}}
+    @stack('scripts')
+
+    {{-- Admin scripts --}}
     <script src="{{ asset('assets/js/admin.js') }}"></script>
+
 </div>
 </body>
 </html>
