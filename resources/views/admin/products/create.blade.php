@@ -60,11 +60,6 @@
             name="file"
         />
 
-        <x-admin.form.image
-            label="{{__('Изображение')}}"
-            name="file2"
-        />
-
         <x-admin.form.button
             text="{{__('Создать')}}"
         />
