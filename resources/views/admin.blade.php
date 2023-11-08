@@ -81,34 +81,34 @@
         </footer>
 
     </div>
-
-    <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
-
-    <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
-    <script>
-        lightbox.option({
-            'resizeDuration': 300,
-            'wrapAround': true,
-            'fadeDuration' : 300,
-        });
-    </script>
-
-    <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
-
-    <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script>
-        $('.tags, .brand_id, .line_id').select2();
-    </script>
-
-    {{-- dmin components scripts --}}
-    @stack('scripts')
-
-    {{-- Admin scripts --}}
-    <script src="{{ asset('assets/js/admin.js') }}"></script>
-
 </div>
+
+<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+
+<script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
+<script>
+    lightbox.option({
+        'resizeDuration': 300,
+        'wrapAround': true,
+        'fadeDuration' : 300,
+    });
+</script>
+
+<script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+
+<script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+<script>
+    $('.tags, .brand_id, .line_id').select2();
+</script>
+
+{{-- dmin components scripts --}}
+@stack('scripts')
+
+{{-- Admin scripts --}}
+<script src="{{ asset('assets/js/admin.js') }}"></script>
+
 </body>
 </html>
 
