@@ -9,7 +9,6 @@
     $value = old($name) ?? $value;
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
     $errorTextDangerClass = $errors->has($name) ? 'text-danger' : '';
-    $imageUrl = file_exists(storage($value)) ? storage($value) : asset('assets/images/no_product.jpg');
 @endphp
 
 <div {{ $attributes->class(['form-group']) }}>
@@ -32,8 +31,8 @@
     @endif
 
     @isset($value)
-        <a href="{{$imageUrl}}" data-lightbox="{{$name}}" data-title="{{$name}}" class="image-a-{{$name}}">
-            <img src="{{$imageUrl}}" alt="{{$name}}" width="200" class="rounded image-div-{{$name}}">
+        <a href="{{storage($value)}}" data-lightbox="{{$name}}" data-title="{{$name}}" class="image-a-{{$name}}">
+            <img src="{{storage($value)}}" alt="{{$name}}" width="200" class="rounded image-div-{{$name}}">
         </a>
     @endisset
 
