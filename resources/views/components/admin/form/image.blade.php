@@ -1,7 +1,6 @@
 @props([
     'name' => '',
     'label' => '',
-    'placeholder' => __('Заполните поле'),
     'value' => '',
     'errors',
 ])
@@ -9,24 +8,22 @@
 @php
     $value = old($name) ?? $value;
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
-    $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
+    $errorTextDangerClass = $errors->has($name) ? 'text-danger' : '';
 @endphp
 
-<div class="form-group">
+<div {{ $attributes->class(['form-group']) }}>
 
-    <label for="{{ $name }}" {!! $errorTextDangerClass !!}>{{ $label}}</label>
+    <label for="{{ $name }}" class="{{$errorTextDangerClass}}">{{ $label}}</label>
 
     <div class="input-group mb-2">
-
-        <input {{ $attributes->merge([
-            'type' => 'file',
-            'value' => $value,
-            'name' => $name,
-            'id' => $name,
-            'placeholder' => $placeholder,
-            'class' => "image-input form-control $errorBorderDangerClass"
-        ])}}>
-
+        <input
+            type="file"
+            value="{{ $value }}"
+            name="{{ $name }}"
+            id="{{$name}}"
+            class="image-input form-control {{$errorBorderDangerClass}}"
+            onchange="onChangeImage(event)"
+        >
     </div>
 
     @if($errors->has($name))
@@ -34,22 +31,23 @@
     @endif
 
     @isset($value)
-        <a href="{{storage($value)}}" data-lightbox="{{$name}}" data-title="{{$name}}" class="image-a">
-            <img src="{{storage($value)}}" alt="{{$name}}" width="200" class="rounded image-div">
+        <a href="{{storage($value)}}" data-lightbox="{{$name}}" data-title="{{$name}}" class="image-a-{{$name}}">
+            <img src="{{storage($value)}}" alt="{{$name}}" width="200" class="rounded image-div-{{$name}}">
         </a>
     @endisset
 
-    <script>
-        {
-            let file = document.querySelector('.image-input');
-            let image = document.querySelector('.image-div');
-            let a = document.querySelector('.image-a');
+</div>
 
-            file.addEventListener('change', (event) => {
+@push('scripts')
+    <script>
+        function onChangeImage(event) {
+            const image = document.querySelector('.image-div-' + event.target.name);
+            const a = document.querySelector('.image-a-' + event.target.name);
+
+            if(event.target.files[0]) {
                 image.src = URL.createObjectURL(event.target.files[0]);
                 a.href = URL.createObjectURL(event.target.files[0]);
-            });
+            }
         }
     </script>
-
-</div>
+@endpush

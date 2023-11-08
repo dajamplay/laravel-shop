@@ -53,13 +53,16 @@
             placeholder="{{__('Выберите теги')}}"
             name="tags"
             :options="$tags"
-            icon="fas fa-tags"
         />
 
         <x-admin.form.image
             label="{{__('Изображение')}}"
-            placeholder="{{__('Изображение')}}"
             name="file"
+        />
+
+        <x-admin.form.image
+            label="{{__('Изображение')}}"
+            name="file2"
         />
 
         <x-admin.form.button

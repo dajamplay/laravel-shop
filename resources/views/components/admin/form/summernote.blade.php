@@ -16,8 +16,8 @@
 
     <label for="{{ $name }}">{{ $label}}</label>
 
-    <div class="input-group mb-2">
-        <textarea name="{{ $name }}" id="summernote">{{ $value }}</textarea>
+    <div class="input-group">
+        <textarea name="{{ $name }}" class="summernote">{{ $value }}</textarea>
     </div>
 
     @if($errors->has($name))
@@ -29,10 +29,10 @@
 @pushonce('scripts')
     <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script>
-        $('#summernote').summernote({
+        $('.summernote').summernote({
             placeholder: 'Введите текст',
             width: 1400,
-            height: 300,
+            height: 100,
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
