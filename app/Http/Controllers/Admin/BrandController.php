@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Brand\BrandDestroyAction;
 use App\Actions\Brand\BrandStoreAction;
+use App\Actions\Brand\BrandUpdateAction;
 use App\Data\BrandData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Brand\BrandStoreRequest;
@@ -60,5 +62,13 @@ class BrandController extends Controller
 
         return redirect(route('admin.brands.show', $brand->fresh()))
             ->with('message', trans('custom.brands.updated'));
+    }
+
+    public function destroy(BrandDestroyAction $action, Brand $brand): RedirectResponse
+    {
+        $action->run($brand);
+
+        return redirect(route('admin.brands.index'))
+            ->with('message', trans('custom.brands.deleted'));
     }
 }
