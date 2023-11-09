@@ -1,1 +1,1 @@
-<span class="text-danger">-</span>
+<span class="text-danger">{{__('нет')}}</span>
