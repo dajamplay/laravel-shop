@@ -2,7 +2,6 @@
     use App\Data;
     use Illuminate\Database\Eloquent\Collection;
     /** @var $products Collection<Data\ProductData> */
-    $items = $products;
 @endphp
 
 @extends('admin')
@@ -11,12 +10,12 @@
 
 @section('content')
 
-    <x-ui.button
+    <x-admin.button
         text="{{__('Создать продукт')}}"
         href="{{ route('admin.products.create') }}"
     />
 
-    @if($items->isNotEmpty())
+    @if($products->isNotEmpty())
 
         <x-admin.table>
             <x-admin.table.head>
@@ -32,34 +31,34 @@
                 <x-admin.table.head.text title="Действия"/>
             </x-admin.table.head>
             <x-admin.table.body>
-                @foreach($items as $item)
+                @foreach($products as $product)
                     <x-admin.table.body.row>
-                        <x-admin.table.body.row.text value="{{$item->id}}"/>
+                        <x-admin.table.body.row.text value="{{$product->id}}"/>
 
                         <x-admin.table.body.row.link
-                            value="{{$item->title}}"
-                            link="{{ route('admin.products.show', $item) }}"
+                            value="{{$product->title}}"
+                            link="{{ route('admin.products.show', $product) }}"
                         />
 
-                        <x-admin.table.body.row.money value="{{$item->price}}"/>
-                        <x-admin.table.body.row.money value="{{$item->price_opt}}"/>
+                        <x-admin.table.body.row.money value="{{$product->price}}"/>
+                        <x-admin.table.body.row.money value="{{$product->price_opt}}"/>
 
-                        <x-admin.table.body.row.size value="{{$item->size}}"/>
+                        <x-admin.table.body.row.size value="{{$product->size}}"/>
 
-                        <x-admin.table.body.row.text value="{!! $item->content !!}" limit="40"/>
-                        <x-admin.table.body.row.text value="{{$item->line->title}}"/>
-                        <x-admin.table.body.row.text value="{{$item->brand->title}}"/>
+                        <x-admin.table.body.row.text value="{!!$product->content!!}" limit="40"/>
+                        <x-admin.table.body.row.text value="{{$product->line->title}}"/>
+                        <x-admin.table.body.row.text value="{{$product->brand->title}}"/>
 
-                        <x-admin.table.body.row.image value="{{$item->image}}" title="{{$item->title}}"/>
+                        <x-admin.table.body.row.image value="{{$product->image}}" title="{{$product->title}}"/>
 
-                        <x-admin.table.body.row.btns id="{{$item->id}}" resource="products"/>
+                        <x-admin.table.body.row.btns id="{{$product->id}}" resource="products"/>
 
                     </x-admin.table.body.row>
                 @endforeach
             </x-admin.table.body>
         </x-admin.table>
 
-        {{ $items->withQueryString()->links() }}
+        {{ $products->withQueryString()->links() }}
 
     @else
         <h2>Нет продукции</h2>

@@ -1,5 +1,6 @@
 @php
-/** @var $product \App\Data\ProductData */
+    use App\Data;
+    /** @var $product Data\ProductData */
 @endphp
 
 @extends('admin')
@@ -8,7 +9,7 @@
 
 @section('content')
 
-    <x-ui.button
+    <x-admin.button
         text="{{__('Редактировать')}}"
         href="{{ route('admin.products.edit', $product->id) }}"
     />
@@ -17,7 +18,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                <hr />
+                <hr/>
 
                 <x-admin.show label="Наименование" value="{{$product->title}}"/>
 

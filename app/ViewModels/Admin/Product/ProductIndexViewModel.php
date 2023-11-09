@@ -2,11 +2,9 @@
 
 namespace App\ViewModels\Admin\Product;
 
-use App\Data\ProductData;
 use App\Models\Product;
-use App\Models\Tag;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Spatie\LaravelData\PaginatedDataCollection;
+
+use Illuminate\Pagination\LengthAwarePaginator;
 use Spatie\ViewModels\ViewModel;
 
 class ProductIndexViewModel extends ViewModel
@@ -25,10 +23,4 @@ class ProductIndexViewModel extends ViewModel
         return Product::query()
             ->paginate(self::PER_PAGE);
     }
-
-//    public function products(): PaginatedDataCollection
-//    {
-//        return ProductData::collection(Product::query()
-//            ->paginate(self::PER_PAGE));
-//    }
 }
