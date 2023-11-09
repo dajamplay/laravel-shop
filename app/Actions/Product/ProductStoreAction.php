@@ -15,9 +15,8 @@ class ProductStoreAction
         try {
             DB::beginTransaction();
 
-            if(isset($data['file'])) {
-                $data['image'] = Storage::put('/products', $data['file']);
-                unset($data['file']);
+            if(isset($data['image'])) {
+                $data['image'] = Storage::put('/products', $data['image']);
             }
 
             $product = Product::create($data);

@@ -26,7 +26,7 @@ class ProductUpdateRequest extends FormRequest
             'size' => ['nullable', 'integer'],
             'brand_id' => ['required', 'integer', 'exists:brands,id'],
             'line_id' => ['required', 'integer', 'exists:lines,id'],
-            'file' => ['nullable', 'image'],
+            'image' => ['nullable', 'image'],
             'tags' => ['nullable', 'array'],
             'tags.*' => ['nullable', 'integer', 'exists:tags,id'],
         ];
