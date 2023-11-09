@@ -42,7 +42,7 @@ class ProductController extends Controller
         $action->run($data);
 
         return redirect(route('admin.products.index'))
-            ->with('message', trans('custom.product.created'));
+            ->with('message', trans('custom.products.created'));
     }
 
     public function edit(Product $product): ProductEditViewModel
@@ -61,7 +61,7 @@ class ProductController extends Controller
         $action->run($data, $product);
 
         return redirect(route('admin.products.show', $product->fresh()))
-            ->with('message', trans('custom.product.updated'));
+            ->with('message', trans('custom.products.updated'));
     }
 
     public function destroy(ProductDestroyAction $action, Product $product): RedirectResponse
@@ -69,6 +69,6 @@ class ProductController extends Controller
         $action->run($product);
 
         return redirect(route('admin.products.index'))
-            ->with('message', trans('custom.product.deleted'));
+            ->with('message', trans('custom.products.deleted'));
     }
 }
