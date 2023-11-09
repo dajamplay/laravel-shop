@@ -14,7 +14,13 @@ return new class extends Migration
         Schema::create('lines', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title');
+            $table->string('slug')->unique();
+
+            $table->string('title')->unique();
+
+            $table->text('content')->nullable();
+
+            $table->string('image')->nullable();
 
             $table->timestamps();
 

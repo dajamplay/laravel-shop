@@ -21,7 +21,6 @@ class User extends Authenticatable implements MustVerifyEmail
         SoftDeletes;
 
     const ROLE_SUPER_ADMIN = 7;
-
     const ROLE_USER = 1;
 
     protected $fillable = [

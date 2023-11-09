@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->datetime('birthday')->nullable();
 
-            $table->string('role')->default('user');
+            $table->string('role')->default('1');
 
             $table->timestamp('email_verified_at')->nullable();
 
