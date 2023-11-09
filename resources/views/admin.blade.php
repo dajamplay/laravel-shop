@@ -107,7 +107,7 @@
 @stack('scripts')
 
 {{-- Admin scripts --}}
-<script src="{{ asset('assets/js/admin.js') }}"></script>
+<script src="{{ asset('adminlte/main.js') }}"></script>
 
 </body>
 </html>
