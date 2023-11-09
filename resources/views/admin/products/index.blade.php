@@ -1,5 +1,8 @@
 @php
-    /** @var $product \App\Data\ProductData */
+    use App\Data;
+    use Illuminate\Database\Eloquent\Collection;
+    /** @var $products Collection<Data\ProductData> */
+    $items = $products;
 @endphp
 
 @extends('admin')
@@ -13,46 +16,53 @@
         href="{{ route('admin.products.create') }}"
     />
 
-    @if($products->isNotEmpty())
+    @if($items->isNotEmpty())
 
-        <table class="table table-striped table-bordered table-hover projects mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Наименование</th>
-                    <th>Цена</th>
-                    <th>Цена(опт)</th>
-                    <th>Объем</th>
-                    <th>Описание</th>
-                    <th>Линия</th>
-                    <th>Бренд</th>
-                    <th>Изображение</th>
-                    <th>Действия</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($products as $product)
-                    <tr>
-                        <td>{{$product->id}}</td>
-                        <td><a href="{{ route('admin.products.show', $product) }}">{{$product->title}}</a></td>
-                        <td>{{$product->price}} {{"\u{20BD}"}}</td>
-                        <td>{{$product->price_opt}} {{"\u{20BD}"}}</td>
-                        <td>{{$product->size}} мл</td>
-                        <td>{!! Str::limit($product->content, 20, ' ...') !!}</td>
-                        <td>{{$product->line->title}}</td>
-                        <td>{{$product->brand->title}}</td>
+        <x-admin.table>
+            <x-admin.table.head>
+                <x-admin.table.head.text title="ID"/>
+                <x-admin.table.head.text title="Наименование"/>
+                <x-admin.table.head.text title="Цена"/>
+                <x-admin.table.head.text title="Цена(опт)"/>
+                <x-admin.table.head.text title="Объем"/>
+                <x-admin.table.head.text title="Описание"/>
+                <x-admin.table.head.text title="Линия"/>
+                <x-admin.table.head.text title="Бренд"/>
+                <x-admin.table.head.text title="Изображение"/>
+                <x-admin.table.head.text title="Действия"/>
+            </x-admin.table.head>
+            <x-admin.table.body>
+                @foreach($items as $item)
+                    <x-admin.table.body.row>
+                        <x-admin.table.body.row.text value="{{$item->id}}"/>
+
+                        <x-admin.table.body.row.link
+                            value="{{$item->title}}"
+                            link="{{ route('admin.products.show', $item) }}"
+                        />
+
+                        <x-admin.table.body.row.money value="{{$item->price}}"/>
+                        <x-admin.table.body.row.money value="{{$item->price_opt}}"/>
+
+                        <x-admin.table.body.row.size value="{{$item->size}}"/>
+
+                        <x-admin.table.body.row.text value="{!! $item->content !!}" limit="40"/>
+                        <x-admin.table.body.row.text value="{{$item->line->title}}"/>
+                        <x-admin.table.body.row.text value="{{$item->brand->title}}"/>
+
+                        <x-admin.table.body.row.image value="{{$item->image}}" title="{{$item->title}}"/>
+
                         <td>
-                            <a href="{{storage($product->image)}}" data-lightbox="{{$product->title}}" data-title="{{$product->title}}">
-                                <img src="{{storage($product->image)}}" alt="{{$product->title}}" height="100">
-                            </a>
+                            <x-admin.extrabuttons :model="$item" resource="products"/>
+                            <br/>
+                            <small>{{$item->created_at}}</small>
                         </td>
-                        <td><x-admin.extrabuttons :model="$product" resource="products"/><br><small>{{$product->created_at}}</small></td>
-                    </tr>
+                    </x-admin.table.body.row>
                 @endforeach
-            </tbody>
-        </table>
+            </x-admin.table.body>
+        </x-admin.table>
 
-        {{ $products->withQueryString()->links() }}
+        {{ $items->withQueryString()->links() }}
 
     @else
         <h2>Нет продукции</h2>

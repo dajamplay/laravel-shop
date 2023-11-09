@@ -65,7 +65,7 @@
 
         <x-admin.form.image
             label="{{__('Изображение')}}"
-            name="file"
+            name="image"
             :value="$product->image"
         />
 

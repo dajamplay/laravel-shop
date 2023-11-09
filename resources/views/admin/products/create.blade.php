@@ -57,7 +57,7 @@
 
         <x-admin.form.image
             label="{{__('Изображение')}}"
-            name="file"
+            name="image"
         />
 
         <x-admin.form.button
