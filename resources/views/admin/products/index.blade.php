@@ -52,11 +52,8 @@
 
                         <x-admin.table.body.row.image value="{{$item->image}}" title="{{$item->title}}"/>
 
-                        <td>
-                            <x-admin.extrabuttons :model="$item" resource="products"/>
-                            <br/>
-                            <small>{{$item->created_at}}</small>
-                        </td>
+                        <x-admin.table.body.row.btns id="{{$item->id}}" resource="products"/>
+
                     </x-admin.table.body.row>
                 @endforeach
             </x-admin.table.body>
