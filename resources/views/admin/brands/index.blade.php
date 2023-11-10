@@ -1,6 +1,6 @@
 @extends('admin')
 
-@section('title', __('Брэнд'))
+@section('title', __('Брэнды'))
 
 @section('content')
 
@@ -15,28 +15,29 @@
 
                 @if($brands->isNotEmpty())
 
-                    <table class="table table-hover mt-3">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Название</th>
-                                <th>Описание</th>
-                                <th>Изображение</th>
-                                <th>Действия</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <x-admin.table>
+                        <x-admin.table.head>
+                            <x-admin.table.head.text title="ID"/>
+                            <x-admin.table.head.text title="Наименование"/>
+                            <x-admin.table.head.text title="Описание"/>
+                            <x-admin.table.head.text title="Изображение"/>
+                            <x-admin.table.head.text title="Действия"/>
+                        </x-admin.table.head>
+                        <x-admin.table.body>
                             @foreach($brands as $brand)
-                                <tr>
-                                    <td>{{$brand->id}}</td>
-                                    <td>{{$brand->title}}</td>
-                                    <td>{{$brand->content}}</td>
-                                    <td>{{$brand->image}}</td>
-                                    <td><x-admin.extrabuttons :model="$brand" resource="brands"/></td>
-                                </tr>
+                                <x-admin.table.body.row>
+                                    <x-admin.table.body.row.text value="{{$brand->id}}"/>
+                                    <x-admin.table.body.row.link
+                                        value="{{$brand->title}}"
+                                        link="{{ route('admin.products.show', $brand) }}"
+                                    />
+                                    <x-admin.table.body.row.text value="{!!$brand->content!!}" limit="40"/>
+                                    <x-admin.table.body.row.image value="{{$brand->image}}" title="{{$brand->title}}"/>
+                                    <x-admin.table.body.row.btns id="{{$brand->id}}" resource="brands"/>
+                                </x-admin.table.body.row>
                             @endforeach
-                        </tbody>
-                    </table>
+                        </x-admin.table.body>
+                    </x-admin.table>
 
                     {{ $brands->withQueryString()->links() }}
 

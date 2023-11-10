@@ -34,11 +34,3 @@
     </x-admin.show>
 
 @endsection
-
-
-
-
-
-
-
-

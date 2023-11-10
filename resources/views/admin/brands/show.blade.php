@@ -1,30 +1,26 @@
+@php
+    use App\Data;
+    /** @var $brand Data\BrandData */
+@endphp
+
 @extends('admin')
 
 @section('title', $brand->title)
 
 @section('content')
 
-<div class="single-item">
-    <div class="container-fluid">
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">ID</div>
-            <div class="col-md-10">{{$brand->id}}</div>
-        </div>
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">Название</div>
-            <div class="col-md-10">{{$brand->title}}</div>
-        </div>
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">Описание</div>
-            <div class="col-md-10">{{$brand->content}}</div>
-        </div>
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">Изображение</div>
-            <div class="col-md-10">
-                <img src="{{ storage($brand->image)}}" alt="{{$brand->title}}">
-            </div>
-        </div>
-</div>
+    <x-admin.button
+        text="{{__('Редактировать')}}"
+        href="{{ route('admin.brands.edit', $brand->id) }}"
+    />
+
+    <x-admin.show class="col-md-12">
+        <x-admin.show.text label="Наименование" value="{{$brand->title}}"/>
+        <x-admin.show.text label="Идентификатор" value="{{$brand->id}}"/>
+        <x-admin.show.link label="Путь" value="{{route('shop.brands.show', $brand->slug)}}"/>
+        <x-admin.show.text label="Описание" value="{!!$brand->content!!}"/>
+        <x-admin.show.image label="Изображение" src="{{$brand->image}}" alt="{{$brand->title}}"/>
+    </x-admin.show>
 
 @endsection
 
