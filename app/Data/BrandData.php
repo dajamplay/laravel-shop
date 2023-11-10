@@ -16,7 +16,7 @@ class BrandData extends Data
 {
     public function __construct(
 
-        public string $id,
+        public int $id,
 
         public string $slug,
 
