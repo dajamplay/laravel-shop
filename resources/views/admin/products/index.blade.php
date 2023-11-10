@@ -1,9 +1,3 @@
-@php
-    use App\Data;
-    use Illuminate\Database\Eloquent\Collection;
-    /** @var $products Collection<Data\ProductData> */
-@endphp
-
 @extends('admin')
 
 @section('title', __('Продукция'))
