@@ -1,8 +1,3 @@
-@php
-    use App\Data;
-    /** @var $product Data\ProductData */
-@endphp
-
 @extends('admin')
 
 @section('title', $product->title)
