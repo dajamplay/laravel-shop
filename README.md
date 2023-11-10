@@ -1,5 +1,8 @@
 # Laravel Demo Project  
 
+## О проекте
+Интернет магазин по продаже косметики.
+
 ## Требования  
 - Наличие установленного ```Docker``` и ```Docker Compose```  
 - Желательно утилита ```make```
@@ -12,6 +15,8 @@
 ```docker exec php composer install```  
 ```docker exec node npm install```  
 ```docker exec php php artisan migrate:fresh --seed```  
+```docker exec php php artisan storage:link```  
+```docker exec php php artisan key:generate```  
 
 ## Вход в командную строку PHP  
 ```make exec-php```  
@@ -26,41 +31,19 @@
 ## WEB  
 Адрес: ```http://localhost```
 
-## Dashboard
-Адрес: ```http://localhost/dashboard```
+## Admin Panel
+Адрес: ```http://localhost/admin```  
+Логин: ```admin@example.com```  
+Пароль: ```admin```  
 
 ## PHPMyAdmin  
 Адрес: ```http://localhost:8080```  
 Логин: ```root```  
 Пароль: ```root```  
-Если необходимо посмотреть базу данных
 
 ## MailHog
 Адрес: ```http://localhost:8025```  
 UI для электронной почты
-
-## Blade
-### Директивы
-```@linkactive('имя маршрута')```, например ```@linkactive('dahsboadr.index')```.  
-Добавляет ```class="active"``` на месте директивы  
-
-
-### Компоненты
-#### Список  
-```resources/views/components/dashboard/table-list```
-```php
-<x-dashboard.table-list
-    :titleFields="[
-        'ID' => 'id',
-        'Имя' => 'first_name',
-        'Фамилия' => 'last_name',
-        'Электронная почта' => 'email',
-    ]"
-    :items="$users"
-    :pagination="true"
-    :extraButtons="true"
-/>
-```  
 
 
 
