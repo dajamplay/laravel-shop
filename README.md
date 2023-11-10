@@ -1,4 +1,4 @@
-# Laravel Demo Project  
+# Laravel Shop Project  
 
 ## О проекте
 Интернет магазин по продаже косметики.
