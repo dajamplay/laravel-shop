@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Actions\Product\ProductDestroyAction;
 use App\Actions\Product\ProductStoreAction;
 use App\Actions\Product\ProductUpdateAction;
-use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;
 use App\Http\Requests\Product\ProductUpdateRequest;
@@ -13,26 +12,24 @@ use App\Models\Product;
 use App\ViewModels\Admin\Product\ProductCreateViewModel;
 use App\ViewModels\Admin\Product\ProductEditViewModel;
 use App\ViewModels\Admin\Product\ProductIndexViewModel;
-use App\ViewModels\Admin\Product\ProductShowViewModel;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     public function index(ProductIndexViewModel $viewModel): ProductIndexViewModel
     {
-        return $viewModel;
+        return $viewModel->view('admin.products.index');
     }
 
-    public function show(Product $product): ProductShowViewModel
+    public function show(Product $product): View
     {
-        $data = ProductData::from($product);
-
-        return new ProductShowViewModel($data);
+        return view('admin.products.show', compact('product'));
     }
 
     public function create(ProductCreateViewModel $viewModel): ProductCreateViewModel
     {
-        return $viewModel;
+        return $viewModel->view('admin.products.create');
     }
 
     public function store(ProductStoreRequest $request, ProductStoreAction $action): RedirectResponse
@@ -47,7 +44,8 @@ class ProductController extends Controller
 
     public function edit(Product $product): ProductEditViewModel
     {
-        return new ProductEditViewModel($product);
+        return (new ProductEditViewModel($product))
+            ->view('admin.products.edit');
     }
 
     public function update(

@@ -11,8 +11,6 @@ use Spatie\ViewModels\ViewModel;
 
 class ProductEditViewModel extends ViewModel
 {
-    protected $view = 'admin.products.edit';
-
     public function __construct(
         private readonly Product $product
     ){}

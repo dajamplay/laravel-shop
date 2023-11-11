@@ -11,12 +11,7 @@ class ProductIndexViewModel extends ViewModel
 {
     const PER_PAGE = 10;
 
-    protected $view = 'admin.products.index';
-
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(){}
 
     public function products(): LengthAwarePaginator
     {

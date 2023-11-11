@@ -12,6 +12,7 @@ class ProductStoreAction
     public function run(array $data): Product|null
     {
         $product = null;
+
         try {
             DB::beginTransaction();
 
