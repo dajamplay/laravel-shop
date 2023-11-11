@@ -39,3 +39,4 @@ class AdminRequestTest extends TestCase
             ->assertViewIs('admin.index');
     }
 }
+
