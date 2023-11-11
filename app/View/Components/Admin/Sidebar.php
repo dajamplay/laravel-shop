@@ -15,3 +15,4 @@ class Sidebar extends Component
         return view('components.admin.sidebar.index');
     }
 }
+
