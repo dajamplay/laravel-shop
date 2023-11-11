@@ -18,3 +18,4 @@ class ResetPasswordEmail extends ResetPassword
             ->line(Lang::get('Если вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.'));
     }
 }
+

@@ -17,3 +17,4 @@ class VerifyEmail extends VerifyEmailBase
             ->line(Lang::get('Если вы не создавали учетную запись, никаких дальнейших действий не требуется.'));
     }
 }
+
