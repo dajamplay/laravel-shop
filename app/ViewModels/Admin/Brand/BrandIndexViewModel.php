@@ -10,12 +10,7 @@ class BrandIndexViewModel extends ViewModel
 {
     const PER_PAGE = 10;
 
-    protected $view = 'admin.brands.index';
-
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(){}
 
     public function brands(): LengthAwarePaginator
     {

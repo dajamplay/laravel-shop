@@ -9,10 +9,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductStoreAction
 {
-    public function run(array $data): Product|null
+    public function run(array $data): void
     {
-        $product = null;
-
         try {
             DB::beginTransaction();
 
@@ -24,7 +22,6 @@ class ProductStoreAction
 
             if(isset($data['tags'])) {
                 $product->tags()->sync($data['tags']);
-                unset($data['tags']);
             }
 
             DB::commit();
@@ -37,7 +34,5 @@ class ProductStoreAction
 
             Log::error($e->getMessage());
         }
-
-        return $product;
     }
 }
