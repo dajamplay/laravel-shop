@@ -87,4 +87,3 @@ volumes:
 networks:
   lara-net:
     driver: bridge
-
