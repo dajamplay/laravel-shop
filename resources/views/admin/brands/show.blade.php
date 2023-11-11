@@ -1,8 +1,3 @@
-@php
-    use App\Data;
-    /** @var $brand Data\BrandData */
-@endphp
-
 @extends('admin')
 
 @section('title', $brand->title)
