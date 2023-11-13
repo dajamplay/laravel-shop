@@ -48,8 +48,7 @@ class TagController extends Controller
     public function update(
         Tag $tag,
         TagUpdateAction $action,
-        TagUpdateRequest $request
-    ): RedirectResponse
+        TagUpdateRequest $request): RedirectResponse
     {
         $data = $request->validated();
 
