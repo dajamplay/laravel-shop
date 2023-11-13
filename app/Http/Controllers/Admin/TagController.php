@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Actions\Tag\TagDestroyAction;
 use App\Actions\Tag\TagStoreAction;
 use App\Actions\Tag\TagUpdateAction;
-use App\Data\TagData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tag\TagStoreRequest;
 use App\Http\Requests\Tag\TagUpdateRequest;
