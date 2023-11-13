@@ -10,12 +10,7 @@ class LineIndexViewModel extends ViewModel
 {
     const PER_PAGE = 10;
 
-    protected $view = 'admin.lines.index';
-
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(){}
 
     public function lines(): LengthAwarePaginator
     {

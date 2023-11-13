@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Actions\Brand\BrandDestroyAction;
 use App\Actions\Brand\BrandStoreAction;
 use App\Actions\Brand\BrandUpdateAction;
+use App\Exceptions\AdminPanelException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Brand\BrandStoreRequest;
 use App\Http\Requests\Brand\BrandUpdateRequest;
@@ -59,6 +60,9 @@ class BrandController extends Controller
             ->with('message', trans('custom.brands.updated'));
     }
 
+    /**
+     * @throws AdminPanelException
+     */
     public function destroy(BrandDestroyAction $action, Brand $brand): RedirectResponse
     {
         $action->run($brand);
