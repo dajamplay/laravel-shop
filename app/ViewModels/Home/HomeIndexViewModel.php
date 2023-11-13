@@ -2,14 +2,13 @@
 
 namespace App\ViewModels\Home;
 
+use App\Models\Feedback;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
 class HomeIndexViewModel extends ViewModel
 {
-    protected $view = 'home.index';
-
     public function __construct()
     {
         seo()->description = 'Тестовое описание';
@@ -29,6 +28,11 @@ class HomeIndexViewModel extends ViewModel
     public function latestProducts(): Collection
     {
         return Product::query()->orderBy('id', 'desc')->limit(4)->get();
+    }
+
+    public function feedbacks(): Collection
+    {
+        return Feedback::query()->orderBy('id', 'asc')->limit(4)->get();
     }
 
 }

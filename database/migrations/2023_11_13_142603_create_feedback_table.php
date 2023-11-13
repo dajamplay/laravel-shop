@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title')->unique();
+
+            $table->text('content')->nullable();
+
+            $table->string('image')->nullable();
+
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

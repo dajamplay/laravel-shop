@@ -38,6 +38,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.feedback.index')}}" class="nav-link  @linkactive('admin.feedback.*')" >
+                    <i class="nav-icon fa fa-comments"></i>
+                    <p>{{__('Отзывы')}}</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.users.index')}}" class="nav-link @linkactive('admin.users.*')">
                     <i class="nav-icon fa fa-users"></i>
                     <p>{{__('Пользователи')}}</p>

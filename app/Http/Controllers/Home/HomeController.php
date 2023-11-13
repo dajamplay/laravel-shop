@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index(HomeIndexViewModel $viewModel): HomeIndexViewModel
     {
-        return $viewModel;
+        return $viewModel->view('home.index');
     }
 }
