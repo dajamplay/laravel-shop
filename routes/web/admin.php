@@ -14,6 +14,7 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth','verified'])->group(
     Route::resource('tags', Admin\TagController::class);
     Route::resource('lines', Admin\LineController::class);
     Route::resource('feedback', Admin\FeedbackController::class);
+    Route::resource('slides', Admin\SlideController::class);
 
     Route::resource('orders', Admin\OrdersController::class)->only(['index']);
 

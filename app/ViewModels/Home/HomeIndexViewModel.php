@@ -5,7 +5,7 @@ namespace App\ViewModels\Home;
 use App\Models\Brand;
 use App\Models\Feedback;
 use App\Models\Product;
-use App\Models\Slider;
+use App\Models\Slide;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
@@ -44,7 +44,7 @@ class HomeIndexViewModel extends ViewModel
 
     public function sliders(): Collection
     {
-        return Slider::query()->orderBy('id', 'asc')->get();
+        return Slide::query()->orderBy('id', 'asc')->get();
     }
 
 }

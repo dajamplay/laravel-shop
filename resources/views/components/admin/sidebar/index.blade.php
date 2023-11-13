@@ -44,6 +44,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.slides.index')}}" class="nav-link  @linkactive('admin.feedback.*')" >
+                    <i class="nav-icon fas fa-pager"></i>
+                    <p>{{__('Слайдер')}}</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.users.index')}}" class="nav-link @linkactive('admin.users.*')">
                     <i class="nav-icon fa fa-users"></i>
                     <p>{{__('Пользователи')}}</p>

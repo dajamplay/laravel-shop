@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Slider;
 
-use App\Models\Slider;
+use App\Models\Slide;
 use Illuminate\Database\Seeder;
 
 //use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,7 +14,7 @@ class SliderSeeder extends Seeder
      */
     public function run(): void
     {
-        Slider::create(
+        Slide::create(
             [
                 'sale' => '65% скидка',
                 'title' => 'Rosa graf',
@@ -24,7 +24,7 @@ class SliderSeeder extends Seeder
                 'link' => '#',
             ]
         );
-        Slider::create(
+        Slide::create(
             [
                 'sale' => '45% скидка',
                 'title' => 'Circadia',
@@ -34,7 +34,7 @@ class SliderSeeder extends Seeder
                 'link' => '#',
             ]
         );
-        Slider::create(
+        Slide::create(
             [
                 'sale' => '55% скидка',
                 'title' => 'Oxygen',
