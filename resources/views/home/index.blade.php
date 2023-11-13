@@ -4,27 +4,16 @@
 
     <!-- Begin Slider Area -->
     <x-home.slider>
-        <x-home.slider.slide
-            offer="65% скидка"
-            title="Rosa graf"
-            description="Rosa graf - это 100% натуральная косметика."
-            image="tmp/slider/1-1.jpg"
-        />
-
-        <x-home.slider.slide
-            offer="45% скидка"
-            title="Circadia"
-            description="Circadia - это 100% натуральная косметика."
-            image="tmp/slider/1-3.jpg"
-            position="right"
-        />
-
-        <x-home.slider.slide
-            offer="55% скидка"
-            title="Oxygen"
-            description="Oxygen - это 100% натуральная косметика."
-            image="tmp/slider/1-2.jpg"
-        />
+        @foreach($sliders as $slider)
+            <x-home.slider.slide
+                offer="{{$slider->sale}}"
+                title="{{$slider->title}}"
+                description="{{$slider->content}}"
+                image="{{$slider->image}}"
+                link="{{$slider->link}}"
+                position="{{$slider->position}}"
+            />
+        @endforeach
     </x-home.slider>
     <!-- Slider Area End Here -->
 
@@ -66,19 +55,33 @@
     <!-- Banner Area End Here -->
 
     <!-- Begin Product Area -->
-    <x-home.products />
+{{--    <x-home.products />--}}
     <!-- Product Area End Here -->
 
-    <!-- Begin Testimonial Area -->
-    <x-home.reviews />
-    <!-- Testimonial Area End Here -->
+    <!-- Begin Feedback Area -->
+    <x-home.feedback>
+        @foreach($feedbacks as $feedback)
+            <x-home.feedback.item
+                title="{{$feedback->title}}"
+                content="{{$feedback->content}}"
+                image="{{$feedback->image}}"
+            />
+        @endforeach
+    </x-home.feedback>
+    <!-- Feedback Area End Here -->
 
     <!-- Begin Brand Area -->
-    <x-home.brands />
+    <x-home.brands>
+        @foreach($brands as $brand)
+            <x-home.brands.item image="{{$brand->image}}" title="{{$brand->title}}"/>
+        @endforeach
+    </x-home.brands>
     <!-- Brand Area End Here -->
 
     <!-- Begin Blog Area -->
-    <x-home.blog />
+    <x-home.blog>
+
+    </x-home.blog>
     <!-- Blog Area End Here -->
 
 @endsection
