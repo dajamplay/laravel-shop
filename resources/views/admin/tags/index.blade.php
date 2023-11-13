@@ -9,39 +9,36 @@
         href="{{ route('admin.tags.create') }}"
     />
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+    @if($tags->isNotEmpty())
 
-                @if($tags->isNotEmpty())
+        <x-admin.table>
+            <x-admin.table.head>
+                <x-admin.table.head.text title="ID"/>
+                <x-admin.table.head.text title="Наименование"/>
+                <x-admin.table.head.text title="Описание"/>
+                <x-admin.table.head.text title="Изображение"/>
+                <x-admin.table.head.text title="Действия"/>
+            </x-admin.table.head>
+            <x-admin.table.body>
+                @foreach($tags as $tag)
+                    <x-admin.table.body.row>
+                        <x-admin.table.body.row.text value="{{$tag->id}}"/>
+                        <x-admin.table.body.row.link
+                            value="{{$tag->title}}"
+                            link="{{ route('admin.tags.show', $tag) }}"
+                        />
+                        <x-admin.table.body.row.text value="{!!$tag->content!!}" limit="40"/>
+                        <x-admin.table.body.row.image value="{{$tag->image}}" title="{{$tag->title}}"/>
+                        <x-admin.table.body.row.btns id="{{$tag->id}}" resource="tags"/>
+                    </x-admin.table.body.row>
+                @endforeach
+            </x-admin.table.body>
+        </x-admin.table>
 
-                    <table class="table table-hover mt-3">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Название</th>
-                                <th>Действия</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($tags as $tag)
-                                <tr>
-                                    <td>{{$tag->id}}</td>
-                                    <td>{{$tag->title}}</td>
-                                    <td><x-admin.extrabuttons :model="$tag" resource="tags"/></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        {{ $tags->withQueryString()->links() }}
 
-                    {{ $tags->withQueryString()->links() }}
-
-                @else
-                    <h2>{{__('Нет тегов')}}</h2>
-                @endif
-
-            </div>
-        </div>
-    </div>
+    @else
+        <h2>{{__('Нет тегов')}}</h2>
+    @endif
 
 @endsection

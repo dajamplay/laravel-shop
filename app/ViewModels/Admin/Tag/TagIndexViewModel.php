@@ -10,12 +10,7 @@ class TagIndexViewModel extends ViewModel
 {
     const PER_PAGE = 10;
 
-    protected $view = 'admin.tags.index';
-
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(){}
 
     public function tags(): LengthAwarePaginator
     {

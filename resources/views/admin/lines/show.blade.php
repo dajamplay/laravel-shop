@@ -4,17 +4,18 @@
 
 @section('content')
 
-<div class="single-item">
-    <div class="container-fluid">
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">ID</div>
-            <div class="col-md-10">{{$line->id}}</div>
-        </div>
-        <div class="row single-item__row">
-            <div class="col-md-2 single-item__title">Заголовок</div>
-            <div class="col-md-10">{{$line->title}}</div>
-        </div>
-</div>
+    <x-admin.button
+        text="{{__('Редактировать')}}"
+        href="{{ route('admin.lines.edit', $line->id) }}"
+    />
+
+    <x-admin.show class="col-md-12">
+        <x-admin.show.text label="Наименование" value="{{$line->title}}"/>
+        <x-admin.show.text label="Идентификатор" value="{{$line->id}}"/>
+        <x-admin.show.link label="Путь" value="{{route('shop.lines.show', $line->slug)}}"/>
+        <x-admin.show.text label="Описание" value="{!!$line->content!!}"/>
+        <x-admin.show.image label="Изображение" src="{{$line->image}}" alt="{{$line->title}}"/>
+    </x-admin.show>
 
 @endsection
 

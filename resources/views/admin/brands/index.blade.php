@@ -25,7 +25,7 @@
                         <x-admin.table.body.row.text value="{{$brand->id}}"/>
                         <x-admin.table.body.row.link
                             value="{{$brand->title}}"
-                            link="{{ route('admin.products.show', $brand) }}"
+                            link="{{ route('admin.brands.show', $brand) }}"
                         />
                         <x-admin.table.body.row.text value="{!!$brand->content!!}" limit="40"/>
                         <x-admin.table.body.row.image value="{{$brand->image}}" title="{{$brand->title}}"/>

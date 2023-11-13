@@ -9,39 +9,36 @@
         href="{{ route('admin.lines.create') }}"
     />
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+    @if($lines->isNotEmpty())
 
-                @if($lines->isNotEmpty())
+        <x-admin.table>
+            <x-admin.table.head>
+                <x-admin.table.head.text title="ID"/>
+                <x-admin.table.head.text title="Наименование"/>
+                <x-admin.table.head.text title="Описание"/>
+                <x-admin.table.head.text title="Изображение"/>
+                <x-admin.table.head.text title="Действия"/>
+            </x-admin.table.head>
+            <x-admin.table.body>
+                @foreach($lines as $line)
+                    <x-admin.table.body.row>
+                        <x-admin.table.body.row.text value="{{$line->id}}"/>
+                        <x-admin.table.body.row.link
+                            value="{{$line->title}}"
+                            link="{{ route('admin.lines.show', $line) }}"
+                        />
+                        <x-admin.table.body.row.text value="{!!$line->content!!}" limit="40"/>
+                        <x-admin.table.body.row.image value="{{$line->image}}" title="{{$line->title}}"/>
+                        <x-admin.table.body.row.btns id="{{$line->id}}" resource="lines"/>
+                    </x-admin.table.body.row>
+                @endforeach
+            </x-admin.table.body>
+        </x-admin.table>
 
-                    <table class="table table-hover mt-3">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Название</th>
-                                <th>Действия</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($lines as $line)
-                                <tr>
-                                    <td>{{$line->id}}</td>
-                                    <td>{{$line->title}}</td>
-                                    <td><x-admin.extrabuttons :model="$line" resource="lines"/></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        {{ $lines->withQueryString()->links() }}
 
-                    {{ $lines->withQueryString()->links() }}
-
-                @else
-                    <h2>{{__('Нет линий')}}</h2>
-                @endif
-
-            </div>
-        </div>
-    </div>
+    @else
+        <h2>{{__('Нет линий')}}</h2>
+    @endif
 
 @endsection
