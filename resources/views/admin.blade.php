@@ -54,6 +54,9 @@
             <div class="container-fluid">
                 <x-ui.session_alert message="message"/>
             </div>
+            <div class="container-fluid">
+                <x-ui.session_alert message="message-error" color="danger"/>
+            </div>
             <section class="content-header">
 
                 <div class="container-fluid">
