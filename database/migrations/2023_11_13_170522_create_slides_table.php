@@ -22,9 +22,9 @@ return new class extends Migration
 
             $table->string('image')->nullable();
 
-            $table->string('position')->default('left');
+            $table->string('position')->default('left')->nullable();;
 
-            $table->string('link')->default('#');
+            $table->string('link')->default('#')->nullable();;
 
             $table->string('slider')->default('1');
 

@@ -18,7 +18,7 @@ class SlideUpdateRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                Rule::unique('sliders', 'title')->ignore($this->slider)
+                Rule::unique('slides', 'title')->ignore($this->slider)
             ],
             'sale' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],

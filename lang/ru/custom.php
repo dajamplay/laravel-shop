@@ -45,7 +45,7 @@ return [
         'created' => 'Отзыв создан',
         'deleted' => 'Отзыв удален',
     ],
-    'sliders' => [
+    'slides' => [
         'updated' => 'Слайд обновлен',
         'created' => 'Слайд создан',
         'deleted' => 'Слайд удален',

@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.slides.index')}}" class="nav-link  @linkactive('admin.feedback.*')" >
+                <a href="{{ route('admin.slides.index')}}" class="nav-link  @linkactive('admin.slides.*')" >
                     <i class="nav-icon fas fa-pager"></i>
                     <p>{{__('Слайдер')}}</p>
                 </a>

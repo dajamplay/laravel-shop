@@ -14,7 +14,7 @@ class SlideStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'unique:sliders,title'],
+            'title' => ['required', 'string', 'unique:slides,title'],
             'sale' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],
             'image' => ['nullable', 'image'],
