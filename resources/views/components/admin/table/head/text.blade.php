@@ -13,42 +13,51 @@
         <div class="d-flex align-items-center">
             @if($filter)
                 <input name="{{$filter}}" value="{{ Request::query($filter)}}" class="input-filter"/>
-{{--                <i class="fas fa-backspace input-filter-erase" onclick="inputFilterErase(event)"></i>--}}
             @endif
         </div>
     </div>
 
 </td>
 
-@push('styles')
+@pushonce('styles')
     <style>
         .input-filter {
             outline: none;
             width: 100%;
             border: 1px dashed #0c84ff;
-            border-radius: 4px;
+            border-radius: 6px;
+            transition: .3s all;
+        }
+        .input-filter-not-empty {
+            background-color: #e1f0ff;
+            border: 1px solid #0c84ff;
         }
         .input-filter:focus {
-            width: 100%;
             border: 1px solid #0c84ff;
-            border-radius: 8px;
-            transition: 0.3s all;
-            background-color: #e1f0ff;
         }
-        /*.input-filter-erase {*/
-        /*    font-size: 22px;*/
-        /*    margin-left: 4px;*/
-        /*}*/
-        /*.input-filter-erase:hover {*/
-        /*    cursor: pointer;*/
-        /*}*/
     </style>
-@endpush
+@endpushonce
 
-@push('scripts')
-{{--    <script>--}}
-{{--        function inputFilterErase(event) {--}}
-{{--            console.log(event.target);--}}
-{{--        }--}}
-{{--    </script>--}}
-@endpush
+@pushonce('scripts')
+    <script>
+
+        let inputsFilter = document.querySelectorAll('.input-filter');
+
+        inputsFilter.forEach( (element) => {
+            checkInputNotEmptyValue(element.value, element);
+
+            element.addEventListener('input', function (event) {
+                checkInputNotEmptyValue(event.target.value, element);
+            });
+        });
+
+        function checkInputNotEmptyValue(value, element) {
+            if(value !== '') {
+                element.classList.add('input-filter-not-empty');
+            } else {
+                element.classList.remove('input-filter-not-empty');
+            }
+        }
+
+    </script>
+@endpushonce
