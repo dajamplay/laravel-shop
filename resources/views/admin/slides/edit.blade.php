@@ -1,55 +1,60 @@
 @extends('admin')
 
-@section('title', __('Создание слайда'))
+@section('title', __('Редактирование слайда'))
 
 @section('content')
 
-    <x-admin.form action="{{route('admin.slides.store')}}" method="post" class="col-md-6">
+    <x-admin.form action="{{route('admin.slides.update', $slide)}}" method="put" class="col-md-6">
 
         <x-admin.form.input
             label="{{__('Предложение')}}"
             placeholder="{{__('Введите Предложение')}}"
             name="sale"
+            value="{{ $slide->sale }}"
         />
 
         <x-admin.form.input
             label="{{__('Заголовок')}}"
             placeholder="{{__('Введите Заголовок')}}"
             name="title"
+            value="{{ $slide->title }}"
         />
 
         <x-admin.form.input
             label="{{__('Описание')}}"
             placeholder="{{__('Введите Описание')}}"
             name="content"
+            value="{{ $slide->content }}"
         />
 
         <x-admin.form.select
             label="{{__('Слайдер')}}"
             name="slider"
             :options="$sliderOptions"
+            value="{{ $slide->slider }}"
         />
 
         <x-admin.form.select
             label="{{__('Позиция текста')}}"
             name="position"
             :options="$positionOptions"
+            value="{{ $slide->position }}"
         />
 
         <x-admin.form.input
             label="{{__('Ссылка')}}"
             placeholder="{{__('Введите ссылку')}}"
             name="link"
+            value="{{ $slide->link }}"
         />
 
         <x-admin.form.image
             label="{{__('Изображение')}}"
             name="image"
+            value="{{ $slide->image }}"
         />
 
-        <x-admin.form.button
-            text="{{__('Создать')}}"
-        />
+        <x-admin.form.button text="{{__('Сохранить изменения')}}"/>
 
     </x-admin.form>
 

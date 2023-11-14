@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Slide\SlideStoreRequest;
 use App\Http\Requests\Slide\SlideUpdateRequest;
 use App\Models\Slide;
+use App\Services\SliderService;
 use App\ViewModels\Admin\Slide\SlideIndexViewModel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -25,9 +26,12 @@ class SlideController extends Controller
         return view('admin.slides.show', compact('slide'));
     }
 
-    public function create(): View
+    public function create(SliderService $service): View
     {
-        return view('admin.slides.create');
+        return view('admin.slides.create', [
+            'positionOptions' => $service->getPositionOptions(),
+            'sliderOptions' => $service->getSliderOptions(),
+        ]);
     }
 
     public function store(SlideStoreRequest $request, SlideStoreAction $action): RedirectResponse
@@ -40,9 +44,13 @@ class SlideController extends Controller
             ->with('message', trans('custom.slides.created'));
     }
 
-    public function edit(Slide $slide): View
+    public function edit(Slide $slide, SliderService $service): View
     {
-        return view('admin.slides.edit', compact('slide'));
+        return view('admin.slides.edit', [
+            'slide' => $slide,
+            'positionOptions' => $service->getPositionOptions(),
+            'sliderOptions' => $service->getSliderOptions(),
+        ]);
     }
 
     public function update(

@@ -26,7 +26,7 @@
             <option disabled selected>{{ __('Не выбрано') }}</option>
             @isset($options)
                 @foreach($options as $option)
-                    @if((int)$value === $option->id)
+                    @if($value == $option->id)
                         <option selected value="{{ $option->id }}">{{ $option->title }}</option>
                     @else
                         <option value="{{ $option->id }}">{{ $option->title }}</option>
