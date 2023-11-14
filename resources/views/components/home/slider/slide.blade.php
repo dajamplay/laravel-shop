@@ -13,7 +13,7 @@
 @endphp
 
 <div class="swiper-slide animation-style-01">
-    <div class="slide-inner style-1 bg-height" data-bg-image="{{ $image }}">
+    <div class="slide-inner style-1 bg-height" data-bg-image="{{ storage($image) }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 {{ $position  }} order-2 order-lg-1 align-self-center">
