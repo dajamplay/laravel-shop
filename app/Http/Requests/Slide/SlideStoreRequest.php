@@ -15,12 +15,12 @@ class SlideStoreRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'unique:slides,title'],
-            'sale' => ['nullable', 'string'],
-            'content' => ['nullable', 'string'],
+            'sale' => ['required', 'nullable', 'string'],
+            'content' => ['required', 'nullable', 'string'],
             'image' => ['nullable', 'image'],
-            'position' => ['nullable', 'string'],
+            'position' => ['required', 'nullable', 'string'],
             'link' => ['nullable', 'string'],
-            'slider' => ['nullable', 'string'],
+            'slider' => ['required', 'nullable', 'string'],
         ];
     }
 }

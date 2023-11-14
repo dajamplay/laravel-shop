@@ -11,6 +11,7 @@
             placeholder="{{__('Введите Предложение')}}"
             name="sale"
             value="{{ $slide->sale }}"
+            required
         />
 
         <x-admin.form.input
@@ -18,6 +19,7 @@
             placeholder="{{__('Введите Заголовок')}}"
             name="title"
             value="{{ $slide->title }}"
+            required
         />
 
         <x-admin.form.input
@@ -25,6 +27,7 @@
             placeholder="{{__('Введите Описание')}}"
             name="content"
             value="{{ $slide->content }}"
+            required
         />
 
         <x-admin.form.select
@@ -32,6 +35,7 @@
             name="slider"
             :options="$sliderOptions"
             value="{{ $slide->slider }}"
+            required
         />
 
         <x-admin.form.select
@@ -39,6 +43,7 @@
             name="position"
             :options="$positionOptions"
             value="{{ $slide->position }}"
+            required
         />
 
         <x-admin.form.input

@@ -4,6 +4,7 @@
     'value' => '',
     'errors',
     'icon',
+    'required' => false,
 ])
 
 @php
@@ -14,7 +15,7 @@
 
 <div class="form-group">
 
-    <label for="{{ $name }}">{{ $label}}</label>
+    <label for="{{ $name }}" {!! $errorTextDangerClass !!} {!! $required ? 'class="required-marker"' : '' !!}>{{ $label}}</label>
 
     <div class="input-group">
         <textarea name="{{ $name }}" class="summernote">{{ $value }}</textarea>

@@ -5,6 +5,7 @@
     'errors',
     'options',
     'value' => '',
+    'required' => false,
 ])
 
 @php
@@ -14,7 +15,7 @@
 @endphp
 
 <div class="form-group">
-    <label for="{{ $name }}" {!! $errorTextDangerClass !!}>{{ $label}}</label>
+    <label for="{{ $name }}" {!! $errorTextDangerClass !!} {!! $required ? 'class="required-marker"' : '' !!}>{{ $label}}</label>
 
     <div class="input-group mb-2">
 

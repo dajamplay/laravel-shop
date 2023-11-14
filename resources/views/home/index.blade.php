@@ -4,14 +4,14 @@
 
     <!-- Begin Slider Area -->
     <x-home.slider>
-        @foreach($sliders as $slider)
+        @foreach($slides as $slide)
             <x-home.slider.slide
-                offer="{{$slider->sale}}"
-                title="{{$slider->title}}"
-                description="{{$slider->content}}"
-                image="{{$slider->image}}"
-                link="{{$slider->link}}"
-                position="{{$slider->position}}"
+                offer="{{$slide->sale}}"
+                title="{{$slide->title}}"
+                description="{{$slide->content}}"
+                image="{{$slide->image}}"
+                link="{{$slide->link}}"
+                position="{{$slide->position}}"
             />
         @endforeach
     </x-home.slider>

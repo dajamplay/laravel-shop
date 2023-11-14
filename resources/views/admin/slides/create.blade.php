@@ -10,30 +10,35 @@
             label="{{__('Предложение')}}"
             placeholder="{{__('Введите Предложение')}}"
             name="sale"
+            required
         />
 
         <x-admin.form.input
             label="{{__('Заголовок')}}"
             placeholder="{{__('Введите Заголовок')}}"
             name="title"
+            required
         />
 
         <x-admin.form.input
             label="{{__('Описание')}}"
             placeholder="{{__('Введите Описание')}}"
             name="content"
+            required
         />
 
         <x-admin.form.select
             label="{{__('Слайдер')}}"
             name="slider"
             :options="$sliderOptions"
+            required
         />
 
         <x-admin.form.select
             label="{{__('Позиция текста')}}"
             name="position"
             :options="$positionOptions"
+            required
         />
 
         <x-admin.form.input

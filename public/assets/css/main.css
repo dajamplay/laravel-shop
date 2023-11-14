@@ -2106,7 +2106,7 @@ blockquote p {
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    min-height: 680px;
+    min-height: 760px;
 }
 
 @media (max-width: 991px) {

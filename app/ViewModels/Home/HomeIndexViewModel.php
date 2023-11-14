@@ -42,9 +42,9 @@ class HomeIndexViewModel extends ViewModel
         return Brand::query()->orderBy('id', 'asc')->get();
     }
 
-    public function sliders(): Collection
+    public function slides(): Collection
     {
-        return Slide::query()->orderBy('id', 'asc')->get();
+        return Slide::query()->where('slider', '=', '1')->orderBy('id', 'asc')->get();
     }
 
 }

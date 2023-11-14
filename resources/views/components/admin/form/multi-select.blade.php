@@ -7,6 +7,7 @@
     'options',
     'placeholder' => 'Выберите',
     'value' => [],
+    'required' => false,
 ])
 
 @php
@@ -16,7 +17,7 @@
 @endphp
 
 <div class="form-group">
-    <label for="{{ $name }}" {!! $errorTextDangerClass !!}>{{ $label}}</label>
+    <label for="{{ $name }}" {!! $errorTextDangerClass !!} {!! $required ? 'class="required-marker"' : '' !!}>{{ $label}}</label>
 
     <div class="input-group mb-2 d-flex justify-content-between">
         <select name="{{ $name }}[]" class="flex-fill {{ $name }} {{$errorBorderDangerClass}}" multiple="" data-placeholder="{{ $placeholder }}">

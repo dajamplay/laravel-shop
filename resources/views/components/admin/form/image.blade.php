@@ -3,17 +3,18 @@
     'label' => '',
     'value' => '',
     'errors',
+    'required' => false,
 ])
 
 @php
     $value = old($name) ?? $value;
     $errorBorderDangerClass = $errors->has($name) ? 'border-danger' : '';
-    $errorTextDangerClass = $errors->has($name) ? 'text-danger' : '';
+    $errorTextDangerClass = $errors->has($name) ? 'class="text-danger"' : '';
 @endphp
 
 <div {{ $attributes->class(['form-group']) }}>
 
-    <label for="{{ $name }}" class="{{$errorTextDangerClass}}">{{ $label}}</label>
+    <label for="{{ $name }}" {{$errorTextDangerClass}} {!! $required ? 'class="required-marker"' : '' !!}>{{ $label}}</label>
 
     <div class="input-group mb-2">
         <input

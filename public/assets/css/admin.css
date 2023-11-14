@@ -53,3 +53,13 @@ span.select2-dropdown {
     padding: 7px!important;
 }
 
+/*****************   FORMS   *****************/
+
+/*** Required marker ***/
+
+.required-marker:after {
+    content: "*";
+    color: #ff1f1f;
+    margin-left: 2px;
+}
+

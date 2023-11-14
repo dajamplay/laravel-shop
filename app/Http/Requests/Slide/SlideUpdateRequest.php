@@ -20,12 +20,12 @@ class SlideUpdateRequest extends FormRequest
                 'string',
                 Rule::unique('slides', 'title')->ignore($this->slide)
             ],
-            'sale' => ['nullable', 'string'],
-            'content' => ['nullable', 'string'],
+            'sale' => ['required', 'nullable', 'string'],
+            'content' => ['required', 'nullable', 'string'],
             'image' => ['nullable', 'image'],
-            'position' => ['nullable', 'string'],
+            'position' => ['required', 'nullable', 'string'],
             'link' => ['nullable', 'string'],
-            'slider' => ['nullable', 'string'],
+            'slider' => ['required', 'nullable', 'string'],
         ];
     }
 }
