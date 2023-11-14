@@ -14,7 +14,7 @@
         <x-admin.table>
             <x-admin.table.head>
 
-                <x-admin.table.head.text title="ID" filter="filter_id"/>
+                <x-admin.table.head.text title="ID"/>
                 <x-admin.table.head.text title="Наименование" filter="filter_title"/>
                 <x-admin.table.head.text title="Цена" filter="filter_price"/>
                 <x-admin.table.head.text title="Цена(опт)" filter="filter_price_opt"/>
