@@ -5,6 +5,7 @@
     'filter' => null
 ])
 
+
 <td {{ $attributes->merge([])->class('')}}>
     <div>
         <div class="d-flex flex-column justify-content-center align-items-center">

@@ -17,6 +17,7 @@ class ProductFilter extends AbstractFilter
             'filter_size' => [$this, 'size'],
             'filter_price' => [$this, 'price'],
             'filter_price_opt' => [$this, 'price_opt'],
+            'filter_trashed' => [$this, 'trashed'],
         ];
     }
 
@@ -62,5 +63,10 @@ class ProductFilter extends AbstractFilter
         $builder->whereHas('line', function($query) use ($value) {
             $query->where('title', 'like', "%$value%");
         });
+    }
+
+    public function trashed(Builder $builder, string $value)
+    {
+        if ($value === 'trashed' ) $builder->trashed();
     }
 }
