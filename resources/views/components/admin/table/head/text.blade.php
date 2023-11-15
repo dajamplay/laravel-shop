@@ -13,7 +13,12 @@
         </div>
         <div class="d-flex align-items-center">
             @if($filter)
-                <input name="{{$filter}}" value="{{ Request::query($filter)}}" class="input-filter"/>
+                @if($filter === 'filter_trashed')
+                    <input type="checkbox" id="{{$filter}}" name="{{$filter}}" {{ Request::query($filter) === 'on' ? 'checked' : ''}}/>
+                    <button type="submit">Filter</button>
+                @else
+                    <input name="{{$filter}}" value="{{ Request::query($filter)}}" class="input-filter"/>
+                @endif
             @endif
         </div>
     </div>

@@ -23,7 +23,7 @@
             <x-admin.table.head.text title="Линия" filter="filter_line"/>
             <x-admin.table.head.text title="Бренд" filter="filter_brand"/>
             <x-admin.table.head.text title="Изображение"/>
-            <x-admin.table.head.text title="Действия"/>
+            <x-admin.table.head.text title="Действия" filter="filter_trashed"/>
 
         </x-admin.table.head>
 
