@@ -3,7 +3,7 @@
     'limit' => null
 ])
 
-<td {{ $attributes->merge([])->class('')}}>
+<td {{ $attributes->merge([])->class([])}}>
     @if(!empty($value))
         {!! $limit ? Str::limit($value, $limit, ' ...') : $value !!}
     @else

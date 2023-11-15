@@ -3,7 +3,7 @@
     'link' => null,
 ])
 
-<td {{ $attributes->merge([])->class('')}}>
+<td {{ $attributes->merge([])->class([])}}>
     @if(!empty($value) && !empty($link))
         <a href="{{ $link }}">{{ $value }}</a>
     @else

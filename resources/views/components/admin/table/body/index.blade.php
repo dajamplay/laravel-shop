@@ -1,3 +1,3 @@
-<tbody {{ $attributes->merge([])->class('')}}>
+<tbody {{ $attributes->merge([])->class([])}}>
     {{ $slot }}
 </tbody>

@@ -4,7 +4,9 @@
 
 @section('content')
 
-    <x-ui.button
+    <p class="text-lg">Найдено: {{ $brands->total() }}</p>
+
+    <x-admin.button
         text="{{__('Создать брэнд')}}"
         href="{{ route('admin.brands.create') }}"
     />

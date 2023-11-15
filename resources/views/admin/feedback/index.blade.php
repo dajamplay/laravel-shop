@@ -4,7 +4,9 @@
 
 @section('content')
 
-    <x-ui.button
+    <p class="text-lg">Найдено: {{ $feedbacks->total() }}</p>
+
+    <x-admin.button
         text="{{__('Создать отзыв')}}"
         href="{{ route('admin.feedback.create') }}"
     />

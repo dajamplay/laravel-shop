@@ -4,12 +4,12 @@
 ])
 
 @if($id && $resource)
-    <td>
-        <div {{ $attributes->merge(['class' => 'd-inline-flex']) }}>
+    <td class="text-center">
+        <div {{ $attributes->merge()->class('d-inline-flex') }} class="">
 
             <a class="btn btn-success btn-sm" href="{{ route('admin.' . $resource. '.show', $id) }}"><i class="fas fa-eye"></i></a>
 
-            <a class="btn btn-primary btn-sm mx-2"
+            <a class="btn btn-primary btn-sm mx-1"
                href="{{ route('admin.' . $resource. '.edit', $id) }}"><i class="fas fa-pen"></i></a>
 
             <form action="{{ route('admin.' . $resource. '.destroy', $id) }}" method="post">

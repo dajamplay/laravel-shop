@@ -3,7 +3,7 @@
     'currency' => "\u{20BD}",
 ])
 
-<td {{ $attributes->merge([])->class('')}}>
+<td {{ $attributes->merge([])->class('text-center')}}>
     @if(!empty($value))
         {{ $value . ' ' . $currency }}
     @else

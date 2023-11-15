@@ -3,7 +3,7 @@
     'unit' => 'мл',
 ])
 
-<td {{ $attributes->merge([])->class('')}}>
+<td {{ $attributes->merge([])->class('text-center')}}>
     @if(!empty($value))
         {{ $value . ' ' . $unit}}
     @else
