@@ -44,7 +44,7 @@
                         <x-admin.table.body.row.text value="{{$product->line->title}}"/>
                         <x-admin.table.body.row.text value="{{$product->brand->title}}"/>
                         <x-admin.table.body.row.image value="{{$product->image}}" title="{{$product->title}}"/>
-                        <x-admin.table.body.row.btns id="{{$product->id}}" resource="products"/>
+                        <x-admin.table.body.row.btns id="{{$product->id}}" resource="products" deleted_at="{{ $product->deleted_at }}" />
 
                     </x-admin.table.body.row>
                 @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Actions\Product\ProductDestroyAction;
+use App\Actions\Product\ProductRestoreAction;
 use App\Actions\Product\ProductStoreAction;
 use App\Actions\Product\ProductUpdateAction;
 use App\Http\Controllers\Controller;
@@ -67,5 +68,14 @@ class ProductController extends Controller
         $action->run($product);
 
         return redirect()->back()->with('message', trans('custom.products.deleted'));
+    }
+
+    public function restore(ProductRestoreAction $action, string $id): RedirectResponse
+    {
+        if($action->run($id)) {
+            return redirect()->back()->with('message', trans('custom.products.restored'));
+        }
+
+        return redirect()->back()->with('message-error', trans('custom.products.error-restore'));
     }
 }
