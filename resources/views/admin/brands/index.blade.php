@@ -11,17 +11,16 @@
         href="{{ route('admin.brands.create') }}"
     />
 
-    @if($brands->isNotEmpty())
-
-        <x-admin.table>
-            <x-admin.table.head>
-                <x-admin.table.head.text title="ID"/>
-                <x-admin.table.head.text title="Наименование"/>
-                <x-admin.table.head.text title="Описание"/>
-                <x-admin.table.head.text title="Изображение"/>
-                <x-admin.table.head.text title="Действия"/>
-            </x-admin.table.head>
-            <x-admin.table.body>
+    <x-admin.table>
+        <x-admin.table.head>
+            <x-admin.table.head.text title="ID"/>
+            <x-admin.table.head.text title="Наименование" filter="filter_title"/>
+            <x-admin.table.head.text title="Описание"/>
+            <x-admin.table.head.text title="Изображение"/>
+            <x-admin.table.head.text title="Действия"/>
+        </x-admin.table.head>
+        <x-admin.table.body>
+            @if($brands->count() > 0)
                 @foreach($brands as $brand)
                     <x-admin.table.body.row>
                         <x-admin.table.body.row.text value="{{$brand->id}}"/>
@@ -34,13 +33,14 @@
                         <x-admin.table.body.row.btns id="{{$brand->id}}" resource="brands"/>
                     </x-admin.table.body.row>
                 @endforeach
-            </x-admin.table.body>
-        </x-admin.table>
+            @endif
+        </x-admin.table.body>
+    </x-admin.table>
 
+    @if($brands->count() > 0)
         {{ $brands->withQueryString()->links() }}
-
     @else
-        <h2>{{__('Нет брэндов')}}</h2>
+        <h2>Не найдено</h2>
     @endif
 
 @endsection

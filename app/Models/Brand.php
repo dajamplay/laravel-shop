@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Filterable;
 use App\Models\Traits\HasSlug;
 use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Brand extends Model
 {
-    use HasFactory, HasSlug, SoftDeletes, SoftCascadeTrait;
+    use HasFactory, HasSlug, SoftDeletes, SoftCascadeTrait, Filterable;
 
     protected $fillable = [
         'title',
