@@ -72,7 +72,6 @@ final class UserController extends Controller
     {
         $action->run($user);
 
-        return redirect(route('admin.users.index'))
-            ->with('message', trans('custom.user.deleted'));
+        return redirect()->back()->with('message', trans('custom.user.deleted'));
     }
 }

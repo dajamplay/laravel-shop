@@ -66,7 +66,6 @@ class ProductController extends Controller
     {
         $action->run($product);
 
-        return redirect(route('admin.products.index'))
-            ->with('message', trans('custom.products.deleted'));
+        return redirect()->back()->with('message', trans('custom.products.deleted'));
     }
 }

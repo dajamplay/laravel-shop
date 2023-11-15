@@ -67,7 +67,6 @@ class BrandController extends Controller
     {
         $action->run($brand);
 
-        return redirect(route('admin.brands.index'))
-            ->with('message', trans('custom.brands.deleted'));
+        return redirect()->back()->with('message', trans('custom.brands.deleted'));
     }
 }

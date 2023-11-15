@@ -63,7 +63,6 @@ class FeedbackController extends Controller
     {
         $action->run($feedback);
 
-        return redirect(route('admin.feedback.index'))
-            ->with('message', trans('custom.feedback.deleted'));
+        return redirect()->back()->with('message', trans('custom.feedback.deleted'));
     }
 }

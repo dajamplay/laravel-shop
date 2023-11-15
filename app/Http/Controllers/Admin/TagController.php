@@ -62,7 +62,6 @@ class TagController extends Controller
     {
         $action->run($tag);
 
-        return redirect(route('admin.tags.index'))
-            ->with('message', trans('custom.tags.deleted'));
+        return redirect()->back()->with('message', trans('custom.tags.deleted'));
     }
 }

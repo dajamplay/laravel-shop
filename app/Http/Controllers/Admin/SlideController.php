@@ -71,7 +71,6 @@ class SlideController extends Controller
     {
         $action->run($slide);
 
-        return redirect(route('admin.slides.index'))
-            ->with('message', trans('custom.slides.deleted'));
+        return redirect()->back()->with('message', trans('custom.slides.deleted'));
     }
 }

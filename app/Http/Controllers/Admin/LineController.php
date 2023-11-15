@@ -67,7 +67,6 @@ class LineController extends Controller
     {
         $action->run($line);
 
-        return redirect(route('admin.lines.index'))
-            ->with('message', trans('custom.lines.deleted'));
+        return redirect()->back()->with('message', trans('custom.lines.deleted'));
     }
 }
