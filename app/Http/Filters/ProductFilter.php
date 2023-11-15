@@ -67,6 +67,6 @@ class ProductFilter extends AbstractFilter
 
     public function trashed(Builder $builder, string $value)
     {
-        if ($value === 'on' ) $builder->withTrashed();
+        if ($value === 'on' ) $builder->onlyTrashed();
     }
 }
