@@ -1,4 +1,4 @@
-init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-migrate artisan-store-link artisan-key-gen chmod
+init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-migrate artisan-store-link artisan-key-gen
 
 docker-pull:
 	docker compose pull
@@ -41,7 +41,3 @@ db-clear:
 
 seed:
 	docker exec php php artisan migrate:refresh --seed
-
-chmod:
-	docker exec php chmod 777 -R ./
-
