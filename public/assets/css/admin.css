@@ -63,3 +63,9 @@ span.select2-dropdown {
     margin-left: 2px;
 }
 
+/*****************   PAGINATION   *****************/
+
+.pagination {
+    margin: 0!important;
+}
+

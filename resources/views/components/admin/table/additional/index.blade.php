@@ -26,7 +26,7 @@
             />
         </div>
 
-        <span class="btn btn-flat">Найдено: {{ $total ?? 0 }}</span>
+        <span class="btn btn-outline-primary mr-1">Найдено: {{ $total ?? 0 }}</span>
     </div>
 
     <div class="additional-table-block__right">
@@ -55,9 +55,6 @@
         .additional-table-block__left__checkbox {
             transform : scale(2);
             margin-left: 15px;
-        }
-        .pagination {
-            margin: 0!important;
         }
     </style>
 @endpushonce
