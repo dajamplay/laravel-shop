@@ -1,8 +1,5 @@
 <thead {{ $attributes->merge([])->class('')}}>
     <tr>
-        <form method="get">
-            {{ $slot }}
-            <button type="submit" class="d-none"></button>
-        </form>
+        {{ $slot }}
     </tr>
 </thead>

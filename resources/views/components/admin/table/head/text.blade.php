@@ -13,12 +13,7 @@
         </div>
         <div class="d-flex align-items-center">
             @if($filter)
-                @if($filter === 'filter_trashed')
-                    <input type="checkbox" id="{{$filter}}" name="{{$filter}}" {{ Request::query($filter) === 'on' ? 'checked' : ''}}/>
-                    <button type="submit">Filter</button>
-                @else
-                    <input name="{{$filter}}" value="{{ Request::query($filter)}}" class="input-filter"/>
-                @endif
+                <input name="{{$filter}}" value="{{ Request::query($filter)}}" class="input-filter"/>
             @endif
         </div>
     </div>
@@ -34,19 +29,36 @@
             border-radius: 6px;
             transition: .3s all;
         }
+
         .input-filter-not-empty {
             background-color: #e1f0ff;
             border: 1px solid #0c84ff;
         }
+
         .input-filter:focus {
             border: 1px solid #0c84ff;
         }
+
+        .trash-block__wrapper{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .trash-block__checker+label {
+            font-size: 24px;
+        }
+
+        .trash-block__checker+label:hover, .trash-block__checker:hover {
+            cursor: pointer;
+        }
+
     </style>
 @endpushonce
 
 @pushonce('scripts')
     <script>
-
         let inputsFilter = document.querySelectorAll('.input-filter');
 
         inputsFilter.forEach( (element) => {
@@ -64,6 +76,5 @@
                 element.classList.remove('input-filter-not-empty');
             }
         }
-
     </script>
 @endpushonce

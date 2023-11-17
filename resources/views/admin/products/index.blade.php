@@ -4,16 +4,19 @@
 
 @section('content')
 
-    <p class="text-lg">Найдено: {{ $products->total() }}</p>
-
-    <x-admin.button
-        text="{{__('Создать продукт')}}"
-        href="{{ route('admin.products.create') }}"
-    />
-
     <x-admin.table>
-        <x-admin.table.head>
 
+        <x-slot name="additional">
+            <x-admin.table.additional
+                total="{{ $products->total() }}"
+                button_text="{{__('Создать продукт')}}"
+                button_href="{{ route('admin.products.create') }}"
+                filter_trashed="filter_trashed"
+                :pagination="$products->count() > 0 ? $products->withQueryString()->links() : null"
+            />
+        </x-slot>
+
+        <x-admin.table.head>
             <x-admin.table.head.text title="ID"/>
             <x-admin.table.head.text title="Наименование" filter="filter_title"/>
             <x-admin.table.head.text title="Цена" filter="filter_price"/>
@@ -23,15 +26,13 @@
             <x-admin.table.head.text title="Линия" filter="filter_line"/>
             <x-admin.table.head.text title="Бренд" filter="filter_brand"/>
             <x-admin.table.head.text title="Изображение"/>
-            <x-admin.table.head.text title="Действия" filter="filter_trashed"/>
-
+            <x-admin.table.head.text title="Действия"/>
         </x-admin.table.head>
 
         <x-admin.table.body>
             @if($products->count() > 0)
                 @foreach($products as $product)
                     <x-admin.table.body.row>
-
                         <x-admin.table.body.row.text value="{{$product->id}}"/>
                         <x-admin.table.body.row.link
                             value="{{$product->title}}"
@@ -45,7 +46,6 @@
                         <x-admin.table.body.row.text value="{{$product->brand->title}}"/>
                         <x-admin.table.body.row.image value="{{$product->image}}" title="{{$product->title}}"/>
                         <x-admin.table.body.row.btns id="{{$product->id}}" resource="products" deleted_at="{{ $product->deleted_at }}" />
-
                     </x-admin.table.body.row>
                 @endforeach
             @endif
