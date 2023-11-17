@@ -10,12 +10,12 @@
     <div class="additional-table-block__left">
         <div>
             <x-admin.button text="{{$button_text}}" href="{{$button_href}}"/>
-            <button type="submit" class="btn btn-md btn-primary">Применить фильтры <i class="fas fa-search"></i></button>
+            <button type="submit" class="btn btn-primary">Применить фильтры <i class="fas fa-search"></i></button>
         </div>
 
         <div>
             <div class="d-inline">
-                <label for="{{$filter_trashed}}" class="btn btn-sm btn-outline-danger">В корзине</label>
+                <label for="{{$filter_trashed}}" class="btn btn-outline-danger">В корзине</label>
                 <input
                     type="checkbox"
                     id="{{$filter_trashed}}"

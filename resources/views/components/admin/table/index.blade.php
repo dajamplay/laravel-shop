@@ -1,6 +1,6 @@
 <form method="get">
 
-    <div>{{$additional}}</div>
+    <div>{{$additional ?? ''}}</div>
 
     <table {{ $attributes->merge([])->class('table table-striped table-bordered table-hover projects mt-3') }}>
         {{ $slot }}
