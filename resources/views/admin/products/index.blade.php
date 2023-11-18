@@ -11,7 +11,6 @@
                 total="{{ $products->total() }}"
                 button_text="{{__('Создать продукт')}}"
                 button_href="{{ route('admin.products.create') }}"
-                filter_trashed="filter_trashed"
                 :pagination="$products->count() > 0 ? $products->withQueryString()->links() : null"
             />
         </x-slot>

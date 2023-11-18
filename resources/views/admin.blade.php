@@ -62,8 +62,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h4>@yield('title')</h4>
-                            <hr/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>@yield('title')</h4>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-end">
+                                    <h4>@yield('title_right')</h4>
+                                </div>
+                            </div>
+                            <hr />
                         </div>
                     </div>
                 </div>
