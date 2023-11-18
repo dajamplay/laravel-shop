@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Post;
 use App\Models\Product;
 use App\Models\ProductTag;
 use App\Models\User;
@@ -35,6 +36,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->count(100)->create();
 
         ProductTag::factory()->count(50)->create();
+
+        Post::factory()->count(50)->create();
 
     }
 }
