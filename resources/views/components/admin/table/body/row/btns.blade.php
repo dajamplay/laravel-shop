@@ -12,11 +12,10 @@
             <a class="btn btn-primary btn-sm mx-1"
                href="{{ route('admin.' . $resource. '.edit', $id) }}"><i class="fas fa-pen"></i></a>
 
-            <form action="{{ route('admin.' . $resource. '.destroy', $id) }}" method="post" id="form_delete">
+            <form action="{{ route('admin.' . $resource. '.destroy', $id) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button
-                    form="form_delete"
                     type="submit"
                     class="btn btn-danger btn-sm"
                     onclick="return confirm('Вы уверены?')"
