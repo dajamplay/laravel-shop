@@ -39,6 +39,13 @@
     </x-home.shipping>
     <!-- Shipping Area End Here -->
 
+    <!-- Begin About Area -->
+    <x-home.about
+        title=""
+        content=""
+    />
+    <!-- About Area End Here -->
+
     <!-- Begin Product Tabs Area -->
     <x-home.tabs title="Наша продукция">
         <x-home.tabs.tabs/>
