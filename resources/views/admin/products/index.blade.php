@@ -4,17 +4,14 @@
 
 @section('content')
 
+    <p class="text-lg">Найдено: {{ $products->total() }}</p>
+
+    <x-admin.button
+        text="{{__('Создать продукт')}}"
+        href="{{ route('admin.products.create') }}"
+    />
+
     <x-admin.table>
-
-        <x-slot name="additional">
-            <x-admin.table.additional
-                total="{{ $products->total() }}"
-                button_text="{{__('Создать продукт')}}"
-                button_href="{{ route('admin.products.create') }}"
-                :pagination="$products->count() > 0 ? $products->withQueryString()->links() : null"
-            />
-        </x-slot>
-
         <x-admin.table.head>
             <x-admin.table.head.text title="ID"/>
             <x-admin.table.head.text title="Наименование" filter="filter_title"/>
