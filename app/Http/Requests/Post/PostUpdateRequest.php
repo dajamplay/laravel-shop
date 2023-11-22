@@ -20,7 +20,7 @@ class PostUpdateRequest extends FormRequest
                 'string',
                 Rule::unique('posts', 'title')->ignore($this->post)
             ],
-            'content' => ['nullable', 'string'],
+            'content' => ['required', 'string'],
             'image' => ['nullable', 'image'],
         ];
     }
