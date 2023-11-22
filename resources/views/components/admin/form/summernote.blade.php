@@ -33,7 +33,7 @@
         $('.summernote').summernote({
             placeholder: 'Введите текст',
             width: 1400,
-            height: 100,
+            height: 200,
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],

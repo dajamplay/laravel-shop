@@ -79,8 +79,21 @@
     <!-- Brand Area End Here -->
 
     <!-- Begin Blog Area -->
-    <x-home.blog>
+    <x-home.blog
+        title="Последние новости"
+        description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                roots in a piece of classical Latin literature">
 
+        @foreach($posts as $post)
+            <x-home.blog.post
+                title="{{$post->title}}"
+                content="{{$post->content}}"
+                image="{{$post->image}}"
+                slug="{{$post->slug}}"
+                updated_at="{{$post->updated_at}}"
+                author="Елеанта"
+            />
+        @endforeach
     </x-home.blog>
     <!-- Blog Area End Here -->
 

@@ -4,6 +4,7 @@ namespace App\ViewModels\Home;
 
 use App\Models\Brand;
 use App\Models\Feedback;
+use App\Models\Post;
 use App\Models\Product;
 use App\Models\Slide;
 use Illuminate\Database\Eloquent\Collection;
@@ -41,6 +42,12 @@ class HomeIndexViewModel extends ViewModel
     {
         return Brand::query()->orderBy('id', 'asc')->get();
     }
+
+    public function posts(): Collection
+    {
+        return Post::query()->orderBy('id', 'asc')->limit(4)->get();
+    }
+
 
     public function slides(): Collection
     {

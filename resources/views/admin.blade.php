@@ -87,7 +87,7 @@
         </div>
 
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 Aksenov Maksim</strong> All rights reserved.
+            <strong><i class="fas fa-copyright"></i> 2023-2024 Аксенов Максим.</strong> Сделано с любовью<span class="text-danger"><i class="fas fa-heart"></i></span>
         </footer>
 
     </div>
