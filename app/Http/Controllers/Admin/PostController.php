@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Post\PostDestroyAction;
 use App\Actions\Post\PostStoreAction;
+use App\Actions\Post\PostUpdateAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostStoreRequest;
+use App\Http\Requests\Post\PostUpdateRequest;
 use App\Models\Post;
 use App\ViewModels\Admin\Post\PostIndexViewModel;
 use Illuminate\Http\RedirectResponse;
@@ -40,5 +43,26 @@ class PostController extends Controller
     public function edit(Post $post): View
     {
         return view('admin.posts.edit', compact('post'));
+    }
+
+    public function update(
+        Post $post,
+        PostUpdateAction $action,
+        PostUpdateRequest $request
+    ): RedirectResponse
+    {
+        $data = $request->validated();
+
+        $action->run($data, $post);
+
+        return redirect(route('admin.posts.show', $post->fresh()))
+            ->with('message', trans('custom.posts.updated'));
+    }
+
+    public function destroy(PostDestroyAction $action, Post $post): RedirectResponse
+    {
+        $action->run($post);
+
+        return redirect()->back()->with('message', trans('custom.posts.deleted'));
     }
 }
