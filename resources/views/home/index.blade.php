@@ -21,19 +21,19 @@
     <x-home.shipping>
         <x-home.shipping.item
             title="{{ $settings('shipping1_title') }}"
-            description="Бесплатно от 15000 руб"
+            description="{{ $settings('shipping1_description') }}"
             icon="car.png"
         />
 
         <x-home.shipping.item
-            title="Безопасная оплата"
-            description="Наличные, банковский перевод"
+            title="{{ $settings('shipping2_title') }}"
+            description="{{ $settings('shipping2_description') }}"
             icon="card.png"
         />
 
         <x-home.shipping.item
-            title="Лучший сервис"
-            description="Сервис, который имеет значение"
+            title="{{ $settings('shipping3_title') }}"
+            description="{{ $settings('shipping3_description') }}"
             icon="service.png"
         />
     </x-home.shipping>
