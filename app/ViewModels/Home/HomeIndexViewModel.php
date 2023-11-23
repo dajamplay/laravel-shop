@@ -20,17 +20,7 @@ class HomeIndexViewModel extends ViewModel
         seo()->title = 'Тестовый заголовок';
     }
 
-    public function featuredProducts(): Collection
-    {
-        return Product::query()->orderBy('id', 'desc')->limit(4)->get();
-    }
-
-    public function bestsellerProducts(): Collection
-    {
-        return Product::query()->orderBy('id', 'desc')->limit(4)->get();
-    }
-
-    public function latestProducts(): Collection
+    public function products(): Collection
     {
         return Product::query()->orderBy('id', 'desc')->limit(4)->get();
     }

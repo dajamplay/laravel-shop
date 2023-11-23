@@ -46,17 +46,6 @@
     />
     <!-- About Area End Here -->
 
-    <!-- Begin Product Tabs Area -->
-{{--    <x-home.tabs title="Наша продукция">--}}
-{{--        <x-home.tabs.tabs/>--}}
-{{--        <x-home.tabs.items--}}
-{{--            :featuredProducts="$featuredProducts"--}}
-{{--            :bestsellerProducts="$bestsellerProducts"--}}
-{{--            :latestProducts="$latestProducts"--}}
-{{--        />--}}
-{{--    </x-home.tabs>--}}
-    <!-- Product Tabs Area End Here -->
-
     <!-- Begin Banner Area -->
     <x-home.banner />
     <!-- Banner Area End Here -->
@@ -66,7 +55,7 @@
         title="Новые поступления"
         description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
     >
-        @foreach($latestProducts as $product)
+        @foreach($products as $product)
             <x-home.products.product
                 title="{{$product->title}}"
                 image="{{$product->image}}"
