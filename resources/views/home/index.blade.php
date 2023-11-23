@@ -47,14 +47,14 @@
     <!-- About Area End Here -->
 
     <!-- Begin Product Tabs Area -->
-    <x-home.tabs title="Наша продукция">
-        <x-home.tabs.tabs/>
-        <x-home.tabs.items
-            :featuredProducts="$featuredProducts"
-            :bestsellerProducts="$bestsellerProducts"
-            :latestProducts="$latestProducts"
-        />
-    </x-home.tabs>
+{{--    <x-home.tabs title="Наша продукция">--}}
+{{--        <x-home.tabs.tabs/>--}}
+{{--        <x-home.tabs.items--}}
+{{--            :featuredProducts="$featuredProducts"--}}
+{{--            :bestsellerProducts="$bestsellerProducts"--}}
+{{--            :latestProducts="$latestProducts"--}}
+{{--        />--}}
+{{--    </x-home.tabs>--}}
     <!-- Product Tabs Area End Here -->
 
     <!-- Begin Banner Area -->
@@ -62,7 +62,20 @@
     <!-- Banner Area End Here -->
 
     <!-- Begin Product Area -->
-{{--    <x-home.products />--}}
+    <x-home.products
+        title="Новые поступления"
+        description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
+    >
+        @foreach($latestProducts as $product)
+            <x-home.products.product
+                title="{{$product->title}}"
+                image="{{$product->image}}"
+                slug="{{$product->slug}}"
+                price="{{$product->price}}"
+                price_opt="{{$product->price_opt}}"
+            />
+        @endforeach
+    </x-home.products>
     <!-- Product Area End Here -->
 
     <!-- Begin Feedback Area -->
@@ -88,9 +101,8 @@
     <!-- Begin Blog Area -->
     <x-home.blog
         title="Последние новости"
-        description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                roots in a piece of classical Latin literature">
-
+        description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
+    >
         @foreach($posts as $post)
             <x-home.blog.post
                 title="{{$post->title}}"

@@ -1,4 +1,4 @@
-<div class="banner-area section-space-top-90">
+<div class="banner-area section-space-top-75">
     <div class="container">
         <div class="row g-min-30 g-4">
             <div class="col-lg-8 animate__fadeIn wow">
