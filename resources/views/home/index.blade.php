@@ -20,7 +20,7 @@
     <!-- Begin Shipping Area -->
     <x-home.shipping>
         <x-home.shipping.item
-            title="Быстрая доставка"
+            title="{{ $settings('shipping1_title') }}"
             description="Бесплатно от 15000 руб"
             icon="car.png"
         />

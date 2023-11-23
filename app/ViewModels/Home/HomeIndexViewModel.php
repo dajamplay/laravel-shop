@@ -6,7 +6,9 @@ use App\Models\Brand;
 use App\Models\Feedback;
 use App\Models\Post;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\Slide;
+use Closure;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
@@ -31,6 +33,16 @@ class HomeIndexViewModel extends ViewModel
     public function latestProducts(): Collection
     {
         return Product::query()->orderBy('id', 'desc')->limit(4)->get();
+    }
+
+    public function settings(): Closure
+    {
+        $settings = Setting::query()->get();
+
+        return function ($key) use ($settings): string
+        {
+            return $settings->where('key', $key)->first()->value ?? '' ;
+        };
     }
 
     public function feedbacks(): Collection
