@@ -79,7 +79,10 @@
     <!-- Product Area End Here -->
 
     <!-- Begin Feedback Area -->
-    <x-home.feedback>
+    <x-home.feedback
+        title="Отзывы клиентов"
+        description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
+    >
         @foreach($feedbacks as $feedback)
             <x-home.feedback.item
                 title="{{$feedback->title}}"

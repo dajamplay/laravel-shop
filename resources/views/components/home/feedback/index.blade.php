@@ -1,11 +1,14 @@
-<div class="testimonial-area section-space-top-90 section-space-bottom-95">
+@props([
+    'title' => '',
+    'description' => '',
+])
+
+<div class="testimonial-area section-space-top-75 section-space-bottom-90">
     <div class="container-fluid">
         <div class="testimonial-bg" data-bg-image="{{asset('assets/images/section.jpg')}}">
             <div class="section-title-wrap">
-                <h2 class="section-title">{{__('Отзывы клиентов')}}</h2>
-                <p class="section-desc mb-0">Contrary to popular belief, Lorem Ipsum is not simply random
-                    text. It has roots in a piece of classical Latin literature
-                </p>
+                <h2 class="section-title">{{$title}}</h2>
+                <p class="section-desc mb-0">{{$description}}</p>
             </div>
         </div>
         <div class="container custom-space">
