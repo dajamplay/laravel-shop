@@ -41,7 +41,7 @@ class HomeIndexViewModel extends ViewModel
 
         return function ($key) use ($settings): string
         {
-            return $settings->where('key', $key)->first()->value ?? '' ;
+            return $settings->where('key', $key)->first()->value ?? '';
         };
     }
 
