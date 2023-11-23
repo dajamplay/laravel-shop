@@ -10,6 +10,7 @@ use App\Models\User;
 use Database\Seeders\Brand\BrandSeeder;
 use Database\Seeders\Feedback\FeedbackSeeder;
 use Database\Seeders\Line\LineSeeder;
+use Database\Seeders\Setting\SettingSeeder;
 use Database\Seeders\Slider\SlideSeeder;
 use Database\Seeders\Tag\TagSeeder;
 use Database\Seeders\User\SuperAdminSeeder;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
             LineSeeder::class,
             FeedbackSeeder::class,
             SlideSeeder::class,
+            SettingSeeder::class,
         ]);
 
         User::factory()->count(100)->create();

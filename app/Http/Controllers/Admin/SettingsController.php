@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use App\ViewModels\Admin\Setting\SettingIndexViewModel;
 
 class SettingsController extends Controller
 {
-    public function index(): View
+    public function index(SettingIndexViewModel $viewModel): SettingIndexViewModel
     {
-        return view('admin.settings.index');
+        return $viewModel->view('admin.settings.index');
     }
 }

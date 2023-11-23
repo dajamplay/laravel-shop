@@ -23,6 +23,6 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth','verified'])->group(
 
     Route::resource('posts', Admin\PostController::class);
 
-    Route::resource('settings', Admin\SettingsController::class)->only(['index']);
+    Route::resource('settings', Admin\SettingsController::class)->only(['index', 'update', 'edit']);
 
 });
