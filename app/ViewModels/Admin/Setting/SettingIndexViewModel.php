@@ -10,10 +10,8 @@ class SettingIndexViewModel extends ViewModel
 {
     public function __construct(){}
 
-    public function shippings(): Collection
+    public function settings(): Collection
     {
-        return Setting::query()
-            ->where('key', 'like', '%shipping%')
-            ->get();
+        return Setting::query()->get();
     }
 }
