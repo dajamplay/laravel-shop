@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Setting\SettingUpdateAction;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use App\ViewModels\Admin\Setting\SettingIndexViewModel;
@@ -15,23 +16,16 @@ class SettingController extends Controller
         return $viewModel->view('admin.settings.index');
     }
 
-    public function update_all(Request $request): RedirectResponse
+    public function update_all(Request $request, SettingUpdateAction $action): RedirectResponse
     {
         $data = $request->except(['_token', '_method']);
 
-        foreach ($data as $key => $value) {
+        $key = $action->run($data);
 
-            if(empty($value)) {
-                return back()->withErrors([$key => 'Поле не может быть пустым']);
-            }
-
-            $setting = Setting::query()->where('key', '=', $key)->first();
-
-            $setting->value = $value;
-
-            $setting->save();
+        if($key !== '') {
+            return back()->withErrors([$key => trans('custom.settings.empty')]);
         }
 
-        return back()->with(['message' => 'Настройки обновлены']);
+        return back()->with(['message' => trans('custom.settings.updated')]);
     }
 }
