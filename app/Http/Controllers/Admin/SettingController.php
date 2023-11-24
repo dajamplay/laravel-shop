@@ -15,7 +15,7 @@ class SettingController extends Controller
         return $viewModel->view('admin.settings.index');
     }
 
-    public function update_all(Request $request, SettingUpdateAction $action): RedirectResponse
+    public function updateAll(Request $request, SettingUpdateAction $action): RedirectResponse
     {
         $data = $request->except(['_token', '_method']);
 

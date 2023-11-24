@@ -24,7 +24,7 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth','verified'])->group(
     Route::resource('posts', Admin\PostController::class);
 
     Route::resource('settings', Admin\SettingController::class)->only(['index', 'update']);
-    Route::post('settings/update_all', [Admin\SettingController::class, 'update_all'])
+    Route::post('settings/update_all', [Admin\SettingController::class, 'updateAll'])
         ->name('settings.update_all');
 
 });
