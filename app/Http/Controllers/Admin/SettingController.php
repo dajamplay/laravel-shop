@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Setting\SettingUpdateAction;
 use App\Http\Controllers\Controller;
-use App\Models\Setting;
 use App\ViewModels\Admin\Setting\SettingIndexViewModel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
