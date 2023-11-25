@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
@@ -11,9 +12,9 @@ class AdminPanelMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $roleId = auth()->user()->role->id;
+        $roleId = auth()?->user()->role->id ?? Role::ROLE_BAN;
 
-        if (!in_array($roleId, [6,7])) {
+        if (!in_array($roleId, [Role::ROLE_MANAGER, Role::ROLE_ADMIN])) {
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 

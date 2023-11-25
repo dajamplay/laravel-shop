@@ -9,6 +9,12 @@ class Role extends Model
 {
     use HasFactory;
 
+    const ROLE_USER = 1;
+    const ROLE_COSMETOLOGIST = 2;
+    const ROLE_MANAGER = 6;
+    const ROLE_ADMIN = 7;
+    const ROLE_BAN = 9;
+
     protected $fillable = [
         'id',
         'title',
