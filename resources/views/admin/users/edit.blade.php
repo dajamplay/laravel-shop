@@ -35,6 +35,14 @@
             :value="$user->role->id"
         />
 
+        <x-admin.form.input
+            label="{{__('День рождения')}}"
+            placeholder="{{__('День рождения')}}"
+            name="birthday"
+            type="date"
+            value="{{\Carbon\Carbon::parse($user->birthday)->format('Y-m-d')}}"
+        />
+
         <x-admin.form.button text="{{__('Сохранить изменения')}}"/>
 
     </x-admin.form>
