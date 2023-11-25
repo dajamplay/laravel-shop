@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Models\User;
-use App\Services\RoleService;
 use App\ViewModels\Admin\User\UserCreateViewModel;
 use App\ViewModels\Admin\User\UserEditViewModel;
 use App\ViewModels\Admin\User\UserIndexViewModel;

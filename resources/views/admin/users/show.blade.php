@@ -17,7 +17,7 @@
         <x-admin.show.text label="Дата регистрации" value="{{$user->registered_at}}"/>
         <x-admin.show.text label="Дата рождения" value="{{$user->birthday}}"/>
         <x-admin.show.text label="Дата подтверждения" value="{{$user->email_verified_at}}"/>
-        <x-admin.show.text label="Роль" value="{{$user->role}}"/>
+        <x-admin.show.text label="Роль" value="{{$user->role->title}}"/>
 
     </x-admin.show>
 

@@ -32,6 +32,13 @@
         />
 
         <x-admin.form.input
+            label="{{__('День рождения')}}"
+            placeholder="{{__('День рождения')}}"
+            name="birthday"
+            type="date"
+        />
+
+        <x-admin.form.input
             label="{{__('Пароль')}}"
             placeholder="{{__('Введите пароль')}}"
             name="password"
