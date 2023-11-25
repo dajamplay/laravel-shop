@@ -22,7 +22,8 @@ class UserUpdateRequest extends FormRequest
         return [
             'first_name' => ['required', 'string', 'max:50', 'min:3'],
             'last_name' => ['required', 'string', 'max:50', 'min:3'],
-            "birthday" => ['nullable', 'string', 'date']
+            'birthday' => ['nullable', 'string', 'date'],
+            'role_id' => ['required', 'integer', 'exists:roles,id'],
         ];
     }
 }

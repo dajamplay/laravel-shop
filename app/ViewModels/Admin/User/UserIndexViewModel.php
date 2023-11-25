@@ -3,8 +3,10 @@
 namespace App\ViewModels\Admin\User;
 
 use App\Http\Filters\UserFilter;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
 class UserIndexViewModel extends ViewModel
@@ -12,8 +14,6 @@ class UserIndexViewModel extends ViewModel
     const PER_PAGE = 10;
 
     private UserFilter $filter;
-
-    protected $view = 'admin.users.index';
 
     public function __construct(UserFilter $filter)
     {
@@ -25,5 +25,10 @@ class UserIndexViewModel extends ViewModel
         return User::query()
             ->filter($this->filter)
             ->paginate(self::PER_PAGE);
+    }
+
+    public function roles(): Collection
+    {
+        return Role::all();
     }
 }

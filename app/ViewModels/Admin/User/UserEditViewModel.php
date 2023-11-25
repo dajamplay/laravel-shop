@@ -2,7 +2,9 @@
 
 namespace App\ViewModels\Admin\User;
 
+use App\Models\Role;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
 class UserEditViewModel extends ViewModel
@@ -16,5 +18,10 @@ class UserEditViewModel extends ViewModel
     public function user(): User
     {
         return $this->user;
+    }
+
+    public function roles(): Collection
+    {
+        return Role::all();
     }
 }

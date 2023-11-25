@@ -4,34 +4,21 @@
 
 @section('content')
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
+    <x-admin.button
+        text="{{__('Редактировать')}}"
+        href="{{ route('admin.users.edit', $user->id) }}"
+    />
 
-                <x-ui.session_alert
-                    message="message"
-                />
+    <x-admin.show class="col-md-12">
+        <x-admin.show.text label="Идентификатор" value="{{$user->id}}"/>
+        <x-admin.show.text label="Имя" value="{{$user->first_name}}"/>
+        <x-admin.show.text label="Фамилия" value="{{$user->last_name}}"/>
+        <x-admin.show.text label="Электронная почта" value="{{$user->email}}"/>
+        <x-admin.show.text label="Дата регистрации" value="{{$user->registered_at}}"/>
+        <x-admin.show.text label="Дата рождения" value="{{$user->birthday}}"/>
+        <x-admin.show.text label="Дата подтверждения" value="{{$user->email_verified_at}}"/>
+        <x-admin.show.text label="Роль" value="{{$user->role}}"/>
 
-                <x-admin.profile>
-
-                    <x-admin.profile.head
-                        :model="$user"
-                    />
-
-                    <x-admin.profile.info
-                        :model="$user"
-                        :titleFields="[
-                            'ID' => 'id',
-                            'Имя' => 'first_name',
-                            'Фамилия' => 'last_name',
-                            'Электронная почта' => 'email',
-                        ]"
-                    />
-
-                </x-admin.profile>
-
-            </div>
-        </div>
-    </div>
+    </x-admin.show>
 
 @endsection

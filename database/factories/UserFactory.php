@@ -20,6 +20,7 @@ class UserFactory extends Factory
             'registered_at' => fake()->dateTimeThisYear(),
             'birthday' => fake()->dateTimeThisCentury(),
             'remember_token' => Str::random(10),
+            'role_id' => 1,
         ];
     }
 }

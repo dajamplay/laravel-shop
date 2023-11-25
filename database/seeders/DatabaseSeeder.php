@@ -10,6 +10,7 @@ use App\Models\User;
 use Database\Seeders\Brand\BrandSeeder;
 use Database\Seeders\Feedback\FeedbackSeeder;
 use Database\Seeders\Line\LineSeeder;
+use Database\Seeders\Role\RoleSeeder;
 use Database\Seeders\Setting\SettingSeeder;
 use Database\Seeders\Slider\SlideSeeder;
 use Database\Seeders\Tag\TagSeeder;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            RoleSeeder::class,
             SuperAdminSeeder::class,
             BrandSeeder::class,
             TagSeeder::class,

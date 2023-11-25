@@ -4,15 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Actions\Auth\UserLoginAction;
 use App\Actions\Auth\UserLogoutAction;
-use App\Data\Auth\UserLoginData;
 use App\Http\Requests\Auth\UserLoginRequest;
 use App\Providers\RouteServiceProvider;
 use App\ViewModels\Auth\LoginCreateViewModel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Spatie\LaravelData\Exceptions\InvalidDataClass;
-use Illuminate\Http\JsonResponse;
 
 class LoginController extends AbstractAuthController
 {
@@ -22,20 +19,18 @@ class LoginController extends AbstractAuthController
     }
 
     /**
-     * @throws InvalidDataClass
      * @throws ValidationException
      */
-    public function store(UserLoginRequest $request, UserLoginAction $action): JsonResponse|RedirectResponse
+    public function store(UserLoginRequest $request, UserLoginAction $action): RedirectResponse
     {
-        /** @var UserLoginData $data */
-        $data = $request->getData();
+        $data = $request->validated();
 
         $action->run($data, $request->session(), $this->guard);
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
-    public function destroy(Request $request, UserLogoutAction $action): JsonResponse|RedirectResponse
+    public function destroy(Request $request, UserLogoutAction $action): RedirectResponse
     {
         $action->run($request->session(), $this->guard);
 

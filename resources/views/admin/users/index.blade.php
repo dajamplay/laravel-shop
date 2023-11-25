@@ -34,7 +34,7 @@
                         <x-admin.table.body.row.text value="{{$user->registered_at}}"/>
                         <x-admin.table.body.row.text value="{{$user->birthday}}"/>
                         <x-admin.table.body.row.text value="{{$user->email_verified_at}}"/>
-                        <x-admin.table.body.row.text value="{{$user->role}}"/>
+                        <x-admin.table.body.row.text value="{{$user->role->title}}"/>
 
                         <x-admin.table.body.row.btns id="{{$user->id}}" resource="users"/>
                     </x-admin.table.body.row>

@@ -7,7 +7,9 @@ use App\Notifications\ResetPasswordEmail;
 use App\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -20,9 +22,6 @@ class User extends Authenticatable implements MustVerifyEmail
         Filterable,
         SoftDeletes;
 
-    const ROLE_SUPER_ADMIN = 7;
-    const ROLE_USER = 1;
-
     protected $fillable = [
         'email',
         'password',
@@ -30,6 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'last_name',
         'registered_at',
         'birthday',
+        'role_id',
     ];
 
     protected $hidden = [
@@ -47,6 +47,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
     public function sendEmailVerificationNotification(): void
     {
         $this->notify(new VerifyEmail);
@@ -57,8 +62,8 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new ResetPasswordEmail($token));
     }
 
-    public function getFullNameAttribute(): string
+    public function scopeWithoutAdmin(Builder $query): void
     {
-        return "$this->first_name $this->last_name";
+        $query->whereNotIn('role_id', [6, 7]);
     }
 }

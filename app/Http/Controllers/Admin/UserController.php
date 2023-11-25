@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Actions\User\UserDestroyAction;
 use App\Actions\User\UserStoreAction;
 use App\Actions\User\UserUpdateAction;
-use App\Data\User\UserStoreData;
-use App\Data\User\UserUpdateData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
@@ -16,18 +14,17 @@ use App\ViewModels\Admin\User\UserEditViewModel;
 use App\ViewModels\Admin\User\UserIndexViewModel;
 use App\ViewModels\Admin\User\UserShowViewModel;
 use Illuminate\Http\RedirectResponse;
-use Spatie\LaravelData\Exceptions\InvalidDataClass;
 
 final class UserController extends Controller
 {
     public function index(UserIndexViewModel $viewModel): UserIndexViewModel
     {
-        return $viewModel;
+        return $viewModel->view('admin.users.index');
     }
 
     public function create(UserCreateViewModel $viewModel): UserCreateViewModel
     {
-        return $viewModel;
+        return $viewModel->view('admin.users.create');
     }
 
     public function store(UserStoreRequest $request, UserStoreAction $action): RedirectResponse

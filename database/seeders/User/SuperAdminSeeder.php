@@ -25,7 +25,7 @@ class SuperAdminSeeder extends Seeder
             'birthday' => fake()->dateTimeThisCentury(),
             'remember_token' => Str::random(10),
             'email_verified_at' => now(),
-            'role' => USER::ROLE_SUPER_ADMIN
+            'role_id' => 7
         ]);
     }
 }
