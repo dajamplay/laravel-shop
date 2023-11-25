@@ -23,6 +23,7 @@ class UserIndexViewModel extends ViewModel
     public function users(): LengthAwarePaginator
     {
         return User::query()
+            ->withoutAdmin()
             ->filter($this->filter)
             ->paginate(self::PER_PAGE);
     }

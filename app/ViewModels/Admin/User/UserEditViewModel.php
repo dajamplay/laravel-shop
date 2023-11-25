@@ -2,18 +2,21 @@
 
 namespace App\ViewModels\Admin\User;
 
-use App\Models\Role;
 use App\Models\User;
+use App\Services\RoleService;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
 class UserEditViewModel extends ViewModel
 {
-    protected $view = 'admin.users.edit';
+    private RoleService $roleService;
 
     public function __construct(
-        private readonly User $user
-    ){}
+        private readonly User $user,
+        RoleService $roleService,
+    ){
+        $this->roleService = $roleService;
+    }
 
     public function user(): User
     {
@@ -22,6 +25,6 @@ class UserEditViewModel extends ViewModel
 
     public function roles(): Collection
     {
-        return Role::all();
+        return $this->roleService->getRolesWithoutAdmin();
     }
 }

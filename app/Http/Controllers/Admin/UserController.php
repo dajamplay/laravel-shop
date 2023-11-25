@@ -9,10 +9,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Models\User;
+use App\Services\RoleService;
 use App\ViewModels\Admin\User\UserCreateViewModel;
 use App\ViewModels\Admin\User\UserEditViewModel;
 use App\ViewModels\Admin\User\UserIndexViewModel;
 use App\ViewModels\Admin\User\UserShowViewModel;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\RedirectResponse;
 
 final class UserController extends Controller
@@ -42,12 +44,23 @@ final class UserController extends Controller
         return new UserShowViewModel($user);
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function edit(User $user): UserEditViewModel
     {
-        return new UserEditViewModel($user);
+        $viewModel = app()->makeWith(UserEditViewModel::class, [
+            'user' => $user
+        ]);
+
+        return $viewModel->view('admin.users.edit');
     }
 
-    public function update(UserUpdateRequest $request, User $user, UserUpdateAction $action): RedirectResponse
+    public function update(
+        UserUpdateRequest $request,
+        User $user,
+        UserUpdateAction $action
+    ): RedirectResponse
     {
         $data = $request->validated();
 
