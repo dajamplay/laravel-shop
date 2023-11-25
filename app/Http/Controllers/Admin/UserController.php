@@ -30,13 +30,9 @@ final class UserController extends Controller
         return $viewModel;
     }
 
-    /**
-     * @throws InvalidDataClass
-     */
     public function store(UserStoreRequest $request, UserStoreAction $action): RedirectResponse
     {
-        /** @var UserStoreData $data */
-        $data = $request->getData();
+        $data = $request->validated();
 
         $action->run($data);
 
@@ -54,17 +50,13 @@ final class UserController extends Controller
         return new UserEditViewModel($user);
     }
 
-    /**
-     * @throws InvalidDataClass
-     */
     public function update(UserUpdateRequest $request, User $user, UserUpdateAction $action): RedirectResponse
     {
-        /** @var UserUpdateData $data */
-        $data = $request->getData();
+        $data = $request->validated();
 
         $action->run($data, $user);
 
-        return redirect(route('admin.users.show', $user))
+        return redirect(route('admin.users.show', $user->fresh()))
             ->with('message', trans('custom.user.updated'));
     }
 
