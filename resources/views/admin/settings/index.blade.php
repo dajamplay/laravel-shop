@@ -7,7 +7,7 @@
     <x-admin.form action="{{route('admin.settings.update_all')}}" method="post" class="col-md-6">
 
         @foreach($settings as $setting)
-            <x-admin.form.input
+            <x-admin.form.input-inline
                 label="{{$setting->key}}"
                 placeholder="{{$setting->key}}"
                 name="{{$setting->key}}"
