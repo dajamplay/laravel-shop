@@ -21,7 +21,7 @@
     <x-header.mobile-menu>
         <x-slot name="logo"><x-header.center.logo /></x-slot>
         <x-slot name="phones"><x-header.center.phones :phones="$phones" class="d-sm-flex" /></x-slot>
-        <x-slot name="menu"><x-header.menu class="mobile-menu offcanvas-navigation"/></x-slot>
+        <x-slot name="menu"><x-header.menu class="mobile-menu"/></x-slot>
     </x-header.mobile-menu>
 
     <x-header.modal-search />

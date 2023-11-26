@@ -5,7 +5,7 @@
                 <i class="pe-7s-search"></i>
             </a>
         </li>
-        <li class="dropdown d-none d-lg-block">
+        <li class="dropdown ">
             <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
                 <i class="pe-7s-users"></i>
             </button>

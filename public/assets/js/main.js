@@ -2,7 +2,7 @@
     ('use strict');
 
     /*----------------------------------------*/
-    /*  Preloader  
+    /*  Preloader
 /*----------------------------------------*/
     var windows = $(window);
     windows.on('load', function () {
@@ -44,14 +44,14 @@
         animateClass: 'animate__animated',
         offset: 150,
         mobile: false,
-        live: true 
+        live: true
     }).init();
 
     /*---------------------------------------
 		Header Sticky
 ---------------------------------*/
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 210) {
+        if ($(this).scrollTop() > 186) {
             $('.header-sticky').addClass('sticky');
         } else {
             $('.header-sticky').removeClass('sticky');
@@ -812,7 +812,7 @@
     }
 
     /*----------------------------------------*/
-    /*  ion Range Slider 
+    /*  ion Range Slider
 /*----------------------------------------*/
     $('.pronia-range-slider').ionRangeSlider({
         prefix: '$',

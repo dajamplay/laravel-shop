@@ -2043,8 +2043,6 @@ blockquote p {
     -ms-flex-align: center;
     align-items: center;
     max-width: 400px;
-    /*filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(17deg) brightness(95%) contrast(80%);*/
-
 }
 
 @media (max-width: 479px) {
@@ -2063,7 +2061,7 @@ blockquote p {
     animation: 800ms ease-in-out 0s normal none 1 running fadeInDown;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     z-index: 99;
     top: 0;
