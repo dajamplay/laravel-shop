@@ -6,6 +6,7 @@ use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\ViewModels\Product\ProductShowViewModel;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -18,13 +19,16 @@ class ProductController extends Controller
 
         $products = Product::all();
 
-        return view('shop.products.index', compact('products'));
+        return view('pages.shop.products.index', compact('products'));
     }
 
-    public function show(Product $product): ProductShowViewModel
+    /**
+     * @throws BindingResolutionException
+     */
+    public function show(Product $product)
     {
-        $data = ProductData::from($product);
+        $viewModel = app()->makeWith(ProductShowViewModel::class, ['product' => $product]);
 
-        return new ProductShowViewModel($data);
+        return $viewModel->view('pages.shop.products.show');
     }
 }

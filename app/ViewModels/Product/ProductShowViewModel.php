@@ -2,16 +2,14 @@
 
 namespace App\ViewModels\Product;
 
-use App\Data\ProductData;
+use App\Models\Product;
 use Spatie\ViewModels\ViewModel;
 
 class ProductShowViewModel extends ViewModel
 {
-    protected $view = 'shop.products.show';
+    private Product $product;
 
-    private ProductData $product;
-
-    public function __construct(ProductData $product)
+    public function __construct(Product $product)
     {
         seo()->title = $product->title;
 
@@ -20,7 +18,7 @@ class ProductShowViewModel extends ViewModel
         $this->product = $product;
     }
 
-    public function product(): ProductData
+    public function product(): Product
     {
         return $this->product;
     }
