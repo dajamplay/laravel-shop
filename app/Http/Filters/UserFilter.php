@@ -6,31 +6,36 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserFilter extends AbstractFilter
 {
-    public const FIRST_NAME = 'first_name';
-    public const LAST_NAME = 'last_name';
-    public const EMAIL = 'email';
 
     protected function getCallbacks(): array
     {
         return [
-            self::FIRST_NAME => [$this, 'firstName'],
-            self::LAST_NAME => [$this, 'lastName'],
-            self::EMAIL => [$this, 'email'],
+            'filter_first_name' => [$this, 'firstName'],
+            'filter_last_name' => [$this, 'lastName'],
+            'filter_email' => [$this, 'email'],
+            'filter_role' => [$this, 'role'],
         ];
     }
 
     public function firstName(Builder $builder, string $value)
     {
-        $builder->where(self::FIRST_NAME, 'like', "%$value%");
+        $builder->where('first_name', 'like', "%$value%");
     }
 
     public function lastName(Builder $builder, string $value)
     {
-        $builder->where(self::LAST_NAME, 'like', "%$value%");
+        $builder->where('last_name', 'like', "%$value%");
     }
 
     public function email(Builder $builder, string $value)
     {
-        $builder->where(self::EMAIL, 'like', "%$value%");
+        $builder->where('email', 'like', "%$value%");
+    }
+
+    public function role(Builder $builder, string $value)
+    {
+        $builder->whereHas('role', function($query) use ($value) {
+            $query->where('title', 'like', "%$value%");
+        });
     }
 }

@@ -14,13 +14,13 @@
     <x-admin.table>
         <x-admin.table.head>
             <x-admin.table.head.text title="ID"/>
-            <x-admin.table.head.text title="Имя"/>
-            <x-admin.table.head.text title="Фамилия"/>
-            <x-admin.table.head.text title="Электронная почта"/>
+            <x-admin.table.head.text title="Имя" filter="filter_first_name"/>
+            <x-admin.table.head.text title="Фамилия" filter="filter_last_name"/>
+            <x-admin.table.head.text title="Электронная почта" filter="filter_email"/>
             <x-admin.table.head.text title="Дата регистрации"/>
             <x-admin.table.head.text title="Дата рождения"/>
             <x-admin.table.head.text title="Дата подтверждения"/>
-            <x-admin.table.head.text title="Роль"/>
+            <x-admin.table.head.text title="Роль" filter="filter_role"/>
             <x-admin.table.head.text title="Действия"/>
         </x-admin.table.head>
         <x-admin.table.body>
