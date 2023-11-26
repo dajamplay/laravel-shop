@@ -22,5 +22,9 @@ class BladeServiceProvider extends ServiceProvider
         Blade::directive('linkactive', function ($route) {
             return "<?php echo Route::is($route) ? 'active' : $route;?>";
         });
+
+        Blade::if('admin', function () {
+            return auth()?->user()?->isAdmin() === true;
+        });
     }
 }

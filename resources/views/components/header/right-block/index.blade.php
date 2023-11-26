@@ -9,14 +9,16 @@
             <i class="pe-7s-users"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="settingButton">
-
             @auth
                 <li>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                        <button type="submit" class="dropdown-item">{{__('Выход')}}</button>
+                        <button type="submit" class="dropdown-item text-center">{{__('Выход')}}</button>
                     </form>
                 </li>
+                @admin
+                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Админка</a></li>
+                @endadmin
             @endauth
 
             @guest
@@ -26,7 +28,7 @@
         </ul>
     </li>
     <li class="d-none d-lg-block">
-        <a href="wishlist.html">
+        <a href="#">
             <i class="pe-7s-like"></i>
         </a>
     </li>
