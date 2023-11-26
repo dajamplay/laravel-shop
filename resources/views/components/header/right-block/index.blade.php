@@ -16,13 +16,14 @@
                         <button type="submit" class="dropdown-item text-center">{{__('Выход')}}</button>
                     </form>
                 </li>
+                <li><a class="dropdown-item text-center" href="#">{{__('Личный кабинет')}}</a></li>
                 @admin
-                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Админка</a></li>
+                    <li><a class="dropdown-item text-center" href="{{route('admin.index')}}" target="_blank" >{{__('Панель администратора')}}</a></li>
                 @endadmin
             @endauth
 
             @guest
-                <li><a class="dropdown-item" href="{{route('login')}}">Вход | Регистрация</a></li>
+                <li><a class="dropdown-item" href="{{route('login')}}">{{__('Вход | Регистрация')}}</a></li>
             @endguest
 
         </ul>
