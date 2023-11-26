@@ -9,12 +9,20 @@
     </x-header.center>
 
     <x-header.bottom>
-
+        <x-header.menu class="main-nav header-middle py-1"/>
     </x-header.bottom>
 
-    <x-header.sticky-menu />
+    <x-header.sticky-menu>
+        <x-slot name="logo"><x-header.center.logo /></x-slot>
+        <x-slot name="menu"><x-header.menu class="main-nav header-middle py-1"/></x-slot>
+        <x-slot name="right"><x-header.center.right /></x-slot>
+    </x-header.sticky-menu>
 
-    <x-header.mobile-menu />
+    <x-header.mobile-menu>
+        <x-slot name="logo"><x-header.center.logo /></x-slot>
+        <x-slot name="phones"><x-header.center.phones :phones="$phones" class="d-sm-flex" /></x-slot>
+        <x-slot name="menu"><x-header.menu class="mobile-menu offcanvas-navigation"/></x-slot>
+    </x-header.mobile-menu>
 
     <x-header.modal-search />
 

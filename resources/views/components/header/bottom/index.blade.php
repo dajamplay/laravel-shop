@@ -3,9 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-menu position-relative">
-                    <nav class="main-nav">
-                        <x-header.menu class="header-middle py-1"/>
-                    </nav>
+                    {{$slot}}
                 </div>
             </div>
         </div>
