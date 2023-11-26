@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\Log;
 
 class UserStoreAction
 {
-    public function run(array $data): void
+    private User|null $user = null;
+
+    public function run(array $data): User|null
     {
         try {
             DB::beginTransaction();
 
-            User::create($data);
+            $this->user = User::create($data);
 
             DB::commit();
         } catch(\Exception $e) {
@@ -21,5 +23,7 @@ class UserStoreAction
 
             Log::error($e->getMessage());
         }
+
+        return $this->user;
     }
 }

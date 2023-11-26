@@ -7,14 +7,6 @@ use Illuminate\Auth\Events\Registered;
 
 class AuthService
 {
-    private GuardService $guardService;
-
-    public function __construct(GuardService $guardService)
-    {
-
-        $this->guardService = $guardService;
-    }
-
     public function auth(User $user, string $guard): void
     {
         auth($guard)->login($user);

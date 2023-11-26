@@ -9,9 +9,20 @@
             <i class="pe-7s-users"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="settingButton">
-            <li><a class="dropdown-item" href="my-account.html">Аккаунт</a></li>
-            <li><a class="dropdown-item" href="login-register.html">Вход | Регистрация</a>
-            </li>
+
+            @auth
+                <li>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="dropdown-item">{{__('Выход')}}</button>
+                    </form>
+                </li>
+            @endauth
+
+            @guest
+                <li><a class="dropdown-item" href="{{route('login')}}">Вход | Регистрация</a></li>
+            @endguest
+
         </ul>
     </li>
     <li class="d-none d-lg-block">

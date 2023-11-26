@@ -12,6 +12,7 @@
                 <p class="login-box-msg">{{ __('Регистрация нового пользователя') }}</p>
                 <form action=" {{ route("register") }} " method="post">
                     @csrf
+                    <input type="hidden" name="role_id" value="1">
                     <div class="input-group mb-3">
                         <input name="email" type="email" class="form-control @error("email") border-danger @enderror"
                                placeholder="{{ __('Электронная почта') }}" value="{{old('email')}}">
