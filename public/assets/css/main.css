@@ -2047,7 +2047,7 @@ blockquote p {
 
 @media (max-width: 479px) {
     .header-logo {
-        width: 140px;
+        width: 160px;
     }
 }
 
@@ -2595,7 +2595,7 @@ blockquote p {
 .mobile-menu_wrapper .offcanvas-body,
 .offcanvas-minicart_wrapper .offcanvas-body,
 .offcanvas-search_wrapper .offcanvas-body {
-    background-color: #333333;
+    background-color: rgba(51, 51, 51, 0.75);
     position: fixed;
     top: 0;
     left: -350px;
@@ -2662,7 +2662,7 @@ blockquote p {
 .mobile-menu_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close,
 .offcanvas-minicart_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close,
 .offcanvas-search_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close {
-    font-size: 24px;
+    font-size: 48px;
     color: #ffffff;
 }
 
