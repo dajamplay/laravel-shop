@@ -92,15 +92,15 @@
             <a href="#">Информация</a>
             <ul class="drop-menu">
                 <li>
-                    <a href="#">О компании</a>
+                    <a href="{{route('home.about')}}">О компании</a>
                 </li>
                 <li>
-                    <a href="#">Доставка и оплата</a>
+                    <a href="{{route('home.delivery')}}">Доставка и оплата</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#">Контакты</a>
+            <a href="{{route('home.contacts')}}">Контакты</a>
         </li>
     </ul>
 </nav>
