@@ -25,9 +25,7 @@
     </x-header.mobile-menu>
 
     <x-header.modal-search />
-
     <x-header.modal-mini-cart />
-
     <x-global-overlay />
 
 </header>
