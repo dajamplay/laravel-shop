@@ -1,10 +1,16 @@
 <header class="main-header-area">
 
-    <x-header.top-line text="25% Скидки на всю косметику в октябре" />
+    <x-header.top text="{{$saleText}}" />
 
-    <x-header.middle />
+    <x-header.center>
+        <x-header.center.phones :phones="$phones" />
+        <x-header.center.logo />
+        <x-header.center.right />
+    </x-header.center>
 
-    <x-header.bottom />
+    <x-header.bottom>
+
+    </x-header.bottom>
 
     <x-header.sticky-menu />
 

@@ -18,6 +18,7 @@
 
     <!--Main Style CSS-->
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">--}}
 
     {{--    @vite(['resources/js/app.js', 'resources/css/app.css'])--}}
 </head>
@@ -26,8 +27,10 @@
 <div id="app" class="main-wrapper">
 
     <!-- Begin Header Area -->
-    <x-header />
+{{--    <x-header2 />--}}
     <!-- Header Area End Here -->
+
+    <x-header />
 
     <!-- Begin Page Area -->
     @yield('layout')

@@ -1,3 +1,3 @@
 <a {!! $attributes !!} href="{{ route('home.index') }}" class="header-logo">
-    <img src="/assets/images/logo.png" alt="Header Logo">
+    <img src="{{storage('assets/images/logo.png')}}" alt="ООО Елеанта">
 </a>

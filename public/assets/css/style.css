@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__left, .header__center, .header__right {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+}
+
+.header__left {
+    justify-content: start;
+}
+
+.header__center {
+    justify-content: center;
+}
+
+.header__right {
+    justify-content: end;
+}

@@ -8,19 +8,27 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    /**
-     * Create a new component instance.
-     */
+    public array $phones = [
+        '+7(911)940-66-95',
+        '+7(911)744-78-88',
+    ];
+
+    public string $saleText = '25% Скидки на всю косметику в декабре';
+
+    public array $menu = [
+        [
+            'title' => '',
+            'link' => ''
+        ]
+    ];
+
     public function __construct()
     {
         //
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
-        return view('components.header');
+        return view('components.header.index');
     }
 }
