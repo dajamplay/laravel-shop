@@ -3395,7 +3395,9 @@ blockquote p {
     max-width: 270px;
     height: auto;
     width: auto;
-    border-radius: 15px;
+    -webkit-box-shadow: 0px 3px 25px -7px rgba(34, 60, 80, 0.26);
+    -moz-box-shadow: 0px 3px 25px -7px rgba(34, 60, 80, 0.26);
+    box-shadow: 0px 3px 25px -7px rgba(34, 60, 80, 0.26);
 }
 
 .product-img img.secondary-img {

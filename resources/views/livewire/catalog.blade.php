@@ -194,53 +194,46 @@
             <div class="tab-pane fade" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
                 <div class="product-list-view row g-y-30">
                     @foreach($products as $product)
-                        <div class="col-12">
-                            <div class="product-item">
-                                <div class="product-img">
-                                    <a href="single-product-variable.html">
-                                        <img class="primary-img" src="assets/images/product/medium-size/1-1-270x300.jpg" alt="Product Images">
-                                        <img class="secondary-img" src="assets/images/product/medium-size/1-2-270x300.jpg" alt="Product Images">
-                                    </a>
+                        <div class="col-12 d-flex">
+                            <div class="product-img">
+                                <a href="single-product-variable.html">
+                                    <img class="primary-img" src="{{storage($product->image)}}" alt="Product Images">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <a class="product-name" href="single-product-variable.html">{{$product->title}}</a>
+                                <div class="price-box pb-1">
+                                    <span class="new-price">{{$product->price}}</span>
                                 </div>
-                                <div class="product-content">
-                                    <a class="product-name" href="single-product-variable.html">American
-                                        Marigold</a>
-                                    <div class="price-box pb-1">
-                                        <span class="new-price">$23.45</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <p class="short-desc mb-0">Proin nec ligula dolor. Mauris mollis turpis
-                                        vitae viverra viverra. Mauris at lacus commodo, dictum eros in, interdum
-                                        diam. Sed lorem orci, maximus nec efficitur, mattis sed tortor.
-                                        Voluptates repudiandae nulla rhoncus varius eget id eros.
-                                    </p>
-                                    <div class="product-add-action">
-                                        <ul>
-                                            <li>
-                                                <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                    <i class="pe-7s-like"></i>
-                                                </a>
-                                            </li>
-                                            <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                    <i class="pe-7s-look"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                    <i class="pe-7s-cart"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="rating-box">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="short-desc mb-0">{!! $product->content !!}
+                                </p>
+                                <div class="product-add-action">
+                                    <ul>
+                                        <li>
+                                            <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="pe-7s-like"></i>
+                                            </a>
+                                        </li>
+                                        <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                                            <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="pe-7s-look"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                <i class="pe-7s-cart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
