@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/ion.rangeSlider.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    @livewireStyles
 </head>
 <body>
 <div id="app" class="main-wrapper">
@@ -35,5 +36,6 @@
 <script src="{{asset('assets/js/plugins/mailchimp-ajax.js')}}"></script>
 <script src="{{asset('assets/js/plugins/jquery.counterup.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
+@livewireScripts
 </body>
 </html>

@@ -5,7 +5,7 @@
                 <div class="col-lg-3">
                     <div class="footer-widget-item">
                         <div class="footer-widget-logo">
-                            <x-header.logo />
+                            <x-header.center.logo />
                         </div>
                         <p class="footer-widget-desc">Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod
                             tempor

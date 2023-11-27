@@ -4,7 +4,7 @@
             <a href="/">Главная</a>
         </li>
         <li class="megamenu-holder">
-            <a href="shop.html">Магазин</a>
+            <a href="{{route('shop.products.index')}}">Магазин</a>
             <ul class="drop-menu megamenu">
                 <li>
                     <span class="title">Shop Layout</span>

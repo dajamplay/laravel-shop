@@ -8,9 +8,9 @@ abstract class AbstractFilter implements FilterInterface
 {
     private array $queryParams = [];
 
-    public function __construct()
+    public function __construct(array $params = null)
     {
-        $this->queryParams = request()->query();
+        $this->queryParams = $params ?? request()->query();
     }
 
     public function apply(Builder $builder)
