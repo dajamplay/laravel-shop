@@ -147,9 +147,7 @@
     <div class="col-xl-9 col-lg-8 order-1 order-lg-2">
         <div class="product-topbar">
             <ul>
-                <li class="page-count">
-                    <span>12</span> Product Found of <span>30</span>
-                </li>
+                <li class="page-count">Найдено продукции <span>{{$products->count() ?? 0}}</span></li>
                 <li class="product-view-wrap">
                     <ul class="nav" role="tablist">
                         <li class="grid-view" role="presentation">
