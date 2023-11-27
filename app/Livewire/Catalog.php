@@ -8,14 +8,30 @@ use App\Models\Line;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\View\View;
+use Livewire\Attributes\Url;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Catalog extends Component
 {
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
+    const PER_PAGE = 12;
+
+    #[Url]
     public string $filter_title = '';
+    #[Url]
     public string $filter_brand = '';
+    #[Url]
     public string $filter_line = '';
+    #[Url]
     public array $filter_tags = [];
+    #[Url]
+    public string $price = '';
+    #[Url]
+    public string $page = '';
 
     private ProductFilter $filter;
 
@@ -27,7 +43,7 @@ class Catalog extends Component
             'filter_line' => $this->filter_line,
         ]);
 
-        $products = Product::query()->filter($this->filter)->get();
+        $products = Product::query()->filter($this->filter)->paginate(self::PER_PAGE);;
         $brands = Brand::all();
         $lines = Line::all();
         $tags = Tag::all();
@@ -43,11 +59,13 @@ class Catalog extends Component
     public function brandFilter(Brand $brand)
     {
         $this->filter_brand = $brand->title ?? '';
+        $this->resetPage();
     }
 
     public function lineFilter(Line $line)
     {
         $this->filter_line = $line->title ?? '';
+        $this->resetPage();
     }
 
     private function createFilter(array $params) {

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-    <div class="col-xl-3 col-lg-4 order-2 order-lg-1 pt-5 pt-lg-0">
-        <div class="sidebar-area">
+    <div class="catalog-sidebar-filters mobile-menu_wrapper col-xl-3 col-lg-4 order-2 order-lg-1 pt-5 pt-lg-0" id="mobileFilter">
+            <div class="sidebar-area">
             <div class="widgets-searchbox">
                 <form id="widgets-searchbox">
                     <input
@@ -22,7 +22,7 @@
                         <li>
                             <a href="" wire:click.prevent="brandFilter()"
                                @if($filter_brand == '')
-                                   class="text-danger"
+                                   class="active-menu-catalog"
                                 @endif
                             >
                                 <i class="fa fa-chevron-right"></i>
@@ -33,14 +33,11 @@
                             <li>
                                 <a href="{{$brand->slug}}" wire:click.prevent="brandFilter({{$brand}})"
                                     @if($filter_brand == $brand->title)
-                                        class="text-danger"
+                                        class="active-menu-catalog"
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
                                     {{$brand->title}}<span>({{$brand->products->count()}})</span>
-                                    @if($filter_brand == $brand->title)
-                                        <i class="fa fa-chevron-right"></i>
-                                    @endif
                                 </a>
                             </li>
                         @endforeach
@@ -52,7 +49,7 @@
                         <li>
                             <a href="" wire:click.prevent="lineFilter()"
                                @if($filter_line == '')
-                                   class="text-danger"
+                                   class="active-menu-catalog"
                                 @endif
                             >
                                 <i class="fa fa-chevron-right"></i>
@@ -63,7 +60,7 @@
                             <li>
                                 <a href="{{$line->slug}}" wire:click.prevent="lineFilter({{$line}})"
                                    @if($filter_line == $line->title)
-                                       class="text-danger"
+                                       class="active-menu-catalog"
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
@@ -75,9 +72,6 @@
                 </div>
                 <div class="widgets-item widgets-filter">
                     <h2 class="widgets-title mb-4">Диапазон цен</h2>
-                    <div class="price-filter">
-                        <input type="text" class="pronia-range-slider" name="pronia-range-slider" value="" data-type="double" data-min="16" data-from="16" data-to="300" data-max="350" data-grid="false" />
-                    </div>
                 </div>
                 <div class="widgets-item">
                     <h2 class="widgets-title mb-4">Популярные теги</h2>
@@ -90,7 +84,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="banner-item widgets-banner img-hover-effect">
+            <div class="banner-item widgets-banner img-hover-effect d-none d-lg-block">
                 <div class="banner-img">
                     <img src="assets/images/sidebar/banner/1-270x300.jpg" alt="Banner Image">
                 </div>
@@ -132,6 +126,11 @@
                         <option value="5">Sort by High Price</option>
                         <option value="6">Sort by Low Price</option>
                     </select>
+                </li>
+                <li class="mobile-menu_wrap d-block d-lg-none">
+                    <a href="#mobileFilter" class="mobile-menu_btn toolbar-btn pl-0">
+                        <i class="pe-7s-menu"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -249,18 +248,15 @@
                 </div>
             </div>
         </div>
+
         <div class="pagination-area">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">&raquo;</a>
-                    </li>
-                </ul>
-            </nav>
+            @if($products->count() > 0)
+                {{ $products->links() }}
+            @else
+                <h2>Не найдено</h2>
+            @endif
         </div>
+
     </div>
     </div>
 </div>

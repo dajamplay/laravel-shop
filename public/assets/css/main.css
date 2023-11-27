@@ -6988,3 +6988,19 @@ blockquote p {
 .error-404-img {
     margin-bottom: 70px;
 }
+
+/*----------------------------------------*/
+/*  CATALOG
+/*----------------------------------------*/
+
+.active-menu-catalog {
+    color: #8ab051 !important;
+}
+
+@media (max-width: 991px) {
+    .catalog-sidebar-filters {
+        position: absolute;
+        left: -100vw;
+        top: 0;
+    }
+}
