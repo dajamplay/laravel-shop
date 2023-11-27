@@ -78,7 +78,11 @@
                     <ul class="widgets-tag">
                         @foreach($tags as $tag)
                             <li>
-                                <a href="#">{{$tag->title}}</a>
+                                <a href="#" wire:click.prevent="tagFilter({{$tag}})"
+                                    @if(array_key_exists($tag->id, $filter_tags))
+                                        class="btn-pronia-primary text-white"
+                                    @endif
+                                >{{$tag->title}}</a>
                             </li>
                         @endforeach
                     </ul>

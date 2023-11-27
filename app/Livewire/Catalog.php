@@ -41,9 +41,11 @@ class Catalog extends Component
             'filter_title' => $this->filter_title,
             'filter_brand' => $this->filter_brand,
             'filter_line' => $this->filter_line,
+            'filter_tags' => $this->filter_tags,
         ]);
 
-        $products = Product::query()->filter($this->filter)->paginate(self::PER_PAGE);;
+        $products = Product::query()->filter($this->filter)->paginate(self::PER_PAGE);
+
         $brands = Brand::all();
         $lines = Line::all();
         $tags = Tag::all();
@@ -65,6 +67,16 @@ class Catalog extends Component
     public function lineFilter(Line $line)
     {
         $this->filter_line = $line->title ?? '';
+        $this->resetPage();
+    }
+
+    public function tagFilter(Tag $tag)
+    {
+        if (array_key_exists($tag->id, $this->filter_tags)) {
+            unset($this->filter_tags[$tag->id]);
+        } else {
+            $this->filter_tags[$tag->id] = $tag->title ?? '';
+        }
         $this->resetPage();
     }
 

@@ -18,6 +18,7 @@ class ProductFilter extends AbstractFilter
             'filter_price' => [$this, 'price'],
             'filter_price_opt' => [$this, 'price_opt'],
             'filter_trashed' => [$this, 'trashed'],
+            'filter_tags' => [$this, 'tags'],
         ];
     }
 
@@ -63,6 +64,15 @@ class ProductFilter extends AbstractFilter
         $builder->whereHas('line', function($query) use ($value) {
             $query->where('title', 'like', "%$value%");
         });
+    }
+
+    public function tags(Builder $builder, array $values)
+    {
+        foreach ($values as $value) {
+            $builder->whereHas('tags', function($query) use ($value) {
+                $query->where('title', 'like', "%$value%");
+            });
+        }
     }
 
     public function trashed(Builder $builder, string $value)
