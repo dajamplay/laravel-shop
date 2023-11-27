@@ -17,115 +17,76 @@
             </div>
             <div class="widgets-area">
                 <div class="widgets-item pt-0">
-                    <h2 class="widgets-title mb-4">Categories</h2>
+                    <h2 class="widgets-title mb-4">Бренды</h2>
                     <ul class="widgets-category">
                         <li>
-                            <a href="#">
+                            <a href="" wire:click.prevent="brandFilter()"
+                               @if($filter_brand == '')
+                                   class="text-danger"
+                                @endif
+                            >
                                 <i class="fa fa-chevron-right"></i>
-                                All <span>(65)</span>
+                                Все бренды
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Bansai <span>(12)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                House Plants <span>(22)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Indoor Living <span>(19)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Perennnials <span>(17)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Plant For Gift <span>(01)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Garden Tools <span>(12)</span>
-                            </a>
-                        </li>
+                        @foreach($brands as $brand)
+                            <li>
+                                <a href="{{$brand->slug}}" wire:click.prevent="brandFilter({{$brand}})"
+                                    @if($filter_brand == $brand->title)
+                                        class="text-danger"
+                                    @endif
+                                >
+                                    <i class="fa fa-chevron-right"></i>
+                                    {{$brand->title}}<span>({{$brand->products->count()}})</span>
+                                    @if($filter_brand == $brand->title)
+                                        <i class="fa fa-chevron-right"></i>
+                                    @endif
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="widgets-item">
-                    <h2 class="widgets-title mb-4">Color</h2>
-                    <ul class="widgets-category widgets-color">
+                    <h2 class="widgets-title mb-4">Линии</h2>
+                    <ul class="widgets-category">
                         <li>
-                            <a href="#">
+                            <a href="" wire:click.prevent="lineFilter()"
+                               @if($filter_line == '')
+                                   class="text-danger"
+                                @endif
+                            >
                                 <i class="fa fa-chevron-right"></i>
-                                All <span>(65)</span>
+                                Все линии
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Gold <span>(12)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-
-                                Green <span>(22)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                white <span>(13)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-chevron-right"></i>
-                                Black <span>(10)</span>
-                            </a>
-                        </li>
+                        @foreach($lines as $line)
+                            <li>
+                                <a href="{{$line->slug}}" wire:click.prevent="lineFilter({{$line}})"
+                                   @if($filter_line == $line->title)
+                                       class="text-danger"
+                                    @endif
+                                >
+                                    <i class="fa fa-chevron-right"></i>
+                                    {{$line->title}}<span>({{$line->products->count()}})</span>
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="widgets-item widgets-filter">
-                    <h2 class="widgets-title mb-4">Price Filter</h2>
+                    <h2 class="widgets-title mb-4">Диапазон цен</h2>
                     <div class="price-filter">
                         <input type="text" class="pronia-range-slider" name="pronia-range-slider" value="" data-type="double" data-min="16" data-from="16" data-to="300" data-max="350" data-grid="false" />
                     </div>
                 </div>
                 <div class="widgets-item">
-                    <h2 class="widgets-title mb-4">Populer Tags</h2>
+                    <h2 class="widgets-title mb-4">Популярные теги</h2>
                     <ul class="widgets-tag">
-                        <li>
-                            <a href="#">Fashion</a>
-                        </li>
-                        <li>
-                            <a href="#">Organic</a>
-                        </li>
-                        <li>
-                            <a href="#">Old Fashion</a>
-                        </li>
-                        <li>
-                            <a href="#">Men</a>
-                        </li>
-                        <li>
-                            <a href="#">Fashion</a>
-                        </li>
-                        <li>
-                            <a href="#">Dress</a>
-                        </li>
+                        @foreach($tags as $tag)
+                            <li>
+                                <a href="#">{{$tag->title}}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -208,7 +169,13 @@
                                 <div class="product-content">
                                     <a class="product-name" href="{{$product->slug}}">{{$product->title}}</a>
                                     <div class="price-box pb-1">
-                                        <span class="new-price">{{$product->price}}</span>
+                                        <span class="new-price">{{$product->price}} Руб.</span>
+                                    </div>
+                                    <div class="price-box pb-1">
+                                        <span class="">Бренд: {{$product->brand->title}}</span>
+                                    </div>
+                                    <div class="price-box pb-1">
+                                        <span class="">Линия: {{$product->line->title}}</span>
                                     </div>
                                     <div class="rating-box">
                                         <ul>
