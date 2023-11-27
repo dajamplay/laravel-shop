@@ -54,7 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isAdmin(): bool
     {
-        return in_array($this->role->id, [6,7]);
+        return in_array($this->role->id, Role::adminIds());
     }
 
     public function sendEmailVerificationNotification(): void
@@ -69,6 +69,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function scopeWithoutAdmin(Builder $query): void
     {
-        $query->whereNotIn('role_id', [6, 7]);
+        $query->whereNotIn('role_id', Role::adminIds());
     }
 }

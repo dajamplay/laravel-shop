@@ -15,6 +15,14 @@ class Role extends Model
     const ROLE_ADMIN = 7;
     const ROLE_BAN = 9;
 
+    public static function adminIds(): array
+    {
+        return [
+            self::ROLE_ADMIN,
+            self::ROLE_MANAGER,
+        ];
+    }
+
     protected $fillable = [
         'id',
         'title',
