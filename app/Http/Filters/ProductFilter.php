@@ -68,11 +68,10 @@ class ProductFilter extends AbstractFilter
 
     public function tags(Builder $builder, array $values)
     {
-        foreach ($values as $value) {
-            $builder->whereHas('tags', function($query) use ($value) {
-                $query->where('title', 'like', "%$value%");
-            });
-        }
+        if ($values === []) return;
+        $builder->whereHas('tags', function($query) use ($values) {
+            $query->whereIn('title', $values);
+        });
     }
 
     public function trashed(Builder $builder, string $value)

@@ -137,6 +137,11 @@
                 </li>
             </ul>
         </div>
+{{--        <div class="pagination-area-top mb-2">--}}
+{{--            @if($products->count() > 0)--}}
+{{--                {{ $products->links() }}--}}
+{{--            @endif--}}
+{{--        </div>--}}
         <div class="tab-content">
             <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
                 <div class="product-grid-view row g-y-20">

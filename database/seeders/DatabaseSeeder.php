@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->count(100)->create();
 
         Product::all()->each( function (Product $product) {
-            $product->tags()->attach([rand(1,2),rand(3,4)]);
+            $product->tags()->attach([rand(1,2),rand(3,4), 5]);
         });
 
         Post::factory()->count(50)->create();
