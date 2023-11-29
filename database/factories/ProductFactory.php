@@ -20,7 +20,7 @@ class ProductFactory extends Factory
             'brand_id' => fake()->numberBetween(1,5),
             'line_id' => fake()->numberBetween(1,5),
             'size' => fake()->numberBetween(50,300),
-            'image' => fake()->imageUrl(),
+            'image' => 'tmp/products/' . fake()->numberBetween(1,8) . '.jpg',
         ];
     }
 }

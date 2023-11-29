@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Line;
 use App\Models\Product;
 use App\Models\Tag;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\View\View;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -34,28 +35,42 @@ class Catalog extends Component
     public string $page = '';
 
     private ProductFilter $filter;
+    private ProductFilter $brandCountFilter;
+    private ProductFilter $lineCountFilter;
 
     public function render(): View
     {
-        $this->createFilter([
+        $this->filter = $this->createFilter([
             'filter_title' => $this->filter_title,
             'filter_brand' => $this->filter_brand,
             'filter_line' => $this->filter_line,
             'filter_tags' => $this->filter_tags,
         ]);
 
+        $this->brandCountFilter = $this->createFilter([
+            'filter_title' => $this->filter_title,
+            'filter_line' => $this->filter_line,
+        ]);
+
+        $this->lineCountFilter = $this->createFilter([
+            'filter_title' => $this->filter_title,
+            'filter_brand' => $this->filter_brand,
+        ]);
+
+        $productsAll = Product::all();
         $products = Product::query()->filter($this->filter)->paginate(self::PER_PAGE);
 
         $brands = Brand::all();
         $lines = Line::all();
         $tags = Tag::all();
 
-        return view('livewire.catalog', [
-            'products' => $products,
-            'brands' => $brands,
-            'lines' => $lines,
-            'tags' => $tags,
-        ]);
+        return view('livewire.catalog', array_merge(compact(
+                ['products','brands', 'lines', 'tags', 'productsAll']
+        ), [
+            'filter' => $this->filter,
+            'brandCountFilter' => $this->brandCountFilter,
+            'lineCountFilter' => $this->lineCountFilter,
+        ]));
     }
 
     public function brandFilter(Brand $brand)
@@ -80,7 +95,10 @@ class Catalog extends Component
         $this->resetPage();
     }
 
-    private function createFilter(array $params) {
-        $this->filter = app()->makeWith(ProductFilter::class, ['params' => $params]);
+    /**
+     * @throws BindingResolutionException
+     */
+    private function createFilter(array $params): ProductFilter {
+        return app()->makeWith(ProductFilter::class, ['params' => $params]);
     }
 }

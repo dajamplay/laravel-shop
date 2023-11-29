@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Shop;
 
-use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\ViewModels\Product\ProductShowViewModel;
@@ -17,9 +16,7 @@ class ProductController extends Controller
 
         seo()->title = 'Магазин профессиональной косметики';
 
-        $products = Product::all();
-
-        return view('pages.shop.products.index', compact('products'));
+        return view('pages.shop.products.index');
     }
 
     /**

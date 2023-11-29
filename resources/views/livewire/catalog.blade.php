@@ -37,7 +37,7 @@
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
-                                    {{$brand->title}}<span>({{$brand->products->count()}})</span>
+                                    {{$brand->title}}<span>({{$brand->products()->filter($brandCountFilter)->count()}})</span>
                                 </a>
                             </li>
                         @endforeach
@@ -64,14 +64,11 @@
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
-                                    {{$line->title}}<span>({{$line->products->count()}})</span>
+                                    {{$line->title}}<span>({{$line->products()->filter($lineCountFilter)->count()}})</span>
                                 </a>
                             </li>
                         @endforeach
                     </ul>
-                </div>
-                <div class="widgets-item widgets-filter">
-                    <h2 class="widgets-title mb-4">Диапазон цен</h2>
                 </div>
                 <div class="widgets-item">
                     <h2 class="widgets-title mb-4">Популярные теги</h2>
@@ -106,7 +103,9 @@
     <div class="col-xl-9 col-lg-8 order-1 order-lg-2">
         <div class="product-topbar">
             <ul>
-                <li class="page-count">Найдено продукции <span>{{$products->count() ?? 0}}</span></li>
+                <li class="page-count">
+                    {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>{{__(' из ')}}<span>{{$productsAll->count() ?? 0}}</span>
+                </li>
                 <li class="product-view-wrap">
                     <ul class="nav" role="tablist">
                         <li class="grid-view" role="presentation">
@@ -145,7 +144,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="product-item">
                                 <div class="product-img">
-                                    <a href="{{$product->slug}}">
+                                    <a href="{{route('shop.products.show', $product->slug)}}">
                                         <img class="primary-img" src="{{storage($product->image)}}" alt="Product Images">
 {{--                                        <img class="secondary-img" src="{{storage($product->image)}}" alt="Product Images">--}}
                                     </a>
@@ -188,6 +187,13 @@
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
                                         </ul>
+                                    </div>
+                                    <div>
+                                        @if($product?->tags?->count() > 0)
+                                            @foreach($product->tags as $tag)
+                                                <p>{{$tag->title}}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
