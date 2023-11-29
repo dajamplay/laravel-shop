@@ -22,51 +22,51 @@ class ProductFilter extends AbstractFilter
         ];
     }
 
-    public function title(Builder $builder, string $value)
+    public function title(Builder $builder, string $value): void
     {
         $builder->where('title', 'like', "%$value%");
     }
 
-    public function id(Builder $builder, string $value)
+    public function id(Builder $builder, string $value): void
     {
         $builder->where('id', 'like', "%$value%");
     }
 
-    public function content(Builder $builder, string $value)
+    public function content(Builder $builder, string $value): void
     {
         $builder->where('content', 'like', "%$value%");
     }
 
-    public function size(Builder $builder, string $value)
+    public function size(Builder $builder, string $value): void
     {
         $builder->where('size', 'like', "%$value%");
     }
 
-    public function price(Builder $builder, string $value)
+    public function price(Builder $builder, string $value): void
     {
         $builder->where('price', 'like', "%$value%");
     }
 
-    public function price_opt(Builder $builder, string $value)
+    public function price_opt(Builder $builder, string $value): void
     {
         $builder->where('price_opt', 'like', "%$value%");
     }
 
-    public function brand(Builder $builder, string $value)
+    public function brand(Builder $builder, string $value): void
     {
         $builder->whereHas('brand', function($query) use ($value) {
             $query->where('title', 'like', "%$value%");
         });
     }
 
-    public function line(Builder $builder, string $value)
+    public function line(Builder $builder, string $value): void
     {
         $builder->whereHas('line', function($query) use ($value) {
             $query->where('title', 'like', "%$value%");
         });
     }
 
-    public function tags(Builder $builder, array $values)
+    public function tags(Builder $builder, array $values): void
     {
         if ($values === []) return;
         $builder->whereHas('tags', function($query) use ($values) {
@@ -74,7 +74,7 @@ class ProductFilter extends AbstractFilter
         });
     }
 
-    public function trashed(Builder $builder, string $value)
+    public function trashed(Builder $builder, string $value): void
     {
         if ($value === 'on' ) $builder->onlyTrashed();
     }
