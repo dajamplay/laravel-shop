@@ -46,11 +46,11 @@
                 </ul>
             </div>
             <div>
-                @if(count($tagsList) > 0)
-                    @foreach($tagsList as $tag)
-                        <p>{{$tag}}</p>
-                    @endforeach
-                @endif
+{{--                @if(count($tagsList) > 0)--}}
+{{--                    @foreach($tagsList as $tag)--}}
+{{--                        <p>{{$tag}}</p>--}}
+{{--                    @endforeach--}}
+{{--                @endif--}}
             </div>
         </div>
     </div>
