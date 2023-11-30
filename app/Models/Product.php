@@ -31,7 +31,7 @@ class Product extends Model
         'deleted_at' => "datetime:Y-m-d H:i:s",
     ];
 
-    protected $with = ['brand', 'tags', 'line'];
+    //protected $with = ['brand', 'tags', 'line'];
 
     public function brand(): BelongsTo
     {

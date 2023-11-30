@@ -46,9 +46,9 @@
                 </ul>
             </div>
             <div>
-                @if($product?->tags?->count() > 0)
-                    @foreach($product->tags as $tag)
-                        <p>{{$tag->title}}</p>
+                @if(count($tagsList) > 0)
+                    @foreach($tagsList as $tag)
+                        <p>{{$tag}}</p>
                     @endforeach
                 @endif
             </div>

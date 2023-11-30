@@ -10,9 +10,13 @@ class CatalogCardProduct extends Component
 {
     public Product $product;
 
+    public array $tagsList;
+
     public function mount(Product $product): void
     {
         $this->product = $product;
+
+        $this->tagsList = $product->tags->pluck('title')->toArray();
     }
 
     public function render(): View

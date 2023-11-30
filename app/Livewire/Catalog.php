@@ -8,6 +8,7 @@ use App\Models\Line;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -34,42 +35,42 @@ class Catalog extends Component
     #[Url]
     public string $page = '';
 
-    private ProductFilter $filter;
-    private ProductFilter $brandCountFilter;
-    private ProductFilter $lineCountFilter;
+    public Collection $brands;
+    public Collection $lines;
+    public Collection $tags;
+    public Collection $productsAll;
+
+    public function mount(): void
+    {
+        $this->brands = Brand::query()->has('products')->get();
+        $this->lines = Line::query()->has('products')->get();
+        $this->tags = Tag::query()->has('products')->get();
+        $this->productsAll = Product::all();
+    }
 
     public function render(): View
     {
-        $this->filter = $this->createFilter([
+        $filter = $this->createFilter([
             'filter_title' => $this->filter_title,
             'filter_brand' => $this->filter_brand,
             'filter_line' => $this->filter_line,
             'filter_tags' => $this->filter_tags,
         ]);
 
-        $this->brandCountFilter = $this->createFilter([
+        $brandCountFilter = $this->createFilter([
             'filter_title' => $this->filter_title,
             'filter_line' => $this->filter_line,
         ]);
 
-        $this->lineCountFilter = $this->createFilter([
+        $lineCountFilter = $this->createFilter([
             'filter_title' => $this->filter_title,
             'filter_brand' => $this->filter_brand,
         ]);
 
-        $productsAll = Product::all();
-        $products = Product::query()->filter($this->filter)->paginate(self::PER_PAGE);
+        $products = Product::query()->filter($filter)->paginate(self::PER_PAGE);
 
-        $brands = Brand::all();
-        $lines = Line::all();
-        $tags = Tag::all();
-
-        return view('livewire.catalog', array_merge(compact(
-                ['products','brands', 'lines', 'tags', 'productsAll']
-        ), [
-            'filter' => $this->filter,
-            'brandCountFilter' => $this->brandCountFilter,
-            'lineCountFilter' => $this->lineCountFilter,
+        return view('livewire.catalog', compact([
+            'products', 'filter', 'brandCountFilter', 'lineCountFilter'
         ]));
     }
 
