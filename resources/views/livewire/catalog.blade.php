@@ -31,13 +31,14 @@
                         </li>
                         @foreach($brands as $brand)
                             <li>
-                                <a href="{{$brand->slug}}" wire:click.prevent="brandFilter({{$brand}})"
-                                    @if($filter_brand == $brand->title)
+                                <a href="#" wire:click.prevent="brandFilter('{{$brand['title']}}')"
+                                    @if($filter_brand == $brand['title'])
                                         class="active-menu-catalog"
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
-                                    {{$brand->title}}<span>({{$brand->products()->filter($brandCountFilter)->count()}})</span>
+                                    {{$brand['title']}}
+{{--                                    <span>({{$brand->products()->filter($brandCountFilter)->count()}})</span>--}}
                                 </a>
                             </li>
                         @endforeach
@@ -58,13 +59,14 @@
                         </li>
                         @foreach($lines as $line)
                             <li>
-                                <a href="{{$line->slug}}" wire:click.prevent="lineFilter({{$line}})"
-                                   @if($filter_line == $line->title)
+                                <a href="{{$line['slug']}}" wire:click.prevent="lineFilter('{{$line['title']}}')"
+                                   @if($filter_line == $line['title'])
                                        class="active-menu-catalog"
                                     @endif
                                 >
                                     <i class="fa fa-chevron-right"></i>
-                                    {{$line->title}}<span>({{$line->products()->filter($lineCountFilter)->count()}})</span>
+                                    {{$line['title']}}
+{{--                                    <span>({{$line->products()->filter($lineCountFilter)->count()}})</span>--}}
                                 </a>
                             </li>
                         @endforeach
@@ -75,11 +77,11 @@
                     <ul class="widgets-tag">
                         @foreach($tags as $tag)
                             <li>
-                                <a href="#" wire:click.prevent="tagFilter({{$tag}})"
-                                    @if(array_key_exists($tag->id, $filter_tags))
+                                <a href="#" wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')"
+                                    @if(array_key_exists($tag['id'], $filter_tags))
                                         class="btn-pronia-primary text-white"
                                     @endif
-                                >{{$tag->title}}</a>
+                                >{{$tag['title']}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -104,7 +106,7 @@
         <div class="product-topbar">
             <ul>
                 <li class="page-count">
-                    {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>{{__(' из ')}}<span>{{$productsAll->count() ?? 0}}</span>
+                    {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>{{__(' из ')}}<span>{{$productsCountAll}}</span>
                 </li>
 
                 <li class="short">

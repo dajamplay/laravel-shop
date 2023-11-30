@@ -35,17 +35,19 @@ class Catalog extends Component
     #[Url]
     public string $page = '';
 
-    public Collection $brands;
-    public Collection $lines;
-    public Collection $tags;
-    public Collection $productsAll;
+    public int $productsCountAll = 0;
+
+    public array $brands = [];
+    public array $lines = [];
+    public array $tags = [];
+
 
     public function mount(): void
     {
-        $this->brands = Brand::query()->has('products')->get();
-        $this->lines = Line::query()->has('products')->get();
-        $this->tags = Tag::query()->has('products')->get();
-        $this->productsAll = Product::all();
+        $this->brands = Brand::query()->has('products')->get()->toArray();
+        $this->lines = Line::query()->has('products')->get()->toArray();
+        $this->tags = Tag::query()->has('products')->get()->toArray();
+        $this->productsCountAll = Product::all()->count();
     }
 
     public function render(): View
@@ -70,28 +72,28 @@ class Catalog extends Component
         $products = Product::query()->filter($filter)->paginate(self::PER_PAGE);
 
         return view('livewire.catalog', compact([
-            'products', 'filter', 'brandCountFilter', 'lineCountFilter'
+             'products', 'filter', 'brandCountFilter', 'lineCountFilter'
         ]));
     }
 
-    public function brandFilter(Brand $brand)
+    public function brandFilter(string $title = '')
     {
-        $this->filter_brand = $brand->title ?? '';
+        $this->filter_brand = $title;
         $this->resetPage();
     }
 
-    public function lineFilter(Line $line)
+    public function lineFilter(string $title = '')
     {
-        $this->filter_line = $line->title ?? '';
+        $this->filter_line = $title;
         $this->resetPage();
     }
 
-    public function tagFilter(Tag $tag)
+    public function tagFilter(int $id = -1, string $title = '')
     {
-        if (array_key_exists($tag->id, $this->filter_tags)) {
-            unset($this->filter_tags[$tag->id]);
+        if (array_key_exists($id, $this->filter_tags)) {
+            unset($this->filter_tags[$id]);
         } else {
-            $this->filter_tags[$tag->id] = $tag->title ?? '';
+            $this->filter_tags[$id] = $title;
         }
         $this->resetPage();
     }
