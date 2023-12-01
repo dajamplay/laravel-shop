@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/Pe-icon-7-stroke.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}" />--}}
     <link rel="stylesheet" href="{{asset('adminlte/plugins/lightbox/css/lightbox.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     @livewireStyles
@@ -18,28 +16,24 @@
 <body>
 <div id="app" class="main-wrapper">
     <x-header />
+
     <div class="container-fluid">
         <x-ui.session_alert message="message"/>
     </div>
+
     <div class="container-fluid">
         <x-ui.session_alert message="message-error" color="danger"/>
     </div>
+
         @yield('layout')
     <x-footer />
 </div>
 <script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
-<script src="{{asset('assets/js/vendor/jquery-migrate-3.3.2.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery.waypoints.js')}}"></script>
-<script src="{{asset('assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins/wow.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('assets/js/plugins/jquery.nice-select.js')}}"></script>
-{{--<script src="{{asset('assets/js/plugins/parallax.min.js')}}"></script>--}}
-{{--<script src="{{asset('assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>--}}
 <script src="{{asset('assets/js/plugins/tippy.min.js')}}"></script>
-{{--<script src="{{asset('assets/js/plugins/mailchimp-ajax.js')}}"></script>--}}
-{{--<script src="{{asset('assets/js/plugins/jquery.counterup.js')}}"></script>--}}
 <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
 @livewireScripts

@@ -11,7 +11,6 @@
 
     <x-breadcrumb h1="Контакты" :breadcrumbs="$breadcrumbs"/>
 
-
     <div class="contact-form-area mt-30">
         <div class="container">
             <div class="row">
@@ -45,10 +44,11 @@
                             @csrf
                             <div class="group-input">
                                 <div class="form-field me-lg-30 mb-35 mb-lg-0">
-                                    <input type="text" name="con_firstName" id="con_firstName" placeholder="Имя*" class="input-field" autocomplete="off">
+                                    <input type="text" name="first_name" id="first_name" placeholder="Имя*" class="input-field" autocomplete="off" value="{{old('first_name')}}">
+                                    @if($errors->has('first_name'))<div class="text-danger">{{ $errors->first('first_name') }}</div>@endif
                                 </div>
                                 <div class="form-field mb-35">
-                                    <input type="text" name="con_lastName" id="con_lastName" placeholder="Фамилия*" class="input-field" autocomplete="off">
+                                    <input type="text" name="con_lastName" id="con_lastName" placeholder="Фамилия*" class="input-field" autocomplete="off" value="{{old('con_lastName')}}">
                                 </div>
                             </div>
                             <div class="group-input mb-35">
@@ -63,8 +63,7 @@
                                 <textarea name="con_message" id="con_message" placeholder="Введите сообщение" class="textarea-field"></textarea>
                             </div>
                             <div class="contact-button-wrap">
-                                <button type="submit" value="submit" class="btn btn btn-custom-size xl-size btn-pronia-primary" name="submit">Отправить</button>
-                                <p class="form-messege mb-0"></p>
+                                <button type="submit" value="submit" class="btn btn btn-custom-size btn-pronia-primary" name="submit">Отправить</button>
                             </div>
                         </form>
                     </div>
@@ -72,16 +71,6 @@
             </div>
         </div>
     </div>
-
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <p>197110, Санкт-Петербург, ул. Большая Разночинная, дом 14, офис 516</p>--}}
-{{--            <p>Бизнес-центр "Бизнес Депо"</p>--}}
-{{--            <p>Ст.М. "Чкаловская"</p>--}}
-{{--            <p>Тел: +7(911)744-78-88, +7(911)940-66-95</p>--}}
-{{--            <p>E-mail: eleanta@yandex.ru</p>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
     <div class="contact-with-map mt-30">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afe87167dbac9cf72de4125c5fd85572fe53a708fe95801a4364f4e7811b2f8c4&amp;width=100%25&amp;height=480&amp;lang=ru_RU&amp;scroll=false"></script>

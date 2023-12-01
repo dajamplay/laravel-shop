@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Message\MessageStoreRequest;
 use App\ViewModels\Home\HomeContactsViewModel;
 use App\ViewModels\Home\HomeIndexViewModel;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -19,7 +21,7 @@ class HomeController extends Controller
         return $viewModel->view('pages.home.contacts');
     }
 
-    public function contactsStoreAndSend()
+    public function contactsStoreAndSend(MessageStoreRequest $request): RedirectResponse
     {
         return back()->with(['message' => 'success']);
     }
