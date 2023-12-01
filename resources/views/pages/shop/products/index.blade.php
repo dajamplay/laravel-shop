@@ -5,9 +5,9 @@
 <div class="main-wrapper">
     <main class="main-content">
 
-        <x-breadcrumb h1="Аш одын магазын" />
+        <x-breadcrumb h1="Магазин косметики" />
 
-        <div class="shop-area section-space-y-axis-100">
+        <div class="shop-area mt-30">
 
             @livewire('catalog')
 
