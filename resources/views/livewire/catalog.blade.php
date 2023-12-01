@@ -65,7 +65,7 @@
                                             <li>
                                                 <a href="#" wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')"
                                                     @if(array_key_exists($tag['id'], $filter_tags))
-                                                        class="btn-pronia-primary text-white"
+                                                        class="btn-pronia-primary text-white btn-filter"
                                                     @endif
                                                 >{{$tag['title']}}</a>
                                             </li>
@@ -96,7 +96,7 @@
                                         <a
                                             href="#"
                                             wire:click.prevent="clearSearchFilter"
-                                            class="btn-pronia-primary text-white p-2 rounded"
+                                            class="btn-pronia-primary text-white p-2 rounded btn-filter"
                                         >{{__('Поиск: ') . $filter_title}}</a>
                                     </li>
                                 @endif
@@ -106,7 +106,7 @@
                                         <a
                                             href="#"
                                             wire:click.prevent="brandFilter('')"
-                                            class="btn-pronia-primary text-white p-2 rounded"
+                                            class="btn-pronia-primary text-white p-2 rounded btn-filter"
                                         >{{$filter_brand}}</a>
                                     </li>
                                 @endif
@@ -116,7 +116,7 @@
                                         <a
                                             href="#"
                                             wire:click.prevent="lineFilter('')"
-                                            class="btn-pronia-primary text-white p-2 rounded"
+                                            class="btn-pronia-primary text-white p-2 rounded btn-filter"
                                         >{{$filter_line}}</a>
                                     </li>
                                 @endif
@@ -128,7 +128,7 @@
                                                 <a
                                                     href="#"
                                                     wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')"
-                                                    class="btn-pronia-primary text-white p-2 rounded"
+                                                    class="btn-pronia-primary text-white p-2 rounded btn-filter"
                                                 >{{$tag['title']}}</a>
                                             </li>
                                         @endif

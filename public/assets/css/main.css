@@ -7007,4 +7007,24 @@ blockquote p {
     }
 }
 
-.
+.btn-filter {
+    position: relative;
+}
+
+.btn-filter:hover {
+    background-color: #99c45b !important;
+}
+
+.btn-filter:after {
+    content: "\00d7";
+    position: absolute;
+    padding-left: 4px;
+    line-height: 18px;
+    height: 18px;
+    width: 18px;
+    right: -10px;
+    top: -8px;
+    background-color: #82a64e;
+    border-radius: 9px;
+    border: 1px solid #ffffff;
+}
