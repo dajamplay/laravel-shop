@@ -8,7 +8,7 @@
                             <div class="widgets-searchbox">
                                 <form id="widgets-searchbox">
                                     <input
-                                        wire:model.live="filter_title"
+                                        wire:model.live.debounce.500ms="filter_title"
                                         id="search"
                                         class="input-field"
                                         type="text"

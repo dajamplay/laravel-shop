@@ -1,4 +1,4 @@
-<div class="footer-area" data-bg-image="{{asset('assets/images/footer4.jpg')}}">
+<div class="footer-area mt-30" data-bg-image="{{asset('assets/images/footer4.jpg')}}">
     <div class="footer-top section-space-top-100 pb-60">
         <div class="container">
             <div class="row">

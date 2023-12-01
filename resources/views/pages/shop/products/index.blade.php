@@ -3,13 +3,13 @@
 @section('content')
 
     @php
-        $breadcrumb = [
+        $breadcrumbs = [
             ['title' => 'Главная', 'link' => '/'],
             ['title' => 'Магазин'],
         ];
     @endphp
 
-    <x-breadcrumb h1="Магазин косметики" :breadcrumb="$breadcrumb"/>
+    <x-breadcrumb h1="Магазин косметики" :breadcrumbs="$breadcrumbs"/>
 
     @livewire('catalog')
 

@@ -20,5 +20,11 @@ class SettingSeeder extends Seeder
         Setting::create([ 'key' => 'shipping2_description', 'value' => 'Наличные, банковский перевод']);
         Setting::create([ 'key' => 'shipping3_title', 'value' => 'Лучший сервис']);
         Setting::create([ 'key' => 'shipping3_description', 'value' => 'Сервис, который имеет значение']);
+        Setting::create([ 'key' => 'contacts_street', 'value' => '197110, Санкт-Петербург, ул. Большая Разночинная, дом 14, офис 516']);
+        Setting::create([ 'key' => 'contacts_house', 'value' => 'Бизнес-центр "Бизнес Депо"']);
+        Setting::create([ 'key' => 'contacts_metro', 'value' => 'Ст.М. "Чкаловская"']);
+        Setting::create([ 'key' => 'contacts_telephone', 'value' => '+7(911)744-78-88']);
+        Setting::create([ 'key' => 'contacts_email', 'value' => 'eleanta@yandex.ru']);
+        Setting::create([ 'key' => 'contacts_description', 'value' => 'Заполните форму, и наш сервис свяжется с вами в течение 24 часов.']);
     }
 }

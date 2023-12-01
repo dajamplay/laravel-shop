@@ -6,8 +6,18 @@
 
 @section('content')
 
+    @php
+        $breadcrumbs = [
+            ['title' => 'Главная', 'link' => '/'],
+            ['title' => 'Магазин', 'link' => '/shop/products'],
+            ['title' => $product->title],
+        ];
+    @endphp
+
+    <x-breadcrumb h1="{{$product->title}}" :breadcrumbs="$breadcrumbs"/>
+
     <main class="main-content">
-        <div class="single-product-area">
+        <div class="single-product-area mt-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">

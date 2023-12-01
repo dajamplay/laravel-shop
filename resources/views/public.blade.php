@@ -12,12 +12,19 @@
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/ion.rangeSlider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/lightbox/css/lightbox.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     @livewireStyles
 </head>
 <body>
 <div id="app" class="main-wrapper">
     <x-header />
+    <div class="container-fluid">
+        <x-ui.session_alert message="message"/>
+    </div>
+    <div class="container-fluid">
+        <x-ui.session_alert message="message-error" color="danger"/>
+    </div>
         @yield('layout')
     <x-footer />
 </div>
@@ -35,6 +42,7 @@
 <script src="{{asset('assets/js/plugins/ion.rangeSlider.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins/mailchimp-ajax.js')}}"></script>
 <script src="{{asset('assets/js/plugins/jquery.counterup.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
 @livewireScripts
 </body>
