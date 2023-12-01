@@ -2,21 +2,17 @@
 
 @section('content')
 
-<div class="main-wrapper">
-    <main class="main-content">
+    @php
+        $breadcrumb = [
+            ['title' => 'Главная', 'link' => '/'],
+            ['title' => 'Магазин'],
+        ];
+    @endphp
 
-        <x-breadcrumb h1="Магазин косметики" />
+    <x-breadcrumb h1="Магазин косметики" :breadcrumb="$breadcrumb"/>
 
-        <div class="shop-area mt-30">
-
-            @livewire('catalog')
-
-        </div>
-
-    </main>
+    @livewire('catalog')
 
     <x-ui.scroll-to-top />
-
-</div>
 
 @endsection

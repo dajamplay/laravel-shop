@@ -1,6 +1,6 @@
 @props([
     'h1' => 'Магазин профессиональной косметики',
-    'image' => 'assets/images/breadcrumb/bg.jpg',
+    'image' => 'assets/images/breadcrumb/bg3.jpg',
     'breadcrumb' => [],
 ])
 
