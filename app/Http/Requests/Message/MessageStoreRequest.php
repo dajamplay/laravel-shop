@@ -15,6 +15,10 @@ class MessageStoreRequest extends FormRequest
     {
         return [
             'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'email' => ['required', 'email'],
+            'message' => ['required', 'string'],
         ];
     }
 }

@@ -48,19 +48,23 @@
                                     @if($errors->has('first_name'))<div class="text-danger">{{ $errors->first('first_name') }}</div>@endif
                                 </div>
                                 <div class="form-field mb-35">
-                                    <input type="text" name="con_lastName" id="con_lastName" placeholder="Фамилия*" class="input-field" autocomplete="off" value="{{old('con_lastName')}}">
+                                    <input type="text" name="last_name" id="last_name" placeholder="Фамилия*" class="input-field" autocomplete="off" value="{{old('last_name')}}">
+                                    @if($errors->has('last_name'))<div class="text-danger">{{ $errors->first('last_name') }}</div>@endif
                                 </div>
                             </div>
                             <div class="group-input mb-35">
                                 <div class="form-field me-lg-30 mb-35 mb-lg-0">
-                                    <input type="text" name="con_phone" id="con_phone" placeholder="Телефон*" class="input-field" autocomplete="off">
+                                    <input type="text" name="phone" id="phone" placeholder="Телефон*" class="input-field" autocomplete="off" value="{{old('phone')}}">
+                                    @if($errors->has('phone'))<div class="text-danger">{{ $errors->first('phone') }}</div>@endif
                                 </div>
                                 <div class="form-field">
-                                    <input type="text" name="con_email" id="con_email" placeholder="Электронная почта*" class="input-field" autocomplete="off">
+                                    <input type="email" name="email" id="email" placeholder="Электронная почта*" class="input-field" autocomplete="off" value="{{old('email')}}">
+                                    @if($errors->has('email'))<div class="text-danger">{{ $errors->first('email') }}</div>@endif
                                 </div>
                             </div>
                             <div class="form-field mb-5">
-                                <textarea name="con_message" id="con_message" placeholder="Введите сообщение" class="textarea-field"></textarea>
+                                <textarea name="message" id="message" placeholder="Введите сообщение" class="textarea-field">{{old('message')}}</textarea>
+                                @if($errors->has('message'))<div class="text-danger">{{ $errors->first('message') }}</div>@endif
                             </div>
                             <div class="contact-button-wrap">
                                 <button type="submit" value="submit" class="btn btn btn-custom-size btn-pronia-primary" name="submit">Отправить</button>

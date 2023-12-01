@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     public function contactsStoreAndSend(MessageStoreRequest $request): RedirectResponse
     {
-        return back()->with(['message' => 'success']);
+        return back()->with(['message' => $request->validated()['message']]);
     }
 
     public function about(): View
