@@ -21,11 +21,6 @@ class HomeController extends Controller
         return $viewModel->view('pages.home.contacts');
     }
 
-    public function contactsStoreAndSend(MessageStoreRequest $request): RedirectResponse
-    {
-        return back()->with(['message' => $request->validated()['message']]);
-    }
-
     public function about(): View
     {
         return view('pages.home.about');

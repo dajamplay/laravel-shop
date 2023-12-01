@@ -40,7 +40,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <form class="contact-form" action="{{route('home.contacts.store')}}" method="post">
+                        <form class="contact-form" action="{{route('home.message.store')}}" method="post">
                             @csrf
                             <div class="group-input">
                                 <div class="form-field me-lg-30 mb-35 mb-lg-0">
