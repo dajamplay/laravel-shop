@@ -12,25 +12,19 @@
                                         id="search"
                                         class="input-field"
                                         type="text"
-                                        placeholder="Поиск">
-                                    <button class="widgets-searchbox-btn" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
+                                        placeholder="{{__('Поиск')}}">
                                 </form>
                             </div>
                             <div class="widgets-area">
                                 <div class="widgets-item pt-0">
-                                    <h2 class="widgets-title mb-4">Бренды</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Бренды')}}</h2>
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="brandFilter()"
                                                @if($filter_brand == '')
                                                    class="active-menu-catalog"
                                                 @endif
-                                            >
-                                                <i class="fa fa-chevron-right"></i>
-                                                Все бренды
-                                            </a>
+                                            ><i class="fa fa-chevron-right"></i>{{__('Все бренды')}}</a>
                                         </li>
                                         @foreach($brands as $brand)
                                             <li>
@@ -38,27 +32,20 @@
                                                     @if($filter_brand == $brand['title'])
                                                         class="active-menu-catalog"
                                                     @endif
-                                                >
-                                                    <i class="fa fa-chevron-right"></i>
-                                                    {{$brand['title']}}
-                {{--                                    <span>({{$brand->products()->filter($brandCountFilter)->count()}})</span>--}}
-                                                </a>
+                                                ><i class="fa fa-chevron-right"></i>{{$brand['title']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
                                 </div>
                                 <div class="widgets-item">
-                                    <h2 class="widgets-title mb-4">Линии</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Линии')}}</h2>
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="lineFilter()"
                                                @if($filter_line == '')
                                                    class="active-menu-catalog"
                                                 @endif
-                                            >
-                                                <i class="fa fa-chevron-right"></i>
-                                                Все линии
-                                            </a>
+                                            ><i class="fa fa-chevron-right"></i>{{__('Все линии')}}</a>
                                         </li>
                                         @foreach($lines as $line)
                                             <li>
@@ -66,17 +53,13 @@
                                                    @if($filter_line == $line['title'])
                                                        class="active-menu-catalog"
                                                     @endif
-                                                >
-                                                    <i class="fa fa-chevron-right"></i>
-                                                    {{$line['title']}}
-                {{--                                    <span>({{$line->products()->filter($lineCountFilter)->count()}})</span>--}}
-                                                </a>
+                                                ><i class="fa fa-chevron-right"></i>{{$line['title']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
                                 </div>
                                 <div class="widgets-item">
-                                    <h2 class="widgets-title mb-4">Популярные теги</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Популярные теги')}}</h2>
                                     <ul class="widgets-tag">
                                         @foreach($tags as $tag)
                                             <li>
@@ -107,13 +90,19 @@
                     </div>
                     <div class="col-xl-9 col-lg-8 order-1 order-lg-2">
                         <div class="product-topbar">
-                            <ul>
-                                <li class="page-count">
-                                    {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>{{__(' из ')}}<span>{{$productsCountAll}}</span>
-                                </li>
+                            <ul class="d-flex flex-wrap justify-content-start">
+                                @if($filter_title !== '')
+                                    <li class="mt-2">
+                                        <a
+                                            href="#"
+                                            wire:click.prevent="clearSearchFilter"
+                                            class="btn-pronia-primary text-white p-2 rounded"
+                                        >{{__('Поиск: ') . $filter_title}}</a>
+                                    </li>
+                                @endif
 
                                 @if($filter_brand !== '')
-                                    <li>
+                                    <li class="mt-2">
                                         <a
                                             href="#"
                                             wire:click.prevent="brandFilter('')"
@@ -123,7 +112,7 @@
                                 @endif
 
                                 @if($filter_line !== '')
-                                    <li>
+                                    <li class="mt-2">
                                         <a
                                             href="#"
                                             wire:click.prevent="lineFilter('')"
@@ -135,7 +124,7 @@
                                 @if(count($tags) > 0)
                                     @foreach($tags as $tag)
                                         @if(array_key_exists($tag['id'], $filter_tags))
-                                            <li>
+                                            <li class="mt-2">
                                                 <a
                                                     href="#"
                                                     wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')"
@@ -155,6 +144,10 @@
                 {{--                    </select>--}}
                 {{--                </li>--}}
 
+                                <li class="page-count p-1 mt-2">
+                                    {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>
+                                </li>
+
                                 <li class="mobile-menu_wrap d-block d-lg-none">
                                     <a href="#mobileFilter" class="mobile-menu_btn toolbar-btn pl-0">
                                         <i class="pe-7s-menu"></i>
@@ -173,7 +166,7 @@
                             @if($products->count() > 0)
                                 {{ $products->links() }}
                             @else
-                                <h2>Не найдено</h2>
+                                <h2>{{__('Не найдено')}}</h2>
                             @endif
                         </div>
 

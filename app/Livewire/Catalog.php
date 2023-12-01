@@ -82,6 +82,12 @@ class Catalog extends Component
         $this->resetPage();
     }
 
+    public function clearSearchFilter()
+    {
+        $this->filter_title = '';
+        $this->resetPage();
+    }
+
     public function lineFilter(string $title = '')
     {
         $this->filter_line = $title;
