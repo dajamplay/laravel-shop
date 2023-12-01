@@ -1,6 +1,6 @@
 @props([
     'h1' => 'Магазин профессиональной косметики',
-    'image' => 'assets/images/breadcrumb/bg3.jpg',
+    'image' => 'assets/images/breadcrumb/bg4.jpg',
     'breadcrumbs' => [],
 ])
 
@@ -23,7 +23,6 @@
                             @endforeach
                         </ul>
                     @endif
-
                 </div>
             </div>
         </div>
