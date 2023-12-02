@@ -3065,98 +3065,12 @@ blockquote p {
 }
 
 /*----------------------------------------*/
-/*  08. Newsletter
-/*----------------------------------------*/
-.newsletter-area {
-    height: 400px;
-}
-
-.newsletter-title {
-    margin-bottom: 45px;
-    color: #464646;
-    font-weight: 500;
-    font-size: 48px;
-    max-width: 650px;
-}
-
-@media (max-width: 991px) {
-    .newsletter-title {
-        font-size: 28px;
-        line-height: 1.3;
-    }
-}
-
-.newsletter-form {
-    display: inline-block;
-    position: relative;
-}
-
-.newsletter-form .input-field {
-    background-color: #87b04a;
-    border: 1px solid #87b04a;
-    border-radius: 5px;
-    position: relative;
-    color: #f1ffde;
-    font-size: 16px;
-    padding-left: 15px;
-    padding-right: 90px;
-    width: 425px;
-    height: 55px;
-    line-height: 55px;
-}
-
-@media (max-width: 575px) {
-    .newsletter-form .input-field {
-        width: 100%;
-    }
-}
-
-.newsletter-form .btn-wrap {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.newsletter-form .btn-submit {
-    position: relative;
-    padding: 0;
-}
-
-.newsletter-form .btn-submit:before {
-    background-color: #ffffff;
-    height: 30px;
-    width: 1px;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.newsletter-form .btn-submit i {
-    padding: 15px 20px;
-    font-size: 30px;
-    display: block;
-    color: #ffffff;
-}
-
-/* ---Mailchimp--- */
-.mailchimp-success {
-    color: green;
-}
-
-.mailchimp-error {
-    color: red;
-}
-
-/*----------------------------------------*/
 /*  11. Footer
 /*----------------------------------------*/
+.footer-area {
+    background-color: #f6f7fb;
+}
+
 .footer-widget-item .social-link ul li a {
     border-color: #000000;
     color: #000000;
