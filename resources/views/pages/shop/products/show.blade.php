@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('public')
 
 @php
 /** @var $product \App\Data\ProductData */

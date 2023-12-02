@@ -78,7 +78,7 @@
             </ul>
         </li>
         <li class="drop-holder">
-            <a href="blog.html">Блог</a>
+            <a href="{{route('blog.posts.index')}}">{{__('Блог')}}</a>
             <ul class="drop-menu">
                 <li>
                     <a href="#">Последние статьи</a>

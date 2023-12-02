@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/plugins/lightbox/css/lightbox.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-    @livewireStyles
 </head>
 <body>
 <div id="app" class="main-wrapper">
@@ -25,7 +24,7 @@
         <x-ui.session_alert message="message-error" color="danger"/>
     </div>
 
-        @yield('layout')
+        @yield('content')
     <x-footer />
 </div>
 <script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
@@ -36,6 +35,5 @@
 <script src="{{asset('assets/js/plugins/tippy.min.js')}}"></script>
 <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
-@livewireScripts
 </body>
 </html>

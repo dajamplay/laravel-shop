@@ -19,16 +19,16 @@
                 </ul>
             </div>
             <h2 class="title">
-                <a href="{{$slug}}">{{$title}}</a>
+                <a href="{{route('blog.posts.show', $slug)}}">{{$title}}</a>
             </h2>
             <p class="short-desc mb-7">{!!htmlspecialchars_decode($content)!!}</p>
         </div>
         <div class="blog-img img-hover-effect">
-            <a href="{{$slug}}">
+            <a href="{{route('blog.posts.show', $slug)}}">
                 <img class="img-full" src="{{storage($image)}}" alt="{{$title}}">
             </a>
             <div class="inner-btn-wrap">
-                <a class="inner-btn" href="{{$slug}}">
+                <a class="inner-btn" href="{{route('blog.posts.show', $slug)}}">
                     <i class="pe-7s-link"></i>
                 </a>
             </div>

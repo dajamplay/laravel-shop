@@ -1,7 +1,5 @@
 @extends('public')
 
 @section('content')
-
-    <h1>Доставка</h1>
-
+    <h1>POST: {{$post->title}}</h1>
 @endsection
