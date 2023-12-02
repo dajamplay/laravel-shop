@@ -78,6 +78,7 @@ class Catalog extends Component
 
     public function brandFilter(string $title = '')
     {
+        if ($this->filter_brand === $title) $title = '';
         $this->filter_brand = $title;
         $this->resetPage();
     }
@@ -90,6 +91,7 @@ class Catalog extends Component
 
     public function lineFilter(string $title = '')
     {
+        if ($this->filter_line === $title) $title = '';
         $this->filter_line = $title;
         $this->resetPage();
     }

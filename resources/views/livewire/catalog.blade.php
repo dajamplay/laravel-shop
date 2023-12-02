@@ -21,10 +21,17 @@
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="brandFilter()"
-                                               @if($filter_brand == '')
+                                                @if($filter_brand == '')
                                                    class="active-menu-catalog"
                                                 @endif
-                                            ><i class="fa fa-chevron-right"></i>{{__('Все бренды')}}</a>
+                                            >
+                                                @if($filter_brand == '')
+                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                                @endif
+                                                {{__('Все бренды')}}
+                                            </a>
                                         </li>
                                         @foreach($brands as $brand)
                                             <li>
@@ -32,7 +39,14 @@
                                                     @if($filter_brand == $brand['title'])
                                                         class="active-menu-catalog"
                                                     @endif
-                                                ><i class="fa fa-chevron-right"></i>{{$brand['title']}}</a>
+                                                >
+                                                    @if($filter_brand == $brand['title'])
+                                                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                                    @else
+                                                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                                    @endif
+                                                    {{$brand['title']}}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -42,18 +56,32 @@
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="lineFilter()"
-                                               @if($filter_line == '')
+                                                @if($filter_line == '')
                                                    class="active-menu-catalog"
                                                 @endif
-                                            ><i class="fa fa-chevron-right"></i>{{__('Все линии')}}</a>
+                                            >
+                                                @if($filter_line == '')
+                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                                @endif
+                                                {{__('Все линии')}}
+                                            </a>
                                         </li>
                                         @foreach($lines as $line)
                                             <li>
                                                 <a href="{{$line['slug']}}" wire:click.prevent="lineFilter('{{$line['title']}}')"
-                                                   @if($filter_line == $line['title'])
+                                                    @if($filter_line == $line['title'])
                                                        class="active-menu-catalog"
                                                     @endif
-                                                ><i class="fa fa-chevron-right"></i>{{$line['title']}}</a>
+                                                >
+                                                    @if($filter_line == $line['title'])
+                                                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                                    @else
+                                                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                                    @endif
+                                                    {{$line['title']}}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -134,16 +162,6 @@
                                         @endif
                                     @endforeach
                                 @endif
-
-                {{--                <li class="short">--}}
-                {{--                    <select class="nice-select">--}}
-                {{--                        <option value="1">Sort by Default</option>--}}
-                {{--                        <option value="2">Sort by Popularity</option>--}}
-                {{--                        <option value="3">Sort by Rated</option>--}}
-                {{--                        <option value="4">Sort by Latest</option>--}}
-                {{--                    </select>--}}
-                {{--                </li>--}}
-
                                 <li class="page-count p-1 mt-2">
                                     {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>
                                 </li>
@@ -162,7 +180,7 @@
                             @endforeach
                         </div>
 
-                        <div class="pagination-area">
+                        <div class="pagination-area mb-30">
                             @if($products->count() > 0)
                                 {{ $products->links() }}
                             @else
