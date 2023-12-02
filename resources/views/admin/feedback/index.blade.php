@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Отзывы'))
 
@@ -7,8 +7,8 @@
     <p class="text-lg">Найдено: {{ $feedbacks->total() }}</p>
 
     <x-admin.button
-        text="{{__('Создать отзыв')}}"
-        href="{{ route('admin.feedback.create') }}"
+            text="{{__('Создать отзыв')}}"
+            href="{{ route('admin.feedback.create') }}"
     />
 
     @if($feedbacks->isNotEmpty())
@@ -26,8 +26,8 @@
                     <x-admin.table.body.row>
                         <x-admin.table.body.row.text value="{{$feedback->id}}"/>
                         <x-admin.table.body.row.link
-                            value="{{$feedback->title}}"
-                            link="{{ route('admin.feedback.show', $feedback) }}"
+                                value="{{$feedback->title}}"
+                                link="{{ route('admin.feedback.show', $feedback) }}"
                         />
                         <x-admin.table.body.row.text value="{!!$feedback->content!!}" limit="40"/>
                         <x-admin.table.body.row.image value="{{$feedback->image}}" title="{{$feedback->title}}"/>

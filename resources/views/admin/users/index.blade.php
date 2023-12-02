@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Пользователи'))
 
@@ -7,8 +7,8 @@
     <p class="text-lg">Найдено: {{ $users->total() }}</p>
 
     <x-admin.button
-        text="{{__('Создать пользователя')}}"
-        href="{{ route('admin.users.create') }}"
+            text="{{__('Создать пользователя')}}"
+            href="{{ route('admin.users.create') }}"
     />
 
     <x-admin.table>

@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Брэнды'))
 
@@ -7,8 +7,8 @@
     <p class="text-lg">Найдено: {{ $brands->total() }}</p>
 
     <x-admin.button
-        text="{{__('Создать брэнд')}}"
-        href="{{ route('admin.brands.create') }}"
+            text="{{__('Создать брэнд')}}"
+            href="{{ route('admin.brands.create') }}"
     />
 
     <x-admin.table>
@@ -25,8 +25,8 @@
                     <x-admin.table.body.row>
                         <x-admin.table.body.row.text value="{{$brand->id}}"/>
                         <x-admin.table.body.row.link
-                            value="{{$brand->title}}"
-                            link="{{ route('admin.brands.show', $brand) }}"
+                                value="{{$brand->title}}"
+                                link="{{ route('admin.brands.show', $brand) }}"
                         />
                         <x-admin.table.body.row.text value="{!!$brand->content!!}" limit="40"/>
                         <x-admin.table.body.row.image value="{{$brand->image}}" title="{{$brand->title}}"/>

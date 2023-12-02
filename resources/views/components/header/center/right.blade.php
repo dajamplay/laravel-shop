@@ -17,7 +17,7 @@
                             <button type="submit" class="dropdown-item text-center">{{__('Выход')}}</button>
                         </form>
                     </li>
-                    <li><a class="dropdown-item text-center" href="#">{{__('Личный кабинет')}}</a></li>
+                    <li><a class="dropdown-item text-center" href="{{route('dashboard.index')}}">{{__('Личный кабинет')}}</a></li>
                     @admin
                         <li><a class="dropdown-item text-center" href="{{route('admin.index')}}" target="_blank" >{{__('Панель администратора')}}</a></li>
                     @endadmin

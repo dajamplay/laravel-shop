@@ -1,4 +1,4 @@
-@extends('public')
+@extends('layouts.public')
 
 @section('content')
 
@@ -47,7 +47,7 @@
     <!-- About Area End Here -->
 
     <!-- Begin Banner Area -->
-    <x-home.banner />
+    <x-home.banner/>
     <!-- Banner Area End Here -->
 
     <!-- Begin Product Area -->

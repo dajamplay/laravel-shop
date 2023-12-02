@@ -1,4 +1,4 @@
-@extends('public')
+@extends('layouts.public')
 
 @section('content')
 
@@ -13,6 +13,6 @@
 
     @livewire('catalog')
 
-    <x-ui.scroll-to-top />
+    <x-ui.scroll-to-top/>
 
 @endsection

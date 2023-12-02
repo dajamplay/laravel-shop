@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Заказы'))
 
@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12">
 
-               <h1>Заказы - в разработке</h1>
+                <h1>Заказы - в разработке</h1>
 
             </div>
         </div>

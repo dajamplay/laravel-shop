@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Линии'))
 
@@ -7,8 +7,8 @@
     <p class="text-lg">Найдено: {{ $lines->total() }}</p>
 
     <x-admin.button
-        text="{{__('Создать линию')}}"
-        href="{{ route('admin.lines.create') }}"
+            text="{{__('Создать линию')}}"
+            href="{{ route('admin.lines.create') }}"
     />
 
     <x-admin.table>
@@ -25,8 +25,8 @@
                     <x-admin.table.body.row>
                         <x-admin.table.body.row.text value="{{$line->id}}"/>
                         <x-admin.table.body.row.link
-                            value="{{$line->title}}"
-                            link="{{ route('admin.lines.show', $line) }}"
+                                value="{{$line->title}}"
+                                link="{{ route('admin.lines.show', $line) }}"
                         />
                         <x-admin.table.body.row.text value="{!!$line->content!!}" limit="40"/>
                         <x-admin.table.body.row.image value="{{$line->image}}" title="{{$line->title}}"/>

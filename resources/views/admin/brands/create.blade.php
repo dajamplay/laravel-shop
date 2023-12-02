@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Создание бренда'))
 
@@ -7,24 +7,24 @@
     <x-admin.form action="{{route('admin.brands.store')}}" method="post" class="col-md-6">
 
         <x-admin.form.input
-            label="{{__('Наименование')}}"
-            placeholder="{{__('Введите Наименование')}}"
-            name="title"
+                label="{{__('Наименование')}}"
+                placeholder="{{__('Введите Наименование')}}"
+                name="title"
         />
 
         <x-admin.form.summernote
-            label="{{__('Описание')}}"
-            placeholder="{{__('Введите Описание')}}"
-            name="content"
+                label="{{__('Описание')}}"
+                placeholder="{{__('Введите Описание')}}"
+                name="content"
         />
 
         <x-admin.form.image
-            label="{{__('Изображение')}}"
-            name="image"
+                label="{{__('Изображение')}}"
+                name="image"
         />
 
         <x-admin.form.button
-            text="{{__('Создать')}}"
+                text="{{__('Создать')}}"
         />
 
     </x-admin.form>

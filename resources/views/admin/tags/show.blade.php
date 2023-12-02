@@ -1,12 +1,12 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', $tag->title)
 
 @section('content')
 
     <x-admin.button
-        text="{{__('Редактировать')}}"
-        href="{{ route('admin.tags.edit', $tag->id) }}"
+            text="{{__('Редактировать')}}"
+            href="{{ route('admin.tags.edit', $tag->id) }}"
     />
 
     <x-admin.show class="col-md-12">

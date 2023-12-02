@@ -1,12 +1,12 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Слайдер'))
 
 @section('content')
 
     <x-ui.button
-        text="{{__('Создать слайд')}}"
-        href="{{ route('admin.slides.create') }}"
+            text="{{__('Создать слайд')}}"
+            href="{{ route('admin.slides.create') }}"
     />
 
     @if($slides->isNotEmpty())

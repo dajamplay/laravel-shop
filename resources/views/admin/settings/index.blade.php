@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Настройки'))
 
@@ -8,10 +8,10 @@
 
         @foreach($settings as $setting)
             <x-admin.form.input-inline
-                label="{{$setting->key}}"
-                placeholder="{{$setting->key}}"
-                name="{{$setting->key}}"
-                :value="$setting->value"
+                    label="{{$setting->key}}"
+                    placeholder="{{$setting->key}}"
+                    name="{{$setting->key}}"
+                    :value="$setting->value"
             />
         @endforeach
 

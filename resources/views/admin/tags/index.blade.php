@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('title', __('Теги'))
 
@@ -7,8 +7,8 @@
     <p class="text-lg">Найдено: {{ $tags->total() }}</p>
 
     <x-admin.button
-        text="{{__('Создать тег')}}"
-        href="{{ route('admin.tags.create') }}"
+            text="{{__('Создать тег')}}"
+            href="{{ route('admin.tags.create') }}"
     />
 
     <x-admin.table>
@@ -25,8 +25,8 @@
                     <x-admin.table.body.row>
                         <x-admin.table.body.row.text value="{{$tag->id}}"/>
                         <x-admin.table.body.row.link
-                            value="{{$tag->title}}"
-                            link="{{ route('admin.tags.show', $tag) }}"
+                                value="{{$tag->title}}"
+                                link="{{ route('admin.tags.show', $tag) }}"
                         />
                         <x-admin.table.body.row.text value="{!!$tag->content!!}" limit="40"/>
                         <x-admin.table.body.row.image value="{{$tag->image}}" title="{{$tag->title}}"/>

@@ -1,4 +1,4 @@
-@extends('public')
+@extends('layouts.public')
 
 @section('content')
 
