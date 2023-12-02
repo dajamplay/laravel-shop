@@ -522,7 +522,7 @@
     Scroll To Top
     -------------------------------- */
     function scrollToTop() {
-        var $scrollUp = $('.scroll-to-top'),
+        var $scrollUp = $('.scroll-to-top .page-item'),
             $lastScrollTop = 0,
             $window = $(window);
 

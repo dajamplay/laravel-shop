@@ -11,7 +11,6 @@
     <div class="product-img">
         <a href="{{ route('shop.products.show', $slug) }}">
             <img class="primary-img" src="{{ storage($image) }}" alt="{{$title}}">
-            <img class="secondary-img" src="{{ storage($image) }}" alt="{{$title}}">
         </a>
         <div class="product-add-action">
             <ul>
