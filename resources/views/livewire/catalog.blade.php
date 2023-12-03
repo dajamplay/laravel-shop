@@ -3,8 +3,10 @@
         <div class="shop-area mt-30">
             <div class="container">
                 <div class="row">
+
                     <div class="catalog-sidebar-filters mobile-menu_wrapper col-xl-3 col-lg-4 order-2 order-lg-1 pt-5 pt-lg-0" id="mobileFilter">
                         <div class="sidebar-area">
+
                             <div class="widgets-searchbox">
                                 <form id="widgets-searchbox">
                                     <input
@@ -15,6 +17,7 @@
                                         placeholder="{{__('Поиск')}}">
                                 </form>
                             </div>
+
                             <div class="widgets-area">
                                 <div class="widgets-item pt-0">
                                     <h2 class="widgets-title mb-4">{{__('Бренды')}}</h2>
@@ -101,22 +104,12 @@
                                     </ul>
                                 </div>
                             </div>
-                {{--            <div class="banner-item widgets-banner img-hover-effect d-none d-lg-block">--}}
-                {{--                <div class="banner-img">--}}
-                {{--                    <img src="assets/images/sidebar/banner/1-270x300.jpg" alt="Banner Image">--}}
-                {{--                </div>--}}
-                {{--                <div class="banner-content text-position-center">--}}
-                {{--                    <span class="collection">New Collection</span>--}}
-                {{--                    <h3 class="title">Plant Port</h3>--}}
-                {{--                    <div class="button-wrap">--}}
-                {{--                        <a class="btn btn-custom-size sm-size btn-pronia-primary" href="#">Shop--}}
-                {{--                            Now</a>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--            </div>--}}
+
                         </div>
                     </div>
+
                     <div class="col-xl-9 col-lg-8 order-1 order-lg-2">
+
                         <div class="product-topbar">
                             <ul class="d-flex flex-wrap justify-content-start">
                                 @if($filter_title !== '')
