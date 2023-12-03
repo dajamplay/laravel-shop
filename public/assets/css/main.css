@@ -11,6 +11,20 @@
     /*url('../fonts/Caveat-SemiBold.ttf');*/
 }
 
+@font-face {
+    font-family: 'Title';
+    src: local('Title'),
+    /*url('../fonts/Roboto-Regular.ttf');*/
+    /*url('../fonts/MarckScript-Regular.ttf');*/
+    /*url('../fonts/OpenSans-Regular.ttf');*/
+    /*url('../fonts/RobotoCondensed-Regular.ttf');*/
+    /*url('../fonts/Lobster-Regular.ttf');*/
+    /*url('../fonts/Caveat-Regular.ttf');*/
+    /*url('../fonts/Caveat-SemiBold.ttf');*/
+    /*url('../fonts/Pacifico-Regular.ttf');*/
+    url('../fonts/ElMessiri-Regular.ttf');
+}
+
 /*----------------------------------------*/
 /*  01. Template default CSS
 /*----------------------------------------*/
@@ -502,6 +516,7 @@ img {
     padding-right: 90px;
     font-weight: 700;
     margin-bottom: 30px;
+    font-family: "Title", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -1236,6 +1251,7 @@ blockquote p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
 }
 
 .rating-box ul {
@@ -3241,6 +3257,8 @@ blockquote p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     border-radius: 10px;
 }
 
@@ -5014,9 +5032,10 @@ blockquote p {
 /*  15. About
 /*----------------------------------------*/
 .about-title {
-    font-size: 60px;
+    font-size: 40px!important;
     line-height: 57px;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
+    font-family: "Title", sans-serif;
 }
 
 .about-title span {
@@ -5027,7 +5046,7 @@ blockquote p {
 .about-title span:before {
     content: url("../images/about/icon/1.png");
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     right: 0;
 }
 
@@ -5040,12 +5059,8 @@ blockquote p {
 /*----------------------------------------*/
 /*  21. Breadcrumb
 /*----------------------------------------*/
-.breadcrumb-height {
-    height: 120px;
-}
 
 .breadcrumb-heading {
-    text-transform: uppercase;
     font-size: 36px;
 }
 
@@ -5168,16 +5183,23 @@ blockquote p {
 }
 
 .widgets-title {
-    padding-bottom: 15px;
+    font-size: 32px;
+    line-height: 57px;
+    margin-bottom: 20px;
+    font-family: "Title", sans-serif;
     text-align: center;
     position: relative;
     color: #6c6c6c;
-    font-size: 24px;
+}
+
+.widgets-title span {
+    color: #87b04a;
+    position: relative;
 }
 
 .widgets-title:before {
     background-color: #87b04a;
-    content: '';
+    content: ' ';
     width: 30px;
     height: 2px;
     position: absolute;
@@ -6637,4 +6659,31 @@ blockquote p {
     background-color: #82a64e;
     border-radius: 9px;
     border: 1px solid #ffffff;
+}
+
+/*----------------------------------------*/
+/*  BRAND SINGLE PAGE
+/*----------------------------------------*/
+
+.about-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-img img {
+    display: block;
+    max-height: 250px;
+    width: auto;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+/*----------------------------------------*/
+/*  SLIDER PRODUCT
+/*----------------------------------------*/
+
+.product-button-next, .product-button-prev {
+    background-color: rgba(130, 166, 78, 0.51);
 }

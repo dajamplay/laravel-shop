@@ -35,7 +35,7 @@
     <div class="product-content">
         <a class="product-name" href="{{ route('shop.products.show', $slug) }}">{{$title}}</a>
         <div class="price-box pb-1">
-            <span class="new-price">{{$price}}</span>
+            <span class="new-price">{{$price}} Руб.</span>
         </div>
         <div class="rating-box">
             <ul>

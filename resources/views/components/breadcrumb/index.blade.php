@@ -1,15 +1,16 @@
 @props([
-    'h1' => 'Магазин профессиональной косметики',
+    'h1_black' => '',
+    'h1_green' => '',
     'image' => 'assets/images/breadcrumb/bg4.jpg',
     'breadcrumbs' => [],
 ])
 
-<div class="breadcrumb-area breadcrumb-height mt-30" data-bg-image="{{storage($image)}}">
+<div class="breadcrumb-area breadcrumb-height py-1" data-bg-image="{{storage($image)}}">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-lg-12">
                 <div class="breadcrumb-item">
-                    <h1 class="breadcrumb-heading">{{$h1}}</h1>
+                    <h1 class="breadcrumb-heading about-title">{{$h1_black}}&nbsp;<span>{{$h1_green}}</span></h1>
                     @if(count($breadcrumbs) > 0)
                         <ul>
                             @foreach($breadcrumbs as $breadcrumb)
@@ -18,7 +19,7 @@
                                         <a href="{{$breadcrumb['link']}}">{{$breadcrumb['title']}}</a>
                                     </li>
                                 @else
-                                    <li class="">{{$breadcrumb['title']}}</li>
+                                    <li style="color:#aaaaaa;">{{$breadcrumb['title']}}</li>
                                 @endif
                             @endforeach
                         </ul>

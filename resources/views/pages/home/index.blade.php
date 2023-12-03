@@ -85,7 +85,11 @@
     <!-- Begin Brand Area -->
     <x-home.brands>
         @foreach($brands as $brand)
-            <x-home.brands.item image="{{$brand->image}}" title="{{$brand->title}}"/>
+            <x-home.brands.item
+                image="{{$brand->image}}"
+                title="{{$brand->title}}"
+                slug="{{$brand->slug}}"
+            />
         @endforeach
     </x-home.brands>
     <!-- Brand Area End Here -->

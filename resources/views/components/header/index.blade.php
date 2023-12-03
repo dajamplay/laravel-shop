@@ -9,7 +9,12 @@
     </x-header.center>
 
     <x-header.bottom>
-        <x-header.menu class="main-nav header-middle py-1"/>
+        <x-header.menu
+            class="main-nav header-middle py-1"
+            :brands="$brands"
+            :lines="$lines"
+            :products="$products"
+        />
     </x-header.bottom>
 
     <x-header.sticky-menu>

@@ -25,7 +25,7 @@
                             <!-- Search widgets start-->
                             <div class="widgets-area mb-30">
                                 <div class="widgets-item pt-0">
-                                    <h2 class="widgets-title mb-4">{{__('Бренды')}}</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Б')}}<span>{{__('ренды')}}</span></h2>
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="brandFilter()"
@@ -60,7 +60,7 @@
                                     </ul>
                                 </div>
                                 <div class="widgets-item">
-                                    <h2 class="widgets-title mb-4">{{__('Линии')}}</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Л')}}<span>{{__('инии')}}</span></h2>
                                     <ul class="widgets-category">
                                         <li>
                                             <a href="" wire:click.prevent="lineFilter()"
@@ -95,7 +95,7 @@
                                     </ul>
                                 </div>
                                 <div class="widgets-item">
-                                    <h2 class="widgets-title mb-4">{{__('Популярные теги')}}</h2>
+                                    <h2 class="widgets-title mb-4">{{__('Т')}}<span>{{__('еги')}}</span></h2>
                                     <ul class="widgets-tag">
                                         @foreach($tags as $tag)
                                             <li>

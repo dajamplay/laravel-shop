@@ -1,4 +1,4 @@
-<div class="brand-area section-space-bottom-100">
+<div class="brand-area section-space-bottom-90">
     <div class="container">
         <div class="brand-bg" data-bg-image="{{asset('assets/images/brand_bg.jpg')}}">
             <div class="row">
