@@ -15,6 +15,9 @@
                     <div class="swiper-wrapper">
                         {{$slot}}
                     </div>
+                    <!-- Add Arrows -->
+                    <div class="product-button-next swiper-button-next"></div>
+                    <div class="product-button-prev swiper-button-prev"></div>
                 </div>
             </div>
         </div>

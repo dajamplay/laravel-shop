@@ -17,7 +17,7 @@
                     {{ $slot }}
                 </div>
                 <!-- Add Pagination -->
-                <div class="swiper-pagination without-absolute"></div>
+                <div class="testimonial-pagination swiper-pagination without-absolute"></div>
             </div>
         </div>
     </div>
