@@ -4938,7 +4938,7 @@ blockquote p {
 /*----------------------------------------*/
 .brand-bg {
     border-radius: 10px;
-    padding: 90px;
+    padding: 50px;
 }
 
 @media (max-width: 767px) {
@@ -4963,14 +4963,22 @@ blockquote p {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    opacity: 0.5;
+    opacity: 0.6;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    position: relative;
+    align-items: center;
 }
 
 .brand-item:hover {
     opacity: 1;
+}
+
+.brand-item div {
+    position: absolute;
+    font-size: 20px;
+    color: #333333!important;
 }
 
 .brand-nav {

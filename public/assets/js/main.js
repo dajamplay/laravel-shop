@@ -175,7 +175,7 @@
     if ($('.brand-slider').elExists()) {
         var swiper = new Swiper('.brand-slider', {
             slidesPerView: 5,
-            spaceBetween: 120,
+            spaceBetween: 80,
             loop: true,
             speed: 750,
             autoplay: {
