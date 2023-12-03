@@ -5,8 +5,11 @@
                 <div class="row">
 
                     <div class="catalog-sidebar-filters mobile-menu_wrapper col-xl-3 col-lg-4 order-2 order-lg-1 pt-5 pt-lg-0" id="mobileFilter">
+
+                        <!-- Sidebar start-->
                         <div class="sidebar-area">
 
+                            <!-- Search start-->
                             <div class="widgets-searchbox">
                                 <form id="widgets-searchbox">
                                     <input
@@ -17,8 +20,10 @@
                                         placeholder="{{__('Поиск')}}">
                                 </form>
                             </div>
+                            <!-- Search end-->
 
-                            <div class="widgets-area">
+                            <!-- Search widgets start-->
+                            <div class="widgets-area mb-30">
                                 <div class="widgets-item pt-0">
                                     <h2 class="widgets-title mb-4">{{__('Бренды')}}</h2>
                                     <ul class="widgets-category">
@@ -104,12 +109,16 @@
                                     </ul>
                                 </div>
                             </div>
+                            <!-- Search widgets end-->
 
                         </div>
+                        <!-- Sidebar end-->
+
                     </div>
 
                     <div class="col-xl-9 col-lg-8 order-1 order-lg-2">
 
+                        <!-- Toolbar start-->
                         <div class="product-topbar">
                             <ul class="d-flex flex-wrap justify-content-start">
                                 @if($filter_title !== '')
@@ -166,13 +175,17 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- Toolbar end-->
 
+                        <!-- Products grid start-->
                         <div class="product-grid-view row g-y-20">
                             @foreach($products as $product)
                                 @livewire('catalog-card-product', ['product' => $product], key($product->id))
                             @endforeach
                         </div>
+                        <!-- Products grid end-->
 
+                        <!-- Pagination start-->
                         <div class="pagination-area mb-30">
                             @if($products->count() > 0)
                                 {{ $products->links() }}
@@ -180,6 +193,7 @@
                                 <h2>{{__('Не найдено')}}</h2>
                             @endif
                         </div>
+                        <!-- Pagination end-->
 
                     </div>
                 </div>
