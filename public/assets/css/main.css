@@ -975,7 +975,12 @@ img {
 
 /* ---Pagination--- */
 .pagination-area {
-    padding-top: 50px;
+    margin-top: 35px;
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .pagination .page-item:not(:last-child) {
@@ -3092,6 +3097,9 @@ blockquote p {
 /*----------------------------------------*/
 .footer-area {
     background-color: #f6f7fb;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .footer-widget-item .social-link ul li a {
@@ -3260,6 +3268,12 @@ blockquote p {
     justify-content: center;
     text-align: center;
     border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .product-item:hover .product-img img.secondary-img {
@@ -3287,8 +3301,6 @@ blockquote p {
     max-width: 270px;
     height: auto;
     width: auto;
-    border-radius: 10px;
-
 }
 
 .product-content {
@@ -5042,20 +5054,7 @@ blockquote p {
 .about-title {
     font-size: 40px!important;
     line-height: 57px;
-    margin-bottom: 20px;
     font-family: "Title", sans-serif;
-}
-
-.about-title span {
-    color: #87b04a;
-    position: relative;
-}
-
-.about-title span:before {
-    content: url("../images/about/icon/1.png");
-    position: absolute;
-    bottom: -30px;
-    right: 0;
 }
 
 .about-desc {
@@ -5136,8 +5135,11 @@ blockquote p {
     background-color: #f6f7fb;
     border-radius: 10px;
     position: relative;
-    margin-bottom: 40px;
-    padding: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .widgets-searchbox .input-field {
@@ -5145,7 +5147,7 @@ blockquote p {
     background-color: #f6f7fb;
     border-radius: 10px;
     width: 100%;
-    height: 45px;
+    height: 42px;
     line-height: 45px;
     padding-left: 15px;
     padding-right: 55px;
@@ -5219,16 +5221,18 @@ blockquote p {
 }
 
 .widgets-area {
-    background-color: #f6f7fb;
-    border-radius: 10px;
-    padding-top: 55px;
-    padding-bottom: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
+
+
 }
 
 .widgets-item {
-    padding-top: 50px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f6f7fb;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .widgets-category li:not(:last-child) a {
@@ -5321,7 +5325,13 @@ blockquote p {
 /*  16. Shop
 /*----------------------------------------*/
 .product-topbar {
-    padding-bottom: 50px;
+    padding: 15px;
+    background-color: #f6f7fb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .product-topbar > ul {
@@ -5358,7 +5368,9 @@ blockquote p {
 }
 
 .product-topbar > ul li a {
-    color: #6c6c6c;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.36);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.36);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.36);
 }
 
 @media (max-width: 479px) {
@@ -6667,6 +6679,16 @@ blockquote p {
     background-color: #82a64e;
     border-radius: 9px;
     border: 1px solid #ffffff;
+}
+
+.product-grid-view {
+    margin: 0!important;
+    padding: 0!important;
+    background-color: #f6f7fb;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 /*----------------------------------------*/

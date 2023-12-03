@@ -10,7 +10,7 @@
         ];
     @endphp
 
-    <x-breadcrumb h1_black="Профессиональная косметика" h1_green="{{$brand->title}}" :breadcrumbs="$breadcrumbs"/>
+    <x-breadcrumb h1="Профессиональная косметика {{$brand->title}}" :breadcrumbs="$breadcrumbs"/>
 
     <div class="about-area">
         <div class="container">

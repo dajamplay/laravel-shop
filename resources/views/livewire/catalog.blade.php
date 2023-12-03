@@ -178,7 +178,7 @@
                         <!-- Toolbar end-->
 
                         <!-- Products grid start-->
-                        <div class="product-grid-view row g-y-20">
+                        <div class="product-grid-view row">
                             @foreach($products as $product)
                                 @livewire('catalog-card-product', ['product' => $product], key($product->id))
                             @endforeach
