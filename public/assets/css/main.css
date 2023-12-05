@@ -100,14 +100,14 @@ img {
 
 /* ---Custom Container--- */
 @media (min-width: 1400px) {
-    .container {
-        --bs-gutter-x: 15px;
-        max-width: 1200px;
-    }
+    /*.container {*/
+    /*    --bs-gutter-x: 15px;*/
+    /*    max-width: 1200px;*/
+    /*}*/
 
-    .container .row {
-        --bs-gutter-x: 30px;
-    }
+    /*.container .row {*/
+    /*    --bs-gutter-x: 30px;*/
+    /*}*/
 }
 
 /* ---Section Space--- */
@@ -389,10 +389,10 @@ img {
 /* --End Here-- */
 /* ---Custom Gutter Space--- */
 @media (min-width: 1400px) {
-    .g-min-30 {
-        --bs-gutter-x: 30px;
-        --bs-gutter-y: 30px;
-    }
+    /*.g-min-30 {*/
+    /*    --bs-gutter-x: 30px;*/
+    /*    --bs-gutter-y: 30px;*/
+    /*}*/
 }
 
 /* -X axis- */
@@ -6646,6 +6646,15 @@ blockquote p {
 /*----------------------------------------*/
 /*  CATALOG
 /*----------------------------------------*/
+.br-10 {
+    border-radius: 10px;
+}
+
+.shadow-card {
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+}
 
 .active-menu-catalog {
     color: #8ab051 !important;

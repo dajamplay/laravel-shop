@@ -19,7 +19,14 @@
 
     <x-header.sticky-menu>
         <x-slot name="logo"><x-header.center.logo /></x-slot>
-        <x-slot name="menu"><x-header.menu class="main-nav header-middle py-1"/></x-slot>
+        <x-slot name="menu">
+            <x-header.menu
+                class="main-nav header-middle py-1"
+                :brands="$brands"
+                :lines="$lines"
+                :products="$products"
+            />
+        </x-slot>
         <x-slot name="right"><x-header.center.right /></x-slot>
     </x-header.sticky-menu>
 
