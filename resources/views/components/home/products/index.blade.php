@@ -3,7 +3,7 @@
     'description' => '',
 ])
 
-<div class="product-area @if($title) section-space-top-75 @endif">
+<div class="product-area @if($title) section-space-top-75 @endif products-slider-bg">
     <div class="container">
         <div class="row" >
             @if($title)
