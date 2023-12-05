@@ -1,6 +1,6 @@
-<div class="main-wrapper">
+<div class="main-wrapper catalog-bg">
     <main class="main-content">
-        <div class="shop-area mt-30">
+        <div class="shop-area pt-30">
             <div class="container">
                 <div class="row">
 
@@ -190,7 +190,7 @@
                             @if($products->count() > 0)
                                 {{ $products->links() }}
                             @else
-                                <h2>{{__('Не найдено')}}</h2>
+                                <p>{{__('Не найдено')}}</p>
                             @endif
                         </div>
                         <!-- Pagination end-->

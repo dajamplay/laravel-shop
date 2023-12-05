@@ -16,15 +16,15 @@
             <div class="price-box pb-1">
                 <span class="">Линия: {{$product->line->title}}</span>
             </div>
-            <div class="rating-box">
-                <ul>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                </ul>
-            </div>
+{{--            <div class="rating-box">--}}
+{{--                <ul>--}}
+{{--                    <li><i class="fa fa-star"></i></li>--}}
+{{--                    <li><i class="fa fa-star"></i></li>--}}
+{{--                    <li><i class="fa fa-star"></i></li>--}}
+{{--                    <li><i class="fa fa-star"></i></li>--}}
+{{--                    <li><i class="fa fa-star"></i></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
         </div>
     </div>
 </div>

@@ -4,7 +4,10 @@
     'breadcrumbs' => [],
 ])
 
-<div class="breadcrumb-area breadcrumb-height py-1" data-bg-image="{{storage($image)}}">
+<div
+    class="breadcrumb-area breadcrumb-height py-1"
+{{--    data-bg-image="{{storage($image)}}"--}}
+>
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-lg-12">
