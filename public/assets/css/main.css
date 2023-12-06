@@ -6483,10 +6483,26 @@ blockquote p {
 
 @media (max-width: 991px) {
     .catalog-sidebar-filters {
-        position: absolute;
+        position: fixed;
         left: -100vw;
         top: 0;
+        z-index: 80;
+        padding: 0!important;
     }
+    .widgets-searchbox {
+        display: none;
+    }
+
+    .widgets-area {
+        margin-bottom: 0!important;
+        display: flex;
+    }
+}
+
+.catalog-sidebar-filters-show {
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 .btn-filter {
@@ -6519,6 +6535,18 @@ blockquote p {
     -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
     -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
     box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+}
+
+.sidebar-mobile {
+    background-color: #ccc;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: 80;
+    transition: left .5s;
+    overflow: auto;
 }
 
 /*----------------------------------------*/

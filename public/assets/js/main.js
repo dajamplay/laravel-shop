@@ -2,19 +2,6 @@
     ('use strict');
 
     /*----------------------------------------*/
-    /*  Preloader
-    /*----------------------------------------*/
-    var windows = $(window);
-    windows.on('load', function () {
-        $('.preloader-activate').removeClass('preloader-active');
-    });
-    jQuery(window).on('load', function () {
-        setTimeout(function () {
-            jQuery('.open_tm_preloader').addClass('loaded');
-        }, 100);
-    });
-
-    /*----------------------------------------*/
     /*  Check if element exists
     /*----------------------------------------*/
     $.fn.elExists = function () {
@@ -47,6 +34,17 @@
         live: true
     }).init();
 
+    /*----------------------------------------*/
+    /*  Mobile Catalog Filter
+    /*----------------------------------------*/
+
+    let filtersCatalogToggle = document.querySelector('.filter-catalog-toggle');
+
+    let sidebarMobile = document.querySelector('.sidebar-mobile');
+
+    filtersCatalogToggle.onclick = () => {
+        sidebarMobile.style.left = '0';
+    }
     /*---------------------------------------
 		Header Sticky
     ---------------------------------*/
