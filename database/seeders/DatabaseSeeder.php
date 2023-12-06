@@ -5,7 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Post;
 use App\Models\Product;
-use App\Models\ProductTag;
 use App\Models\User;
 use Database\Seeders\Brand\BrandSeeder;
 use Database\Seeders\Feedback\FeedbackSeeder;

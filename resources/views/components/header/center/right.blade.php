@@ -41,8 +41,8 @@
             </a>
         </li>
         <li class="mobile-menu_wrap d-block d-lg-none">
-            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn pl-0">
-                <i class="pe-7s-menu"></i>
+            <a href="#" class="mobile-menu_btn toolbar-btn pl-0">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
         </li>
     </ul>

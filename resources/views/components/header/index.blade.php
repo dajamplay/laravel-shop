@@ -1,9 +1,9 @@
 <header class="main-header-area">
 
-    <x-header.top text="{{$saleText}}" />
+    <x-header.top text="{{$settings('contacts_street')}}" />
 
     <x-header.center>
-        <x-header.center.phones :phones="$phones" />
+        <x-header.center.phone phone="{{$settings('contacts_telephone')}}" />
         <x-header.center.logo />
         <x-header.center.right />
     </x-header.center>
@@ -18,7 +18,9 @@
     </x-header.bottom>
 
     <x-header.sticky-menu>
-        <x-slot name="logo"><x-header.center.logo /></x-slot>
+        <x-slot name="logo">
+            <x-header.center.logo />
+        </x-slot>
         <x-slot name="menu">
             <x-header.menu
                 class="main-nav header-middle py-1"
@@ -27,17 +29,17 @@
                 :products="$products"
             />
         </x-slot>
-        <x-slot name="right"><x-header.center.right /></x-slot>
+        <x-slot name="right">
+            <x-header.center.right />
+        </x-slot>
     </x-header.sticky-menu>
 
-    <x-header.mobile-menu>
-        <x-slot name="logo"><x-header.center.logo /></x-slot>
-        <x-slot name="phones"><x-header.center.phones :phones="$phones" class="d-sm-flex" /></x-slot>
-        <x-slot name="menu"><x-header.menu class="mobile-menu"/></x-slot>
-    </x-header.mobile-menu>
-
-    <x-header.modal-search />
-    <x-header.modal-mini-cart />
-    <x-global-overlay />
+    <x-header.mobile-menu
+        class="mobile-menu"
+        phone="{{$settings('contacts_telephone')}}"
+        :brands="$brands"
+        :lines="$lines"
+        :products="$products"
+    />
 
 </header>

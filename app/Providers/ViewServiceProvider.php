@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use App\Services\Seo\SeoService;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Facades\View;
@@ -24,6 +25,25 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('partials.seo', function ($view) use ($seoService){
             $view->with([
                 'seo' => $seoService->data()
+            ]);
+        });
+
+        $settings = (function() {
+            $settings = Setting::query()->get();
+
+            return function ($key) use ($settings): string
+            {
+                return $settings->where('key', $key)->first()->value ?? '';
+            };
+        })();
+
+        View::composer([
+            'components.header.*',
+            'components.footer.*',
+            'pages.home.contacts',
+        ], function ($view) use ($settings){
+            $view->with([
+                'settings' => $settings
             ]);
         });
     }

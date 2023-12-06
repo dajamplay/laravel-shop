@@ -120,6 +120,17 @@
 
                         <!-- Toolbar start-->
                         <div class="product-topbar">
+                            <div class="d-flex flex-wrap d-lg-none align-items-center justify-content-between">
+                                <a href="#mobileFilter" class="filter-catalog-toggle btn btn-primary p-2 mb-1"><i class="fa fa-filter" aria-hidden="true"></i>{{__('Фильтр')}}</a>
+                                <form id="widgets-searchbox">
+                                    <input
+                                        wire:model.live.debounce.500ms="filter_title"
+                                        id="search"
+                                        class="input-field"
+                                        type="text"
+                                        placeholder="{{__('Поиск')}}">
+                                </form>
+                            </div>
                             <ul class="d-flex flex-wrap justify-content-start">
                                 @if($filter_title !== '')
                                     <li class="mt-2">
@@ -168,11 +179,6 @@
                                     {{__('Найдено продукции ')}}<span>{{$products->total() ?? 0}}</span>
                                 </li>
 
-                                <li class="d-block d-lg-none">
-                                    <a href="#mobileFilter" class="filter-catalog-toggle">
-                                        <i class="pe-7s-menu"></i>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                         <!-- Toolbar end-->
@@ -201,11 +207,15 @@
         </div>
     </main>
 
-    <div class="sidebar-mobile">
-        <!-- Search widgets start-->
-        <div class="">
-            <div class="widgets-item pt-0">
-                <h2 class="widgets-title mb-4">{{__('Б')}}<span>{{__('ренды')}}</span></h2>
+    <!-- Mobile filters start-->
+    <div class="sidebar-mobile d-block d-lg-none container-fluid">
+        <div class="row">
+            <div class="col-12 mobile-top-filter-menu d-flex justify-content-between align-items-center">
+                <div class="mobile-top-filter-title">Фильтры</div>
+                <div class="mobile-top-filter-close"><i class="fa fa-times" aria-hidden="true"></i></div>
+            </div>
+            <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
+                <div class="widgets-title p-0 m-0  mb-1">{{__('Б')}}<span>{{__('ренды')}}</span></div>
                 <ul class="widgets-category">
                     <li>
                         <a href="" wire:click.prevent="brandFilter()"
@@ -239,8 +249,8 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="widgets-item">
-                <h2 class="widgets-title mb-4">{{__('Л')}}<span>{{__('инии')}}</span></h2>
+            <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
+                <div class="widgets-title p-0 m-0 mb-1">{{__('Л')}}<span>{{__('инии')}}</span></div>
                 <ul class="widgets-category">
                     <li>
                         <a href="" wire:click.prevent="lineFilter()"
@@ -274,8 +284,8 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="widgets-item">
-                <h2 class="widgets-title mb-4">{{__('Т')}}<span>{{__('еги')}}</span></h2>
+            <div class="col-12 widgets-item-mobile px-3 py-0 m-0">
+                <div class="widgets-title p-0 m-0 mb-1">{{__('Т')}}<span>{{__('еги')}}</span></div>
                 <ul class="widgets-tag">
                     @foreach($tags as $tag)
                         <li>
@@ -289,7 +299,7 @@
                 </ul>
             </div>
         </div>
-        <!-- Search widgets end-->
+        <!-- Mobile filters end-->
     </div>
 
 </div>
