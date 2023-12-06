@@ -6025,10 +6025,6 @@ blockquote p {
     overflow: auto;
 }
 
-.widgets-item-mobile {
-
-}
-
 .mobile-top-filter-menu {
     background-color: #82a64e;
     color: #ffffff;
@@ -6041,8 +6037,6 @@ blockquote p {
 .mobile-top-filter-menu {
     font-size: 24px;
     cursor: pointer;
-}
-.mobile-top-filter-title {
 }
 
 /*----------------------------------------*/
@@ -6085,4 +6079,19 @@ blockquote p {
     z-index: 80;
     transition: left .5s;
     overflow: auto;
+}
+
+.mobile-menu_logo img {
+    height: 60px;
+}
+
+.mobile-menu_close {
+    font-size: 26px;
+    cursor: pointer;
+    background-color: #82a64e;
+    color: #ffffff!important;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 42px;
 }

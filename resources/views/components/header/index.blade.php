@@ -35,8 +35,6 @@
     </x-header.sticky-menu>
 
     <x-header.mobile-menu
-        class="mobile-menu"
-        phone="{{$settings('contacts_telephone')}}"
         :brands="$brands"
         :lines="$lines"
         :products="$products"
