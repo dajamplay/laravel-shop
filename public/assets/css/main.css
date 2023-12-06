@@ -6013,6 +6013,34 @@ blockquote p {
     box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
+/*----------------------------------------*/
+/*  BRAND SINGLE PAGE
+/*----------------------------------------*/
+.about-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-img img {
+    display: block;
+    max-height: 250px;
+    width: auto;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+/*----------------------------------------*/
+/*  SLIDER PRODUCT
+/*----------------------------------------*/
+.product-button-next, .product-button-prev {
+    background-color: rgba(130, 166, 78, 0.51);
+}
+
+/*----------------------------------------*/
+/*  MOBILE CATALOG FILTER
+/*----------------------------------------*/
 .sidebar-mobile {
     background-color: rgba(255, 255, 255, 0.97);
     width: 100vw;
@@ -6037,33 +6065,6 @@ blockquote p {
 .mobile-top-filter-menu {
     font-size: 24px;
     cursor: pointer;
-}
-
-/*----------------------------------------*/
-/*  BRAND SINGLE PAGE
-/*----------------------------------------*/
-
-.about-img {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-img img {
-    display: block;
-    max-height: 250px;
-    width: auto;
-    border-radius: 10px;
-    margin: 15px;
-}
-
-/*----------------------------------------*/
-/*  SLIDER PRODUCT
-/*----------------------------------------*/
-
-.product-button-next, .product-button-prev {
-    background-color: rgba(130, 166, 78, 0.51);
 }
 
 /*----------------------------------------*/
