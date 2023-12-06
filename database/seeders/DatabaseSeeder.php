@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->count(100)->create();
 
-        Product::factory()->count(100)->create();
+        Product::factory()->count(200)->create();
 
         Product::all()->each( function (Product $product) {
             $product->tags()->attach([rand(1,2),rand(3,4), 5]);

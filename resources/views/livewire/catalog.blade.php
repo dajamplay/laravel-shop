@@ -1,4 +1,4 @@
-<div class="main-wrapper catalog-bg">
+<div class="main-wrapper catalog-bg" id="paginated-scroll">
     <main class="main-content">
         <div class="shop-area pt-30">
             <div class="container">
@@ -186,7 +186,7 @@
                         <!-- Products grid end-->
 
                         <!-- Pagination start-->
-                        <div class="pagination-area mb-30">
+                        <div class="pagination-area mb-30 d-flex flex-wrap">
                             @if($products->count() > 0)
                                 {{ $products->links() }}
                             @else
