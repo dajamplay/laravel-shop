@@ -41,7 +41,7 @@
             </a>
         </li>
         <li class="d-block d-lg-none">
-            <a class="toolbar-btn pl-0" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu-2">
+            <a class="toolbar-btn pl-0" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
         </li>

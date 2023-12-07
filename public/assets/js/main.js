@@ -34,24 +34,6 @@
         live: true
     }).init();
 
-    /*----------------------------------------*/
-    /*  Mobile Catalog Filter
-    /*----------------------------------------*/
-
-    if(document.querySelector('.filter-catalog-toggle')) {
-        let filtersCatalogToggle = document.querySelector('.filter-catalog-toggle');
-        let sidebarMobile = document.querySelector('.sidebar-mobile');
-        let mobileTopFilterClose = document.querySelector('.mobile-top-filter-menu');
-
-        filtersCatalogToggle.onclick = () => {
-            sidebarMobile.style.left = '0';
-        }
-
-        mobileTopFilterClose.onclick = () => {
-            sidebarMobile.style.left = '-100vw';
-        }
-    }
-
     /*---------------------------------------
 		Header Sticky
     ---------------------------------*/

@@ -2,7 +2,7 @@
     class="offcanvas offcanvas-start"
     data-bs-scroll="false"
     tabindex="-1"
-    id="mobile-menu-2"
+    id="mobile-menu"
 >
     <div class="offcanvas-header">
         <div class="mobile-menu_logo">
@@ -115,9 +115,9 @@
 
         </div>
     </div>
-    <div class="offcanvas-footer">
-        <div class="accordion-link">Остались вопросы? Позвоните нам</div>
-        <div class="accordion-link">
+    <div class="offcanvas-footer mobile-menu_footer">
+        <div class="accordion-item_footer">Остались вопросы? Позвоните нам!</div>
+        <div class="d-flex justify-content-start align-items-center accordion-item_footer">
             <i class="pe-7s-call"></i>
             <div>
                 <div>
@@ -125,6 +125,6 @@
                 </div>
             </div>
         </div>
-        <div class="accordion-link">{{$settings('contacts_street')}}</div>
+        <div class="accordion-item_footer">{{$settings('contacts_street')}}</div>
     </div>
 </div>

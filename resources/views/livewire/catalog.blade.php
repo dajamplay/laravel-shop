@@ -121,7 +121,10 @@
                         <!-- Toolbar start-->
                         <div class="product-topbar">
                             <div class="d-flex flex-wrap d-lg-none align-items-center justify-content-between">
-                                <a href="#mobileFilter" class="filter-catalog-toggle btn btn-primary p-2 mb-1"><i class="fa fa-filter" aria-hidden="true"></i>{{__('Фильтр')}}</a>
+                                <a
+                                    data-bs-toggle="offcanvas" data-bs-target="#mobile-catalog-filter"
+                                    class="filter-catalog-toggle btn btn-primary p-2 mb-1"
+                                ><i class="fa fa-filter" aria-hidden="true"></i>{{__('Фильтр')}}</a>
                                 <form id="widgets-searchbox">
                                     <input
                                         wire:model.live.debounce.500ms="filter_title"
@@ -208,98 +211,113 @@
     </main>
 
     <!-- Mobile filters start-->
-    <div class="sidebar-mobile d-block d-lg-none container-fluid">
-        <div class="row">
-            <div class="col-12 mobile-top-filter-menu d-flex justify-content-between align-items-center">
-                <div class="mobile-top-filter-title">Фильтры</div>
-                <div class="mobile-top-filter-close"><i class="fa fa-times" aria-hidden="true"></i></div>
-            </div>
-            <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
-                <div class="widgets-title p-0 m-0  mb-1">{{__('Б')}}<span>{{__('ренды')}}</span></div>
-                <ul class="widgets-category">
-                    <li>
-                        <a href="" wire:click.prevent="brandFilter()"
-                           @if($filter_brand == '')
-                               class="active-menu-catalog"
-                            @endif
-                        >
-                            @if($filter_brand == '')
-                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                            @else
-                                <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            @endif
-                            {{__('Все бренды')}}
-                        </a>
-                    </li>
-                    @foreach($brands as $brand)
+
+    <!-- Mobile filters end-->
+
+    <div
+        class="offcanvas offcanvas-start"
+        data-bs-scroll="false"
+        tabindex="-1"
+        id="mobile-catalog-filter"
+    >
+        <script>
+            function hideOffcanvas() {
+                let offcanvas = new bootstrap.Offcanvas(document.getElementById('mobile-catalog-filter'));
+                offcanvas.hide();
+            }
+        </script>
+        <div class="offcanvas-header">
+            <div class="mobile-top-filter-title">Фильтры</div>
+            <button type="button" class="btn-close mobile-menu_close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
+                    <div class="widgets-title p-0 m-0  mb-1">{{__('Б')}}<span>{{__('ренды')}}</span></div>
+                    <ul class="widgets-category">
                         <li>
-                            <a href="#" wire:click.prevent="brandFilter('{{$brand['title']}}')"
-                               @if($filter_brand == $brand['title'])
+                            <a href="" wire:click.prevent="brandFilter()" onclick="hideOffcanvas()"
+                               @if($filter_brand == '')
                                    class="active-menu-catalog"
                                 @endif
                             >
-                                @if($filter_brand == $brand['title'])
+                                @if($filter_brand == '')
                                     <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
                                 @else
                                     <i class="fa fa-circle-o" aria-hidden="true"></i>
                                 @endif
-                                {{$brand['title']}}
+                                {{__('Все бренды')}}
                             </a>
                         </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
-                <div class="widgets-title p-0 m-0 mb-1">{{__('Л')}}<span>{{__('инии')}}</span></div>
-                <ul class="widgets-category">
-                    <li>
-                        <a href="" wire:click.prevent="lineFilter()"
-                           @if($filter_line == '')
-                               class="active-menu-catalog"
-                            @endif
-                        >
-                            @if($filter_line == '')
-                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                            @else
-                                <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            @endif
-                            {{__('Все линии')}}
-                        </a>
-                    </li>
-                    @foreach($lines as $line)
+                        @foreach($brands as $brand)
+                            <li>
+                                <a href="" wire:click.prevent="brandFilter('{{$brand['title']}}')" onclick="hideOffcanvas()"
+                                   @if($filter_brand == $brand['title'])
+                                       class="active-menu-catalog"
+                                    @endif
+                                >
+                                    @if($filter_brand == $brand['title'])
+                                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                    @else
+                                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                    @endif
+                                    {{$brand['title']}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-6 widgets-item-mobile px-3 py-0 m-0">
+                    <div class="widgets-title p-0 m-0 mb-1">{{__('Л')}}<span>{{__('инии')}}</span></div>
+                    <ul class="widgets-category">
                         <li>
-                            <a href="{{$line['slug']}}" wire:click.prevent="lineFilter('{{$line['title']}}')"
-                               @if($filter_line == $line['title'])
+                            <a href="" wire:click.prevent="lineFilter()" onclick="hideOffcanvas()"
+                               @if($filter_line == '')
                                    class="active-menu-catalog"
                                 @endif
                             >
-                                @if($filter_line == $line['title'])
+                                @if($filter_line == '')
                                     <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
                                 @else
                                     <i class="fa fa-circle-o" aria-hidden="true"></i>
                                 @endif
-                                {{$line['title']}}
+                                {{__('Все линии')}}
                             </a>
                         </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-12 widgets-item-mobile px-3 py-0 m-0">
-                <div class="widgets-title p-0 m-0 mb-1">{{__('Т')}}<span>{{__('еги')}}</span></div>
-                <ul class="widgets-tag">
-                    @foreach($tags as $tag)
-                        <li>
-                            <a href="#" wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')"
-                               @if(array_key_exists($tag['id'], $filter_tags))
-                                   class="btn-pronia-primary text-white btn-filter"
-                                @endif
-                            >{{$tag['title']}}</a>
-                        </li>
-                    @endforeach
-                </ul>
+                        @foreach($lines as $line)
+                            <li>
+                                <a href="{{$line['slug']}}" wire:click.prevent="lineFilter('{{$line['title']}}')" onclick="hideOffcanvas()"
+                                   @if($filter_line == $line['title'])
+                                       class="active-menu-catalog"
+                                    @endif
+                                >
+                                    @if($filter_line == $line['title'])
+                                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                    @else
+                                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                                    @endif
+                                    {{$line['title']}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-12 widgets-item-mobile px-3 py-0 m-0">
+                    <div class="widgets-title p-0 m-0 mb-1">{{__('Т')}}<span>{{__('еги')}}</span></div>
+                    <ul class="widgets-tag">
+                        @foreach($tags as $tag)
+                            <li>
+                                <a href="#" wire:click.prevent="tagFilter({{$tag['id']}}, '{{$tag['title']}}')" onclick="hideOffcanvas()"
+                                   @if(array_key_exists($tag['id'], $filter_tags))
+                                       class="btn-pronia-primary text-white btn-filter"
+                                    @endif
+                                >{{$tag['title']}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- Mobile filters end-->
     </div>
 
 </div>

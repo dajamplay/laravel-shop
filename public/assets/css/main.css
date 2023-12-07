@@ -6074,6 +6074,25 @@ blockquote p {
 .mobile-menu_logo img {
     height: 60px;
 }
+
+.mobile-menu_footer, .mobile-menu_footer  a {
+    background-color: #82a64e;
+    color: #ffffff;
+}
+
+.mobile-menu_footer {
+    padding: 5px 15px;
+}
+
+.accordion-item_footer {
+    padding: 0 5px;
+}
+
+.accordion-item_footer:not(:last-child) {
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
 .accordion-link {
     position: relative;
     display: flex;
