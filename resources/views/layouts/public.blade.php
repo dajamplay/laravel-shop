@@ -15,36 +15,13 @@
 <body>
 <div id="app" class="main-wrapper">
     <x-header />
-
-{{--    <a--}}
-{{--        data-bs-toggle="offcanvas"--}}
-{{--        data-bs-target="#test"--}}
-{{--    >Enable both scrolling & backdrop</a>--}}
-
-{{--    <div--}}
-{{--        class="offcanvas offcanvas-start"--}}
-{{--        data-bs-scroll="false"--}}
-{{--        tabindex="-1"--}}
-{{--        id="test"--}}
-{{--    >--}}
-{{--        <div class="offcanvas-header">--}}
-{{--            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>--}}
-{{--            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>--}}
-{{--        </div>--}}
-{{--        <div class="offcanvas-body">--}}
-{{--            <p>Try scrolling the rest of the page to see this option in action.</p>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
     <div class="container-fluid">
         <x-ui.session_alert message="message"/>
     </div>
-
     <div class="container-fluid">
         <x-ui.session_alert message="message-error" color="danger"/>
     </div>
-
-        @yield('content')
+    @yield('content')
     <x-footer />
 </div>
 <script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>

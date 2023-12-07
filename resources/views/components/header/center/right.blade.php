@@ -40,10 +40,11 @@
                 <span class="quantity">3</span>
             </a>
         </li>
-        <li class="mobile-menu_wrap d-block d-lg-none">
-            <a href="#" class="mobile-menu_btn toolbar-btn pl-0">
+        <li class="d-block d-lg-none">
+            <a class="toolbar-btn pl-0" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu-2">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
         </li>
+
     </ul>
 </div>
