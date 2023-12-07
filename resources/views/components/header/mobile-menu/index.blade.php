@@ -15,6 +15,11 @@
 
             <div class="accordion-item">
                 <div class="accordion-header">
+                    <a class="accordion-link" href="{{route('shop.products.index')}}">Магазин</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
                     <button
                         class="accordion-button collapsed"
                         type="button"
@@ -31,10 +36,10 @@
                     <div class="accordion-body">
                         <ul>
                             <li>
-                                <a href="{{route('home.about')}}">О компании</a>
+                                <a class="accordion-link-sub" href="{{route('home.about')}}">О компании</a>
                             </li>
                             <li>
-                                <a href="{{route('home.delivery')}}">Доставка и оплата</a>
+                                <a class="accordion-link-sub"  href="{{route('home.delivery')}}">Доставка и оплата</a>
                             </li>
                         </ul>
                     </div>
@@ -48,7 +53,7 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#mobile-item-brands"
                         aria-expanded="false"
-                    >Бренды</button>
+                    >Популярные бренды</button>
                 </div>
                 <div
                     id="mobile-item-brands"
@@ -58,14 +63,14 @@
                     <div class="accordion-body">
                         @if(count($brands) > 0)
                             <ul>
+                                <li>
+                                    <a  class="accordion-link-sub" href="{{route('shop.products.index')}}">Все бренды</a>
+                                </li>
                                 @foreach($brands as $brand)
                                     <li>
-                                        <a href="{{route('shop.brands.show', $brand->slug)}}">{{$brand->title}}</a>
+                                        <a  class="accordion-link-sub" href="{{route('shop.brands.show', $brand->slug)}}">{{$brand->title}}</a>
                                     </li>
                                 @endforeach
-                                <li>
-                                    <a href="{{route('shop.products.index')}}">Все бренды</a>
-                                </li>
                             </ul>
                         @endif
                     </div>
@@ -79,7 +84,7 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#mobile-item-lines"
                         aria-expanded="false"
-                    >Линии</button>
+                    >Популярные линии</button>
                 </div>
                 <div
                     id="mobile-item-lines"
@@ -89,23 +94,37 @@
                     <div class="accordion-body">
                         @if(count($lines) > 0)
                             <ul>
+                                <li>
+                                    <a class="accordion-link-sub" href="{{route('shop.products.index')}}">Все бренды</a>
+                                </li>
                                 @foreach($lines as $line)
                                     <li>
-                                        <a href="{{route('shop.lines.show', $line->slug)}}">{{$line->title}}</a>
+                                        <a class="accordion-link-sub" href="{{route('shop.lines.show', $line->slug)}}">{{$line->title}}</a>
                                     </li>
                                 @endforeach
-                                <li>
-                                    <a href="{{route('shop.products.index')}}">Все бренды</a>
-                                </li>
                             </ul>
                         @endif
                     </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <a class="accordion-link" href="{{route('home.contacts')}}">Контакты</a>
                 </div>
             </div>
 
         </div>
     </div>
     <div class="offcanvas-footer">
-        <dic>Наш телефон {{$settings('contacts_telephone')}}</dic>
+        <div class="accordion-link">Остались вопросы? Позвоните нам</div>
+        <div class="accordion-link">
+            <i class="pe-7s-call"></i>
+            <div>
+                <div>
+                    <a href="tel://{{$settings('contacts_telephone')}}">{{$settings('contacts_telephone')}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-link">{{$settings('contacts_street')}}</div>
     </div>
 </div>
