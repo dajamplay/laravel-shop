@@ -34,7 +34,7 @@
         </x-slot>
     </x-header.sticky-menu>
 
-    <x-mobile-menu
+    <x-header.mobile-menu
         :brands="$brands"
         :lines="$lines"
         :products="$products"

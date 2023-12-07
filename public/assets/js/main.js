@@ -35,22 +35,6 @@
     }).init();
 
     /*----------------------------------------*/
-    /*  Mobile Menu
-    /*----------------------------------------*/
-    if(document.querySelector('.mobile-menu_btn')) {
-        let mobileMenuToggle = document.querySelector('.mobile-menu_btn');
-        let mobileMenu = document.querySelector('.mobile-menu_wrapper');
-        let mobileMenuClose = document.querySelector('.mobile-menu_close');
-
-        mobileMenuToggle.onclick = () => {
-            mobileMenu.style.left = '0';
-        }
-
-        mobileMenuClose.onclick = () => {
-            mobileMenu.style.left = '-100vw';
-        }
-    }
-    /*----------------------------------------*/
     /*  Mobile Catalog Filter
     /*----------------------------------------*/
 
