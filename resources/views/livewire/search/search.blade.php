@@ -20,7 +20,7 @@
         <div class="row">
             @if(count($products) > 0)
                 @foreach($products as $product)
-                    <div>{{$product->id}} <a class="text-decoration-underline" href="{{route('shop.products.show', $product->slug)}}">{{$product->title}}</a></div>
+                    <div wire:key="{{$product->id}}">{{$product->id}} <a class="text-decoration-underline" href="{{route('shop.products.show', $product->slug)}}">{{$product->title}}</a></div>
                 @endforeach
                 {{ $products->links() }}
             @else
@@ -32,7 +32,15 @@
     </div>
     <div class="offcanvas-footer">
         <div class="offcanvas_products-total-count">
-            {{__('Найдено ')}}<span>{{count($products) ?? 0}}</span>
+            {{__('Найдено ')}}
+            <span>
+                @if(is_array($products))
+                    0
+                @else
+                    {{$products->total()}}
+                @endif
+            </span>
         </div>
     </div>
 </div>
+
