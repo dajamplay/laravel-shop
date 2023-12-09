@@ -799,6 +799,7 @@ img {
 
 .pagination .page-item:not(:last-child) {
     padding-right: 5px;
+    padding-bottom: 5px;
 }
 
 .pagination .page-item.active .page-link {
@@ -818,9 +819,9 @@ img {
     color: #cccccc;
     text-align: center;
     padding: 0;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     border-radius: 5px;
 }
 
@@ -1790,7 +1791,7 @@ blockquote p {
 }
 
 .header-right > ul > li > a i {
-    font-size: 23px;
+    font-size: 30px;
     vertical-align: middle;
 }
 
@@ -6041,30 +6042,32 @@ blockquote p {
 /*----------------------------------------*/
 /*  MOBILE CATALOG FILTER
 /*----------------------------------------*/
-.sidebar-mobile {
-    background-color: rgba(255, 255, 255, 0.97);
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    left: -100vw;
-    top: 0;
-    z-index: 80;
-    transition: left .5s;
-    overflow: auto;
-}
 
-.mobile-top-filter-menu {
-    background-color: #82a64e;
-    color: #ffffff;
-    padding: 0 10px;
-    height: 40px;
-    border-radius: 20px;
-    line-height: 40px;
-}
-
-.mobile-top-filter-menu {
+.offcanvas_close-btn {
     font-size: 24px;
-    cursor: pointer;
+}
+
+.offcanvas_products-total-count {
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid #eeeeee;
+    padding: 0 5px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+}
+
+.offcanvas_products-total-count span {
+    color: #ffffff;
+    background-color: #82a64e;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.offcanvas_mobile-filter-header {
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 /*----------------------------------------*/
@@ -6118,10 +6121,19 @@ blockquote p {
     text-align: left;
     background-color: #fff;
     border-bottom: 1px solid #cccccc;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .accordion-button:not(.collapsed) {
-    color: #82a64e!important;
-    background-color: #eeeeee;
+    color: #ffffff!important;
+    background-color: #82a64e;
     box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+    border-radius: 8px!important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
 }

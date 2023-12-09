@@ -11,9 +11,9 @@
     <x-header.bottom>
         <x-header.menu
             class="main-nav header-middle py-1"
-            :brands="$brands"
-            :lines="$lines"
-            :products="$products"
+            :brands="$menu['brands']"
+            :lines="$menu['lines']"
+            :products="$menu['products']"
         />
     </x-header.bottom>
 
@@ -21,12 +21,12 @@
         <x-slot name="logo">
             <x-header.center.logo />
         </x-slot>
-        <x-slot name="menu">
+        <x-slot name="mainMenu">
             <x-header.menu
                 class="main-nav header-middle py-1"
-                :brands="$brands"
-                :lines="$lines"
-                :products="$products"
+                :brands="$menu['brands']"
+                :lines="$menu['lines']"
+                :products="$menu['products']"
             />
         </x-slot>
         <x-slot name="right">
@@ -35,9 +35,9 @@
     </x-header.sticky-menu>
 
     <x-header.mobile-menu
-        :brands="$brands"
-        :lines="$lines"
-        :products="$products"
+        :brands="$menu['brands']"
+        :lines="$menu['lines']"
+        :products="$menu['products']"
     />
 
 </header>

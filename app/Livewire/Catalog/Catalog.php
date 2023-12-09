@@ -17,7 +17,7 @@ class Catalog extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
+    protected string $paginationTheme = 'bootstrap';
 
     const PER_PAGE = 12;
 
@@ -49,6 +49,9 @@ class Catalog extends Component
         $this->productsCountAll = Product::all()->count();
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function render(): View
     {
         $filter = $this->createFilter([
@@ -58,44 +61,39 @@ class Catalog extends Component
             'filter_tags' => $this->filter_tags,
         ]);
 
-        $brandCountFilter = $this->createFilter([
-            'filter_title' => $this->filter_title,
-            'filter_line' => $this->filter_line,
-        ]);
-
-        $lineCountFilter = $this->createFilter([
-            'filter_title' => $this->filter_title,
-            'filter_brand' => $this->filter_brand,
-        ]);
-
         $products = Product::query()->filter($filter)->paginate(self::PER_PAGE);
 
         return view('livewire.catalog.catalog', compact([
-             'products', 'filter', 'brandCountFilter', 'lineCountFilter'
+             'products', 'filter',
         ]));
     }
 
-    public function brandFilter(string $title = '')
+    public function updatedFilterTitle(): void
+    {
+        $this->resetPage();
+    }
+
+    public function brandFilter(string $title = ''): void
     {
         if ($this->filter_brand === $title) $title = '';
         $this->filter_brand = $title;
         $this->resetPage();
     }
 
-    public function clearSearchFilter()
+    public function clearSearchFilter(): void
     {
         $this->filter_title = '';
         $this->resetPage();
     }
 
-    public function lineFilter(string $title = '')
+    public function lineFilter(string $title = ''): void
     {
         if ($this->filter_line === $title) $title = '';
         $this->filter_line = $title;
         $this->resetPage();
     }
 
-    public function tagFilter(int $id = -1, string $title = '')
+    public function tagFilter(int $id = -1, string $title = ''): void
     {
         if (array_key_exists($id, $this->filter_tags)) {
             unset($this->filter_tags[$id]);

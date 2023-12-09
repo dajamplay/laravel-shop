@@ -5,9 +5,11 @@
     id="mobile-catalog-filter"
     wire:ignore.self
 >
-    <div class="offcanvas-header">
-        <div class="mobile-top-filter-title">Фильтры</div>
-        <button type="button" class="btn-close mobile-menu_close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-header offcanvas_mobile-filter-header">
+        <div class="offcanvas_products-total-count">
+            {{__('Найдено ')}}<span>{{$products->total() ?? 0}}</span>
+        </div>
+        <button type="button" class="btn-close offcanvas_close-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="row">

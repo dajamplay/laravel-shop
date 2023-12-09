@@ -38,7 +38,7 @@
     </main>
 
     <!-- Mobile filters start-->
-    @include('livewire.catalog.catalog-filter')
+    @include('livewire.catalog.catalog-mobile-filter')
     <!-- Mobile filters end-->
 
 </div>

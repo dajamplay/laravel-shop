@@ -10,7 +10,7 @@
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="main-menu">
 
-                        {{$menu}}
+                        {{$mainMenu}}
 
                     </div>
                 </div>

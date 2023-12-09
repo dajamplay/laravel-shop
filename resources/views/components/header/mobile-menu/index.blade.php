@@ -1,3 +1,9 @@
+@props([
+    'brands' => [],
+    'lines' => [],
+    'products' => [],
+])
+
 <div
     class="offcanvas offcanvas-start"
     data-bs-scroll="false"
@@ -8,7 +14,7 @@
         <div class="mobile-menu_logo">
             <x-header.center.logo />
         </div>
-        <button type="button" class="btn-close mobile-menu_close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close offcanvas_close-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="accordion accordion-flush" id="mobile-accordion-flush">

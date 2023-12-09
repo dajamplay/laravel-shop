@@ -1,9 +1,9 @@
 <div class="header-right">
     <ul>
         <li>
-            <a href="#searchModal" class="search-btn bt" data-bs-toggle="modal" data-bs-target="#searchModal">
-                <i class="pe-7s-search"></i>
-            </a>
+            <a
+                data-bs-toggle="offcanvas" data-bs-target="#search-products"
+            ><i class="pe-7s-search"></i></a>
         </li>
         <li class="dropdown ">
             <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
@@ -41,7 +41,7 @@
             </a>
         </li>
         <li class="d-block d-lg-none">
-            <a class="toolbar-btn pl-0" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu">
+            <a class="toolbar-btn pl-0 mobile-menu_toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
         </li>

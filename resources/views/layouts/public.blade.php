@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="app" class="main-wrapper">
-    <x-header />
+    <x-header.index />
     <div class="container-fluid">
         <x-ui.session_alert message="message"/>
     </div>
@@ -22,6 +22,7 @@
         <x-ui.session_alert message="message-error" color="danger"/>
     </div>
     @yield('content')
+    @livewire('search.search')
     <x-footer />
 </div>
 <script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>

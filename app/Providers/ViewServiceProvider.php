@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Brand;
+use App\Models\Line;
+use App\Models\Product;
 use App\Models\Setting;
 use App\Services\Seo\SeoService;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -46,5 +49,20 @@ class ViewServiceProvider extends ServiceProvider
                 'settings' => $settings
             ]);
         });
+
+        $brands = Brand::query()->limit(4)->get();
+        $lines = Line::query()->limit(4)->get();
+        $products = Product::query()->limit(4)->orderBy('created_at', 'desc') ->get();
+        $menu = compact('brands', 'lines', 'products');
+
+        View::composer([
+            'components.header.*',
+            'components.footer.*',
+        ], function ($view) use ($menu){
+            $view->with([
+                'menu' => $menu
+            ]);
+        });
+
     }
 }
