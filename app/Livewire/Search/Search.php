@@ -15,16 +15,16 @@ class Search extends Component
 
     protected string $paginationTheme = 'bootstrap';
 
-    public string $filter_title = '';
+    public string $global_search = '';
 
-    const PER_PAGE = 12;
+    const PER_PAGE = 20;
 
     public function mount(): void
     {
         //
     }
 
-    public function updatedFilterTitle(): void
+    public function updatedGlobalSearch(): void
     {
         $this->resetPage();
     }
@@ -35,10 +35,10 @@ class Search extends Component
     public function render(): View
     {
         $filter = $this->createFilter([
-            'filter_title' => $this->filter_title,
+            'filter_title' => $this->global_search,
         ]);
 
-        $products = $this->filter_title ? Product::query()->filter($filter)->paginate(self::PER_PAGE) : [];
+        $products = $this->global_search ? Product::query()->filter($filter)->paginate(self::PER_PAGE) : [];
 
         return view('livewire.search.search', compact(['products', 'filter']));
     }

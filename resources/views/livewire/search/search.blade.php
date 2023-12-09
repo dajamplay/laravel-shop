@@ -6,28 +6,33 @@
     wire:ignore.self
 >
     <div class="offcanvas-header offcanvas_mobile-filter-header">
-        <div class="offcanvas_products-total-count">
-            <form id="products-searchbox">
-                <input
-                    wire:model.live.debounce.200ms="filter_title"
-                    type="text"
-                    placeholder="{{__('Введите название')}}">
-            </form>
-        </div>
+
+        <form class="global-search_input">
+            <span><input
+                wire:model.live.debounce.200ms="global_search"
+                type="text"
+                placeholder="{{__('Введите название')}}"></span>
+        </form>
+
         <button type="button" class="btn-close offcanvas_close-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="row">
             @if(count($products) > 0)
                 @foreach($products as $product)
-                    <div>{{$product->title}}</div>
+                    <div>{{$product->id}} <a class="text-decoration-underline" href="{{route('shop.products.show', $product->slug)}}">{{$product->title}}</a></div>
                 @endforeach
                 {{ $products->links() }}
             @else
-                @if($filter_title != '')
+                @if($global_search != '')
                     <div>Не найдено</div>
                 @endif
             @endif
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+        <div class="offcanvas_products-total-count">
+            {{__('Найдено ')}}<span>{{count($products) ?? 0}}</span>
         </div>
     </div>
 </div>
