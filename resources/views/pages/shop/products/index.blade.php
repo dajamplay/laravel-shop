@@ -11,7 +11,7 @@
 
     <x-breadcrumb h1_black="Магазин" h1_green="косметики" :breadcrumbs="$breadcrumbs"/>
 
-    @livewire('catalog')
+    @livewire('catalog.catalog')
 
     <x-ui.scroll-to-top/>
 

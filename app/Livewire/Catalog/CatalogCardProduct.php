@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Catalog;
 
 use App\Models\Product;
 use Illuminate\View\View;
@@ -21,6 +21,6 @@ class CatalogCardProduct extends Component
 
     public function render(): View
     {
-        return view('livewire.catalog-card-product');
+        return view('livewire.catalog.catalog-card-product');
     }
 }

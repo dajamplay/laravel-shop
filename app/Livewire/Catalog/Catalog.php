@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Catalog;
 
 use App\Http\Filters\ProductFilter;
 use App\Models\Brand;
@@ -8,7 +8,6 @@ use App\Models\Line;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -71,7 +70,7 @@ class Catalog extends Component
 
         $products = Product::query()->filter($filter)->paginate(self::PER_PAGE);
 
-        return view('livewire.catalog', compact([
+        return view('livewire.catalog.catalog', compact([
              'products', 'filter', 'brandCountFilter', 'lineCountFilter'
         ]));
     }
