@@ -1,5 +1,5 @@
 <div
-    class="offcanvas offcanvas-top"
+    class="offcanvas offcanvas-start"
     data-bs-scroll="false"
     tabindex="-1"
     id="favorite"

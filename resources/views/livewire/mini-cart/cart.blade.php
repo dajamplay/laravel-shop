@@ -1,5 +1,5 @@
 <div
-    class="offcanvas offcanvas-end"
+    class="offcanvas offcanvas-start"
     data-bs-scroll="false"
     tabindex="-1"
     id="mini-cart"
