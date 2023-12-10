@@ -3,11 +3,13 @@
     <x-header.top text="{{$settings('contacts_street')}}" />
 
     <x-header.center>
-        <x-header.center.phone phone="{{$settings('contacts_telephone')}}" />
-        <div class="col-lg-3 col-5">
+        <div class="d-none d-lg-block col-lg-4">
+            <x-header.center.phone phone="{{$settings('contacts_telephone')}}" />
+        </div>
+        <div class="col-lg-4 col-5 d-flex justify-content-center">
             <x-header.center.logo />
         </div>
-        <div class="col-lg-3 col-7">
+        <div class="col-lg-4 col-7">
             <x-header.center.right />
         </div>
     </x-header.center>

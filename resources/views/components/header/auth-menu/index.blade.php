@@ -1,5 +1,5 @@
 <div
-    class="offcanvas offcanvas-start"
+    class="offcanvas offcanvas-end"
     data-bs-scroll="false"
     tabindex="-1"
     id="auth-menu"
