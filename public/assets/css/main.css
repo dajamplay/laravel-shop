@@ -6071,6 +6071,28 @@ blockquote p {
 }
 
 /*----------------------------------------*/
+/*  AUTH MENU
+/*----------------------------------------*/
+.auth-menu-item {
+    display: block;
+    margin: 15px 0;
+    background-color: #82a64e;
+    color: #ffffff;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #82a64e;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.auth-menu-item:hover {
+    background-color: transparent;
+    color: #333333;
+}
+
+/*----------------------------------------*/
 /*  MOBILE MENU
 /*----------------------------------------*/
 

@@ -40,4 +40,6 @@
         :products="$menu['products']"
     />
 
+    <x-header.auth-menu />
+
 </header>
