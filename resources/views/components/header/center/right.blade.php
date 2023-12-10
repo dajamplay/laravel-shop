@@ -7,12 +7,14 @@
             <a data-bs-toggle="offcanvas" data-bs-target="#auth-menu"><i class="pe-7s-users"></i></a>
         </li>
         <li class="d-none d-lg-block">
-            <a href="#">
-                <i class="pe-7s-like"></i>
-            </a>
+            <a data-bs-toggle="offcanvas" data-bs-target="#favorite"><i class="pe-7s-like"></i></a>
         </li>
-        <li class="minicart-wrap me-3 me-lg-0">
-            <a href="#miniCart" class="minicart-btn toolbar-btn">
+        <li>
+            <a
+                class="minicart-btn toolbar-btn"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mini-cart"
+            >
                 <i class="pe-7s-shopbag"></i>
                 <span class="quantity">3</span>
             </a>

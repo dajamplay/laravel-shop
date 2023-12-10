@@ -23,6 +23,8 @@
     </div>
     @yield('content')
     @livewire('search.search')
+    @livewire('mini-cart.cart')
+    @livewire('favorite.favorite')
     <x-footer />
 </div>
 <script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
