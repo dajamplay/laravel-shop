@@ -1848,7 +1848,8 @@ blockquote p {
 
 @media (max-width: 479px) {
     .header-logo {
-        width: 160px;
+        width: 140px;
+        margin-left: -10px;
     }
 }
 
@@ -1877,7 +1878,7 @@ blockquote p {
 }
 
 .sticky img {
-    max-width: 160px;
+    max-width: 140px;
 }
 
 .sticky .main-nav > ul > li > a {
@@ -6095,6 +6096,12 @@ blockquote p {
 /*----------------------------------------*/
 /*  MOBILE MENU
 /*----------------------------------------*/
+
+@media (max-width: 479px) {
+    .right-header-block {
+        justify-content: space-between!important;
+    }
+}
 
 .mobile-menu_logo img {
     height: 60px;

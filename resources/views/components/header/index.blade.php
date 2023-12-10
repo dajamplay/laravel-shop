@@ -4,8 +4,12 @@
 
     <x-header.center>
         <x-header.center.phone phone="{{$settings('contacts_telephone')}}" />
-        <x-header.center.logo />
-        <x-header.center.right />
+        <div class="col-lg-3 col-5">
+            <x-header.center.logo />
+        </div>
+        <div class="col-lg-3 col-7">
+            <x-header.center.right />
+        </div>
     </x-header.center>
 
     <x-header.bottom>
