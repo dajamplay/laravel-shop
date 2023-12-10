@@ -11,14 +11,15 @@
     <div class="offcanvas-body">
         <div class="auth-menu-wrapper">
             @auth
+                <p>Здравствуйте, {{auth()->user()->first_name}} {{auth()->user()->last_name}}!</p>
+                @admin
+                <a class="auth-menu-item" href="{{route('admin.index')}}" target="_blank" >{{__('Панель администратора')}}</a>
+                @endadmin
+                <a class="auth-menu-item" href="{{route('dashboard.index')}}">{{__('Личный кабинет')}}</a>
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class="auth-menu-item">{{__('Выход')}}</button>
                 </form>
-                <a class="auth-menu-item" href="{{route('dashboard.index')}}">{{__('Личный кабинет')}}</a>
-                @admin
-                <a class="auth-menu-item" href="{{route('admin.index')}}" target="_blank" >{{__('Панель администратора')}}</a>
-                @endadmin
             @endauth
 
             @guest
