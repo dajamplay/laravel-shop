@@ -1613,7 +1613,7 @@ blockquote p {
 }
 
 .main-nav > ul > li > a {
-    line-height: 50px;
+    line-height: 34px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1791,7 +1791,7 @@ blockquote p {
 }
 
 .header-right > ul > li > a i {
-    font-size: 30px;
+    font-size: 24px;
     vertical-align: middle;
 }
 
@@ -1848,8 +1848,11 @@ blockquote p {
 
 @media (max-width: 479px) {
     .header-logo {
-        width: 140px;
-        margin-left: -10px;
+        max-width: 150px;
+        margin-left: -15px;
+    }
+    .sticky img {
+        max-width: 150px!important;
     }
 }
 
@@ -1878,7 +1881,7 @@ blockquote p {
 }
 
 .sticky img {
-    max-width: 140px;
+    max-width: 146px;
 }
 
 .sticky .main-nav > ul > li > a {

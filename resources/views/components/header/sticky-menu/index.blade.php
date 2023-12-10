@@ -15,7 +15,7 @@
                     <div class="col-lg-3 col-7">
                         {{$right}}
                     </div>
-
+                </div>
             </div>
         </div>
     </div>
