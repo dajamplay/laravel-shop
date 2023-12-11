@@ -1,31 +1,18 @@
 @props([
-    'title' => '',
-    'content' => '',
-    'image' => '',
-    'slug' => '',
-    'price' => 0,
-    'price_opt' => 0,
+    'product'
 ])
 
-<div class="swiper-slide product-item animate__flipInY wow">
-    <div class="product-img">
-        <a href="{{ route('shop.products.show', $slug) }}">
-            <img class="primary-img" src="{{ storage($image) }}" alt="{{$title}}">
+<div class="swiper-slide card shadow-card animate__flipInY wow br-10">
+
+        <a href="{{route('shop.products.show', $product->slug)}}" class="card-img-top img-hover-effect">
+            <img src="{{storage($product->image)}}" alt="{{$product->title}}" class="br-10">
         </a>
-    </div>
-    <div class="product-content">
-        <a class="product-name" href="{{ route('shop.products.show', $slug) }}">{{$title}}</a>
-        <div class="price-box pb-1">
-            <span class="new-price">{{$price}} Руб.</span>
+
+        <div class="card-body p-2 text-center">
+            <h5 class="card-title"><a href="{{$product->slug}}">{{$product->title}}</a></h5>
+            <div class="price-box pb-1">
+                <span class="new-price">{{$product->price}} Руб.</span>
+            </div>
         </div>
-        <div class="rating-box">
-            <ul>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-            </ul>
-        </div>
-    </div>
+
 </div>

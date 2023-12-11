@@ -5,7 +5,7 @@
 
 <div class="product-area @if($title) section-space-top-75 @endif products-slider-bg">
     <div class="container">
-        <div class="row" >
+        <div class="row">
             @if($title)
                 <div class="section-title-wrap without-tab animate__fadeInDown wow">
                     <h2 class="section-title">{{$title}}</h2>
@@ -14,7 +14,7 @@
             @endif
             <div class="col-lg-12">
                 <div class="swiper-container product-slider">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper my-4">
                         {{$slot}}
                     </div>
                     <!-- Add Arrows -->
