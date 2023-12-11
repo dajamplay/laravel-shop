@@ -2399,9 +2399,9 @@ blockquote p {
 /*----------------------------------------*/
 .footer-area {
     background-color: #f6f7fb;
-    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
-    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
-    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
 }
 
 .footer-widget-item .social-link ul li a {
@@ -2411,15 +2411,19 @@ blockquote p {
 }
 
 .footer-widget-logo {
-    padding-bottom: 35px;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    cursor: pointer;
 }
 
 .footer-widget-title {
-    color: #000000;
+    color: #333333;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    text-decoration: underline;
 }
 
 .footer-widget-desc {
@@ -2430,11 +2434,6 @@ blockquote p {
 
 .footer-widget-list-item > li:not(:last-child) {
     padding-bottom: 5px;
-}
-
-.footer-widget-list-item > li i {
-    margin-right: 20px;
-    color: #df414b;
 }
 
 .footer-widget-list-item > li a {
@@ -2468,14 +2467,16 @@ blockquote p {
 
 /* ---Copyright--- */
 .copyright {
-    border-top: 1px solid #a7cca2;
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.25);
 }
 
 .copyright * {
-    color: #8dba87;
+    color: #87b04a;
 }
 
 .copyright-text {
