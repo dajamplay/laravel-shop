@@ -10,6 +10,7 @@
         <form class="global-search_input">
             <span><input
                 wire:model.live.debounce.200ms="global_search"
+                class="input-field-offcanvas"
                 type="text"
                 placeholder="{{__('Введите название')}}"></span>
         </form>

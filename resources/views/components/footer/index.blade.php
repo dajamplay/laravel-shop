@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-6 col-lg-2 col-md-4">
+                <div class="col-12 col-lg-2 col-md-4">
                     <div class="footer-widget-item">
                         <h3 class="footer-widget-title">{{__('Аккаунт')}}</h3>
                         <ul class="footer-widget-list-item">

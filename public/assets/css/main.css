@@ -2883,7 +2883,7 @@ blockquote p {
     padding-left: 20px;
     padding-right: 20px;
     width: 100%;
-    height: 50px;
+    height: 40px;
 }
 
 .feedback-form .textarea-field {
@@ -4763,7 +4763,7 @@ blockquote p {
 }
 
 .contact-info {
-    padding: 35px 40px;
+    padding: 30px;
     width: 370px;
     background-color: #8ab051;
     border-radius: 10px;
@@ -4840,7 +4840,7 @@ blockquote p {
 }
 
 .contact-form {
-    padding: 50px 40px;
+    padding: 30px;
     width: calc(100% - 370px);
     border-radius: 10px;
 }
@@ -5951,6 +5951,19 @@ blockquote p {
 
 .error-404-img {
     margin-bottom: 70px;
+}
+
+/*----------------------------------------*/
+/*  OFFCANVAS
+/*----------------------------------------*/
+.input-field-offcanvas {
+    border: 1px solid #dee2e6;
+    background-color: #f6f7fb;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
 }
 
 /*----------------------------------------*/

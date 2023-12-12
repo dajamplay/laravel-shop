@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <div class="contact-with-map mt-30">
+    <div class="contact-with-map mt-30 shadow-card">
         <script type="text/javascript" charset="utf-8" async
                 src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afe87167dbac9cf72de4125c5fd85572fe53a708fe95801a4364f4e7811b2f8c4&amp;width=100%25&amp;height=480&amp;lang=ru_RU&amp;scroll=false"></script>
     </div>
