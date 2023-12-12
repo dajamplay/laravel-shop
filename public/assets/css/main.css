@@ -2488,7 +2488,7 @@ blockquote p {
 /*----------------------------------------*/
 .shipping-item {
     border: 1px solid #87b04a;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -2498,6 +2498,11 @@ blockquote p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    transition: 0.3s;
+}
+
+.shipping-item:hover {
+    border: 1px solid #678639;
 }
 
 @media (max-width: 991px) {
@@ -3340,10 +3345,12 @@ blockquote p {
 /*----------------------------------------*/
 .banner-item {
     position: relative;
+    border-radius: 10px;
 }
 
 .banner-img img {
     width: 100%;
+    border-radius: 10px;
 }
 
 @media (max-width: 479px) {
@@ -4742,6 +4749,7 @@ blockquote p {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -4758,6 +4766,7 @@ blockquote p {
     padding: 35px 40px;
     width: 370px;
     background-color: #8ab051;
+    border-radius: 10px;
 }
 
 .custom-selection::selection {
@@ -4833,6 +4842,7 @@ blockquote p {
 .contact-form {
     padding: 50px 40px;
     width: calc(100% - 370px);
+    border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -4864,30 +4874,17 @@ blockquote p {
 
 .contact-form .input-field,
 .contact-form .textarea-field {
-    border: 0;
-    border-bottom: 1px solid #dee2e6;
-    font-weight: 300;
-    color: #8d8d8c;
-    height: 45px;
-    line-height: 45px;
+    border: 1px solid #dee2e6;
+    background-color: #f6f7fb;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
-    font-style: italic;
+    height: 50px;
+    border-radius: 10px;
 }
 
 .contact-form .textarea-field {
     height: 145px;
-}
-
-.contact-form .form-messege {
-    font-size: 14px;
-}
-
-.contact-form .form-messege.success {
-    color: #525252;
-}
-
-.contact-form .form-messege.error {
-    color: red;
 }
 
 .contact-button-wrap {
