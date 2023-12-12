@@ -16,28 +16,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact-wrap">
-                        <div class="contact-info text-white" data-bg-image="assets/images/contacts/contacts_bg.jpg"
-                             style="background-image: url(&quot;assets/images/contacts/contacts_bg.jpg&quot;);">
-                            <h2 class="contact-title">{{__('Информация:')}}</h2>
-                            <p class="contact-desc">{{ $settings('contacts_description') }}</p>
+                        <div class="contact-info text-white">
+                            <h2 class="contact-title custom-selection">{{__('Информация:')}}</h2>
+                            <p class="contact-desc custom-selection">{{ $settings('contacts_description') }}</p>
                             <ul class="contact-list">
                                 <li>
                                     <i class="pe-7s-call"></i>
-                                    <a href="tel://{{ $settings('contacts_telephone') }}">{{ $settings('contacts_telephone') }}</a>
+                                    <a class="custom-selection" href="tel://{{ $settings('contacts_telephone') }}">{{ $settings('contacts_telephone') }}</a>
                                 </li>
                                 <li>
                                     <i class="pe-7s-mail"></i>
-                                    <a href="mailto://{{ $settings('contacts_email') }}">{{ $settings('contacts_email') }}</a>
+                                    <a class="custom-selection" href="mailto://{{ $settings('contacts_email') }}">{{ $settings('contacts_email') }}</a>
                                 </li>
                                 <li>
                                     <i class="pe-7s-map-marker"></i>
-                                    <span>{{ $settings('contacts_house') }}</span>
+                                    <span class="custom-selection">{{ $settings('contacts_house') }}</span>
                                 </li>
                                 <li>
-                                    <span>{{ $settings('contacts_street') }}</span>
+                                    <span class="custom-selection">{{ $settings('contacts_street') }}</span>
                                 </li>
                                 <li>
-                                    <span>{{ $settings('contacts_metro') }}</span>
+                                    <span class="custom-selection">{{ $settings('contacts_metro') }}</span>
                                 </li>
                             </ul>
                         </div>

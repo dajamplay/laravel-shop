@@ -46,11 +46,7 @@
     <x-home.products>
         @foreach($products as $product)
             <x-home.products.product
-                title="{{$product->title}}"
-                image="{{$product->image}}"
-                slug="{{$product->slug}}"
-                price="{{$product->price}}"
-                price_opt="{{$product->price_opt}}"
+                :product="$product"
             />
         @endforeach
     </x-home.products>

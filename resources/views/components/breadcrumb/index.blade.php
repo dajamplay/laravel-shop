@@ -5,7 +5,7 @@
 ])
 
 <div
-    class="breadcrumb-area breadcrumb-height py-1"
+    class="breadcrumb-area breadcrumb-height py-1 mt-4"
     data-bg-image="{{storage($image)}}"
 >
     <div class="container h-100">

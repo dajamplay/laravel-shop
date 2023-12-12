@@ -4757,6 +4757,17 @@ blockquote p {
 .contact-info {
     padding: 35px 40px;
     width: 370px;
+    background-color: #8ab051;
+}
+
+.custom-selection::selection {
+    color: #8ab051!important;
+    background-color: #ffffff!important;
+}
+
+.custom-selection::-moz-selection {
+    color: #8ab051!important;
+    background-color: #ffffff!important;
 }
 
 @media (max-width: 767px) {
@@ -5903,7 +5914,6 @@ blockquote p {
 
 .order-button-payment input {
     background-color: #505050;
-    border: medium none;
     color: #ffffff;
     font-size: 17px;
     height: 50px;
