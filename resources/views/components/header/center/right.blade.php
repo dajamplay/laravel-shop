@@ -6,9 +6,20 @@
             </a>
         </li>
         <li>
-            <a data-bs-toggle="offcanvas" data-bs-target="#auth-menu">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-            </a>
+            @auth
+
+                <a data-bs-toggle="offcanvas" data-bs-target="#auth-menu">
+                    <span class="auth-user-icon">
+                        {{Str::upper(Str::substr(auth()->user()->first_name, 0, 1))}}{{Str::upper(Str::substr(auth()->user()->last_name, 0, 1))}}
+                    </span>
+                </a>
+            @endauth
+
+            @guest
+                <a data-bs-toggle="offcanvas" data-bs-target="#auth-menu">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                </a>
+            @endguest
         </li>
         <li>
             <a data-bs-toggle="offcanvas" data-bs-target="#favorite">

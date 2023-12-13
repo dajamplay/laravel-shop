@@ -6121,6 +6121,17 @@ blockquote p {
     color: #333333;
 }
 
+.auth-user-icon {
+    text-align: center;
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #82a64e;
+    color: #ffffff;
+    line-height: 30px;
+}
+
 /*----------------------------------------*/
 /*  MOBILE MENU
 /*----------------------------------------*/
