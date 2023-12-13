@@ -7,7 +7,7 @@
             <img src="{{storage($post->image)}}" alt="{{$post->title}}" class="br-10">
         </a>
         <div class="card-body p-3">
-            <p>{!! Str::limit($post->content, 200, ' <a class="post-link-more" href="' . route('blog.posts.show', $post->slug ) . '">(читать полностью)</a>') !!}</p>
+            <p>{!! Str::limit($post->content, 200, ' ... ') !!}<a class="post-link-more" href="{{route('blog.posts.show', $post->slug )}}">(читать полностью)</a></p>
         </div>
     </div>
 </div>
