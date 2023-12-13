@@ -6039,6 +6039,10 @@ blockquote p {
     box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
+.card-body a, .card-body span {
+    font-size: 18px;
+}
+
 /*----------------------------------------*/
 /*  BRAND SINGLE PAGE
 /*----------------------------------------*/
