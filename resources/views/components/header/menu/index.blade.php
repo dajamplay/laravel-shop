@@ -22,18 +22,18 @@
                                 </li>
                             @endforeach
                             <li>
-                                <a href="{{route('shop.products.index')}}">Все бренды</a>
+                                <a href="{{route('shop.products.index')}}">{{__('Все бренды')}}</a>
                             </li>
                         </ul>
                     </li>
                 @endif
                 @if(count($lines) > 0)
                     <li>
-                        <span class="title">Линии</span>
+                        <span class="title">{{__('Линии')}}</span>
                         <ul>
                             @foreach($lines as $line)
                                 <li>
-                                    <a href="{{route('shop.lines.show', $line->slug)}}">{{$line->title}}</a>
+                                    <a href="{{route('shop.products.show', '?filter_line=' . $line->title)}}">{{$line->title}}</a>
                                 </li>
                             @endforeach
                             <li>
