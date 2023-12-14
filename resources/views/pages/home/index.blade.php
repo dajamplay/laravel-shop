@@ -47,12 +47,14 @@
     <!-- About Area End Here -->
 
     <!-- Begin Banner Area -->
-    <x-home.banner/>
+    <x-home.banner
+        title="Косметика для косметологов"
+    />
     <!-- Banner Area End Here -->
 
     <!-- Begin Product Area -->
     <x-home.products
-        title="Новые поступления"
+        title="Профессиональная косметика в Санкт-Петербурге"
         description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
     >
         @foreach($products as $product)
@@ -65,7 +67,7 @@
 
     <!-- Begin Feedback Area -->
     <x-home.feedback
-        title="Отзывы клиентов"
+        title='Отзывы клиентов о компании "Елеанта"'
         description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature"
     >
         @foreach($feedbacks as $feedback)

@@ -10,7 +10,7 @@
             <img src="assets/images/shipping/icon/{{ $icon }}" alt="{{ $title }}">
         </div>
         <div class="shipping-content">
-            <h2 class="title">{{ $title }}</h2>
+            <div class="title">{{ $title }}</div>
             <p class="short-desc mb-0">{{ $description }}</p>
         </div>
     </div>

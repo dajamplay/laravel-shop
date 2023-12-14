@@ -19,7 +19,7 @@
                 <div class="col-lg-6 {{ $position  }} order-2 order-lg-1 align-self-center">
                     <div class="slide-content text-black">
                         <span class="offer">{{ $offer }}</span>
-                        <h2 class="title">{{ $title }}</h2>
+                        <div class="title">{{ $title }}</div>
                         <p class="short-desc">{{ $description }}</p>
                         <div class="btn-wrap">
                             <a class="btn btn-custom-size xl-size btn-pronia-primary" href="{{ $link }}">{{ $button }}</a>

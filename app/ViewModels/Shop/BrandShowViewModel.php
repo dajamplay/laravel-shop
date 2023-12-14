@@ -13,10 +13,6 @@ class BrandShowViewModel extends ViewModel
 
     public function __construct(Brand $brand)
     {
-        seo()->title = 'Профессиональная косметика ' . $brand->title;
-
-        seo()->description = $brand->content;
-
         $this->brand = $brand;
     }
 

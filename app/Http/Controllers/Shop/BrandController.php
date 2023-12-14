@@ -9,17 +9,16 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 
 class BrandController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
     /**
      * @throws BindingResolutionException
      */
     public function show(Brand $brand): BrandShowViewModel
     {
         $viewModel = app()->makeWith(BrandShowViewModel::class, ['brand' => $brand]);
+
+        seo()->title = 'Профессиональная косметика ' . $brand->title . '. ООО "Елеанта".';
+
+        seo()->description = $brand->content;
 
         return $viewModel->view('pages.shop.brands.show');
     }

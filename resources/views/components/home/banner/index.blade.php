@@ -1,6 +1,15 @@
+@props([
+    'title' => ''
+])
+
 <div class="banner-area section-space-top-75">
     <div class="container">
         <div class="row g-min-30 g-4">
+            @if($title)
+                <div class="section-title-wrap without-tab animate__fadeInDown wow">
+                    <h2 class="section-title">{{$title}}</h2>
+                </div>
+            @endif
             <div class="col-lg-8 animate__fadeIn wow">
                 <div class="banner-item img-hover-effect">
                     <div class="banner-img">

@@ -16,8 +16,8 @@ class HomeIndexViewModel extends ViewModel
 {
     public function __construct()
     {
-        seo()->description = 'Тестовое описание';
-        seo()->title = 'Тестовый заголовок';
+        seo()->description = 'Профессиональная косметика в Санкт-Петербурге.';
+        seo()->title = 'Компания "Елеанта". Профессиональная косметика в Санкт-Петербурге.';
     }
 
     public function products(): Collection
