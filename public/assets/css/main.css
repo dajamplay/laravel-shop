@@ -2561,10 +2561,6 @@ blockquote p {
     opacity: 1;
 }
 
-.product-item:hover .product-add-action {
-    left: 0;
-}
-
 .product-img {
     position: relative;
     height: auto;
@@ -2601,20 +2597,13 @@ blockquote p {
 }
 
 .product-add-action {
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    position: absolute;
-    bottom: 0;
-    left: -170px;
 }
 
 .product-add-action ul {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    padding: 15px;
+    padding: 5px;
+    justify-content: space-between;
 }
 
 .product-add-action ul li:not(:last-child) {
@@ -6014,6 +6003,16 @@ blockquote p {
 
 .card-body a, .card-body span {
     font-size: 18px;
+}
+
+.card-title {
+    line-height: 18px;
+}
+
+.catalog-card-product-brand {
+    display: block;
+    text-align: left;
+    font-size: 14px!important;
 }
 
 /*----------------------------------------*/

@@ -9,7 +9,7 @@
         ];
     @endphp
 
-    <x-breadcrumb h1="Магазин" :breadcrumbs="$breadcrumbs"/>
+    <x-breadcrumb h1="Магазин профессиональной косметики" :breadcrumbs="$breadcrumbs"/>
 
     @livewire('catalog.catalog')
 
