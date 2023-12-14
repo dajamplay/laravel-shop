@@ -10,25 +10,31 @@ use Livewire\Component;
 
 class Favorite extends Component
 {
-    public array $products = [];
+    public array $favoriteProducts = [];
 
     private FavoriteService $service;
 
     public function boot(FavoriteService $service): void
     {
         $this->service = $service;
-        $this->products = $service->getProducts();
+        $this->favoriteProducts = $service->getProducts();
     }
 
     #[On('add-to-favorite')]
     public function addProduct(Product $product): void
     {
         $this->service->addProduct($product);
-        $this->products = $this->service->getProducts();
+        $this->favoriteProducts = $this->service->getProducts();
+        $this->updateIcons();
     }
 
     public function render(): View
     {
         return view('livewire.favorite.favorite');
+    }
+
+    public function updateIcons(): void
+    {
+        $this->dispatch('add-to-favorite-update-icon');
     }
 }

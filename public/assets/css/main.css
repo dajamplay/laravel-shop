@@ -1775,8 +1775,8 @@ blockquote p {
     padding-right: 12px;
 }
 
-.header-right > ul > li .minicart-btn .quantity {
-    background-color: #87b04a;
+.header-right > ul > li .minicart-btn .quantity,
+.header-right > ul > li .favorite-btn .quantity {
     border-radius: 100%;
     text-align: center;
     font-size: 14px;
@@ -1784,10 +1784,18 @@ blockquote p {
     display: block;
     width: 20px;
     height: 20px;
-    line-height: 20px;
+    line-height: 24px;
     position: absolute;
     top: -5px;
     right: 0;
+}
+
+.header-right > ul > li .minicart-btn .quantity {
+    background-color: #87b04a;
+}
+
+.header-right > ul > li .favorite-btn .quantity {
+    background-color: #da4352;
 }
 
 .header-right > ul .btn {

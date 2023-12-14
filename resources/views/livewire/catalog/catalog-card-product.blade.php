@@ -30,7 +30,11 @@
                     {{__('В корзину')}}
                 </a>
                 <a href="#" wire:click.prevent="addToFavorite({{$product}})" class="card-footer-button card-footer-button-fav">
-                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    @if(isset($favoriteProducts[$product->id]))
+                        <i class="fa fa-heart text-danger" aria-hidden="true"></i>
+                    @else
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    @endif
                 </a>
             </div>
         </div>

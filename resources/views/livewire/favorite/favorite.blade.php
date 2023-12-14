@@ -9,11 +9,11 @@
         <button type="button" class="btn-close offcanvas_close-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        @if(count($products) > 0)
-            @foreach($products as $product)
+        @if(count($favoriteProducts) > 0)
+            @foreach($favoriteProducts as $favoriteProduct)
                 @php
                     echo '<pre>';
-                    print_r($product['title']);
+                    print_r($favoriteProduct['title']);
                     echo '</pre>';
                     @endphp
             @endforeach

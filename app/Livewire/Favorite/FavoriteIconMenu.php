@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Catalog;
+namespace App\Livewire\Favorite;
 
 use App\Models\Product;
 use App\Services\FavoriteService;
@@ -8,27 +8,16 @@ use Illuminate\View\View;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class CatalogCardProduct extends Component
+class FavoriteIconMenu extends Component
 {
-    public Product $product;
-    public array $favoriteProducts;
+    public array $favoriteProducts = [];
 
     private FavoriteService $favoriteProductsService;
 
     public function boot(FavoriteService $favoriteProductsService): void
     {
         $this->favoriteProductsService = $favoriteProductsService;
-        $this->favoriteProducts = $this->favoriteProductsService->getProducts();
-    }
-
-    public function mount(Product $product): void
-    {
-        $this->product = $product;
-    }
-
-    public function render(): View
-    {
-        return view('livewire.catalog.catalog-card-product');
+        $this->favoriteProducts = $favoriteProductsService->getProducts();
     }
 
     #[On('add-to-favorite-update-icon')]
@@ -37,8 +26,8 @@ class CatalogCardProduct extends Component
         $this->favoriteProducts = $this->favoriteProductsService->getProducts();
     }
 
-    public function addToFavorite(Product $product): void
+    public function render(): View
     {
-        $this->dispatch('add-to-favorite', $product);
+        return view('livewire.favorite.favorite-icon-menu');
     }
 }

@@ -24,7 +24,7 @@ class FavoriteService
 
     public function getProducts()
     {
-        return Session::get(self::FAVORITES, []);
+        return Session::get(self::FAVORITES) ?? [];
     }
 
     public function clear(): void
