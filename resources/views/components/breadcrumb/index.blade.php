@@ -10,7 +10,7 @@
 >
     <div class="container h-100">
         <div class="row h-100">
-            <div class="col-lg-12">
+            <div class="col-lg-12 text-center">
                 <div class="breadcrumb-item">
                     <h1 class="breadcrumb-heading about-title">{{$h1}}</h1>
                     @if(count($breadcrumbs) > 0)

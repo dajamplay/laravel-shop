@@ -543,7 +543,6 @@ img {
     text-align: center;
     line-height: 31px;
     color: black;
-    margin-bottom: 55px;
     max-width: 580px;
 }
 
@@ -6013,6 +6012,35 @@ blockquote p {
     display: block;
     text-align: left;
     font-size: 14px!important;
+}
+
+.card-catalog-img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.card-footer-button-cart {
+    background-color: #ffffff;
+    color: #82a64e;
+    font-size: 18px;
+    border-radius: 18px;
+    border: 1px solid #82a64e;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card-footer-button-fav i {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.card-footer-button-fav:hover i {
+    color: #b21f2d;
 }
 
 /*----------------------------------------*/

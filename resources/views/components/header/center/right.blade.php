@@ -23,7 +23,6 @@
         <li>
             <a data-bs-toggle="offcanvas" data-bs-target="#favorite">
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
-{{--                <i class="fa fa-heart-o" aria-hidden="true"></i>--}}
             </a>
         </li>
         <li>
