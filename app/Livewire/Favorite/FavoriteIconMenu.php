@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Favorite;
 
-use App\Models\Product;
 use App\Services\FavoriteService;
 use Illuminate\View\View;
 use Livewire\Attributes\On;
