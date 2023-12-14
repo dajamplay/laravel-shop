@@ -9,7 +9,9 @@
             @if($title)
                 <div class="section-title-wrap without-tab animate__fadeInDown wow">
                     <h2 class="section-title">{{$title}}</h2>
-                    <p class="section-desc">{{$description}}</p>
+                    @if($description)
+                        <p class="section-desc">{{$description}}</p>
+                    @endif
                 </div>
             @endif
             <div class="col-lg-12">

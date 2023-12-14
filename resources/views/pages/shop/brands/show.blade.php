@@ -20,7 +20,7 @@
                         <div class="about-img">
                             <img src="{{storage($brand->image)}}" alt="{{$brand->title}}">
                         </div>
-                        <h2 class="text-center mt-30">Описание косметики {{$brand->title}}</h2>
+                        <h2 class="text-center mt-30">{{__('Описание косметики')}} {{$brand->title}}</h2>
                         <p class="about-desc">{{$brand->content}}</p>
                     </div>
                 </div>
@@ -41,7 +41,8 @@
         </div>
     </div>
 
-    <h2 class="text-center mt-30">Популярная косметика {{$brand->title}}</h2>
+    <h2 class="text-center mt-30">{{__('Популярная косметика')}} {{$brand->title}}</h2>
+
     <!-- Begin Product Area -->
     <x-home.products>
         @foreach($products as $product)
@@ -65,7 +66,7 @@
         </div>
     </div>
 
-    <h2 class="text-center mt-30">Наши бренды</h2>
+    <h2 class="text-center mt-30">{{__('Наши бренды профессиональной косметики')}}</h2>
     <!-- Begin Brand Area -->
     <x-home.brands>
         @foreach($brands as $brand)
