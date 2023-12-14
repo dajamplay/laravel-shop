@@ -6024,19 +6024,23 @@ blockquote p {
 
 .card-footer-button-cart {
     background-color: #82a64e;
-    color: #ffffff;
+    color: #f7f7f7;
     font-size: 18px;
-    border-radius: 18px;
-    border: 1px solid #82a64e;
+    border-radius: 10px;
+    border: 1px solid #f7f7f7;
     height: 36px;
     line-height: 36px;
     padding-left: 14px;
     padding-right: 14px;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
+    box-shadow: 0px 1px 6px 1px rgba(34, 60, 80, 0.15);
 }
 
 .card-footer-button-cart:hover {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     color: #82a64e;
+    border: 1px solid #82a64e;
 }
 
 .card-footer-button-fav i {

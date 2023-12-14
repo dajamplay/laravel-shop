@@ -29,7 +29,7 @@
                 <a href="#" class="card-footer-button-cart">
                     {{__('В корзину')}}
                 </a>
-                <a href="#" class="card-footer-button card-footer-button-fav">
+                <a href="#" wire:click.prevent="addToFavorite({{$product}})" class="card-footer-button card-footer-button-fav">
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                 </a>
             </div>

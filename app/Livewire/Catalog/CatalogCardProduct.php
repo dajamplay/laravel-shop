@@ -23,4 +23,9 @@ class CatalogCardProduct extends Component
     {
         return view('livewire.catalog.catalog-card-product');
     }
+
+    public function addToFavorite(Product $product): void
+    {
+        $this->dispatch('add-to-favorite', $product);
+    }
 }
