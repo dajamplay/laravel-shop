@@ -12,18 +12,15 @@ class FavoriteIconMenu extends Component
 {
     public array $favoriteProducts = [];
 
-    private FavoriteService $favoriteProductsService;
-
-    public function boot(FavoriteService $favoriteProductsService): void
+    public function boot(FavoriteService $service): void
     {
-        $this->favoriteProductsService = $favoriteProductsService;
-        $this->favoriteProducts = $favoriteProductsService->getProducts();
+        $this->favoriteProducts = $service->getProducts();
     }
 
-    #[On('add-to-favorite-update-icon')]
-    public function updateIcon(): void
+    #[On('update-favorite-products')]
+    public function updateFavoriteProducts($favoriteProducts): void
     {
-        $this->favoriteProducts = $this->favoriteProductsService->getProducts();
+        $this->favoriteProducts = $favoriteProducts;
     }
 
     public function render(): View

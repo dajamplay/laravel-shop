@@ -25,7 +25,7 @@ class Favorite extends Component
     {
         $this->service->addProduct($product);
         $this->favoriteProducts = $this->service->getProducts();
-        $this->updateIcons();
+        $this->updateFavoriteProducts($this->favoriteProducts);
     }
 
     public function render(): View
@@ -33,8 +33,8 @@ class Favorite extends Component
         return view('livewire.favorite.favorite');
     }
 
-    public function updateIcons(): void
+    public function updateFavoriteProducts(array $favoriteProducts = []): void
     {
-        $this->dispatch('add-to-favorite-update-icon');
+        $this->dispatch('update-favorite-products', $favoriteProducts);
     }
 }
