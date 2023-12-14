@@ -7,10 +7,9 @@
         </li>
         <li>
             @auth
-
                 <a data-bs-toggle="offcanvas" data-bs-target="#auth-menu">
                     <span class="auth-user-icon">
-                        {{Str::upper(Str::substr(auth()->user()->first_name, 0, 1))}}{{Str::upper(Str::substr(auth()->user()->last_name, 0, 1))}}
+                        {{Str::upper(Str::substr(auth()->user()?->first_name ?? 'А', 0, 1))}}{{Str::upper(Str::substr(auth()->user()?->last_name ?? 'А', 0, 1))}}
                     </span>
                 </a>
             @endauth

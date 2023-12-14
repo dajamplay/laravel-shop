@@ -86,7 +86,7 @@
     </div>
     <div class="w-100">
         <div class="copyright">
-            <span class="copyright-text">© ООО "Елеанта" 2006</span>
+            <span class="copyright-text">{{__('© ООО "Елеанта" 2006')}}</span>
         </div>
     </div>
 </div>

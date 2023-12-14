@@ -13,14 +13,14 @@
             <div class="blog-meta">
                 <ul>
                     <li class="author">
-                        <a href="#">Автор: {{$author}}</a>
+                        <a href="#">{{__('Автор:')}} {{$author}}</a>
                     </li>
                     <li class="date">{{$updated_at}}</li>
                 </ul>
             </div>
-            <h2 class="title">
+            <h3 class="title">
                 <a href="{{route('blog.posts.show', $slug)}}">{{$title}}</a>
-            </h2>
+            </h3>
             <p class="short-desc mb-7">{!!htmlspecialchars_decode($content)!!}</p>
         </div>
         <div class="blog-img img-hover-effect">

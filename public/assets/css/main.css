@@ -2,26 +2,11 @@
     font-family: 'Rubik';
     src: local('Rubik'),
     url('../fonts/FrizQuadrataC.ttf');
-    /*url('../fonts/Roboto-Regular.ttf');*/
-    /*url('../fonts/MarckScript-Regular.ttf');*/
-    /*url('../fonts/OpenSans-Regular.ttf');*/
-    /*url('../fonts/RobotoCondensed-Regular.ttf');*/
-    /*url('../fonts/Lobster-Regular.ttf');*/
-    /*url('../fonts/Caveat-Regular.ttf');*/
-    /*url('../fonts/Caveat-SemiBold.ttf');*/
 }
 
 @font-face {
     font-family: 'Title';
     src: local('Title'),
-        /*url('../fonts/Roboto-Regular.ttf');*/
-        /*url('../fonts/MarckScript-Regular.ttf');*/
-        /*url('../fonts/OpenSans-Regular.ttf');*/
-        /*url('../fonts/RobotoCondensed-Regular.ttf');*/
-        /*url('../fonts/Lobster-Regular.ttf');*/
-        /*url('../fonts/Caveat-Regular.ttf');*/
-        /*url('../fonts/Caveat-SemiBold.ttf');*/
-        /*url('../fonts/Pacifico-Regular.ttf');*/
     url('../fonts/ElMessiri-Regular.ttf');
 }
 
@@ -96,18 +81,6 @@ img {
 ::selection {
     background-color: #87b04a;
     color: #ffffff;
-}
-
-/* ---Custom Container--- */
-@media (min-width: 1400px) {
-    /*.container {*/
-    /*    --bs-gutter-x: 15px;*/
-    /*    max-width: 1200px;*/
-    /*}*/
-
-    /*.container .row {*/
-    /*    --bs-gutter-x: 30px;*/
-    /*}*/
 }
 
 /* ---Section Space--- */
@@ -511,7 +484,7 @@ img {
     position: relative;
     color: #393939;
     font-size: 36px;
-    line-height: 27px;
+    line-height: 36px;
     padding-left: 90px;
     padding-right: 90px;
     font-weight: 700;

@@ -7,14 +7,14 @@
 <nav {{$attributes->merge([])->class([])}}>
     <ul>
         <li class="drop-holder">
-            <a href="/">Главная</a>
+            <a href="/">{{__('Главная')}}</a>
         </li>
         <li class="megamenu-holder">
-            <a href="{{route('shop.products.index')}}">Магазин</a>
+            <a href="{{route('shop.products.index')}}">{{__('Магазин')}}</a>
             <ul class="drop-menu megamenu">
                 @if(count($brands) > 0)
                     <li>
-                        <span class="title">Бренды</span>
+                        <span class="title">{{__('Бренды')}}</span>
                         <ul>
                             @foreach($brands as $brand)
                                 <li>
@@ -37,14 +37,14 @@
                                 </li>
                             @endforeach
                             <li>
-                                <a href="{{route('shop.products.index')}}">Все линии</a>
+                                <a href="{{route('shop.products.index')}}">{{__('Все линии')}}</a>
                             </li>
                         </ul>
                     </li>
                 @endif
                 @if(count($products) > 0)
                     <li>
-                        <span class="title">Последние</span>
+                        <span class="title">{{__('Последние')}}</span>
                         <ul>
                             @foreach($products as $product)
                                 <li>
@@ -52,7 +52,7 @@
                                 </li>
                             @endforeach
                             <li>
-                                <a href="{{route('shop.products.index')}}">Вся продукция</a>
+                                <a href="{{route('shop.products.index')}}">{{__('Вся продукция')}}</a>
                             </li>
                         </ul>
                     </li>
@@ -63,26 +63,26 @@
             <a href="{{route('blog.posts.index')}}">{{__('Блог')}}</a>
             <ul class="drop-menu">
                 <li>
-                    <a href="#">Последние статьи</a>
+                    <a href="#">{{__('Последние статьи')}}</a>
                 </li>
                 <li>
-                    <a href="#">Интересное</a>
+                    <a href="#">{{__('Интересное')}}</a>
                 </li>
             </ul>
         </li>
         <li class="drop-holder">
-            <a href="#">Информация</a>
+            <a href="#">{{__('Информация')}}</a>
             <ul class="drop-menu">
                 <li>
-                    <a href="{{route('home.about')}}">О компании</a>
+                    <a href="{{route('home.about')}}">{{__('О компании')}}</a>
                 </li>
                 <li>
-                    <a href="{{route('home.delivery')}}">Доставка и оплата</a>
+                    <a href="{{route('home.delivery')}}">{{__('Доставка и оплата')}}</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="{{route('home.contacts')}}">Контакты</a>
+            <a href="{{route('home.contacts')}}">{{__('Контакты')}}</a>
         </li>
     </ul>
 </nav>

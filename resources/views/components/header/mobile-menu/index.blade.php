@@ -4,7 +4,7 @@
     'products' => [],
 ])
 
-<div
+<nav
     class="offcanvas offcanvas-start"
     data-bs-scroll="false"
     tabindex="-1"
@@ -21,7 +21,7 @@
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <a class="accordion-link" href="{{route('shop.products.index')}}">Магазин</a>
+                    <a class="accordion-link" href="{{route('shop.products.index')}}">{{__('Магазин')}}</a>
                 </div>
             </div>
             <div class="accordion-item">
@@ -32,7 +32,7 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#mobile-item-info"
                         aria-expanded="false"
-                    >Информация</button>
+                    >{{__('Информация')}}</button>
                 </div>
                 <div
                     id="mobile-item-info"
@@ -42,10 +42,10 @@
                     <div class="accordion-body">
                         <ul>
                             <li>
-                                <a class="accordion-link-sub" href="{{route('home.about')}}">О компании</a>
+                                <a class="accordion-link-sub" href="{{route('home.about')}}">{{__('О компании')}}</a>
                             </li>
                             <li>
-                                <a class="accordion-link-sub"  href="{{route('home.delivery')}}">Доставка и оплата</a>
+                                <a class="accordion-link-sub"  href="{{route('home.delivery')}}">{{__('Доставка и оплата')}}</a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +59,7 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#mobile-item-brands"
                         aria-expanded="false"
-                    >Популярные бренды</button>
+                    >{{__('Популярные бренды')}}</button>
                 </div>
                 <div
                     id="mobile-item-brands"
@@ -70,7 +70,7 @@
                         @if(count($brands) > 0)
                             <ul>
                                 <li>
-                                    <a  class="accordion-link-sub" href="{{route('shop.products.index')}}">Все бренды</a>
+                                    <a  class="accordion-link-sub" href="{{route('shop.products.index')}}">{{__('Все бренды')}}</a>
                                 </li>
                                 @foreach($brands as $brand)
                                     <li>
@@ -90,7 +90,7 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#mobile-item-lines"
                         aria-expanded="false"
-                    >Популярные линии</button>
+                    >{{__('Популярные линии')}}</button>
                 </div>
                 <div
                     id="mobile-item-lines"
@@ -101,7 +101,7 @@
                         @if(count($lines) > 0)
                             <ul>
                                 <li>
-                                    <a class="accordion-link-sub" href="{{route('shop.products.index')}}">Все бренды</a>
+                                    <a class="accordion-link-sub" href="{{route('shop.products.index')}}">{{__('Все бренды')}}</a>
                                 </li>
                                 @foreach($lines as $line)
                                     <li>
@@ -115,14 +115,14 @@
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <a class="accordion-link" href="{{route('home.contacts')}}">Контакты</a>
+                    <a class="accordion-link" href="{{route('home.contacts')}}">{{__('Контакты')}}</a>
                 </div>
             </div>
 
         </div>
     </div>
     <div class="offcanvas-footer mobile-menu_footer">
-        <div class="accordion-item_footer">Остались вопросы? Позвоните нам!</div>
+        <div class="accordion-item_footer">{{__('Остались вопросы? Позвоните нам!')}}</div>
         <div class="d-flex justify-content-start align-items-center accordion-item_footer">
             <i class="pe-7s-call"></i>
             <div>
@@ -133,4 +133,4 @@
         </div>
         <div class="accordion-item_footer">{{$settings('contacts_street')}}</div>
     </div>
-</div>
+</nav>
