@@ -6023,24 +6023,33 @@ blockquote p {
 }
 
 .card-footer-button-cart {
-    background-color: #ffffff;
-    color: #82a64e;
+    background-color: #82a64e;
+    color: #ffffff;
     font-size: 18px;
     border-radius: 18px;
     border: 1px solid #82a64e;
     height: 36px;
     line-height: 36px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.card-footer-button-cart:hover {
+    background-color: #ffffff;
+    color: #82a64e;
 }
 
 .card-footer-button-fav i {
     font-size: 28px;
-    line-height: 36px;
+    margin-top: 5px;
 }
 
 .card-footer-button-fav:hover i {
-    color: #b21f2d;
+    color: #da4352;
+}
+
+.catalog-card-title {
+    min-height: 40px;
 }
 
 /*----------------------------------------*/

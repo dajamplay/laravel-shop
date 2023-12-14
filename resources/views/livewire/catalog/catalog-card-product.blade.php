@@ -8,7 +8,7 @@
         </div>
 
         <div class="card-body p-2">
-            <h3 class="card-title">
+            <h3 class="card-title catalog-card-title">
                 <a href="{{route('shop.products.show', $product->slug)}}">{{$product->title}}</a>
             </h3>
             <div class="price-box pb-1">
