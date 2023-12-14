@@ -31,4 +31,15 @@ class FavoriteService
     {
         Session::put(self::FAVORITES, []);
     }
+
+    public function removeProduct(int $id): void
+    {
+        $productsInFavorite = $this->getProducts();
+
+        if(isset($productsInFavorite[$id])) {
+            unset($productsInFavorite[$id]);
+        }
+
+        Session::put(self::FAVORITES, $productsInFavorite);
+    }
 }

@@ -3,6 +3,7 @@
     data-bs-scroll="false"
     tabindex="-1"
     id="favorite"
+    wire:ignore.self
 >
     <div class="offcanvas-header">
         <div class="">{{__('Избранные товары')}}</div>
@@ -11,15 +12,16 @@
     <div class="offcanvas-body">
         @if(count($favoriteProducts) > 0)
             @foreach($favoriteProducts as $favoriteProduct)
-                @php
-                    echo '<pre>';
-                    print_r($favoriteProduct['title']);
-                    echo '</pre>';
-                    @endphp
+                <div class="" wire:key="{{$favoriteProduct['id']}}">
+                    <a href="{{route('shop.products.show', $favoriteProduct['slug'])}}">{{$favoriteProduct['title']}}</a>
+                    <a href="" wire:click.prevent="removeProduct({{$favoriteProduct['id']}})">{{__('Удалить')}}</a>
+                </div>
             @endforeach
         @endif
     </div>
     <div class="offcanvas-footer">
-        В разработке
+        <div>
+            <a href="" wire:click.prevent="clearProducts()" class="btn btn-pronia-primary m-3">{{__('Очистить избранное')}}</a>
+        </div>
     </div>
 </div>

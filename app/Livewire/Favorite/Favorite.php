@@ -24,17 +24,29 @@ class Favorite extends Component
     public function addProduct(Product $product): void
     {
         $this->service->addProduct($product);
+        $this->updateFavoriteProducts();
+    }
+
+    public function removeProduct(int $id): void
+    {
+        $this->service->removeProduct($id);
+        $this->updateFavoriteProducts();
+    }
+
+    public function clearProducts(): void
+    {
+        $this->service->clear();
+        $this->updateFavoriteProducts();
+    }
+
+    public function updateFavoriteProducts(): void
+    {
         $this->favoriteProducts = $this->service->getProducts();
-        $this->updateFavoriteProducts($this->favoriteProducts);
+        $this->dispatch('update-favorite-products', $this->favoriteProducts);
     }
 
     public function render(): View
     {
         return view('livewire.favorite.favorite');
-    }
-
-    public function updateFavoriteProducts(array $favoriteProducts = []): void
-    {
-        $this->dispatch('update-favorite-products', $favoriteProducts);
     }
 }
