@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -36,6 +37,15 @@ class Product extends Model
 
     protected $with = ['brand', 'line'];
 //    protected $with = ['brand', 'tags', 'line'];
+
+    protected static function booted()
+    {
+        static::addGlobalScope('is_cosmetologist', function (Builder $builder) {
+            if(!auth()?->user()?->isCosmetologist()) {
+                $builder->where('is_cosmetologist', false);
+            }
+        });
+    }
 
 
     public function brand(): BelongsTo

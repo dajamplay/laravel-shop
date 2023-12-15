@@ -26,5 +26,9 @@ class BladeServiceProvider extends ServiceProvider
         Blade::if('admin', function () {
             return auth()?->user()?->isAdmin() === true;
         });
+
+        Blade::if('cosmetologist', function () {
+            return auth()?->user()?->isCosmetologist() === true;
+        });
     }
 }

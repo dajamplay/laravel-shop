@@ -23,6 +23,15 @@ class Role extends Model
         ];
     }
 
+    public static function cosmetologistIds(): array
+    {
+        return [
+            self::ROLE_COSMETOLOGIST,
+            self::ROLE_ADMIN,
+            self::ROLE_MANAGER,
+        ];
+    }
+
     protected $fillable = [
         'id',
         'title',

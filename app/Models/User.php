@@ -58,6 +58,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return in_array($this->role->id, Role::adminIds());
     }
 
+    public function isCosmetologist(): bool
+    {
+        return in_array($this->role->id, Role::cosmetologistIds());
+    }
+
     public function sendEmailVerificationNotification(): void
     {
         $this->notify(new VerifyEmail);
