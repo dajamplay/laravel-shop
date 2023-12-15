@@ -23,6 +23,9 @@ class Product extends Model
         'brand_id',
         'line_id',
         'image',
+        'sku',
+        'is_cosmetologist',
+        'sort',
     ];
 
     protected $casts = [

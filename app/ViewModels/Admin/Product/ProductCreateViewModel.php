@@ -26,4 +26,12 @@ class ProductCreateViewModel extends ViewModel
     {
         return Line::all();
     }
+
+    public function cosmetologists(): array
+    {
+        return [
+            (object)['id' => '1', 'title' => 'Да'],
+            (object)['id' => '0', 'title' => 'Нет'],
+        ];
+    }
 }

@@ -12,6 +12,19 @@
             name="title"
         />
 
+        <x-admin.form.input
+            label="{{__('Артикул')}}"
+            placeholder="{{__('Введите артикул')}}"
+            name="sku"
+        />
+
+        <x-admin.form.input
+            label="{{__('Сортировка')}}"
+            placeholder="{{__('Сортировка')}}"
+            name="sort"
+            value="9999"
+        />
+
         <x-admin.form.summernote
             label="{{__('Описание')}}"
             placeholder="{{__('Введите Описание')}}"
@@ -53,6 +66,13 @@
             placeholder="{{__('Выберите теги')}}"
             name="tags"
             :options="$tags"
+        />
+
+        <x-admin.form.select
+            label="{{__('Показывать только косметологам')}}"
+            name="is_cosmetologist"
+            :options="$cosmetologists"
+            value="0"
         />
 
         <x-admin.form.image
