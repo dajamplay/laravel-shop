@@ -1,4 +1,4 @@
-init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-migrate artisan-store-link artisan-key-gen
+init: docker-down-clear docker-pull docker-build docker-up composer-install npm-install artisan-store-link artisan-key-gen
 
 docker-pull:
 	docker compose pull
