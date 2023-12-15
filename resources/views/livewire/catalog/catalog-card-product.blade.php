@@ -11,9 +11,18 @@
             <h3 class="card-title catalog-card-title">
                 <a href="{{route('shop.products.show', $product->slug)}}">{{$product->title}}</a>
             </h3>
-            <div class="price-box pb-1">
-                <span class="new-price">{{$product->price}} {{__('Руб.')}}</span>
-            </div>
+            @auth
+                <div class="price-box pb-1">
+                    <span class="new-price">{{$product->price_opt}} {{__('руб.')}} {{__('(опт)')}}</span>
+                    <br />
+                    <span class="new-price">{{$product->price}} {{__('руб.')}} {{__('(розница)')}}</span>
+                </div>
+            @endauth
+            @guest
+                <div class="price-box pb-1">
+                    <span class="new-price">{{$product->price}} {{__('руб.')}}</span>
+                </div>
+            @endguest
             <div class="price-box pb-1">
                 <span class="catalog-card-product-brand">{{__('Линия:')}} {{$product->line->title}}</span>
             </div>
