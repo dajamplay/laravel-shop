@@ -38,7 +38,7 @@
 		Header Sticky
     ---------------------------------*/
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 186) {
+        if ($(this).scrollTop() > 110) {
             $('.header-sticky').addClass('sticky');
         } else {
             $('.header-sticky').removeClass('sticky');
