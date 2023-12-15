@@ -13,8 +13,10 @@
             </h3>
             @auth
                 <div class="price-box pb-1">
-                    <span class="new-price">{{$product->price_opt}} {{__('руб.')}} {{__('(опт)')}}</span>
-                    <br />
+                    @if(isset($product->price_opt))
+                        <span class="new-price">{{$product->price_opt}} {{__('руб.')}} {{__('(опт)')}}</span>
+                        <br />
+                    @endif
                     <span class="new-price">{{$product->price}} {{__('руб.')}} {{__('(розница)')}}</span>
                 </div>
             @endauth

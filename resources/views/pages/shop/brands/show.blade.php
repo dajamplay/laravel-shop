@@ -21,7 +21,7 @@
                             <img src="{{storage($brand->image)}}" alt="{{$brand->title}}">
                         </div>
                         <h2 class="text-center mt-30">{{__('Описание косметики')}} {{$brand->title}}</h2>
-                        <p class="about-desc">{{$brand->content}}</p>
+                        <div class="about-desc content">{!! $brand->content !!}</div>
                     </div>
                 </div>
             </div>
