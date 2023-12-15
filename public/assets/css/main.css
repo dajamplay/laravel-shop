@@ -6023,7 +6023,7 @@ blockquote p {
 }
 
 .card-catalog-img {
-    height: 180px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
