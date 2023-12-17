@@ -21,6 +21,9 @@ class ProductFactory extends Factory
             'line_id' => fake()->numberBetween(1,5),
             'size' => fake()->numberBetween(50,300),
             'image' => 'tmp/products/' . fake()->numberBetween(1,8) . '.jpg',
+            'sort' => 9999,
+            'is_cosmetologist' => false,
+            'sku' => fake()->unique()->sentence(1),
         ];
     }
 }

@@ -38,14 +38,14 @@ class Product extends Model
     protected $with = ['brand', 'line'];
 //    protected $with = ['brand', 'tags', 'line'];
 
-    protected static function booted()
-    {
-        static::addGlobalScope('is_cosmetologist', function (Builder $builder) {
-            if(!auth()?->user()?->isCosmetologist()) {
-                $builder->where('is_cosmetologist', false);
-            }
-        });
-    }
+//    protected static function booted()
+//    {
+//        static::addGlobalScope('is_cosmetologist', function (Builder $builder) {
+//            if(!auth()?->user()?->isCosmetologist()) {
+//                $builder->where('is_cosmetologist', false);
+//            }
+//        });
+//    }
 
 
     public function brand(): BelongsTo
