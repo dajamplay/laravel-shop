@@ -28,7 +28,7 @@
                 data-bs-target="#mini-cart"
             >
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="quantity">3</span>
+{{--                <span class="quantity">3</span>--}}
             </a>
         </li>
         <li class="d-block d-lg-none">
