@@ -6247,10 +6247,13 @@ blockquote p {
 /*  LOGIN AND REGISTER
 /*----------------------------------------*/
 
-.input-group-text span {
-    height: 24px;
-    width: 20px;
+.input-group-text {
+    height: 40px;
+    width: 40px;
+    border-radius: 0 20px 20px 0;
     display: inline-block;
+    padding: 10px;
+    margin: 0;
 }
 
 .text-md {
@@ -6259,6 +6262,38 @@ blockquote p {
 
 .login-box {
     width: 100%;
+}
+
+.login-box input {
+    height: 40px;
+    border-radius: 20px;
+}
+
+.form-check-input {
+    display: inline-block;
+    height: 20px!important;
+    width: 20px!important;
+    border-radius: 10px!important;
+    cursor: pointer;
+}
+
+.form-check-label {
+    display: inline-block;
+    height: 20px;
+    border-radius: 10px!important;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.login-box a {
+    height: 30px;
+    line-height: 20px;
+    border-radius: 15px;
+}
+
+.login-box button {
+    border-radius: 20px;
+    height: 40px;
 }
 
 .login-box .card {

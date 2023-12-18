@@ -91,14 +91,14 @@
                                 @enderror
                                 <div class="row">
                                     <div class="col-12">
-                                        <a href=" {{ route("login") }} "
-                                           class="btn-pronia-secondary btn w-100 mb-4 mt-2 text-md"
-                                        >{{ __('Уже есть аккаунт?') }}</a>
+                                        <button type="submit"
+                                                class="btn btn-primary w-100 mb-3 mt-2 "
+                                        >{{ __('Регистрация') }}</button>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit"
-                                                class="btn btn-primary btn-block"
-                                        >{{ __('Регистрация') }}</button>
+                                        <a href=" {{ route("login") }} "
+                                           class="btn-secondary btn w-100 text-md"
+                                        >{{ __('Уже есть аккаунт?') }}</a>
                                     </div>
                                 </div>
                             </form>

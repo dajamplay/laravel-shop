@@ -56,13 +56,13 @@
                                 @enderror
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="form-check ml-1 mt-2 mb-4">
+                                        <div class="form-check mb-3">
                                             <input type="checkbox" id="remember" name="remember" class="form-check-input">
-                                            <label for="remember" class="btn btn-light w-100 py-1 text-md">{{__('Запомнить меня')}}</label>
+                                            <label for="remember" class="form-check-label">{{__('Запомнить меня')}}</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-pronia-primary w-100">{{ __('Вход') }}</button>
+                                        <button type="submit" class="btn btn-pronia-primary w-100">{{ __('Войти') }}</button>
                                     </div>
                                 </div>
                                 <a
@@ -71,7 +71,7 @@
                                 >{{ __('Забыли пароль?') }}</a>
                                 <a
                                     href="{{ route("register")}}"
-                                    class="btn-primary btn w-100 text-md"
+                                    class="btn-secondary btn w-100 text-md"
                                 >{{ __('Регистрация') }}</a>
                             </form>
                         </div>
