@@ -6242,3 +6242,11 @@ blockquote p {
 .content ul li {
     margin-left: 20px;
 }
+
+/*----------------------------------------*/
+/*  LOGIN AND REGISTER
+/*----------------------------------------*/
+
+.check-box-login {
+    font-size: 30px;
+}

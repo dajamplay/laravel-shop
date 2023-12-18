@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/plugins/lightbox/css/lightbox.min.css')}}">
+
+    @stack('styles')
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+
 </head>
 <body>
 <div id="app" class="main-wrapper">
@@ -34,6 +37,8 @@
 <script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins/tippy.min.js')}}"></script>
 <script src="{{ asset('adminlte/plugins/lightbox/js/lightbox.min.js') }}"></script>
+
+@stack('scripts')
 <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 </html>
