@@ -48,6 +48,9 @@
                     </div>
                 </div>
             @endforeach
+        @else
+            <div>{{__('Нет избранных товаров, перейдите в магазин.')}}</div>
+            <a class="btn btn-pronia-primary" href="{{route('shop.products.index')}}">{{__('Перейти в магазин')}}</a>
         @endif
     </div>
     <div class="offcanvas-footer">
