@@ -15,9 +15,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-items-center">
-                <div class="login-box mb-4 mt-4">
-                    <div class="card">
+            <div class="col-md-12 col-lg-4 offset-lg-4 d-flex justify-content-center align-items-center">
+                <div class="login-box my-4">
+                    <div class="card shadow-card">
                         <div class="card-body login-card-body">
                             <p class="login-box-msg">{{ __('Войдите в систему') }}</p>
                             @if(session('status'))
@@ -56,9 +56,9 @@
                                 @enderror
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="form-check ml-1 my-2">
+                                        <div class="form-check ml-1 mt-2 mb-4">
                                             <input type="checkbox" id="remember" name="remember" class="form-check-input">
-                                            <label for="remember" class="btn btn-light w-100 py-1">{{__('Запомнить меня')}}</label>
+                                            <label for="remember" class="btn btn-light w-100 py-1 text-md">{{__('Запомнить меня')}}</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -67,11 +67,11 @@
                                 </div>
                                 <a
                                     href="{{ route("password.request") }}"
-                                    class="btn-secondary btn w-100 mb-3 mt-3"
+                                    class="btn-secondary btn w-100 mb-3 mt-3 text-md"
                                 >{{ __('Забыли пароль?') }}</a>
                                 <a
                                     href="{{ route("register")}}"
-                                    class="btn-primary btn w-100"
+                                    class="btn-primary btn w-100 text-md"
                                 >{{ __('Регистрация') }}</a>
                             </form>
                         </div>

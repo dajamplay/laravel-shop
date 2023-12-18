@@ -15,9 +15,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-items-center">
-                <div class="register-box mb-4 mt-4">
-                    <div class="card">
+            <div class="col-md-12 col-lg-4 offset-lg-4 d-flex justify-content-center align-items-center">
+                <div class="login-box mb-4 mt-4">
+                    <div class="card shadow-card">
                         <div class="card-body register-card-body">
                             <p class="login-box-msg">{{ __('Регистрация нового пользователя') }}</p>
                             <form action=" {{ route("register") }} " method="post">
@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <a href=" {{ route("login") }} "
-                                           class="btn-pronia-secondary btn w-100 mb-4 mt-2"
+                                           class="btn-pronia-secondary btn w-100 mb-4 mt-2 text-md"
                                         >{{ __('Уже есть аккаунт?') }}</a>
                                     </div>
                                     <div class="col-12">
