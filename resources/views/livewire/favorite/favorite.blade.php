@@ -37,14 +37,14 @@
                     <hr class="m-0">
                     <div class="d-flex justify-content-between align-items-start">
                         <a
+                            href="{{route('shop.products.show', $favoriteProduct['slug'])}}"
+                            class="btn btn-pronia-primary mt-2"
+                        >{{__('Просмотр')}}</a>
+                        <a
                             href=""
                             class="btn btn-danger mt-2"
                             wire:click.prevent="removeProduct({{$favoriteProduct['id']}})"
                         >{{__('Удалить')}}</a>
-                        <a
-                            href="{{route('shop.products.show', $favoriteProduct['slug'])}}"
-                            class="btn btn-pronia-primary mt-2"
-                        >{{__('Просмотр')}}</a>
                     </div>
                 </div>
             @endforeach
