@@ -27,6 +27,6 @@ class ForgotPasswordController extends Controller
                 ->withErrors(['email' => trans($status)]);
         }
 
-        return back()->with('status', trans($status));
+        return back()->with('message', trans($status));
     }
 }

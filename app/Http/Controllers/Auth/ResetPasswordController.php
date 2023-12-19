@@ -46,6 +46,6 @@ class ResetPasswordController extends Controller
                 ->withErrors(['email' => trans($status)]);
         }
 
-        return redirect()->route('login')->with('status', trans($status));
+        return redirect()->route('login')->with('message', trans($status));
     }
 }
