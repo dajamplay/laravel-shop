@@ -3,9 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1></h1>
-                <h2>@yield('code')</h2>
+            <div class="col-12 text-center">
+                <h1>Ошибка @yield('code') - @yield('message')</h1>
             </div>
         </div>
     </div>
