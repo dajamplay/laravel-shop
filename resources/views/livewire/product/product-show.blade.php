@@ -40,22 +40,20 @@
                         {{--                            </div>--}}
                         <p class="short-desc">{!! $product->content !!}</p>
                         <div class="d-flex">
-                            <a href="#"
-                               class="single-product-button-plus-minus single-product-btn"
-                            ><i class="fa fa-minus" aria-hidden="true"></i></a>
-                            <div
-                               class="single-product-button-cty single-product-btn"
-                            >
-                                1
+                            <div class="d-flex flex-wrap">
+                                <a href="#"
+                                   class="single-product-button-plus-minus single-product-btn"
+                                ><i class="fa fa-minus" aria-hidden="true"></i></a>
+                                <div
+                                    class="single-product-button-cty single-product-btn"
+                                >1</div>
+                                <a href="#"
+                                   class="single-product-button-plus-minus single-product-btn"
+                                ><i class="fa fa-plus" aria-hidden="true"></i></a>
                             </div>
                             <a href="#"
-                               class="single-product-button-plus-minus single-product-btn"
-                            ><i class="fa fa-plus" aria-hidden="true"></i></a>
-                            <a href="#"
-                                class="single-product-button-cart single-product-btn"
-                            >
-                                В корзину
-                            </a>
+                                class="single-product-button-cart single-product-btn mx-4"
+                            >В корзину</a>
                             <a href="#"
                                wire:click.prevent="addToFavorite({{$product}})"
                                class="single-product-button-fav single-product-btn"
