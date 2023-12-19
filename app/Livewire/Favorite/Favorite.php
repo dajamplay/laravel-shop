@@ -24,22 +24,22 @@ class Favorite extends Component
     public function addProduct(Product $product): void
     {
         $this->service->addProduct($product);
-        $this->updateFavoriteProducts();
+        $this->refreshFavoriteProducts();
     }
 
     public function removeProduct(int $id): void
     {
         $this->service->removeProduct($id);
-        $this->updateFavoriteProducts();
+        $this->refreshFavoriteProducts();
     }
 
     public function clearProducts(): void
     {
         $this->service->clear();
-        $this->updateFavoriteProducts();
+        $this->refreshFavoriteProducts();
     }
 
-    public function updateFavoriteProducts(): void
+    public function refreshFavoriteProducts(): void
     {
         $this->favoriteProducts = $this->service->getProducts();
         $this->dispatch('update-favorite-products', $this->favoriteProducts);

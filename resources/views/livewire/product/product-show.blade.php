@@ -29,13 +29,21 @@
                             <div class="d-flex">
                                 <a href="#"
                                    class="single-product-button-plus-minus single-product-btn"
-                                ><i class="fa fa-minus" aria-hidden="true"></i></a>
+                                   wire:click.prevent="qtyMinus"
+                                >
+                                    <i class="fa fa-minus" aria-hidden="true" wire:loading.remove></i>
+                                    <i class="fa fa-spinner" aria-hidden="true" wire:loading ></i>
+                                </a>
                                 <div
                                     class="single-product-button-cty single-product-btn"
-                                >1</div>
+                                >{{$qty}}</div>
                                 <a href="#"
                                    class="single-product-button-plus-minus single-product-btn"
-                                ><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                   wire:click.prevent="qtyPlus"
+                                >
+                                    <i class="fa fa-plus" aria-hidden="true" wire:loading.remove></i>
+                                    <i class="fa fa-spinner" aria-hidden="true" wire:loading ></i>
+                                </a>
                                 <a href="#"
                                    class="single-product-button-cart single-product-btn"
                                 >В корзину</a>
@@ -45,9 +53,11 @@
                                class="single-product-button-fav single-product-btn"
                             >
                                 @if(isset($favoriteProducts[$product->id]))
-                                    <i class="fa fa-heart text-danger" aria-hidden="true"></i>
+                                    <i class="fa fa-heart text-danger" aria-hidden="true" wire:loading.remove></i>
+                                    <i class="fa fa-spinner text-danger" aria-hidden="true" wire:loading></i>
                                 @else
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fa fa-heart-o" aria-hidden="true" wire:loading.remove></i>
+                                    <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
                                 @endif
                             </a>
                         </div>

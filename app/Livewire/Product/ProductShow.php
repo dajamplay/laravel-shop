@@ -14,6 +14,8 @@ class ProductShow extends Component
 
     public array $favoriteProducts;
 
+    public int $qty = 1;
+
     public function boot(FavoriteService $service): void
     {
         $this->favoriteProducts = $service->getProducts();
@@ -38,5 +40,15 @@ class ProductShow extends Component
     public function addToFavorite(Product $product): void
     {
         $this->dispatch('add-to-favorite', $product);
+    }
+
+    public function qtyPlus(): void
+    {
+        $this->qty++;
+    }
+
+    public function qtyMinus(): void
+    {
+        if($this->qty > 1) $this->qty--;
     }
 }
