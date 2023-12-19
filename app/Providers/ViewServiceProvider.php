@@ -44,6 +44,7 @@ class ViewServiceProvider extends ServiceProvider
             'components.header.*',
             'components.footer.*',
             'pages.home.contacts',
+            'livewire.product.product-show',
         ], function ($view) use ($settings){
             $view->with([
                 'settings' => $settings

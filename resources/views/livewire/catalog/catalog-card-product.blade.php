@@ -30,7 +30,10 @@
                 <a href="#" class="card-footer-button-cart">
                     {{__('В корзину')}}
                 </a>
-                <a href="#" wire:click.prevent="addToFavorite({{$product}})" class="card-footer-button card-footer-button-fav">
+                <a href="#"
+                   wire:click.prevent="addToFavorite({{$product}})"
+                   class="card-footer-button card-footer-button-fav"
+                >
                     @if(isset($favoriteProducts[$product->id]))
                         <i class="fa fa-heart text-danger" aria-hidden="true"></i>
                     @else
@@ -44,22 +47,22 @@
 </div>
 
 <script>
-    function animateFavoriteButton(e) {
-        let favoriteTopButton = document.querySelector('.favorite-btn');
-        let endPosition = favoriteTopButton.getBoundingClientRect();
-
-        let startPosition = e.target.getBoundingClientRect();
-
-        let animateElement = document.createElement('i');
-        animateElement.classList.add('fa');
-        animateElement.classList.add('fa-heart');
-        animateElement.classList.add('text-danger');
-        animateElement.style.position = "fixed";
-        animateElement.style.left = startPosition.x + "px";
-        animateElement.style.top = startPosition.y + "px";
-        animateElement.style.zIndex = "1000";
-        document.body.appendChild(animateElement);
-
-        console.log(startPosition);
-    }
+    // function animateFavoriteButton(e) {
+    //     let favoriteTopButton = document.querySelector('.favorite-btn');
+    //     let endPosition = favoriteTopButton.getBoundingClientRect();
+    //
+    //     let startPosition = e.target.getBoundingClientRect();
+    //
+    //     let animateElement = document.createElement('i');
+    //     animateElement.classList.add('fa');
+    //     animateElement.classList.add('fa-heart');
+    //     animateElement.classList.add('text-danger');
+    //     animateElement.style.position = "fixed";
+    //     animateElement.style.left = startPosition.x + "px";
+    //     animateElement.style.top = startPosition.y + "px";
+    //     animateElement.style.zIndex = "1000";
+    //     document.body.appendChild(animateElement);
+    //
+    //     console.log(startPosition);
+    // }
 </script>
