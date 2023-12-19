@@ -24,6 +24,6 @@ class RegisterController extends AbstractAuthController
 
         $action->run($data, $this->guard);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with('message', trans('custom.auth.email_verify'));
     }
 }

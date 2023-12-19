@@ -15,7 +15,7 @@ class EmailVerificationNotificationController extends Controller
 
         if (!$user->hasVerifiedEmail()) {
             $service->sendEmailVerificationNotification($user);
-            return back()->with('status', trans('custom.auth.email_verify'));
+            return back()->with('message', trans('custom.auth.email_verify'));
         }
 
         return redirect()->intended(RouteServiceProvider::HOME);

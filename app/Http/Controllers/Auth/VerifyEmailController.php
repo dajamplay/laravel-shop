@@ -17,6 +17,6 @@ class VerifyEmailController extends Controller
 
         $request->fulfill();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended(RouteServiceProvider::HOME)->with('message', trans('custom.auth.email_verify_success'));
     }
 }
