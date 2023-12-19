@@ -18,9 +18,7 @@
 <body>
 <div id="app" class="main-wrapper">
     <x-header.index />
-    <div class="container-fluid">
-        <x-ui.session_alert message="message"/>
-    </div>
+
     <div class="container-fluid">
         <x-ui.session_alert message="message-error" color="danger"/>
     </div>
@@ -30,8 +28,8 @@
     @livewire('favorite.favorite')
     <x-footer />
 </div>
-<script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery.waypoints.js')}}"></script>
 <script src="{{asset('assets/js/plugins/wow.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
@@ -40,5 +38,8 @@
 
 @stack('scripts')
 <script src="{{asset('assets/js/main.js')}}"></script>
+
+<x-ui.session_alert message="message"/>
+
 </body>
 </html>

@@ -5376,4 +5376,8 @@ blockquote p {
     height: 30px;
 }
 
+.session-message-text {
+    font-size: 18px;
+}
+
 
