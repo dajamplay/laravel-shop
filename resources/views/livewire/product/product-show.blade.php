@@ -39,21 +39,26 @@
                         {{--                                </div>--}}
                         {{--                            </div>--}}
                         <p class="short-desc">{!! $product->content !!}</p>
-                        <ul class="quantity-with-btn">
-                            <li class="quantity">
-                                <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                    <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                    <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
-                                </div>
-                            </li>
-                            <li class="add-to-cart">
-                                <a class="btn btn-custom-size lg-size btn-pronia-primary" href="cart.html">В
-                                    корзину</a>
-                            </li>
+                        <div class="d-flex">
+                            <a href="#"
+                               class="single-product-button-plus-minus single-product-btn"
+                            ><i class="fa fa-minus" aria-hidden="true"></i></a>
+                            <div
+                               class="single-product-button-cty single-product-btn"
+                            >
+                                1
+                            </div>
+                            <a href="#"
+                               class="single-product-button-plus-minus single-product-btn"
+                            ><i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <a href="#"
+                                class="single-product-button-cart single-product-btn"
+                            >
+                                В корзину
+                            </a>
                             <a href="#"
                                wire:click.prevent="addToFavorite({{$product}})"
-                               class="card-footer-button single-product-button-fav"
+                               class="single-product-button-fav single-product-btn"
                             >
                                 @if(isset($favoriteProducts[$product->id]))
                                     <i class="fa fa-heart text-danger" aria-hidden="true"></i>
@@ -61,7 +66,7 @@
                                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                                 @endif
                             </a>
-                        </ul>
+                        </div>
                         <ul class="service-item-wrap">
                             <li class="service-item">
                                 <div class="service-img">

@@ -5288,25 +5288,58 @@ blockquote p {
 /*----------------------------------------*/
 /*  SINGLE PRODUCT
 /*----------------------------------------*/
-.single-product-button-fav i {
+.single-product-btn {
+    transition: 0.3s;
+    height: 50px;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.single-product-button-fav i {
+.single-product-button-fav {
     font-size: 28px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    color: #333;
-    transition: 0.3s;
+    /*border: 1px solid #555555;*/
+    color: #555555;
     width: 50px;
-    height: 50px;
 }
 
-.single-product-button-fav:hover i{
+.single-product-button-fav:hover {
     color: #da4352;
-    border: 1px solid #da4352!important;
+    /*border: 1px solid #da4352;*/
+}
+
+.single-product-button-cart {
+    font-size: 18px;
+    border: 1px solid #8ab051;
+    color: #ffffff;
+    background-color: #8ab051;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.single-product-button-cart:hover {
+    background-color: transparent;
+}
+
+.single-product-button-plus-minus {
+    font-size: 16px;
+    border: 1px solid #555555;
+    color: #ffffff;
+    background-color: #555555;
+    width: 50px;
+}
+
+.single-product-button-plus-minus:hover {
+    color: #ffffff;
+    background-color: #777777;
+}
+
+.single-product-button-cty {
+    font-size: 26px;
+    color: #555555;
+    background-color: transparent;
+    width: 40px;
 }
 
 
