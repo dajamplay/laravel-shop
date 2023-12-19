@@ -5319,6 +5319,7 @@ blockquote p {
     color: #ffffff;
     background-color: #8ab051;
     width: 140px;
+    margin-left: 10px!important;
 }
 
 .single-product-button-cart:hover {
@@ -5348,6 +5349,31 @@ blockquote p {
     margin-left: -5px;
     margin-right: -5px;
     border-radius: 25px 0!important;
+}
+
+.single-product-tags {
+    text-transform: lowercase;
+    padding: 1px 8px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+.single-product-shipping-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #8ab051;
+    border-radius: 10px;
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.single-product-shipping-item img {
+    height: 30px;
 }
 
 

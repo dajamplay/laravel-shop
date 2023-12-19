@@ -24,23 +24,9 @@
                             'price' => $product->price,
                             'price_opt' => $product->price_opt,
                         ])
-                        {{--                            <div class="rating-box-wrap pb-4">--}}
-                        {{--                                <div class="rating-box">--}}
-                        {{--                                    <ul>--}}
-                        {{--                                        <li><i class="fa fa-star"></i></li>--}}
-                        {{--                                        <li><i class="fa fa-star"></i></li>--}}
-                        {{--                                        <li><i class="fa fa-star"></i></li>--}}
-                        {{--                                        <li><i class="fa fa-star"></i></li>--}}
-                        {{--                                        <li><i class="fa fa-star"></i></li>--}}
-                        {{--                                    </ul>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="review-status">--}}
-                        {{--                                    <a href="#">( 1 Review )</a>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
                         <p class="short-desc">{!! $product->content !!}</p>
-                        <div class="d-flex">
-                            <div class="d-flex flex-wrap">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <div class="d-flex">
                                 <a href="#"
                                    class="single-product-button-plus-minus single-product-btn"
                                 ><i class="fa fa-minus" aria-hidden="true"></i></a>
@@ -50,10 +36,10 @@
                                 <a href="#"
                                    class="single-product-button-plus-minus single-product-btn"
                                 ><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                <a href="#"
+                                   class="single-product-button-cart single-product-btn"
+                                >В корзину</a>
                             </div>
-                            <a href="#"
-                                class="single-product-button-cart single-product-btn mx-4"
-                            >В корзину</a>
                             <a href="#"
                                wire:click.prevent="addToFavorite({{$product}})"
                                class="single-product-button-fav single-product-btn"
@@ -65,34 +51,29 @@
                                 @endif
                             </a>
                         </div>
-                        <ul class="service-item-wrap">
-                            <li class="service-item">
-                                <div class="service-img">
-                                    <img src="{{asset('assets/images/shipping/icon/car.png')}}" alt="Shipping Icon">
-                                </div>
-                                <div class="service-content">
-                                    <span class="title">{{ $settings('shipping1_title') }}</span>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-img">
-                                    <img src="{{asset('assets/images/shipping/icon/card.png')}}"
-                                         alt="Shipping Icon">
-                                </div>
-                                <div class="service-content">
-                                    <span class="title">{{ $settings('shipping2_title') }}</span>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-img">
-                                    <img src="{{asset('assets/images/shipping/icon/service.png')}}"
-                                         alt="Shipping Icon">
-                                </div>
-                                <div class="service-content">
-                                    <span class="title">{{ $settings('shipping3_title') }}</span>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="single-product-shipping-wrap d-flex justify-content-between">
+                            <div class="single-product-shipping-item">
+                                <img
+                                    src="{{asset('assets/images/shipping/icon/car.png')}}"
+                                    alt="Shipping Icon"
+                                >
+                                <div class="title">{{ $settings('shipping1_title') }}</div>
+                            </div>
+                            <div class="single-product-shipping-item">
+                                <img
+                                    src="{{asset('assets/images/shipping/icon/card.png')}}"
+                                    alt="Shipping Icon"
+                                >
+                                <div class="title">{{ $settings('shipping2_title') }}</div>
+                            </div>
+                            <div class="single-product-shipping-item">
+                                <img
+                                    src="{{asset('assets/images/shipping/icon/service.png')}}"
+                                    alt="Shipping Icon"
+                                >
+                                <div class="title">{{ $settings('shipping3_title') }}</div>
+                            </div>
+                        </div>
                         <div class="product-category">
                             <span class="title">{{__('Артикул:')}}</span>
                             <ul>
@@ -123,7 +104,7 @@
                                 <ul>
                                     @foreach($product->tags as $tag)
                                         <li>
-                                            <a href="#">{{$tag->title}}</a>
+                                            <div class="single-product-tags">{{$tag->title}}</div>
                                         </li>
                                     @endforeach
                                 </ul>
