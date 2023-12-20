@@ -29,7 +29,7 @@ class FavoriteService
 
     public function productsCount(): int
     {
-        return count(Session::get(self::FAVORITES));
+        return count(Session::get(self::FAVORITES) ?? []);
     }
 
     public function clear(): void
