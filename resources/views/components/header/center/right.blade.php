@@ -20,7 +20,7 @@
                 </a>
             @endguest
         </li>
-        @livewire('favorite.favorite-icon-menu')
+        <livewire:favorite.favorite-icon-menu />
         <li>
             <a
                 class="minicart-btn"

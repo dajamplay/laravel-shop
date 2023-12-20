@@ -12,37 +12,36 @@ class Favorite extends Component
 {
     public array $favoriteProducts = [];
 
-    private FavoriteService $service;
+    private FavoriteService $favoriteService;
 
-    public function boot(FavoriteService $service): void
+    public function boot(FavoriteService $favoriteService): void
     {
-        $this->service = $service;
-        $this->favoriteProducts = $service->getProducts();
+        $this->favoriteService = $favoriteService;
+        $this->favoriteProducts = $favoriteService->products();
     }
 
-    #[On('add-to-favorite')]
+    #[On('add-favorite')]
     public function addProduct(Product $product): void
     {
-        $this->service->addProduct($product);
         $this->refreshFavoriteProducts();
     }
 
     public function removeProduct(int $id): void
     {
-        $this->service->removeProduct($id);
+        $this->favoriteService->removeProduct($id);
         $this->refreshFavoriteProducts();
+        $this->dispatch('delete-favorite');
     }
 
     public function clearProducts(): void
     {
-        $this->service->clear();
+        $this->favoriteService->clear();
         $this->refreshFavoriteProducts();
     }
 
     public function refreshFavoriteProducts(): void
     {
-        $this->favoriteProducts = $this->service->getProducts();
-        $this->dispatch('update-favorite-products', $this->favoriteProducts);
+        $this->favoriteProducts = $this->favoriteService->products();
     }
 
     public function render(): View

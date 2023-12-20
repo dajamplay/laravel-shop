@@ -34,10 +34,12 @@
                    wire:click.prevent="addToFavorite({{$product}})"
                    class="card-footer-button card-footer-button-fav"
                 >
-                    @if(isset($favoriteProducts[$product->id]))
-                        <i class="fa fa-heart text-danger" aria-hidden="true"></i>
+                    @if($isFavorite)
+                        <i class="fa fa-heart text-danger" aria-hidden="true" wire:loading.remove></i>
+                        <i class="fa fa-spinner text-danger" aria-hidden="true" wire:loading></i>
                     @else
-                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true" wire:loading.remove></i>
+                        <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
                     @endif
                 </a>
             </div>

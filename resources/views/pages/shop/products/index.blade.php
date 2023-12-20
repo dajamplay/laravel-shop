@@ -11,7 +11,7 @@
 
     <x-breadcrumb h1="Магазин профессиональной косметики" :breadcrumbs="$breadcrumbs"/>
 
-    @livewire('catalog.catalog')
+    <livewire:catalog.catalog />
 
     <x-ui.scroll-to-top/>
 

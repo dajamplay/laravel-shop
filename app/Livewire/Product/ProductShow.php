@@ -11,35 +11,33 @@ use Livewire\Component;
 class ProductShow extends Component
 {
     public Product $product;
-
-    public array $favoriteProducts;
-
+    public bool $isFavorite;
     public int $qty = 1;
 
-    public function boot(FavoriteService $service): void
+    private FavoriteService $favoriteService;
+
+    public function boot(FavoriteService $favoriteService): void
     {
-        $this->favoriteProducts = $service->getProducts();
+        $this->favoriteService = $favoriteService;
     }
 
     public function mount(Product $product): void
     {
         $this->product = $product;
+        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
     }
 
-    public function render(): View
+    #[On('delete-favorite')]
+    public function deleteFavorite(): void
     {
-        return view('livewire.product.product-show');
-    }
-
-    #[On('update-favorite-products')]
-    public function updateFavoriteProducts($favoriteProducts): void
-    {
-        $this->favoriteProducts = $favoriteProducts;
+        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
     }
 
     public function addToFavorite(Product $product): void
     {
-        $this->dispatch('add-to-favorite', $product);
+        $this->favoriteService->addProduct($product);
+        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
+        $this->dispatch('add-favorite');
     }
 
     public function qtyPlus(): void
@@ -50,5 +48,10 @@ class ProductShow extends Component
     public function qtyMinus(): void
     {
         if($this->qty > 1) $this->qty--;
+    }
+
+    public function render(): View
+    {
+        return view('livewire.product.product-show');
     }
 }

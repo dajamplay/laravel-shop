@@ -9,17 +9,30 @@ use Livewire\Component;
 
 class FavoriteIconMenu extends Component
 {
-    public array $favoriteProducts = [];
+    public int $favoriteProductsCount;
 
-    public function boot(FavoriteService $service): void
+    private FavoriteService $favoriteService;
+
+    public function boot(FavoriteService $favoriteService): void
     {
-        $this->favoriteProducts = $service->getProducts();
+        $this->favoriteService = $favoriteService;
     }
 
-    #[On('update-favorite-products')]
-    public function updateFavoriteProducts($favoriteProducts): void
+    public function mount(): void
     {
-        $this->favoriteProducts = $favoriteProducts;
+        $this->favoriteProductsCount = $this->favoriteService->productsCount();
+    }
+
+    #[On('delete-favorite')]
+    public function deleteFavorite(): void
+    {
+        $this->favoriteProductsCount = $this->favoriteService->productsCount();
+    }
+
+    #[On('add-favorite')]
+    public function addFavorite(): void
+    {
+        $this->favoriteProductsCount = $this->favoriteService->productsCount();
     }
 
     public function render(): View

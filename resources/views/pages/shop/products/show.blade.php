@@ -16,6 +16,6 @@
 
     <x-breadcrumb h1="{{$product->title}}" :breadcrumbs="$breadcrumbs"/>
 
-    @livewire('product.product-show', ['product' => $product])
+    <livewire:product.product-show :product="$product"/>
 
 @endsection

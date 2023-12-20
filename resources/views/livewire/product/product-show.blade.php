@@ -52,7 +52,7 @@
                                wire:click.prevent="addToFavorite({{$product}})"
                                class="single-product-button-fav single-product-btn"
                             >
-                                @if(isset($favoriteProducts[$product->id]))
+                                @if($isFavorite)
                                     <i class="fa fa-heart text-danger" aria-hidden="true" wire:loading.remove></i>
                                     <i class="fa fa-spinner text-danger" aria-hidden="true" wire:loading></i>
                                 @else
@@ -61,6 +61,8 @@
                                 @endif
                             </a>
                         </div>
+                        @json($isFavorite)
+                        @json(\Illuminate\Support\Facades\Session::get('productInFavorite'))
                         <div class="single-product-shipping-wrap d-flex justify-content-between">
                             <div class="single-product-shipping-item">
                                 <img
