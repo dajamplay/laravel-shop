@@ -61,8 +61,6 @@
                                 @endif
                             </a>
                         </div>
-                        @json($isFavorite)
-                        @json(\Illuminate\Support\Facades\Session::get('productInFavorite'))
                         <div class="single-product-shipping-wrap d-flex justify-content-between">
                             <div class="single-product-shipping-item">
                                 <img
