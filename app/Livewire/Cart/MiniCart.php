@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire\MiniCart;
+namespace App\Livewire\Cart;
 
 use Illuminate\View\View;
 use Livewire\Component;
 
-class Cart extends Component
+class MiniCart extends Component
 {
     public array $products = [];
 
@@ -16,6 +16,6 @@ class Cart extends Component
 
     public function render(): View
     {
-        return view('livewire.mini-cart.cart');
+        return view('livewire.cart.mini-cart');
     }
 }

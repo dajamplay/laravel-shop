@@ -10,10 +10,12 @@ class CartAddButton extends Component
 {
     public Product $product;
     public int $qty = 1;
+    public bool $buttons;
 
-    public function mount(Product $product): void
+    public function mount(Product $product, bool $buttons = false): void
     {
         $this->product = $product;
+        $this->buttons = $buttons;
     }
 
     public function qtyPlus(): void

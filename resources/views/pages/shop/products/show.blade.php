@@ -44,7 +44,7 @@
                             ])
                             <p class="short-desc">{!! $product->content !!}</p>
                             <div class="d-flex flex-wrap justify-content-between">
-                                <livewire:cart.cart-add-button :product="$product"/>
+                                <livewire:cart.cart-add-button :buttons="true" :product="$product"/>
                                 <livewire:favorite.favorite-add-button :product="$product"/>
                             </div>
                             <div class="single-product-shipping-wrap d-flex justify-content-between">

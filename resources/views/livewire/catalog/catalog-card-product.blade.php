@@ -25,46 +25,12 @@
             </div>
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer px-2">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" class="card-footer-button-cart">
-                    {{__('В корзину')}}
-                </a>
-                <a href="#"
-                   wire:click.prevent="addToFavorite({{$product}})"
-                   class="card-footer-button-fav"
-                >
-                    @if($isFavorite)
-                        <i class="fa fa-heart text-danger" aria-hidden="true" wire:loading.remove></i>
-                        <i class="fa fa-spinner text-danger" aria-hidden="true" wire:loading></i>
-                    @else
-                        <i class="fa fa-heart-o" aria-hidden="true" wire:loading.remove></i>
-                        <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
-                    @endif
-                </a>
+                <livewire:cart.cart-add-button :product="$product"/>
+                <livewire:favorite.favorite-add-button :product="$product"/>
             </div>
         </div>
 
     </div>
 </div>
-
-<script>
-    // function animateFavoriteButton(e) {
-    //     let favoriteTopButton = document.querySelector('.favorite-btn');
-    //     let endPosition = favoriteTopButton.getBoundingClientRect();
-    //
-    //     let startPosition = e.target.getBoundingClientRect();
-    //
-    //     let animateElement = document.createElement('i');
-    //     animateElement.classList.add('fa');
-    //     animateElement.classList.add('fa-heart');
-    //     animateElement.classList.add('text-danger');
-    //     animateElement.style.position = "fixed";
-    //     animateElement.style.left = startPosition.x + "px";
-    //     animateElement.style.top = startPosition.y + "px";
-    //     animateElement.style.zIndex = "1000";
-    //     document.body.appendChild(animateElement);
-    //
-    //     console.log(startPosition);
-    // }
-</script>

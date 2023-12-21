@@ -24,7 +24,7 @@
     </div>
     @yield('content')
     @livewire('search.search')
-    @livewire('mini-cart.cart')
+    @livewire('cart.mini-cart')
     @livewire('favorite.favorite')
     <x-footer />
 </div>

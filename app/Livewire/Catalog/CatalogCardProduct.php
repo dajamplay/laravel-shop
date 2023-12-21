@@ -11,32 +11,10 @@ use Livewire\Component;
 class CatalogCardProduct extends Component
 {
     public Product $product;
-    public bool $isFavorite;
-
-    private FavoriteService $favoriteService;
-
-    public function boot(FavoriteService $favoriteService): void
-    {
-        $this->favoriteService = $favoriteService;
-    }
 
     public function mount(Product $product): void
     {
         $this->product = $product;
-        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
-    }
-
-    #[On('delete-favorite')]
-    public function deleteFavorite(): void
-    {
-        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
-    }
-
-    public function addToFavorite(Product $product): void
-    {
-        $this->favoriteService->addProduct($product);
-        $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
-        $this->dispatch('add-favorite');
     }
 
     public function render(): View
