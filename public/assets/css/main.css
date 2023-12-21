@@ -5376,10 +5376,16 @@ blockquote p {
     height: 30px;
 }
 
+/*----------------------------------------*/
+/*  SESSION MESSAGE
+/*----------------------------------------*/
 .session-message-text {
     font-size: 18px;
 }
 
+/*----------------------------------------*/
+/*  SPINNER
+/*----------------------------------------*/
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
         -webkit-transform: rotate(0deg);

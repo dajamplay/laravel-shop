@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Product;
+namespace App\Livewire\Favorite;
 
 use App\Models\Product;
 use App\Services\FavoriteService;
@@ -8,11 +8,10 @@ use Illuminate\View\View;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class ProductShow extends Component
+class FavoriteAddButton extends Component
 {
     public Product $product;
     public bool $isFavorite;
-    public int $qty = 1;
 
     private FavoriteService $favoriteService;
 
@@ -40,18 +39,8 @@ class ProductShow extends Component
         $this->dispatch('add-favorite');
     }
 
-    public function qtyPlus(): void
-    {
-        $this->qty++;
-    }
-
-    public function qtyMinus(): void
-    {
-        if($this->qty > 1) $this->qty--;
-    }
-
     public function render(): View
     {
-        return view('livewire.product.product-show');
+        return view('livewire.favorite.favorite-add-button');
     }
 }

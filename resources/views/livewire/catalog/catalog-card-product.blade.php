@@ -32,7 +32,7 @@
                 </a>
                 <a href="#"
                    wire:click.prevent="addToFavorite({{$product}})"
-                   class="card-footer-button card-footer-button-fav"
+                   class="card-footer-button-fav"
                 >
                     @if($isFavorite)
                         <i class="fa fa-heart text-danger" aria-hidden="true" wire:loading.remove></i>
