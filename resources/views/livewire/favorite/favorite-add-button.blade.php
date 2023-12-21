@@ -1,5 +1,5 @@
 <a href="#"
-   wire:click.prevent="addToFavorite({{$product}})"
+   wire:click.prevent="addToFavorite"
    class="single-product-button-fav single-product-btn"
 >
     @if($isFavorite)

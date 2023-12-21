@@ -19,6 +19,15 @@
         </a>
     @endif
     <a href="#"
-       class="single-product-button-cart single-product-btn {{!$buttons ? 'single-product-button-cart-no-buttons' : ''}}"
-    >В корзину</a>
+       wire:click.prevent="addToCart"
+       class="single-product-button-cart single-product-btn {{$isCart ? 'single-product-button-in-cart' : ''}} {{!$buttons ? 'single-product-button-cart-no-buttons' : ''}}"
+    >
+        @if($isCart)
+            <span wire:loading.remove>{{__('В корзине')}}</span>
+            <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
+        @else
+            <span wire:loading.remove>{{__('В корзину')}}</span>
+            <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
+        @endif
+    </a>
 </div>

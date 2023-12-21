@@ -32,9 +32,9 @@ class FavoriteAddButton extends Component
         $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
     }
 
-    public function addToFavorite(Product $product): void
+    public function addToFavorite(): void
     {
-        $this->favoriteService->addProduct($product);
+        $this->favoriteService->addProduct($this->product);
         $this->isFavorite = $this->favoriteService->isFavorite($this->product->id);
         $this->dispatch('add-favorite');
     }

@@ -11,16 +11,8 @@
         @endif
         <span class="new-price">{{$price}} {{__('руб.')}} {{__('(розница)')}}</span>
     </div>
+@else
+    <div class="price-box pb-1">
+        <span class="new-price">{{$price}} {{__('руб.')}}</span>
+    </div>
 @endcosmetologist
-
-@guest
-    <div class="price-box pb-1">
-        <span class="new-price">{{$price}} {{__('руб.')}}</span>
-    </div>
-@endguest
-
-@auth
-    <div class="price-box pb-1">
-        <span class="new-price">{{$price}} {{__('руб.')}}</span>
-    </div>
-@endauth

@@ -21,16 +21,7 @@
             @endguest
         </li>
         <livewire:favorite.favorite-icon-menu />
-        <li>
-            <a
-                class="minicart-btn"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#mini-cart"
-            >
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-{{--                <span class="quantity">3</span>--}}
-            </a>
-        </li>
+        <livewire:cart.cart-icon-menu />
         <li class="d-block d-lg-none">
             <a data-bs-toggle="offcanvas" data-bs-target="#mobile-menu">
                 <i class="fa fa-bars" aria-hidden="true"></i>
