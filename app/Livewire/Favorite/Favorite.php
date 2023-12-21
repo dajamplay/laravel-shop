@@ -21,7 +21,7 @@ class Favorite extends Component
     }
 
     #[On('add-favorite')]
-    public function addProduct(Product $product): void
+    public function addProduct(): void
     {
         $this->refreshFavoriteProducts();
     }

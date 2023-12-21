@@ -5,6 +5,7 @@ namespace App\Livewire\Cart;
 use App\Models\Product;
 use App\Services\CartService;
 use Illuminate\View\View;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class CartAddButton extends Component
@@ -25,6 +26,12 @@ class CartAddButton extends Component
     {
         $this->product = $product;
         $this->buttons = $buttons;
+        $this->isCart = $this->cartService->isCart($this->product->id);
+    }
+
+    #[On('delete-cart')]
+    public function deleteCart(): void
+    {
         $this->isCart = $this->cartService->isCart($this->product->id);
     }
 
