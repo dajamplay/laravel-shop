@@ -36,7 +36,7 @@ class CartService
                 );
             });
 
-        return $products->toArray();
+        return $products?->toArray() ?? [];
     }
 
     public function qty(int $id): int
