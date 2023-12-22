@@ -1,9 +1,5 @@
 @extends('layouts.public')
 
-@php
-    /** @var $product \App\Data\ProductData */
-@endphp
-
 @section('content')
 
     @php

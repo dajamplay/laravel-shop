@@ -11,3 +11,5 @@ require base_path('routes/web/shop.php');
 require base_path('routes/web/blog.php');
 
 require base_path('routes/web/dashboard.php');
+
+require base_path('routes/web/order.php');

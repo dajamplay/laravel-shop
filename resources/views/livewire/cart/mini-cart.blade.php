@@ -19,14 +19,19 @@
     </div>
     @if(count($cartProducts) > 0)
         <div class="px-3 pb-3 border-bottom border-1 shadow-down">
-            <a href="#" class="btn btn-primary">{{__('Оформить заказ')}}</a>
+            <a href="{{route('order.index')}}" class="btn btn-primary">{{__('Оформить заказ')}}</a>
         </div>
     @endif
     <div class="offcanvas-body p-0">
         @if(count($cartProducts) > 0)
-            @foreach($cartProducts as $cartProduct)
+            @foreach($cartProducts as $key => $cartProduct)
                 <div class="favorite-card shadow-card p-0 my-4 border border-1 bg-white" wire:key="{{$cartProduct['id']}}">
-                    <div class="d-flex justify-content-between align-items-start p-0">
+                    <div class="p-2">
+                        <a href="{{route('shop.products.show', $cartProduct['slug'])}}">
+                            {{$key + 1 . ') ' . $cartProduct['title']}}
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start p-2">
                         <a href="{{route('shop.products.show', $cartProduct['slug'])}}">
                             <img
                                 src="{{storage($cartProduct['image'])}}"
@@ -35,7 +40,6 @@
                                 class="rounded"
                             >
                         </a>
-                        <a href="{{route('shop.products.show', $cartProduct['slug'])}}">{{$cartProduct['title']}}</a>
                         <div>
                             @include('livewire.catalog.catalog-card-product-price', [
                                 'price' => $cartProduct['price'],
@@ -43,6 +47,7 @@
                                 'class' => 'mini-cart-price'
                             ])
                         </div>
+                        <div>{{$cartProduct['cart_qty']}}</div>
                         <div class="d-flex justify-content-between align-items-start flex-column">
                             <a
                                 href="#"
@@ -66,7 +71,7 @@
     <div class="offcanvas-footer shadow-up">
         @if(count($cartProducts) > 0)
             <div class="p-3 border-top border-1">
-                <a href="#" class="btn btn-primary">{{__('Оформить заказ')}}</a>
+                <a href="{{route('order.index')}}" class="btn btn-primary">{{__('Оформить заказ')}}</a>
             </div>
         @endif
     </div>

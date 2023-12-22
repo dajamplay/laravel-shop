@@ -9,22 +9,41 @@ class CartService
 {
     private const CART = 'productInCart';
 
-    public function addProduct(Product $product): void
+    public function addProduct(Product $product, int $qty = 1): void
     {
-        $productsInCart = $this->products();
+        $productsInCart = $this->productsIdsAndQty();
 
         if(isset($productsInCart[$product->id])) {
             unset($productsInCart[$product->id]);
         } else {
-            $productsInCart[$product->id] = $product->toArray();
+            $productsInCart[$product->id] = $qty;
         }
 
         Session::put(self::CART, $productsInCart);
     }
 
-    public function products()
+    public function productsIdsAndQty()
     {
         return Session::get(self::CART) ?? [];
+    }
+
+    public function products(): array
+    {
+        $products = Product::query()
+            ->find(array_keys($this->productsIdsAndQty()))->map( function ($product) {
+                return array_merge(
+                    $product->toArray(), ['cart_qty' => $this->qty($product->id)]
+                );
+            });
+
+        return $products->toArray();
+    }
+
+    public function qty(int $id)
+    {
+        $productsInCart = $this->productsIdsAndQty();
+
+        return $productsInCart[$id];
     }
 
     public function productsCount(): int
@@ -39,14 +58,14 @@ class CartService
 
     public function isCart(int $id): bool
     {
-        $productsInCart = $this->products();
+        $productsInCart = $this->productsIdsAndQty();
 
         return isset($productsInCart[$id]);
     }
 
     public function removeProduct(int $id): void
     {
-        $productsInCart = $this->products();
+        $productsInCart = $this->productsIdsAndQty();
 
         if(isset($productsInCart[$id])) {
             unset($productsInCart[$id]);
