@@ -13,7 +13,7 @@ class CartService
     {
         $productsInCart = $this->productsIdsAndQty();
 
-        if(isset($productsInCart[$product->id])) {
+        if (isset($productsInCart[$product->id])) {
             unset($productsInCart[$product->id]);
         } else {
             $productsInCart[$product->id] = $qty;
@@ -30,7 +30,7 @@ class CartService
     public function products(): array
     {
         $products = Product::query()
-            ->find(array_keys($this->productsIdsAndQty()))->map( function ($product) {
+            ->find(array_keys($this->productsIdsAndQty()))->map(function ($product) {
                 return array_merge(
                     $product->toArray(), ['cart_qty' => $this->qty($product->id)]
                 );
@@ -39,11 +39,41 @@ class CartService
         return $products->toArray();
     }
 
-    public function qty(int $id)
+    public function qty(int $id): int
     {
         $productsInCart = $this->productsIdsAndQty();
 
-        return $productsInCart[$id];
+        return $productsInCart[$id] ?? 1;
+    }
+
+    public function qtyPlus(int $id): bool
+    {
+        $productsInCart = $this->productsIdsAndQty();
+
+        if (isset($productsInCart[$id])) {
+            $productsInCart[$id]++;
+
+            Session::put(self::CART, $productsInCart);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public function qtyMinus(int $id): bool
+    {
+        $productsInCart = $this->productsIdsAndQty();
+
+        if (isset($productsInCart[$id]) && $productsInCart[$id] > 1) {
+            $productsInCart[$id]--;
+
+            Session::put(self::CART, $productsInCart);
+
+            return true;
+        }
+
+        return false;
     }
 
     public function productsCount(): int
@@ -67,7 +97,7 @@ class CartService
     {
         $productsInCart = $this->productsIdsAndQty();
 
-        if(isset($productsInCart[$id])) {
+        if (isset($productsInCart[$id])) {
             unset($productsInCart[$id]);
         }
 

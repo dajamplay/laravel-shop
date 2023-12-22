@@ -25,6 +25,12 @@ class MiniCart extends Component
         $this->refreshCartProducts();
     }
 
+    #[On('qty-cart')]
+    public function qtyProduct(): void
+    {
+        $this->refreshCartProducts();
+    }
+
     public function removeProduct(int $id): void
     {
         $this->cartService->removeProduct($id);
@@ -36,6 +42,21 @@ class MiniCart extends Component
     {
         $this->cartService->clear();
         $this->refreshCartProducts();
+    }
+
+    public function qtyPlus(int $id): void
+    {
+        $this->cartService->qtyPlus($id);
+        $this->dispatch('qty-cart-from-mini-cart');
+        $this->refreshCartProducts();
+    }
+
+    public function qtyMinus(int $id): void
+    {
+        if ($this->cartService->qtyMinus($id)) {
+            $this->dispatch('qty-cart-from-mini-cart');
+            $this->refreshCartProducts();
+        }
     }
 
     public function refreshCartProducts(): void

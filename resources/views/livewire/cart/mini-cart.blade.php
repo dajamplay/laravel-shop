@@ -47,7 +47,11 @@
                                 'class' => 'mini-cart-price'
                             ])
                         </div>
-                        <div>{{$cartProduct['cart_qty']}}</div>
+                        <div>
+                            <a href="" wire:click.prevent="qtyMinus({{$cartProduct['id']}})">-</a>
+                            {{$cartProduct['cart_qty']}}
+                            <a href="" wire:click.prevent="qtyPlus({{$cartProduct['id']}})">+</a>
+                        </div>
                         <div class="d-flex justify-content-between align-items-start flex-column">
                             <a
                                 href="#"
