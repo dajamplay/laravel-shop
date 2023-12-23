@@ -11,18 +11,25 @@ class FavoriteService
 
     public function addProduct(Product $product): void
     {
-        $productsInFavorite = $this->products();
+        $productsInFavorite = $this->productsIds();
 
         if(isset($productsInFavorite[$product->id])) {
             unset($productsInFavorite[$product->id]);
         } else {
-            $productsInFavorite[$product->id] = $product->toArray();
+            $productsInFavorite[$product->id] = $product->id;
         }
 
         Session::put(self::FAVORITES, $productsInFavorite);
     }
 
-    public function products()
+    public function products(): array
+    {
+        return Product::query()
+            ->find(array_keys($this->productsIds()))
+            ->toArray() ?? [];
+    }
+
+    public function productsIds()
     {
         return Session::get(self::FAVORITES) ?? [];
     }
@@ -39,14 +46,14 @@ class FavoriteService
 
     public function isFavorite(int $id): bool
     {
-        $productsInFavorite = $this->products();
+        $productsInFavorite = $this->productsIds();
 
         return isset($productsInFavorite[$id]);
     }
 
     public function removeProduct(int $id): void
     {
-        $productsInFavorite = $this->products();
+        $productsInFavorite = $this->productsIds();
 
         if(isset($productsInFavorite[$id])) {
             unset($productsInFavorite[$id]);

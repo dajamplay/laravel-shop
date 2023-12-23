@@ -27,20 +27,20 @@ class CartAddButton extends Component
         $this->product = $product;
         $this->buttons = $buttons;
         $this->isCart = $this->isCart();
-        $this->qty = $this->cartService->qty($this->product->id);
+        $this->qtyRefresh();
     }
 
     #[On('delete-cart')]
     public function deleteCart(): void
     {
         $this->isCart = $this->isCart();
-        $this->qty = $this->cartService->qty($this->product->id);
+        $this->qtyRefresh();
     }
 
     #[On('qty-cart-from-mini-cart')]
     public function qtyFromMiniCart(): void
     {
-        $this->qty = $this->cartService->qty($this->product->id);
+        $this->qtyRefresh();
     }
 
     public function addToCart(): void
@@ -75,8 +75,14 @@ class CartAddButton extends Component
         }
     }
 
-    private function isCart(): bool {
+    private function isCart(): bool
+    {
         return $this->cartService->isCart($this->product->id);
+    }
+
+    private function qtyRefresh(): void
+    {
+        $this->qty = $this->cartService->qty($this->product->id);
     }
 
     public function render(): View
