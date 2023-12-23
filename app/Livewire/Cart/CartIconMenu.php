@@ -24,13 +24,10 @@ class CartIconMenu extends Component
     }
 
     #[On('delete-cart')]
-    public function deleteFavorite(): void
-    {
-        $this->cartProductsCount = $this->cartService->productsCount();
-    }
-
     #[On('add-cart')]
-    public function addFavorite(): void
+    #[On('qty-cart')]
+    #[On('qty-cart-from-mini-cart')]
+    public function refreshFavorite(): void
     {
         $this->cartProductsCount = $this->cartService->productsCount();
     }

@@ -78,7 +78,10 @@ class CartService
 
     public function productsCount(): int
     {
-        return count(Session::get(self::CART) ?? []);
+        if (count($products = Session::get(self::CART) ?? []) > 0) {
+            return array_sum($products);
+        }
+        return 0;
     }
 
     public function clear(): void
