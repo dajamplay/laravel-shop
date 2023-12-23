@@ -25,19 +25,20 @@
     <div class="offcanvas-body p-0">
         @if(count($cartProducts) > 0)
             @foreach($cartProducts as $key => $cartProduct)
-                <div class="favorite-card shadow-card p-0 my-4 border border-1 bg-white" wire:key="{{$cartProduct['id']}}">
-                    <div class="p-2">
+                <div class="favorite-card shadow-card p-0 m-2 border border-1 bg-white" wire:key="{{$cartProduct['id']}}">
+                    <div class="px-2 pt-2">
                         <a href="{{route('shop.products.show', $cartProduct['slug'])}}">
                             {{$key + 1 . ') ' . $cartProduct['title']}}
                         </a>
                     </div>
-                    <div class="d-flex justify-content-between align-items-start p-2">
+                    <div class="d-flex justify-content-between align-items-center px-2 pb-2">
                         <a href="{{route('shop.products.show', $cartProduct['slug'])}}">
                             <img
                                 src="{{storage($cartProduct['image'])}}"
                                 alt="{{ $cartProduct['title'] }}"
-                                width="70"
-                                class="rounded"
+                                width="80"
+                                height="80"
+                                class="rounded cropped"
                             >
                         </a>
                         <div>
@@ -47,15 +48,19 @@
                                 'class' => 'mini-cart-price'
                             ])
                         </div>
-                        <div>
-                            <a href="" wire:click.prevent="qtyMinus({{$cartProduct['id']}})">-</a>
+                        <div class="mini-cart-qty">
+                            <a href="" wire:click.prevent="qtyMinus({{$cartProduct['id']}})">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </a>
                             {{$cartProduct['cart_qty']}}
-                            <a href="" wire:click.prevent="qtyPlus({{$cartProduct['id']}})">+</a>
+                            <a href="" wire:click.prevent="qtyPlus({{$cartProduct['id']}})">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <div class="d-flex justify-content-between align-items-start flex-column">
+                        <div class="d-flex justify-content-between align-items-start flex-column mini-cart-controls">
                             <a
                                 href="#"
-                                class="p-2 m-0"
+                                class=""
                                 wire:click.prevent="removeProduct({{$cartProduct['id']}})"
                             >
                                 <i class="fa fa-trash-o" aria-hidden="true" wire:loading.remove></i>
