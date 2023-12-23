@@ -11,12 +11,6 @@
 
     <x-breadcrumb h1="Оформление заказа" :breadcrumbs="$breadcrumbs"/>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <p>Корзина</p>
-            </div>
-        </div>
-    </div>
+    <livewire:order.order />
 
 @endsection
