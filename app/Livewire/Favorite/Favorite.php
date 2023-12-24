@@ -37,6 +37,7 @@ class Favorite extends Component
     {
         $this->favoriteService->clear();
         $this->refreshFavoriteProducts();
+        $this->dispatch('delete-favorite');
     }
 
     public function refreshFavoriteProducts(): void

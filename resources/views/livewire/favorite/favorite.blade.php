@@ -53,9 +53,9 @@
             <a class="btn btn-pronia-primary" href="{{route('shop.products.index')}}">{{__('Перейти в магазин')}}</a>
         @endif
     </div>
-    <div class="offcanvas-footer">
-        <div>
-            <a href="" wire:click.prevent="clearProducts()" class="btn btn-pronia-primary m-3">{{__('Очистить избранное')}}</a>
+    <div class="offcanvas-footer shadow-up">
+        <div class="p-3 border-top border-1">
+            <a href="" wire:click.prevent="clearProducts()" class="btn btn-pronia-primary w-100">{{__('Очистить избранное')}}</a>
         </div>
     </div>
 </div>
