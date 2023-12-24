@@ -5314,9 +5314,9 @@ blockquote p {
     color: #555555;
     background-color: transparent;
     width: 50px;
-    margin-left: -5px;
-    margin-right: -5px;
-    border-radius: 25px 0!important;
+    margin-left: -10px;
+    margin-right: -10px;
+    box-shadow: none;
 }
 
 .single-product-button-qty-catalog {
@@ -5325,8 +5325,8 @@ blockquote p {
     background-color: transparent;
     width: 40px;
     height: 40px;
-    margin-left: -5px;
-    margin-right: -5px;
+    margin-left: -10px;
+    margin-right: -10px;
     border: none!important;
     box-shadow: none!important;
 }
@@ -5425,12 +5425,21 @@ blockquote p {
 }
 
 .mini-cart-qty {
-    font-size: 26px!important;
+    font-size: 22px!important;
 }
 
 .mini-cart-controls {
     font-size: 22px!important;
     width: 24px;
+}
+
+.mini-cart-buttons-plus-minus i {
+    font-size: 22px!important;
+    color: #ffffff;
+    background-color: #8ab051;
+    padding: 5px;
+    border-radius: 16px 0;
+    width: 27px;
 }
 
 /*----------------------------------------*/

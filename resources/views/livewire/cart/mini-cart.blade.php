@@ -23,7 +23,7 @@
                 <div class="favorite-card shadow-card p-0 m-2 border border-1 bg-white" wire:key="{{$cartProduct['id']}}">
                     <div class="px-2 pt-2">
                         <a href="{{route('shop.products.show', $cartProduct['slug'])}}">
-                            {{$key + 1 . ') ' . $cartProduct['title']}}
+                            {{$cartProduct['title']}}
                         </a>
                     </div>
                     <div class="d-flex justify-content-between align-items-center px-2 pb-2">
@@ -44,12 +44,20 @@
                             ])
                         </div>
                         <div class="mini-cart-qty">
-                            <a href="" wire:click.prevent="qtyMinus({{$cartProduct['id']}})">
-                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            <a
+                                href="#"
+                                wire:click.prevent="qtyMinus({{$cartProduct['id']}})"
+                                class="mini-cart-buttons-plus-minus"
+                            >
+                                <i class="fa fa-minus" aria-hidden="true"></i>
                             </a>
                             {{$cartProduct['cart_qty']}}
-                            <a href="" wire:click.prevent="qtyPlus({{$cartProduct['id']}})">
-                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            <a
+                                href="#"
+                                wire:click.prevent="qtyPlus({{$cartProduct['id']}})"
+                                class="mini-cart-buttons-plus-minus"
+                            >
+                                <i class="fa fa-plus" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="d-flex justify-content-between align-items-start flex-column mini-cart-controls">
@@ -76,7 +84,10 @@
     <div class="offcanvas-footer shadow-up">
         @if(count($cartProducts) > 0)
             <div class="p-3 border-top border-1">
-                <a href="{{route('order.index')}}" class="btn btn-primary">{{__('Оформить заказ')}}</a>
+                <a
+                    href="{{route('order.index')}}"
+                    class="btn btn-primary w-100"
+                >{{__('Оформить заказ')}}</a>
             </div>
         @endif
     </div>
