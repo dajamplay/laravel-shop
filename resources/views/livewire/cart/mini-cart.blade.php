@@ -17,11 +17,6 @@
             aria-label="Close">
         </button>
     </div>
-    @if(count($cartProducts) > 0)
-        <div class="px-3 pb-3 border-bottom border-1 shadow-down">
-            <a href="{{route('order.index')}}" class="btn btn-primary">{{__('Оформить заказ')}}</a>
-        </div>
-    @endif
     <div class="offcanvas-body p-0">
         @if(count($cartProducts) > 0)
             @foreach($cartProducts as $key => $cartProduct)
