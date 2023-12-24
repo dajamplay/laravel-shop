@@ -57,6 +57,7 @@
                                 href="#"
                                 class=""
                                 wire:click.prevent="removeProduct({{$cartProduct['id']}})"
+                                wire:confirm="{{__('Вы точно хотите удалить из корзины?')}}"
                             >
                                 <i class="fa fa-trash-o" aria-hidden="true" wire:loading.remove></i>
                                 <i class="fa fa-spinner" aria-hidden="true" wire:loading></i>
