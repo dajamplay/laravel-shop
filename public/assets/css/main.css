@@ -5219,7 +5219,7 @@ blockquote p {
 /*  SINGLE PRODUCT
 /*----------------------------------------*/
 .single-product-btn {
-    transition: 0.33s;
+    transition: none!important;
     height: 40px;
     border-radius: 20px;
     display: flex;
@@ -5290,12 +5290,26 @@ blockquote p {
     z-index: 2;
 }
 
-.single-product-button-plus-minus:hover {
+.single-product-button-plus-minus-catalog {
+    font-size: 16px;
+    border: 1px solid #999999;
     color: #ffffff;
-    background-color: #77a828;
+    background-color: #8ab051;
+    width: 40px!important;
+    height: 40px!important;
+    border-radius: 25px 0!important;
+    z-index: 2;
 }
 
-.single-product-button-cty {
+.single-product-button-plus-minus:hover {
+    color: #ffffff;
+}
+
+.single-product-button-plus-minus-catalog:hover {
+    color: #ffffff;
+}
+
+.single-product-button-qty {
     font-size: 22px;
     color: #555555;
     background-color: transparent;
@@ -5303,6 +5317,18 @@ blockquote p {
     margin-left: -5px;
     margin-right: -5px;
     border-radius: 25px 0!important;
+}
+
+.single-product-button-qty-catalog {
+    font-size: 20px;
+    color: #555555;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    margin-left: -5px;
+    margin-right: -5px;
+    border: none!important;
+    box-shadow: none!important;
 }
 
 .single-product-tags {

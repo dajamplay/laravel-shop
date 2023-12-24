@@ -12,7 +12,7 @@ class CartAddButton extends Component
 {
     public Product $product;
     public int $qty;
-    public bool $buttons;
+    public bool $isCatalog;
     public bool $isCart;
 
     private CartService $cartService;
@@ -22,10 +22,10 @@ class CartAddButton extends Component
         $this->cartService = $cartService;
     }
 
-    public function mount(Product $product, bool $buttons = false): void
+    public function mount(Product $product, bool $isCatalog = true): void
     {
         $this->product = $product;
-        $this->buttons = $buttons;
+        $this->isCatalog = $isCatalog;
         $this->isCart = $this->isCart();
         $this->qtyRefresh();
     }
@@ -63,7 +63,7 @@ class CartAddButton extends Component
 
     public function qtyMinus(): void
     {
-        if($this->qty > 1) {
+        if ($this->qty > 1) {
 
             $this->qty--;
 
@@ -72,6 +72,11 @@ class CartAddButton extends Component
             }
 
             $this->dispatch('qty-cart');
+        } else {
+            if ($this->isCart()) {
+                //toggle product
+                $this->addToCart();
+            }
         }
     }
 
