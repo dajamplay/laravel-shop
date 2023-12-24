@@ -64,8 +64,21 @@ class MiniCart extends Component
         $this->cartProducts = $this->cartService->products();
     }
 
+    public function totalPrice(): array
+    {
+        $totalPrice = 0;
+        $totalPriceOpt = 0;
+
+        foreach ($this->cartProducts as $product) {
+            $totalPrice += $product['price'] * $product['cart_qty'];
+            $totalPriceOpt += $product['price_opt'] ?? $product['price'] * $product['cart_qty'];
+        }
+
+        return ['price' => $totalPrice, 'price_opt' => $totalPriceOpt];
+    }
+
     public function render(): View
     {
-        return view('livewire.cart.mini-cart');
+        return view('livewire.cart.mini-cart', ['total' => $this->totalPrice()]);
     }
 }

@@ -16,4 +16,4 @@
     <div class="price-box">
         <span class="{{$class ?: 'new-price'}}">{{$price}} {{__('руб.')}}</span>
     </div>
-    @endcosmetologist
+@endcosmetologist

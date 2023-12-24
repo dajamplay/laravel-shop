@@ -16,11 +16,11 @@ class ProductStoreRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'unique:products,title'],
             'content' => ['nullable', 'string'],
-            'price' => ['nullable', 'integer'],
+            'price' => ['required', 'integer'],
             'sku' => ['required', 'string', 'unique:products,sku'],
             'sort' => ['required'],
             'is_cosmetologist' => ['boolean', 'required'],
-            'price_opt' => ['nullable', 'integer'],
+            'price_opt' => ['required', 'integer'],
             'size' => ['nullable', 'integer'],
             'brand_id' => ['required', 'integer','exists:brands,id'],
             'line_id' => ['required', 'integer','exists:lines,id'],

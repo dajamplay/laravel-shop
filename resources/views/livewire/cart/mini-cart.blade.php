@@ -37,11 +37,11 @@
                             >
                         </a>
                         <div>
-                            @include('livewire.catalog.catalog-card-product-price', [
-                                'price' => $cartProduct['price'],
-                                'price_opt' => $cartProduct['price_opt'],
-                                'class' => 'mini-cart-price'
-                            ])
+                            @cosmetologist
+                                <div>{{$cartProduct['price_opt'] * $cartProduct['cart_qty']}} руб.</div>
+                            @else
+                                <div>{{$cartProduct['price'] * $cartProduct['cart_qty']}} руб.</div>
+                            @endcosmetologist
                         </div>
                         <div class="mini-cart-qty">
                             <a
@@ -84,6 +84,11 @@
     <div class="offcanvas-footer shadow-up">
         @if(count($cartProducts) > 0)
             <div class="p-3 border-top border-1">
+                @cosmetologist
+                    <div>Сумма заказа: {{$total['price_opt']}} руб.</div>
+                @else
+                    <div>Сумма заказа: {{$total['price']}} руб.</div>
+                @endcosmetologist
                 <a
                     href="{{route('order.index')}}"
                     class="btn btn-primary w-100"
