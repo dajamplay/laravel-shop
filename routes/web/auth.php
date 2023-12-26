@@ -20,12 +20,12 @@ Route::middleware('auth')->group( function () {
 
 });
 
-Route::middleware('guest')->group( function () {
+Route::middleware(['guest', 'throttle:50,1'])->group( function () {
 
     Route::get('/login', [Auth\LoginController::class, 'create'])
         ->name('login');
-    Route::post('/login', [Auth\LoginController::class, 'store'])
-        ->middleware('throttle:5,1');
+
+    Route::post('/login', [Auth\LoginController::class, 'store']);
 
     Route::get('/register', [Auth\RegisterController::class, 'create'])
         ->name('register');

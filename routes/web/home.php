@@ -9,8 +9,8 @@ Route::name('home')->group( function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('.index');
 
-    Route::get('/contacts', [HomeController::class, 'contacts'])->name('.contacts');
-    Route::post('/message', [MessageController::class, 'store'])->name('.message.store');
+    Route::get('/contacts', [HomeController::class, 'contacts'])
+        ->name('.contacts');
 
     Route::get('/about', [HomeController::class, 'about'])->name('.about');
 
