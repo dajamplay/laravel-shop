@@ -38,8 +38,8 @@ class ContactForm extends Component
         });
         $this->validate();
         $this->createMessage();
-        $this->dispatch('alert', 'Спасибо! Ваше сообщение отправлено.');
         $this->clearFields();
+        $this->dispatch('alert', 'Спасибо! Ваше сообщение отправлено.');
     }
 
     public function createMessage(): void
