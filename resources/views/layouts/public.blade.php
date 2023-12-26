@@ -41,7 +41,7 @@
 
 <x-ui.session_alert message="message"/>
 
-<livewire:alert.success />
+<livewire:alert.alert />
 
 </body>
 </html>

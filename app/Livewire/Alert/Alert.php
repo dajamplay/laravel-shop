@@ -6,7 +6,7 @@ use Illuminate\View\View;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class Success extends Component
+class Alert extends Component
 {
     public string $message = '';
 
@@ -26,6 +26,6 @@ class Success extends Component
 
     public function render(): View
     {
-        return view('livewire.alert.success');
+        return view('livewire.alert.alert');
     }
 }
