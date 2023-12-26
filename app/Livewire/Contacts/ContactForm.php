@@ -34,11 +34,11 @@ class ContactForm extends Component
     public function submit(): void
     {
         $this->rateLimit(20, function () {
-            $this->dispatch('message', 'Слишком много запросов. Попробуйте через 1 минуту.');
+            $this->dispatch('alert', 'Слишком много запросов. Попробуйте через 1 минуту.');
         });
         $this->validate();
         $this->createMessage();
-        $this->dispatch('message', 'Спасибо! Ваше сообщение отправлено.');
+        $this->dispatch('alert', 'Спасибо! Ваше сообщение отправлено.');
         $this->clearFields();
     }
 
