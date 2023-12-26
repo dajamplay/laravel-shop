@@ -12,7 +12,7 @@ class Alert extends Component
 
     public bool $isOpen = false;
 
-    #[On('modal')]
+    #[On('message')]
     public function openModal(string $message): void
     {
         $this->message = $message;
