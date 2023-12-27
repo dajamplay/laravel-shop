@@ -13,19 +13,19 @@ class ContactForm extends Component
 {
     use ThrottlingTrait;
 
-    #[Validate(['required', 'string', 'min:2'])]
+    #[Validate(['required', 'string', 'min:2', 'max:30'])]
     public string $first_name = '';
 
-    #[Validate(['required', 'string', 'min:2'])]
+    #[Validate(['required', 'string', 'min:2', 'max:30'])]
     public string $last_name = '';
 
-    #[Validate(['required', 'email', 'min:2'])]
+    #[Validate(['required', 'email', 'min:2', 'max:30'])]
     public string $email = '';
 
-    #[Validate(['required', 'string', 'min:2'])]
+    #[Validate(['required', 'string', 'min:2', 'max:20'])]
     public string $phone = '';
 
-    #[Validate(['required', 'string', 'min:2'])]
+    #[Validate(['required', 'string', 'min:2', 'max:2000'])]
     public string $message = '';
 
     /**
