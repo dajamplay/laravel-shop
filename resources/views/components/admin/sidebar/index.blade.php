@@ -34,7 +34,9 @@
                 <a href="{{ route('admin.orders.index')}}" class="nav-link  @linkactive('admin.orders.*')" >
                     <i class="nav-icon fab fa-shopify"></i>
                     <p>{{__('Заказы')}}</p>
-{{--                    <span class="right badge badge-danger">10</span>--}}
+                    @if($newOrdersCount > 0)
+                        <span class="right badge badge-danger">{{$newOrdersCount}}</span>
+                    @endif
                 </a>
             </li>
             <li class="nav-item">

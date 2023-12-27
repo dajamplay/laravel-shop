@@ -11,6 +11,8 @@ class Sidebar extends Component
 {
     public int $newMessagesCount;
 
+    public int $newOrdersCount = 0;
+
     public function __construct(){}
 
     public function render(): View|Closure|string
@@ -18,7 +20,8 @@ class Sidebar extends Component
         $this->newMessagesCount = Message::all()->where('is_new', true)->count();
 
         return view('components.admin.sidebar.index', [
-            'newMessagesCount' => $this->newMessagesCount
+            'newMessagesCount' => $this->newMessagesCount,
+            'newOrdersCount' => $this->newOrdersCount,
         ]);
     }
 }
