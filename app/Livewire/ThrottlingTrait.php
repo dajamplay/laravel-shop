@@ -18,6 +18,9 @@ trait ThrottlingTrait
         return static::class.'|'.$fn.'|'.$id;
     }
 
+    /**
+     * @throws ValidationException
+     */
     protected function rateLimit(int $maxAttempts, Closure $callback = null, int $decaySeconds = 60): void
     {
         $key = $this->getThrottlingKey();
