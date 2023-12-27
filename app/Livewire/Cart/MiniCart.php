@@ -71,7 +71,7 @@ class MiniCart extends Component
 
         foreach ($this->cartProducts as $product) {
             $totalPrice += $product['price'] * $product['cart_qty'];
-            $totalPriceOpt += $product['price_opt'] ?? $product['price'] * $product['cart_qty'];
+            $totalPriceOpt += $product['price_opt'] * $product['cart_qty'];
         }
 
         return ['price' => $totalPrice, 'price_opt' => $totalPriceOpt];

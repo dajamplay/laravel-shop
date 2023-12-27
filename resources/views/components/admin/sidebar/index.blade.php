@@ -34,7 +34,7 @@
                 <a href="{{ route('admin.orders.index')}}" class="nav-link  @linkactive('admin.orders.*')" >
                     <i class="nav-icon fab fa-shopify"></i>
                     <p>{{__('Заказы')}}</p>
-                    <span class="right badge badge-danger">10</span>
+{{--                    <span class="right badge badge-danger">10</span>--}}
                 </a>
             </li>
             <li class="nav-item">
