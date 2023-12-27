@@ -9,6 +9,9 @@
 
 ## Запуск dev сервера  
 ```make init```  
+```docker exec php php artisan migrate:fresh --seed```  
+```docker exec php php artisan storage:link```  
+```docker exec php php artisan key:generate```
 
 ## Альтернативный запуск dev сервера  
 ```docker-compose up -d --build```  

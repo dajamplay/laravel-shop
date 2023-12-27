@@ -15,6 +15,7 @@ class Message extends Model
         'email',
         'phone',
         'message',
+        'is_new'
     ];
 
     protected $casts = [

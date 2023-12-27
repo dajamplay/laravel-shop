@@ -19,7 +19,9 @@ Route::prefix('admin')->name('admin.')->middleware([ 'auth', 'admin'])->group( f
     Route::resource('feedback', Admin\FeedbackController::class);
     Route::resource('slides', Admin\SlideController::class);
 
-    Route::resource('orders', Admin\OrdersController::class)->only(['index']);
+    Route::resource('orders', Admin\OrderController::class)->only(['index']);
+
+    Route::resource('messages', Admin\MessageController::class)->only(['index', 'show']);
 
     Route::resource('posts', Admin\PostController::class);
 

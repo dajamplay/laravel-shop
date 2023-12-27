@@ -38,6 +38,15 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.messages.index')}}" class="nav-link  @linkactive('admin.messages.*')" >
+                    <i class="nav-icon fa fa-envelope" aria-hidden="true"></i>
+                    <p>{{__('Сообщения')}}</p>
+                    @if($newMessagesCount > 0)
+                        <span class="right badge badge-danger">{{$newMessagesCount}}</span>
+                    @endif
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.feedback.index')}}" class="nav-link  @linkactive('admin.feedback.*')" >
                     <i class="nav-icon fa fa-comments"></i>
                     <p>{{__('Отзывы')}}</p>
