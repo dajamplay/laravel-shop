@@ -11,8 +11,12 @@ class Order extends Model
 
     protected $fillable = [
         'user_id',
+        'email',
+        'phone',
+        'name',
         'is_new',
         'status',
         'comment',
+        'price',
     ];
 }
